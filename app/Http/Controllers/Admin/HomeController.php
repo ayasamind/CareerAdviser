@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Admin\AdminController;
 
-class HomeController extends Controller
+class HomeController extends AdminController
 {
     /**
      * Create a new controller instance.
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:user');
+        $this->middleware('auth:admin');
     }
 
     /**
