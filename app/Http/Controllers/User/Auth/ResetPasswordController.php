@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\User\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use App\Http\Controllers\User\UsersController;
 
-class ResetPasswordController extends Controller
+class ResetPasswordController extends UsersController
 {
     /*
     |--------------------------------------------------------------------------

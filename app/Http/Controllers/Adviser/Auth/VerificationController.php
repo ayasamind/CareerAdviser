@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Adviser\AdviserController;
+use App\Http\Controllers\Adviser\AdvisersController;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
-class VerificationController extends AdviserController
+class VerificationController extends AdvisersController
 {
     /*
     |--------------------------------------------------------------------------

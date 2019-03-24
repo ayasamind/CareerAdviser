@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\User\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use App\Http\Controllers\User\UsersController;
 
-class VerificationController extends Controller
+class VerificationController extends UsersController
 {
     /*
     |--------------------------------------------------------------------------

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Adviser;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Adviser\AdviserController;
+use App\Http\Controllers\Adviser\AdvisersController;
 
-class HomeController extends AdviserController
+class HomeController extends AdvisersController
 {
     /**
      * Create a new controller instance.
@@ -24,6 +24,6 @@ class HomeController extends AdviserController
      */
     public function index()
     {
-        return view('home');
+        return view('adviser.home');
     }
 }

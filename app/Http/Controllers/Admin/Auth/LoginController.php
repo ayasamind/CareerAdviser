@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin\Auth;
 
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminsController;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
-class LoginController extends AdminController
+class LoginController extends AdminsController
 {
     /*
     |--------------------------------------------------------------------------
@@ -53,6 +54,6 @@ class LoginController extends AdminController
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect('/admin/');
+        return $this->loggedOut($request) ?: redirect('/admin/login');
     }
 }

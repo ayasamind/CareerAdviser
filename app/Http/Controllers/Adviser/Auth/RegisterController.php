@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Adviser\Auth;
 
 use App\Adviser;
-use App\Http\Controllers\Adviser\AdviserController;
+use App\Http\Controllers\Adviser\AdvisersController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends AdviserController
+class RegisterController extends AdvisersController
 {
     /*
     |--------------------------------------------------------------------------

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\User\UsersController;
 
-class HomeController extends Controller
+class HomeController extends UsersController
 {
     /**
      * Create a new controller instance.

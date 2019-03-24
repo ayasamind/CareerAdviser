@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Adviser\Auth;
 
-use App\Http\Controllers\Adviser\AdviserController;
+use App\Http\Controllers\Adviser\AdvisersController;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
-class ForgotPasswordController extends AdviserController
+class ForgotPasswordController extends AdvisersController
 {
     /*
     |--------------------------------------------------------------------------
