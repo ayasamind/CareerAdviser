@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Adviser\Auth;
 
-use App\Http\Controllers\Adviser\AdviserController;
+use App\Http\Controllers\Adviser\AdvisersController;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
-class ResetPasswordController extends AdviserController
+class ResetPasswordController extends AdvisersController
 {
     /*
     |--------------------------------------------------------------------------

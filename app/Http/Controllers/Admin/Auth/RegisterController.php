@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Admin;
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminsController;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends AdminController
+class RegisterController extends AdminsController
 {
     /*
     |--------------------------------------------------------------------------

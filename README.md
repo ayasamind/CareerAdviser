@@ -6,6 +6,7 @@ $ docker-compose up -d
 $ docker exec -it light-php bash
 $ composer install
 $ php artisan migrate
+$ php artisan db:seed
 ```
 
 Access http://localhost:8080

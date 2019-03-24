@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin\Auth;
 
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminsController;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
-class ResetPasswordController extends AdminController
+class ResetPasswordController extends AdminsController
 {
     /*
     |--------------------------------------------------------------------------

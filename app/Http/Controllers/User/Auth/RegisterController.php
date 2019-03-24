@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\User\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\User\UsersController;
 
-class RegisterController extends Controller
+class RegisterController extends UsersController
 {
     /*
     |--------------------------------------------------------------------------

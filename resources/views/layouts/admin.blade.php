@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/admin/home') }}">
                     管理画面
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -32,20 +32,28 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @guest
+                    @else
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route("admin.advisers.index") }}">アドバイザー一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route("admin.users.index") }}">ユーザー一覧</a>
+                        </li>
                     </ul>
+                    @endguest
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.auth.login_form') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('admin.auth.login_form') }}">ログイン</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.auth.register_form') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('admin.auth.register_form') }}">新規登録</a>
                                 </li>
                             @endif
                         @else
@@ -71,6 +79,16 @@
                 </div>
             </div>
         </nav>
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('error') }}
+            </div>
+        @endif
 
         <main class="py-4">
             @yield('content')

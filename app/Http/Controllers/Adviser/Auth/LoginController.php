@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Adviser\Auth;
 
-use App\Http\Controllers\Adviser\AdviserController;
+use App\Http\Controllers\Adviser\AdvisersController;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
-class LoginController extends AdviserController
+class LoginController extends AdvisersController
 {
     /*
     |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ class LoginController extends AdviserController
      *
      * @var string
      */
-    protected $redirectTo = '/admin/home';
+    protected $redirectTo = '/adviser/home';
 
     /**
      * Create a new controller instance.
@@ -53,6 +54,6 @@ class LoginController extends AdviserController
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect('/adviser/');
+        return $this->loggedOut($request) ?: redirect('/adviser/login');
     }
 }
