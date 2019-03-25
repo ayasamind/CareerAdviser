@@ -33,7 +33,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <!-- Left Side Of Navbar -->
+                        @guest
+                        @else
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route("user.home") }}">アドバイザー一覧</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route("admin.users.index") }}">チャット</a>
+                            </li>
+                        </ul>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -55,13 +66,14 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="{{ route('user.settings') }}">設定</a>
+                                    <a class="dropdown-item" href="{{ route('user.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         ログアウト
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
