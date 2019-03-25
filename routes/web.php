@@ -15,12 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/login", "User\Auth\LoginController@showLoginForm")->name('login_form');
+Route::get("/login", "User\Auth\LoginController@showLoginForm")->name('login_form')->middleware('guest');
 Route::post("/login", "User\Auth\LoginController@login")->name('login');
-Route::post("/logout", "User\Auth\LoginController@logout")->name('logout');
-Route::get("/register", "User\Auth\RegisterController@showRegistrationForm")->name('register_form');
-Route::post("/register", "User\Auth\RegisterController@register")->name('register');
-Route::get("/home", "User\HomeController@index")->name('home');
+Route::get("/register", "User\Auth\RegisterController@showRegistrationForm")->name('register_form')->middleware('guest');
+Route::post("/register", "User\Auth\RegisterController@register")->name('register')->middleware('guest');
+Route::get('/email/verify/{id}', 'User\Auth\VerificationController@verify')->name('verification.verify');
+Route::post('/email/resend', 'User\Auth\VerificationController@resend')->name('verification.resend')->middleware('guest');
+Route::get('/email/show', 'User\Auth\VerificationController@show')->name('verification.notice')->middleware(['web','auth']);
+
+Route::middleware('verified')->name('user.')->group(function() {
+    Route::get("/home", "User\HomeController@index")->name('home');
+    Route::get("/settings", "User\HomeController@settings")->name('settings');
+    Route::get('/users/edit', 'User\UsersController@edit')->name('edit');
+    Route::put('/users/update', 'User\UsersController@update')->name('update');
+    Route::post("/logout", "User\Auth\LoginController@logout")->name('logout');
+});
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get("/login", "Admin\Auth\LoginController@showLoginForm")->name('auth.login_form');
