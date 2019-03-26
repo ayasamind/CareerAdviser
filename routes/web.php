@@ -20,7 +20,7 @@ Route::post("/login", "User\Auth\LoginController@login")->name('login');
 Route::get("/register", "User\Auth\RegisterController@showRegistrationForm")->name('register_form')->middleware('guest');
 Route::post("/register", "User\Auth\RegisterController@register")->name('register')->middleware('guest');
 Route::get('/email/verify/{id}', 'User\Auth\VerificationController@verify')->name('verification.verify');
-Route::post('/email/resend', 'User\Auth\VerificationController@resend')->name('verification.resend')->middleware('guest');
+Route::get('/email/resend', 'User\Auth\VerificationController@resend')->name('verification.resend')->middleware(['web', 'auth']);
 Route::get('/email/show', 'User\Auth\VerificationController@show')->name('verification.notice')->middleware(['web','auth']);
 
 Route::middleware('verified')->name('user.')->group(function() {
