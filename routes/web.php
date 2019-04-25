@@ -35,7 +35,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post("/logout", "Admin\Auth\LoginController@logout")->name('auth.logout');
         Route::get("/register", "Admin\Auth\RegisterController@showRegistrationForm")->name('auth.register_form');
         Route::post("/register", "Admin\Auth\RegisterController@register")->name('auth.register');
-        Route::get("/home", "Admin\HomeController@index")->name('admin.home');
+        Route::get("/home", "Admin\HomeController@index")->name('home');
         Route::resource('/advisers', 'Admin\AdvisersController');
         Route::resource('/users', 'Admin\UsersController')->only(['index', 'show', 'destroy']);
     });
@@ -46,7 +46,9 @@ Route::prefix('adviser')->name('adviser.')->group(function () {
     Route::post("/login", "Adviser\Auth\LoginController@login")->name('auth.login');
     Route::middleware('auth:adviser')->group(function () {
         Route::post("/logout", "Adviser\Auth\LoginController@logout")->name('auth.logout');
-        Route::get("/home", "Adviser\HomeController@index")->name('adviser.home');
+        Route::get("/home", "Adviser\HomeController@index")->name('home');
+        Route::get("/edit", "Adviser\AdvisersController@edit")->name('advisers.edit');
+        Route::put("/update/{id}", "Adviser\AdvisersController@update")->name('advisers.update');
     });
 });
 

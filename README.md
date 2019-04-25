@@ -10,3 +10,10 @@ $ php artisan db:seed
 ```
 
 Access http://localhost:8080
+
+
+## LPのデプロイ
+
+```
+$ sh deploy_production.sh
+```

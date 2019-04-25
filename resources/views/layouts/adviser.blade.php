@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/adviser.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -33,7 +34,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @guest
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('adviser.advisers.edit') }}">ユーザー情報編集</a>
+                            </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->

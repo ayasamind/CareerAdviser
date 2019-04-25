@@ -20,7 +20,7 @@ class Adviser extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'photo_url'
     ];
 
     /**

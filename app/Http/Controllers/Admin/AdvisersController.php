@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Adviser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\AdminsController;
-use App\Http\Requests\Admin\AdviserRequest;
+use App\Http\Requests\Common\AdviserRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewAdviserMail;

@@ -42,7 +42,7 @@
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css" rel="stylesheet">
 <!-- webfont -->
-<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 <!-- webfont -->
 <link rel="stylesheet" href="icomoon/style.css">
@@ -86,6 +86,13 @@
 <script src="js/easing.js"></script>
 <script src="js/inview.js"></script>
 <!-- 残りはfooterで -->
+
+<!-- お問い合わせフォーム -->
+<link rel="stylesheet" href="css/contact.css">
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+<script type="text/javascript" src="js/1.14.0.jquery.validate.min.js"></script>
+<script src="js/contact.js"></script>
+<!-- お問い合わせフォーム -->
 
 <!-- js -->
 <script>
@@ -140,7 +147,7 @@ jQuery(document).ready(function($){
         $('head').prepend('<meta name="viewport" content="width=device-width,initial-scale=1">');
     } else {
         $('head').prepend('<meta name="viewport" content="width=1080">');
-    } 
+    }
 });
 </script>
 <!-- 追随ヘッダー -->
@@ -308,11 +315,11 @@ jQuery(document).ready(function($){
 		</div>
 	</div>
 </header>
-<div class="landscape_notice">
+<!-- <div class="landscape_notice">
 	<p class="landscape_notice_txt">
 		このウェブサイトは横画面には対応しておりません。<br>スマートフォンの向きを縦にしてご閲覧ください。
 	</p>
-</div>
+</div> -->
 <div id="content" class="site-content">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -412,7 +419,7 @@ jQuery(document).ready(function($){
 												<li><a href="">食べ歩き</a></li>
 												<li><a href="">自分に合う企業を知りたい人お待ちしてます</a></li>
 											</dl>
-											<a href="https://note.mu/rashisa0123/n/na5c2e086b2c3" class="advisor_card_more_btn fw700 fs17 mt10">
+											<a href="https://note.mu/rashisa0123/n/na5c2e086b2c3" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
 												<i class="fas fa-user-circle fs28"></i>
 												<span>インタビュー記事へ</span>
 											</a>
@@ -447,7 +454,7 @@ jQuery(document).ready(function($){
 												<li><a href="">アウトドア系全般</a></li>
 												<li><a href="">就活に対してネガティブなイメージ壊します</a></li>
 											</dl>
-											<a href="https://note.mu/rashisa0123/n/n30bce1db3b96" class="advisor_card_more_btn fw700 fs17 mt10">
+											<a href="https://note.mu/rashisa0123/n/n30bce1db3b96" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
 												<i class="fas fa-user-circle fs28"></i>
 												<span>インタビュー記事へ</span>
 											</a>
@@ -1081,26 +1088,14 @@ jQuery(document).ready(function($){
 						</p>
 					</div>
 					<div class="contact_row_wrap mt40">
-						<form method="post" action="mail.php" class="contact_form">
-							<!-- form block -->
-							<!-- <div class="contact_block">
-								<div class="contact_label_wrap">
-									<label class="contact_label">会員区分</label><span class="required">※必須</span>
-								</div>
-								<div class="radio_block">
-									<input id="Yes" class="contact_radio" type="radio" name="会員区分" value="TTP会員である" required><label class="radio_label" for="Yes">TTP会員である</label>
-								</div>
-								<div class="radio_block">
-									<input id="No" class="contact_radio" type="radio" name="会員区分" value="TTP会員でない"><label class="radio_label" for="No">TTP会員でない</label>
-								</div>
-							</div> -->
+                        <form id="ContactIndexForm" method="post" accept-charset="utf-8">
 							<!-- form block -->
 							<!-- form block -->
 							<div class="contact_block">
 								<div class="contact_label_wrap">
-									<label class="contact_label"  for="input_company">会社名・所属機関名</label>
+									<label class="contact_label"  for="input_company">会社名・所属機関名</label><span class="required">※必須</span>
 								</div>
-								<input required="required" name="会社名" type="text" class="contact_input" id="input_company" placeholder="">
+								<input required="required" name="data[company]" type="text" class="contact_input" id="input_company" placeholder="">
 							</div>
 							<!-- form block -->
 							<!-- form block -->
@@ -1108,7 +1103,7 @@ jQuery(document).ready(function($){
 								<div class="contact_label_wrap">
 									<label class="contact_label"  for="input_name">お名前</label><span class="required">※必須</span>
 								</div>
-								<input required="required" name="お名前" type="text" class="contact_input" id="input_name" placeholder="">
+								<input required="required" name="data[name]" type="text" class="contact_input" id="input_name" placeholder="">
 							</div>
 							<!-- form block -->
 							<!-- form block -->
@@ -1116,7 +1111,7 @@ jQuery(document).ready(function($){
 								<div class="contact_label_wrap">
 									<label class="contact_label" for="input_email">メールアドレス</label><span class="required">※必須</span>
 								</div>
-								<input required="required" name="メールアドレス" type="email" class="contact_input" id="input_email" placeholder="">
+								<input required="required" name="data[email]" type="email" class="contact_input" id="input_email" placeholder="">
 							</div>
 							<!-- form block -->
 
@@ -1125,7 +1120,7 @@ jQuery(document).ready(function($){
 								<div class="contact_label_wrap">
 									<label class="contact_label" for="input_tel">電話番号</label><span class="required">※必須</span>
 								</div>
-								<input required="required" name="電話番号" type="tel" class="contact_input" id="input_tel" placeholder="">
+								<input required="required" name="data[tel]" type="tel" class="contact_input" id="input_tel" placeholder="">
 							</div>
 							<!-- form block -->
 
@@ -1134,12 +1129,12 @@ jQuery(document).ready(function($){
 								<div class="contact_label_wrap">
 									<label class="contact_label" for="input_message">お問い合わせ内容</label><span class="required">※必須</span>
 								</div>
-								<textarea required="required" name="お問い合わせ内容" id="input_message" class="contact_input contact_textarea" placeholder="" rows="5"></textarea>
+								<textarea required="required" name="data[body]" id="input_message" class="contact_input contact_textarea" placeholder="" rows="5"></textarea>
 							</div>
 							<!-- form block -->
 
 							<div class="submit_wrap">
-								<button type="submit" class="contact_submit">送信する</button>
+								<button class="contact_submit">送信する</button>
 							</div>
 						</form>
 					</div>
@@ -1213,7 +1208,7 @@ jQuery(function($) {
 	    topBtn.fadeIn(800);
 	  }else{
 	    topBtn.fadeOut(800);
-	  } 
+	  }
 	});
 	topBtn.click(function(){
 	  $('body,html').animate({
