@@ -292,7 +292,9 @@ a.disabled {
   .advisor_box {
     min-height: 620px;
     width: 47.5%;
-    margin-right: 2.5%; }
+    margin-right: 2.5%;
+    margin-bottom:30px;
+  }
     .advisor_box:nth-of-type(2n) {
       margin-right: 0; } }
 
