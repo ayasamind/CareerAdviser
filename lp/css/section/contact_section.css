@@ -49,13 +49,13 @@
   margin: 0 auto;
   display: block;
   color: #fff;
-  background: #f08300;
-  border: 1px solid #f08300; }
+  background: #555;
+  border: 2px solid #555; }
 
 .contact_submit:hover {
-  color: #f08300;
+  color: #555;
   background: #fff;
-  border: 1px solid #f08300; }
+  border: 2px solid #555; }
 
 .contact_select {
   height: 50px;
