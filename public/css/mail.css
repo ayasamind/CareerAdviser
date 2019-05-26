@@ -1,0 +1,152 @@
+body {
+	font-family: serif;
+}
+
+a {
+	text-decoration: none;
+	color: #008cd6;
+}
+
+.complete-wrapper {
+	width: 60%;
+	margin:300px; 	
+	/* text-align: center; */
+	font-size: 1.15em;
+}
+
+.complete-message-wrapper {
+	margin: 150px auto 0;
+	height: 400px; 	
+	width: 60%;
+}
+
+.complete-message-title {
+	color: #008cd6;
+}
+
+.complete-message {
+	font-size: 0.9em;
+	margin-top: 30px;	
+}
+
+.back-to-top-btn {	
+	width: 160px;
+	background-color: #008cd6;
+	text-align: center;
+	margin-top: 15px;
+	color: #fff;
+	border: none;
+}
+
+.back-to-top-btn a {	
+	font-size: 14px;
+	padding: 10px;
+	color: #fff;
+	display: block;
+}
+
+.back-to-top-btn a:hover {	
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+.mail-link  {
+	margin-top: 10px;
+}
+
+.mail-link p {
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+.mail-link a {
+	font-size: 2em;
+	/* margin-left: 14px; */
+}
+
+/* 入力不備 */
+h3 {
+	line-height: 1.5em;
+}
+
+.input-error-wrapper {
+	margin: 160px auto;
+	width: 60%;
+	/* text-align: center; */
+	font-size: 1.15em;
+}
+
+.input-error-title {
+	font-size: 0.8em;
+	color: #008cd6;
+}
+
+.item-to-be-modified {
+	font-size: 18px;
+	background-color: #fcfcfc;
+	padding: 25px 25px 0;
+	margin-top: 30px;
+}
+
+.item-to-be-modified span {
+	color: #008cd6;
+}
+
+/* color */
+/* #008cd6 */
+
+
+
+
+
+
+
+/* @media screen and (min-width:480px) and ( max-width:768px){  */
+@media screen and ( max-width:768px){ 
+    /*　画面サイズが768px以下はここを読み込む（スマホ）　*/
+    /* 区切り縦線 スマホ版の時のみ表示 */
+    .complete-message-wrapper {
+		margin: 50px auto 0;
+		width: 80%;
+	}
+
+	.mail-link p {
+    	font-size: 1em;
+	}
+
+	.input-error-wrapper {
+		margin: 150px auto 60px;
+		width: 80%;
+	}
+
+	.input-error-title h3 {
+		font-size: 1.7em;
+	}
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    /*　画面サイズが768pxから1024pxまではここを読み込む（タブレット）　*/
+
+}
+
+@media screen and (min-width:1024px) {
+    /*　画面サイズが1024pxからはここを読み込む（PC）　*/
+}
+
+@media screen and (min-width:768px) {
+    /*　画面サイズが768pxからはここを読み込む（タブレットとPC）　*/
+    /* 区切り横線 pc,tab版の時のみ表示 */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
