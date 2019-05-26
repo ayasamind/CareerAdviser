@@ -1,0 +1,1092 @@
+@charset "UTF-8";
+/* ----------------------------------参考url */
+/* 吹き出し */
+/* https://saruwakakun.com/html-css/reference/speech-bubble#section1 */
+/* ----------------------------------参考url */
+/* ----------------------------------pagetop */
+#pageTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; }
+
+#pageTop i {
+  padding-top: 6px; }
+
+#pageTop a {
+  display: block;
+  z-index: 1;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  text-align: center; }
+
+#pageTop a:hover {
+  text-decoration: none;
+  opacity: 0.7; }
+
+/* ----------------------------------pagetop */
+/* ----------------------------------btn */
+.btn {
+  width: 100%;
+  display: block;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 15px 15px 15px; }
+
+.btn_bl {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000; }
+
+.btn_wh {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000; }
+
+.btn_half_arrow {
+  margin: 30px auto 0;
+  width: 252px;
+  height: 60px; }
+
+.btn_half_arrow a {
+  color: #fff;
+  height: 100%; }
+
+.btn_half_arrow span {
+  margin-right: 18px;
+  vertical-align: middle; }
+
+.btn_half_arrow img {
+  width: 90px;
+  vertical-align: middle; }
+
+/* hover反転系 */
+.btn_color_reverse {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 40px 0 0;
+  border-radius: 5px;
+  border: 1px solid #f08300;
+  width: 278px;
+  background-color: #fff; }
+
+.btn_color_reverse a {
+  display: block;
+  padding: 20px;
+  color: #f08300; }
+
+.btn_color_reverse a:hover {
+  border: 0;
+  color: #fff;
+  background-color: #f08300;
+  opacity: 1; }
+
+/* hover反転系 */
+/* 右側にライン入り */
+.btn_line {
+  position: relative; }
+
+.btn_line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+  width: 40px;
+  height: 1px;
+  background-color: #FFF;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s; }
+
+.btn_line:hover:before {
+  width: 80px; }
+
+/* 右側にライン入り */
+/* 左からfill */
+.btn_fill {
+  display: inline-block;
+  position: relative;
+  display: block;
+  padding: 23px 30px 23px 30px;
+  text-decoration: none;
+  border: 1px solid #f08300;
+  color: #f08300;
+  background-color: #ffffff; }
+
+a.btn_fill:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: auto;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #f08300;
+  -webkit-transition: all 0.3s cubic-bezier(0.78, 0.07, 0, 1);
+  -o-transition: all 0.3s cubic-bezier(0.78, 0.07, 0, 1);
+  transition: all 0.3s cubic-bezier(0.78, 0.07, 0, 1); }
+
+a.btn_fill:hover:before {
+  left: 0;
+  right: auto;
+  width: 100%; }
+
+a.btn_fill:hover {
+  color: #ffffff;
+  opacity: 1; }
+
+a.btn_fill:hover {
+  border: #f08300 1px solid; }
+
+a.btn_fill:hover {
+  color: #fff; }
+
+.btn_fill_txt {
+  position: relative;
+  z-index: 3;
+  font-size: 1.2rem;
+  line-height: 14px;
+  letter-spacing: 2px;
+  font-weight: normal; }
+
+/* 左からfill */
+/* ------------------button_entry01 */
+.button_entry01 {
+  display: inline-block;
+  width: 200px;
+  height: 54px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 54px;
+  outline: none; }
+
+.button_entry01::before,
+.button_entry01::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: ''; }
+
+.button_entry01,
+.button_entry01::before,
+.button_entry01::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+
+/* 左右にopen */
+.button_open_hor {
+  position: relative;
+  z-index: 2;
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+  line-height: 50px; }
+
+.button_open_hor:hover {
+  background-color: #fff;
+  border-color: #000;
+  color: #000; }
+
+.button_open_hor::before,
+.button_open_hor::after {
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #000; }
+
+.button_open_hor::before {
+  right: 0; }
+
+.button_open_hor::after {
+  left: 0; }
+
+.button_open_hor:hover::before,
+.button_open_hor:hover::after {
+  width: 0;
+  background-color: #000; }
+
+/* 左右にopen */
+/* 上下にopen */
+.button_open_ver {
+  position: relative;
+  z-index: 2;
+  background-color: #000;
+  border: 2px solid #000;
+  color: #fff;
+  line-height: 50px; }
+
+.button_open_ver:hover {
+  background-color: #fff;
+  border-color: #000;
+  color: #000; }
+
+.button_open_ver::before,
+.button_open_ver::after {
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #000; }
+
+.button_open_ver::before {
+  top: 0; }
+
+.button_open_ver::after {
+  bottom: 0; }
+
+.button_open_ver:hover::before,
+.button_open_ver:hover::after {
+  height: 0;
+  background-color: #000; }
+
+/* 上下にopen */
+/* bg変わる */
+.button_bg_change {
+  background-color: #000;
+  color: #fff; }
+
+.button_bg_change:hover {
+  background-color: #f08300; }
+
+/* bg変わる */
+/* bgが迫る */
+.button_bg_coming {
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+  line-height: 50px;
+  overflow: hidden; }
+
+.button_bg_coming:hover {
+  color: #fff; }
+
+.button_bg_coming::after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
+
+.button_bg_coming:hover::after {
+  background: #000;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1); }
+
+/* bgが迫る */
+/* bgが回転して迫る */
+.button_bg_spin {
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+  line-height: 50px;
+  overflow: hidden; }
+
+.button_bg_spin:hover {
+  color: #fff; }
+
+.button_bg_spin::after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.button_bg_spin:hover::after {
+  -webkit-transform: scale(2) rotate(180deg);
+  -ms-transform: scale(2) rotate(180deg);
+  transform: scale(2) rotate(180deg);
+  background: #000; }
+
+/* bgが回転して迫る */
+/* ------------------button_entry01 */
+/* -------------------------btn_collision_plain */
+@-webkit-keyframes criss-cross-left {
+  0% {
+    left: -20px; }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px; }
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px; } }
+
+@keyframes criss-cross-left {
+  0% {
+    left: -20px; }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px; }
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px; } }
+
+@-webkit-keyframes criss-cross-right {
+  0% {
+    right: -20px; }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px; }
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px; } }
+
+@keyframes criss-cross-right {
+  0% {
+    right: -20px; }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px; }
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px; } }
+
+.btn_collision_plain {
+  text-decoration: none;
+  line-height: 80px;
+  position: relative;
+  color: #f08300;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 80px;
+  max-width: 300px;
+  margin: 30px auto 0;
+  text-transform: uppercase;
+  border: 1px solid; }
+
+.btn_collision_plain:before, .btn_collision_plain:after {
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #f08300;
+  border-radius: 50%;
+  z-index: -1; }
+
+.btn_collision_plain:before {
+  left: -20px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.btn_collision_plain:after {
+  right: -20px;
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%); }
+
+.btn_collision_plain:hover {
+  color: #fff;
+  border-color: #f08300; }
+
+.btn_collision_plain:hover:before {
+  -webkit-animation: criss-cross-left 0.4s both;
+  animation: criss-cross-left 0.4s both;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate; }
+
+.btn_collision_plain:hover:after {
+  -webkit-animation: criss-cross-right 0.4s both;
+  animation: criss-cross-right 0.4s both;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate; }
+
+/* -------------------------btn_collision_plain */
+/* -------------------------btn_collision_arrow */
+@-webkit-keyframes criss-cross-left {
+  0% {
+    left: -20px; }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px; }
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px; } }
+
+@keyframes criss-cross-left {
+  0% {
+    left: -20px; }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px; }
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px; } }
+
+@-webkit-keyframes criss-cross-right {
+  0% {
+    right: -20px; }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px; }
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px; } }
+
+@keyframes criss-cross-right {
+  0% {
+    right: -20px; }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px; }
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px; } }
+
+.btn_collision_common {
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  line-height: 60px;
+  height: 60px;
+  max-width: 250px;
+  margin-top: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid; }
+
+.btn_collision_common:before, .btn_collision_common:after {
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  z-index: -1; }
+
+.btn_collision_common:before {
+  left: -20px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.btn_collision_common:after {
+  right: -20px;
+  -webkit-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  transform: translate(50%, -50%); }
+
+.btn_collision_common:hover {
+  color: #fff;
+  border-color: #000; }
+
+.btn_collision_common:hover:before {
+  -webkit-animation: criss-cross-left 0.4s both;
+  animation: criss-cross-left 0.4s both;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate; }
+
+.btn_collision_common:hover:after {
+  -webkit-animation: criss-cross-right 0.4s both;
+  animation: criss-cross-right 0.4s both;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate; }
+
+/* -------------------------btn_collision_arrow */
+/* ----------------------------------btn */
+/* ----------------------------------ribbon */
+.ribbon_container {
+  width: 80%;
+  max-width: 1000px;
+  height: 80px;
+  margin: 40px auto;
+  position: relative; }
+
+.one > div {
+  height: 50px; }
+
+.main {
+  background: #aaa;
+  position: relative;
+  display: block;
+  width: 90%;
+  left: 50%;
+  top: 0;
+  padding: 5px;
+  margin-left: -45%;
+  z-index: 10; }
+
+.main > h2 {
+  border: 1px dashed #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+  height: 40px;
+  line-height: 38px; }
+
+.bk {
+  background: #aaa;
+  position: absolute;
+  width: 8%;
+  top: 12px; }
+
+.bk.l {
+  left: 0; }
+
+.bk.r {
+  right: 0; }
+
+.skew {
+  position: absolute;
+  background: #aaa;
+  width: 3%;
+  top: 6px;
+  z-index: 5; }
+
+.skew.l {
+  left: 5%;
+  -webkit-transform: skew(0deg, 20deg);
+  -ms-transform: skew(0deg, 20deg);
+  transform: skew(0deg, 20deg); }
+
+.skew.r {
+  right: 5%;
+  -webkit-transform: skew(0deg, -20deg);
+  -ms-transform: skew(0deg, -20deg);
+  transform: skew(0deg, -20deg); }
+
+.bk.l > div {
+  left: -30px; }
+
+.bk.r > div {
+  right: -30px; }
+
+.ribbon_arrow {
+  position: absolute;
+  z-index: 2; }
+
+.ribbon_arrow.top {
+  top: 0px;
+  border-top: 0px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-right: 30px solid #aaa; }
+
+.ribbon_arrow.bottom {
+  top: 25px;
+  border-top: 25px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-right: 30px solid #aaa; }
+
+.r .bottom {
+  border-top: 25px solid transparent;
+  border-bottom: 0px solid transparent;
+  border-left: 30px solid #aaa;
+  border-right: none; }
+
+.r .top {
+  border-bottom: 25px solid transparent;
+  border-top: 0px solid transparent;
+  border-left: 30px solid #aaa;
+  border-right: none; }
+
+@media all and (max-width: 1020px) {
+  .skew.l {
+    left: 5%;
+    -webkit-transform: skew(0deg, 25deg);
+    -ms-transform: skew(0deg, 25deg);
+    transform: skew(0deg, 25deg); }
+  .skew.r {
+    right: 5%;
+    -webkit-transform: skew(0deg, -25deg);
+    -ms-transform: skew(0deg, -25deg);
+    transform: skew(0deg, -25deg); } }
+
+@media all and (max-width: 680px) {
+  .skew.l {
+    left: 5%;
+    -webkit-transform: skew(0deg, 30deg);
+    -ms-transform: skew(0deg, 30deg);
+    transform: skew(0deg, 30deg); }
+  .skew.r {
+    right: 5%;
+    -webkit-transform: skew(0deg, -30deg);
+    -ms-transform: skew(0deg, -30deg);
+    transform: skew(0deg, -30deg); } }
+
+@media all and (max-width: 460px) {
+  .skew.l {
+    left: 5%;
+    -webkit-transform: skew(0deg, 40deg);
+    -ms-transform: skew(0deg, 40deg);
+    transform: skew(0deg, 40deg); }
+  .skew.r {
+    right: 5%;
+    -webkit-transform: skew(0deg, -40deg);
+    -ms-transform: skew(0deg, -40deg);
+    transform: skew(0deg, -40deg); } }
+
+/* ----------------------------------ribbon */
+/* ----------------------------------balloon */
+/* 塗りつぶし */
+.balloon1 {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #f08300;
+  /* 角丸ならonに */
+  /* border-radius: 20px; */ }
+
+.balloon1 p {
+  margin: 0;
+  padding: 0; }
+
+.balloon1_down:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #f08300; }
+
+.balloon1_up:before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid #f08300; }
+
+.balloon1_right:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #f08300; }
+
+.balloon1_left:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #f08300; }
+
+/* 塗りつぶし */
+/* curve */
+/* 吹き出し本体 */
+.balloon_curve {
+  position: relative;
+  padding: 20px;
+  background-color: #f08300;
+  color: #ffffff;
+  border-radius: 10px; }
+
+/* 色付きの半円 */
+.balloon_curve::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 15px;
+  top: -15px;
+  border-left: 20px solid #f08300;
+  border-top: 20px solid #f08300;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent; }
+
+/* 白い半円 */
+.balloon_curve::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 30px;
+  top: -20px;
+  border-left: 20px solid #f8f8f8;
+  border-top: 20px solid #f8f8f8;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent; }
+
+/* curve */
+/* ----------------------------------balloon */
+/* ----------------------------------notice */
+.notice {
+  font-size: 1.1rem;
+  margin-top: 12px;
+  line-height: 1.8; }
+
+.notice_left_adjust {
+  margin-top: 6px; }
+
+.notice_center {
+  text-align: center; }
+
+@media screen and (max-width: 600px) {
+  .notice_left, .notice_center {
+    font-size: 1rem;
+    margin-top: 8px; } }
+
+/* ----------------------------------notice */
+/* ----------------------------------diamond */
+/* cf) https://theorthodoxworks.com/web-design/diamond-in-css/ */
+.diamond_contents {
+  position: relative;
+  height: 300px; }
+
+.diamond {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 141px;
+  height: 141px;
+  margin: auto;
+  background: #000;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  overflow: hidden;
+  /* background-image: url('../../img/arrow_down_wh.png'); */ }
+
+.diamond a {
+  display: block;
+  -o-transition: none;
+  transition: none;
+  -webkit-transition: none;
+  -moz-transition: none; }
+
+.diamond_inner::before {
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  border-top: 1px solid #7a0;
+  border-right: 1px solid #7a0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.diamond_inner {
+  position: absolute;
+  top: -29.5px;
+  left: -29.5px;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  color: #fff;
+  background: transparent;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  /* 真ん中じゃないときはこれで調整 */
+  /* line-height: 300; */ }
+
+.diamond_inner p {
+  color: #fff;
+  width: 100%;
+  font-size: 1.4rem; }
+
+.diamond_arrow_up {
+  position: relative;
+  /* display: inline-block; */
+  /* padding-left: 20px; */ }
+
+.diamond_arrow_up:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 0px;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 10px;
+  left: 10px; }
+
+/* ----------------------------------diamond */
+/* ----------------------------------tag square */
+.tag_square {
+  padding: 8px;
+  border: 1px solid #f08300;
+  color: #f08300;
+  display: inline-block;
+  vertical-align: 4px;
+  /* font-size: 1.6rem; */
+  /* margin-right: 10px; */
+  /* margin-left: 10px; */ }
+
+/* ----------------------------------tag square */
+/* ----------------------------------double arrow scroll */
+.scroll_wrap {
+  position: relative; }
+
+.scroll_wrap a {
+  position: absolute;
+  top: 54px;
+  left: 50%;
+  /* z-index: 2; */
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  text-decoration: none;
+  color: #f08300;
+  font-size: 11px; }
+
+.scroll_wrap a span {
+  position: absolute;
+  bottom: -13px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border-left: 1px solid #f08300;
+  border-bottom: 1px solid #f08300;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.arrow2 {
+  bottom: -21px !important; }
+
+.vertical_line {
+  background-color: #f08300;
+  width: 1px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 42px;
+  height: 98px;
+  position: absolute; }
+
+@media screen and (max-width: 600px) {
+  .scroll_wrap a {
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto; } }
+
+/* ----------------------------------double arrow scroll */
+/* ----------------------------------mouse scroll */
+@-webkit-keyframes ani-mouse {
+  0% {
+    opacity: 1;
+    top: 29%; }
+  15% {
+    opacity: 1;
+    top: 50%; }
+  50% {
+    opacity: 0;
+    top: 50%; }
+  100% {
+    opacity: 0;
+    top: 29%; } }
+
+@-moz-keyframes ani-mouse {
+  0% {
+    opacity: 1;
+    top: 29%; }
+  15% {
+    opacity: 1;
+    top: 50%; }
+  50% {
+    opacity: 0;
+    top: 50%; }
+  100% {
+    opacity: 0;
+    top: 29%; } }
+
+@keyframes ani-mouse {
+  0% {
+    opacity: 1;
+    top: 29%; }
+  15% {
+    opacity: 1;
+    top: 50%; }
+  50% {
+    opacity: 0;
+    top: 50%; }
+  100% {
+    opacity: 0;
+    top: 29%; } }
+
+.scroll_btn_wrap {
+  width: 100%; }
+
+.scroll-btn {
+  /*     display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center; */
+  margin-top: 35px; }
+
+.scroll-btn > * {
+  display: block;
+  line-height: 18px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #7f8c8d;
+  color: #ffffff;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px; }
+
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
+  color: #ffffff; }
+
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+.scroll-btn .mouse {
+  position: relative;
+  display: block;
+  margin: 0 auto 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 23px;
+  width: 22px;
+  height: 34px;
+  border: 2px solid white; }
+
+.scroll-btn .mouse > * {
+  position: absolute;
+  display: block;
+  top: 29%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: white;
+  border-radius: 50%;
+  -webkit-animation: ani-mouse 2.5s linear infinite;
+  -moz-animation: ani-mouse 2.5s linear infinite;
+  animation: ani-mouse 2.5s linear infinite; }
+
+@media screen and (max-width: 600px) {
+  .scroll-btn {
+    margin-top: 60px; }
+  .scroll-btn > * {
+    font-size: 1.1rem; } }
+
+/* ----------------------------------mouse scroll */
+/* ----------------------------------bmg akasaka telephone */
+.nav_li_tel a {
+  font-size: 1.5rem;
+  background-image: url("../../img/tel_icon_red.png");
+  background-size: 14px auto;
+  background-position: top 12px left 10px;
+  background-repeat: no-repeat;
+  color: #f08300;
+  display: block;
+  width: 160px;
+  padding: 11px 0 10px 15px;
+  background-color: #fff;
+  letter-spacing: 0;
+  font-weight: bold; }
+
+.nav_li_tel a:hover {
+  opacity: 1; }
+
+@media screen and (max-width: 600px) {
+  .nav_li_tel a {
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 15px 0 14px 15px;
+    background-size: 22px auto; } }
+
+/* ----------------------------------bmg akasaka telephone */
+/* ----------------------------------circle (text center) */
+.circle_txt_center {
+  margin-left: 35px;
+  line-height: 1.26;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #f08300;
+  padding-bottom: 9px;
+  /* 上下位置微調整 */
+  width: 206px;
+  height: 206px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 3.5rem;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+/* ----------------------------------circle (text center) */

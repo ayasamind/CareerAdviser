@@ -1,0 +1,113 @@
+/* ------------------------bmg akasaka */
+footer {
+  background-color: #f08300;
+  padding-top: 22px; }
+
+.footer_brand {
+  display: inline-block;
+  height: 40px; }
+  .footer_brand a {
+    display: inline-block;
+    height: 100%; }
+    .footer_brand a img {
+      height: 100%; }
+    .footer_brand a:hover {
+      opacity: 0.75; }
+
+.footer_lower_box_l {
+  background-color: #fff;
+  border-radius: 10000px;
+  padding-top: 15px; }
+
+.footer_lower_box_l a {
+  display: inline-block;
+  margin: 0 10px 0;
+  width: 50px;
+  height: 20px;
+  background: #000; }
+
+.footer_lower_box_l a img {
+  height: 40px;
+  width: auto; }
+
+.sponsor_wrap {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.footer_nav_li_tel a {
+  width: 281px;
+  padding: 26px 0 25px 30px;
+  background-size: 26px auto;
+  background-position: top 19px left 15px; }
+
+.footer_lower_row {
+  margin-top: 14px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+footer ul li {
+  padding-right: 30px; }
+
+footer ul li:last-child {
+  padding-right: 0; }
+
+footer ul li a {
+  color: #fff;
+  margin: 0;
+  display: block;
+  text-decoration: none;
+  -webkit-transition: all .4s;
+  -moz-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s; }
+
+footer ul li a:hover {
+  opacity: 0.5; }
+
+.copyright {
+  text-align: center;
+  letter-spacing: 0.7px;
+  width: 100%;
+  margin-top: 25px;
+  padding-bottom: 15px;
+  color: #fff; }
+
+@media screen and (max-width: 600px) {
+  footer {
+    padding-top: 15px; }
+  .footer_nav {
+    float: none;
+    margin: 10px auto 0; }
+  footer ul li {
+    margin: 5px 0 5px;
+    width: 33%; }
+  .footer_inner {
+    width: 100%;
+    margin: 0 auto; }
+  .copyright {
+    padding: 15px 0 15px; }
+  .footer_brand {
+    display: block;
+    margin: 0 auto; }
+  .footer_lower_box_l {
+    width: 100%;
+    padding-top: 8px; }
+  .footer_lower_box_r {
+    width: 100%; }
+  .footer_nav_li_tel {
+    width: 100%;
+    margin-top: 20px; }
+  .footer_nav_li_tel a {
+    width: 100%;
+    padding: 15px 0 14px 15px;
+    background-size: 22px auto;
+    background-position: top 12px left 10px; }
+  .footer_lower_row {
+    margin-top: 20px; } }
+
+/* ------------------------bmg akasaka */

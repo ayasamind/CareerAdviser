@@ -1,0 +1,28 @@
+#single a:hover {
+  opacity: 0.5;
+  -o-transition: .4s;
+  transition: .4s;
+  -webkit-transition: .4s;
+  -moz-transition: .4s; }
+
+.text a {
+  color: #f08300; }
+  .text a:hover {
+    -o-transition: .4s;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s; }
+
+.prev_a {
+  background-image: url("../../img/svg/arrow3_r.svg");
+  background-position: center right;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+  background-size: auto 16px; }
+
+.next_a {
+  background-image: url("../../img/svg/arrow3_l.svg");
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  background-size: auto 16px; }
