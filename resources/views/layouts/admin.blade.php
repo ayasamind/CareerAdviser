@@ -51,11 +51,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.auth.login_form') }}">ログイン</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('admin.auth.register_form') }}">新規登録</a>
-                                </li>
-                            @endif
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -64,9 +59,9 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('admin.auth.logout') }}"
-                                       onclick="event.preventDefault();
+                                       onclick="event.prevzentDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        ログアウト
                                     </a>
 
                                     <form id="logout-form" action="{{ route('admin.auth.logout') }}" method="POST" style="display: none;">

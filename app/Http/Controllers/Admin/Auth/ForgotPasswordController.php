@@ -27,6 +27,6 @@ class ForgotPasswordController extends AdminsController
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest:admin');
     }
 }
