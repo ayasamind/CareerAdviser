@@ -1,4 +1,23 @@
 <div class="form-group row">
+    <label for="photo" class="col-md-4 col-form-label text-md-right">プロフィール画像</label>
+
+    <div class="col-md-6">
+        @if ($adviser->photo_url)
+            <img src="{{ $adviser->photo_url }}" width="200"/>
+        @else
+            <img src="{{ asset('img/no_image.png') }}" width="200"/>
+        @endif
+        {!! Form::file('photo', null, ['id'=>'photo', 'class'=>'form-control-file '  . ($errors->has('photo') ? 'is-invalid' : '')]) !!}
+        @if ($errors->has('photo'))
+            <span class="validate-error">
+                <br/>
+                <strong>{{ $errors->first('photo') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group row">
     <label for="name" class="col-md-4 col-form-label text-md-right">名前</label>
 
     <div class="col-md-6">
@@ -20,23 +39,6 @@
         @if ($errors->has('email'))
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $errors->first('email') }}</strong>
-            </span>
-        @endif
-    </div>
-</div>
-
-<div class="form-group row">
-    <label for="photo" class="col-md-4 col-form-label text-md-right">プロフィール画像</label>
-
-    <div class="col-md-6">
-        @if ($adviser->photo_url)
-            <img src="{{ $adviser->photo_url }}" width="200"/>
-        @endif
-        {!! Form::file('photo', null, ['id'=>'photo', 'class'=>'form-control-file '  . ($errors->has('photo') ? 'is-invalid' : '')]) !!}
-        @if ($errors->has('photo'))
-            <span class="validate-error">
-                <br/>
-                <strong>{{ $errors->first('photo') }}</strong>
             </span>
         @endif
     </div>

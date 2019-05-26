@@ -8,7 +8,7 @@
                 <div class="card-header">アドバイザー一覧</div>
 
                 <div class="card-body">
-                    <table>
+                    <table class="table">
                         <tr>
                             <th>ID</th>
                             <th>名前</th>
@@ -23,7 +23,7 @@
                             <td>{{ $adviser->email }}</td>
                             <td>{{ $adviser->created_at }}</td>
                             <td>
-                                <a class="btn btn-primary" href="{{ route('admin.advisers.show', [
+                                <a class="btn btn-primary" href="{{ route('user.advisers.show', [
                                     'adviser' => $adviser->id
                                 ]) }}">詳細</a>
                             </td>

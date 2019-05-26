@@ -3,13 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">アドバイザー一覧</div>
 
                 <div class="card-body">
-                    <a href="{{ route('admin.advisers.create') }}">アドバイザー新規登録</a>
-                    <table>
+                    <a class="btn btn-primary" href="{{ route('admin.advisers.create') }}">アドバイザー新規登録</a>
+                    <table class="table">
                         <tr>
                             <th>ID</th>
                             <th>名前</th>
