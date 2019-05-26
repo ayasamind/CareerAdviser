@@ -69,7 +69,7 @@ class AdvisersController extends AdminsController
         $adviser = $this->createAdviser($request->all());
         return redirect()->route('admin.advisers.show', [
             'adviser' => $adviser
-        ])->with('success', 'アドバイザーを作成しました');
+        ])->with('success', 'アドバイザーを作成しました。アドバイザーはメールを確認してください。');
     }
 
     protected function createAdviser(array $data)

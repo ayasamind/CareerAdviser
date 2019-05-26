@@ -25,7 +25,7 @@ class VerificationController extends AdvisersController
      *
      * @var string
      */
-    protected $redirectTo = '/adviser/home';
+    protected $redirectTo = '/adviser';
 
     /**
      * Create a new controller instance.

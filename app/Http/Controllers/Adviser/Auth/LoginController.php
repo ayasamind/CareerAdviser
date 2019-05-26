@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Adviser\Auth;
 use App\Http\Controllers\Adviser\AdvisersController;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends AdvisersController
 {
@@ -26,7 +27,7 @@ class LoginController extends AdvisersController
      *
      * @var string
      */
-    protected $redirectTo = '/adviser/home';
+    protected $redirectTo = '/adviser';
 
     /**
      * Create a new controller instance.
@@ -35,11 +36,14 @@ class LoginController extends AdvisersController
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:adviser')->except('logout');
     }
 
     public function showLoginForm()
     {
+        if (Auth::guard('adviser')->check()) {
+            return redirect('/adviser/home');
+        }
         return view('adviser.auth.login');
     }
 

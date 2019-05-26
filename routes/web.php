@@ -19,16 +19,18 @@ Route::post("/register", "User\Auth\RegisterController@register")->name('registe
 Route::get('/email/verify/{id}', 'User\Auth\VerificationController@verify')->name('verification.verify');
 Route::get('/email/resend', 'User\Auth\VerificationController@resend')->name('verification.resend')->middleware(['web', 'auth:user']);
 Route::get('/email/show', 'User\Auth\VerificationController@show')->name('verification.notice')->middleware(['web','auth:user']);
+Route::post("/logout", "User\Auth\LoginController@logout")->name('user.logout');
 
 Route::middleware(['verified', 'auth:user'])->name('user.')->group(function() {
-    Route::get("/home", "User\HomeController@index")->name('home');
+    Route::get("/mypage", "User\HomeController@index")->name('home');
+    Route::get('/advisers/show/{id}', 'User\AdvisersController@show')->name('advisers.show');
     Route::get("/settings", "User\HomeController@settings")->name('settings');
     Route::get('/users/edit', 'User\UsersController@edit')->name('edit');
     Route::put('/users/update', 'User\UsersController@update')->name('update');
-    Route::post("/logout", "User\Auth\LoginController@logout")->name('logout');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get("/", "Admin\HomeController@index")->name('auth.home');
     Route::get("/login", "Admin\Auth\LoginController@showLoginForm")->name('auth.login_form');
     Route::post("/login", "Admin\Auth\LoginController@login")->name('auth.login');
     Route::middleware('auth:admin')->group(function () {
@@ -46,7 +48,7 @@ Route::prefix('adviser')->name('adviser.')->group(function () {
     Route::post("/login", "Adviser\Auth\LoginController@login")->name('auth.login');
     Route::middleware('auth:adviser')->group(function () {
         Route::post("/logout", "Adviser\Auth\LoginController@logout")->name('auth.logout');
-        Route::get("/home", "Adviser\HomeController@index")->name('home');
+        Route::get("/", "Adviser\HomeController@index")->name('home');
         Route::get("/edit", "Adviser\AdvisersController@edit")->name('advisers.edit');
         Route::put("/update/{id}", "Adviser\AdvisersController@update")->name('advisers.update');
     });

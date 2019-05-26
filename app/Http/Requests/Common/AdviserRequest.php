@@ -28,7 +28,7 @@ class AdviserRequest extends FormRequest
             $rules = [
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:advisers,email,' . $this->id],
-                'photo' => ['image', 'mimes:jpg,png'],
+                'photo' => ['image', 'mimes:jpeg,jpg,png'],
             ];
         } else {
             // Create Rules

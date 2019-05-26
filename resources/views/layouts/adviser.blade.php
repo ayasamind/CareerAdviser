@@ -36,9 +36,6 @@
                     <ul class="navbar-nav mr-auto">
                         @guest
                         @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('adviser.advisers.edit') }}">ユーザー情報編集</a>
-                            </li>
                         @endguest
                     </ul>
 
@@ -56,6 +53,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('adviser.home') }}">
+                                        マイページ
+                                     </a>
                                     <a class="dropdown-item" href="{{ route('adviser.auth.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
