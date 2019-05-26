@@ -53,5 +53,5 @@ Route::prefix('adviser')->name('adviser.')->group(function () {
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('top');
 });
