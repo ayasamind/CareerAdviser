@@ -3,12 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">ユーザー一覧</div>
 
                 <div class="card-body">
-                    <table>
+                    <table class="table">
                         <tr>
                             <th>ID</th>
                             <th>名前</th>
@@ -23,10 +23,10 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->created_at }}</td>
                             <td>
-                                <a href="{{ route('admin.users.show', [
+                                <a class="btn btn-primary" href="{{ route('admin.users.show', [
                                     'user' => $user->id
                                 ]) }}">詳細</a>
-                                <a href="{{ route('admin.users.destroy', [
+                                <a class="btn btn-danger" href="{{ route('admin.users.destroy', [
                                     'user' => $user->id
                                 ]) }}">削除</a>
                             </td>

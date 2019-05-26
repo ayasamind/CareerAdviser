@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Adviser;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Adviser\AdvisersController;
-
+use Illuminate\Support\Facades\Auth;
 class HomeController extends AdvisersController
 {
     /**
@@ -24,6 +24,9 @@ class HomeController extends AdvisersController
      */
     public function index()
     {
-        return view('adviser.home');
+        $adviser = Auth::user();
+        return view('adviser.home', [
+            'adviser' => $adviser
+        ]);
     }
 }
