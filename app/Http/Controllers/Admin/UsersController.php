@@ -47,8 +47,11 @@ class UsersController extends AdminsController
      * @author ayasamind
      * @return array
     */
-    public function destroy()
+    public function destroy(User $user)
     {
-
+        User::destroy($user->id);
+        return redirect()
+            ->route('admin.users.index')
+            ->with('success', $user->name . 'を削除しました');
     }
 }

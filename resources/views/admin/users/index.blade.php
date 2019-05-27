@@ -26,9 +26,11 @@
                                 <a class="btn btn-primary" href="{{ route('admin.users.show', [
                                     'user' => $user->id
                                 ]) }}">詳細</a>
-                                <a class="btn btn-danger" href="{{ route('admin.users.destroy', [
-                                    'user' => $user->id
-                                ]) }}">削除</a>
+                                <form style="display:inline" onsubmit="return confirm('本当に{{ $user->name }}を削除しますか？');" action="{{ route('admin.users.destroy',['adviser' => $user->id]) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="_method" value="DELETE" />
+                                    <button class="btn btn-danger" type="submit">削除</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
