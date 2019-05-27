@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ route("user.home") }}">
+                <a class="navbar-brand" href="{{ route("user.mypage") }}">
                     ユーザー画面
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -38,7 +38,7 @@
                         @else
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route("user.home") }}">アドバイザー一覧</a>
+                                <a class="nav-link" href="{{ route("user.mypage") }}">アドバイザー一覧</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route("admin.users.index") }}">チャット</a>
@@ -66,7 +66,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('user.settings') }}">設定</a>
+                                    <a class="dropdown-item" href="{{ route('user.mypage') }}">マイページ</a>
                                     <a class="dropdown-item" href="{{ route('user.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -33,7 +33,7 @@
                             <td>{{ $adviser->created_at }}</td>
                         </tr>
                     </table>
-                    <a class="btn btn-secondary" href="{{ route('user.home') }}">戻る</a>
+                    <a class="btn btn-secondary" href="{{ route('user.mypage') }}">戻る</a>
                 </div>
             </div>
         </div>
