@@ -27,8 +27,16 @@ class HomeController extends UsersController
     public function index()
     {
         $advisers = Adviser::paginate(10);
-        return view('user.index', [
+        return view('top', [
             'advisers' => $advisers
+        ]);
+    }
+
+    public function mypage()
+    {
+        $user = Auth::user();
+        return view('user.mypage', [
+            'user' => $user
         ]);
     }
 

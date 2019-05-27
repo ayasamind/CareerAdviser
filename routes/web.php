@@ -21,12 +21,17 @@ Route::get('/email/resend', 'User\Auth\VerificationController@resend')->name('ve
 Route::get('/email/show', 'User\Auth\VerificationController@show')->name('verification.notice')->middleware(['web','auth:user']);
 Route::post("/logout", "User\Auth\LoginController@logout")->name('user.logout');
 
+Route::middleware(['auth:user'])->name('user.')->group(function() {
+    Route::get('/thanks', function () {
+        return view('user.thanks');
+    });
+    Route::get("/mypage", "User\HomeController@mypage")->name('mypage');
+});
+
 Route::middleware(['verified', 'auth:user'])->name('user.')->group(function() {
-    Route::get("/mypage", "User\HomeController@index")->name('home');
     Route::get('/advisers/show/{id}', 'User\AdvisersController@show')->name('advisers.show');
-    Route::get("/settings", "User\HomeController@settings")->name('settings');
-    Route::get('/users/edit', 'User\UsersController@edit')->name('edit');
-    Route::put('/users/update', 'User\UsersController@update')->name('update');
+    Route::get('/users/edit', 'User\UsersController@edit')->name('users.edit');
+    Route::put('/users/update', 'User\UsersController@update')->name('users.update');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
