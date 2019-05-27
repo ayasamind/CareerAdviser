@@ -8,7 +8,7 @@
                 <div class="card-header">アドバイザー編集</div>
 
                 <div class="card-body">
-                    {!! Form::model($user, ['route' => ['user.update', $user->id], 'method' => 'put']) !!}
+                    {!! Form::model($user, ['route' => ['user.users.update', $user->id], 'method' => 'put']) !!}
                     <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">名前</label>
                         <div class="col-md-6">

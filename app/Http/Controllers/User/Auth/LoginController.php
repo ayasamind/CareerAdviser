@@ -28,7 +28,7 @@ class LoginController extends UsersController
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/mypage';
 
     /**
      * Create a new controller instance.
@@ -42,9 +42,9 @@ class LoginController extends UsersController
 
     public function showLoginForm()
     {
-        // if (Auth::guard('user')->check()) {
-        //     return redirect('/');
-        // }
+        if (Auth::guard('user')->check()) {
+            return redirect('/mypage');
+        }
         return view('user.auth.login');
     }
 
