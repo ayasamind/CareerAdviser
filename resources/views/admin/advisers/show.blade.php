@@ -7,16 +7,12 @@
             <div class="card">
                 <div class="card-header">アドバイザー詳細</div>
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
                     <a class="btn btn-primary" href="{{ route('admin.advisers.edit', [
                         'id' => $adviser->id
                     ]) }}">アドバイザー情報編集</a>
-                    <a class="btn btn-primary" target="_brank" href="{{ route('advisers.show', [ 'id' => $adviser->id ]) }}">公開画面を確認</a>
+                    @if ($adviser->AdviserProfile)
+                        <a class="btn btn-primary" target="_brank" href="{{ route('advisers.show', [ 'id' => $adviser->id ]) }}">公開画面を確認</a>
+                    @endif
                     <table class="table">
                         <tr>
                             <th>プロフィール画像</th>
