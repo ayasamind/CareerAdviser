@@ -1,4 +1,4 @@
-## Create Environment
+## 開発環境構築
 
 ```
 $ cp server/.env.development .env
@@ -11,6 +11,16 @@ $ php artisan db:seed
 
 Access http://localhost:8080
 
+
+## ステージング環境
+
+https://ca-com.herokuapp.com
+
+環境変数設定
+
+```
+$ sh heroku.sh
+```
 
 ## LPのデプロイ
 
