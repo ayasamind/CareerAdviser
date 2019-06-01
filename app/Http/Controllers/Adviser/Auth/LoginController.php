@@ -42,7 +42,7 @@ class LoginController extends AdvisersController
     public function showLoginForm()
     {
         if (Auth::guard('adviser')->check()) {
-            return redirect('/adviser/home');
+            return redirect('/adviser');
         }
         return view('adviser.auth.login');
     }
