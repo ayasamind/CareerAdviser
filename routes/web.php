@@ -11,6 +11,10 @@
 |
 */
 
+if(env('APP_ENV') !== 'local'){
+    // asset()やurl()がhttpsで生成される
+    URL::forceScheme('https');
+}
 
 Route::get("/login", "User\Auth\LoginController@showLoginForm")->name('login_form')->middleware('guest');
 Route::post("/login", "User\Auth\LoginController@login")->name('login');
@@ -45,7 +49,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get("/register", "Admin\Auth\RegisterController@showRegistrationForm")->name('auth.register_form');
         Route::post("/register", "Admin\Auth\RegisterController@register")->name('auth.register');
         Route::get("/home", "Admin\HomeController@index")->name('home');
-        Route::resource('/advisers', 'Admin\AdvisersController');
+        Route::resource('/advisers', 'Admin\AdvisersController')->except(['update']);
+        Route::put("/update/{id}", "Admin\AdvisersController@update")->name('advisers.update');
         Route::resource('/users', 'Admin\UsersController')->only(['index', 'show', 'destroy']);
     });
 });
