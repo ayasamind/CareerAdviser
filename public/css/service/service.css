@@ -1,0 +1,1043 @@
+@charset "UTF-8";
+#main {
+  background-color: #fdf9ef;
+}
+
+.container_service {
+  /* コンテンツ幅 */
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+  html {
+    font-size: 78%;
+  }
+  .container_service {
+    padding: 0 15px;
+    max-width: none;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sections {
+    padding: 30px 0 30px;
+  }
+  .section_ttl_sub {
+    margin: 6px auto 0;
+  }
+  .container_service {
+    padding-right: 8px;
+    padding-left: 8px;
+    max-width: none;
+  }
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: #f08300;
+  height: 48px;
+}
+
+header .brand {
+  height: 32px;
+  line-height: 1;
+}
+
+header .brand a {
+  display: block;
+  height: 100%;
+}
+
+header .brand a img {
+  height: 100%;
+}
+
+header .header_inner {
+  position: relative;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+header nav {
+  height: 100%;
+}
+
+header ul {
+  margin: 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+header ul li {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  height: 100%;
+}
+
+header ul li a {
+  display: inline-block;
+  padding: 12px 25px 12px;
+  height: 100%;
+}
+
+header ul li a img {
+  height: 100%;
+}
+
+header ul li a .nav_user_icon {
+  border-radius: 10000px;
+}
+
+@media screen and (max-width: 600px) {
+  header .header_inner {
+    padding: 0 0 0 8px;
+  }
+  header .brand {
+    height: 26px;
+  }
+  header ul li {
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    height: 100%;
+  }
+  header ul li a {
+    display: inline-block;
+    padding: 6px 12px 6px;
+    height: 100%;
+    line-height: 2;
+  }
+  header ul li a img {
+    height: 65%;
+  }
+}
+
+#advisor_profile, #mypage {
+  padding: 70px 0 25px;
+}
+
+#advisor_profile section, #mypage section {
+  background-color: #fff;
+}
+
+#advisor_profile .advisor_profile_main_row h2, #advisor_profile .mypage_main_row h2, #mypage .advisor_profile_main_row h2, #mypage .mypage_main_row h2 {
+  font-size: 1.6rem;
+  line-height: 1;
+  background-color: #f7f7f7;
+  padding: 15px 18px 15px;
+  border-radius: 5px 5px 0 0;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+#advisor_profile .advisor_profile_main_row .advisor_profile_section_body, #advisor_profile .advisor_profile_main_row .mypage_section_body, #advisor_profile .mypage_main_row .advisor_profile_section_body, #advisor_profile .mypage_main_row .mypage_section_body, #mypage .advisor_profile_main_row .advisor_profile_section_body, #mypage .advisor_profile_main_row .mypage_section_body, #mypage .mypage_main_row .advisor_profile_section_body, #mypage .mypage_main_row .mypage_section_body {
+  padding: 15px 18px 15px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #ddd;
+}
+
+#advisor_profile .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .advisor_profile_main_row .mypage_section_body .mark_exp, #advisor_profile .mypage_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .mypage_main_row .mypage_section_body .mark_exp, #mypage .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #mypage .advisor_profile_main_row .mypage_section_body .mark_exp, #mypage .mypage_main_row .advisor_profile_section_body .mark_exp, #mypage .mypage_main_row .mypage_section_body .mark_exp {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  display: inline-block;
+}
+
+#advisor_profile .advisor_profile_main_row .person_info_wrap .person_name, #advisor_profile .mypage_main_row .person_info_wrap .person_name, #mypage .advisor_profile_main_row .person_info_wrap .person_name, #mypage .mypage_main_row .person_info_wrap .person_name {
+  font-size: 2.6rem;
+}
+
+#advisor_profile .advisor_profile_main_row .person_info_wrap dl, #advisor_profile .mypage_main_row .person_info_wrap dl, #mypage .advisor_profile_main_row .person_info_wrap dl, #mypage .mypage_main_row .person_info_wrap dl {
+  margin: 0 0 0 10px;
+}
+
+#advisor_profile .advisor_profile_main_row .person_info_wrap dl li, #advisor_profile .mypage_main_row .person_info_wrap dl li, #mypage .advisor_profile_main_row .person_info_wrap dl li, #mypage .mypage_main_row .person_info_wrap dl li {
+  display: inline-block;
+}
+
+#advisor_profile .advisor_col_l, #mypage .advisor_col_l {
+  width: 70%;
+  margin-right: 2%;
+}
+
+#advisor_profile .advisor_col_r, #mypage .advisor_col_r {
+  width: 28%;
+}
+
+#advisor_profile .person_icon_wrap, #mypage .person_icon_wrap {
+  margin-right: 2%;
+  width: 20%;
+}
+
+#advisor_profile .person_icon_wrap img, #mypage .person_icon_wrap img {
+  width: 100%;
+  border-radius: 10000px;
+}
+
+#advisor_profile .person_female .person_icon_wrap img, #mypage .person_female .person_icon_wrap img {
+  border: 5px solid #fabe00;
+}
+
+#advisor_profile .person_female .person_info_wrap .male_li, #mypage .person_female .person_info_wrap .male_li {
+  display: none;
+}
+
+#advisor_profile .person_male .person_icon_wrap img, #mypage .person_male .person_icon_wrap img {
+  border: 5px solid #66A0FF;
+}
+
+#advisor_profile .person_male .person_info_wrap .female_li, #mypage .person_male .person_info_wrap .female_li {
+  display: none;
+}
+
+#advisor_profile .person_info_wrap, #mypage .person_info_wrap {
+  width: 78%;
+}
+
+#advisor_profile .person_info_wrap .person_name, #mypage .person_info_wrap .person_name {
+  font-size: 2.6rem;
+}
+
+#advisor_profile .person_info_wrap dl, #mypage .person_info_wrap dl {
+  margin: 0 0 0 10px;
+}
+
+#advisor_profile .person_info_wrap dl li, #mypage .person_info_wrap dl li {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 10px 0;
+  font-weight: 700;
+  color: #888;
+}
+
+#advisor_profile .person_info_wrap dl li img, #mypage .person_info_wrap dl li img {
+  margin-right: 5px;
+}
+
+#advisor_profile .person_info_wrap dl li .gender_icon, #mypage .person_info_wrap dl li .gender_icon {
+  width: 15px;
+}
+
+#advisor_profile .person_info_wrap dl li .area_icon, #mypage .person_info_wrap dl li .area_icon {
+  width: 17px;
+}
+
+#advisor_profile .person_info_wrap dl li .reject_icon, #mypage .person_info_wrap dl li .reject_icon {
+  width: 20px;
+}
+
+#advisor_profile .advisor_balloon, #mypage .advisor_balloon {
+  font-size: 1.4rem;
+  position: relative;
+  padding: 10px 15px 10px;
+  border-radius: 8px;
+  margin: 5px 0 0 0;
+  line-height: 1.45;
+}
+
+#advisor_profile .advisor_balloon_male, #mypage .advisor_balloon_male {
+  color: #fff;
+  background-color: #66A0FF;
+}
+
+#advisor_profile .advisor_balloon_male::before, #mypage .advisor_balloon_male::before {
+  border-left: 20px solid #66A0FF;
+  border-top: 20px solid #66A0FF;
+}
+
+#advisor_profile .advisor_balloon_female, #mypage .advisor_balloon_female {
+  color: #000;
+  background-color: #faf2d7;
+}
+
+#advisor_profile .advisor_balloon_female::before, #mypage .advisor_balloon_female::before {
+  border-left: 20px solid #faf2d7;
+  border-top: 20px solid #faf2d7;
+}
+
+#advisor_profile .self_introduction_section, #advisor_profile .work_history_section, #mypage .self_introduction_section, #mypage .work_history_section {
+  margin: 30px 0 0;
+}
+
+#advisor_profile .self_introduction_section h3, #advisor_profile .work_history_section h3, #mypage .self_introduction_section h3, #mypage .work_history_section h3 {
+  font-size: 1.5rem;
+  padding: 0 0 4px 7px;
+  border-left: 4px solid #f08300;
+  border-bottom: 1px dotted #ccc;
+}
+
+#advisor_profile .self_introduction_section, #mypage .self_introduction_section {
+  font-size: 1.3rem;
+}
+
+#advisor_profile .self_introduction_section > p, #mypage .self_introduction_section > p {
+  margin: 10px 0 0;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+}
+
+#advisor_profile .work_history_section dl, #mypage .work_history_section dl {
+  margin: 6px 0 0;
+}
+
+#advisor_profile .work_history_section dl li, #mypage .work_history_section dl li {
+  font-size: 1.4rem;
+  padding: 11px 0 10px;
+  line-height: 2;
+  border-bottom: 1px dotted #ccc;
+}
+
+#advisor_profile .work_history_section dl li span, #mypage .work_history_section dl li span {
+  font-size: 1.2rem;
+  color: #888;
+  margin: 0 8px 0 0;
+}
+
+@media screen and (max-width: 1080px) {
+  #advisor_profile, #mypage {
+    padding: 58px 10px 30px;
+  }
+  #advisor_profile .advisor_col_l, #advisor_profile .mypage_col_l, #mypage .advisor_col_l, #mypage .mypage_col_l {
+    width: 100%;
+    margin-right: 0;
+  }
+  #advisor_profile .advisor_col_r, #mypage .advisor_col_r {
+    width: 100%;
+    margin: 15px 0 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #advisor_profile, #mypage {
+    padding: 60px auto 30px;
+  }
+  #advisor_profile .advisor_profile_main_row .advisor_profile_section_body, #advisor_profile .advisor_profile_main_row .mypage_section_body, #advisor_profile .mypage_main_row .advisor_profile_section_body, #advisor_profile .mypage_main_row .mypage_section_body, #mypage .advisor_profile_main_row .advisor_profile_section_body, #mypage .advisor_profile_main_row .mypage_section_body, #mypage .mypage_main_row .advisor_profile_section_body, #mypage .mypage_main_row .mypage_section_body {
+    padding: 15px 12px 15px;
+  }
+  #advisor_profile .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .advisor_profile_main_row .mypage_section_body .mark_exp, #advisor_profile .mypage_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .mypage_main_row .mypage_section_body .mark_exp, #mypage .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #mypage .advisor_profile_main_row .mypage_section_body .mark_exp, #mypage .mypage_main_row .advisor_profile_section_body .mark_exp, #mypage .mypage_main_row .mypage_section_body .mark_exp {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 6px;
+    display: inline-block;
+  }
+  #advisor_profile .advisor_profile_main_row .person_icon_wrap, #advisor_profile .mypage_main_row .person_icon_wrap, #mypage .advisor_profile_main_row .person_icon_wrap, #mypage .mypage_main_row .person_icon_wrap {
+    margin-right: 3%;
+    width: 27%;
+  }
+  #advisor_profile .advisor_profile_main_row .person_info_wrap, #advisor_profile .mypage_main_row .person_info_wrap, #mypage .advisor_profile_main_row .person_info_wrap, #mypage .mypage_main_row .person_info_wrap {
+    width: 70%;
+  }
+  #advisor_profile .advisor_profile_main_row .person_info_wrap .person_info_wrap_inner, #advisor_profile .mypage_main_row .person_info_wrap .person_info_wrap_inner, #mypage .advisor_profile_main_row .person_info_wrap .person_info_wrap_inner, #mypage .mypage_main_row .person_info_wrap .person_info_wrap_inner {
+    display: block;
+  }
+  #advisor_profile .advisor_profile_main_row .person_info_wrap .person_name, #advisor_profile .mypage_main_row .person_info_wrap .person_name, #mypage .advisor_profile_main_row .person_info_wrap .person_name, #mypage .mypage_main_row .person_info_wrap .person_name {
+    font-size: 2rem;
+  }
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl, #advisor_profile .mypage_main_row .person_info_wrap dl, #mypage .advisor_profile_main_row .person_info_wrap dl, #mypage .mypage_main_row .person_info_wrap dl {
+    margin: 0;
+  }
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li, #advisor_profile .mypage_main_row .person_info_wrap dl li, #mypage .advisor_profile_main_row .person_info_wrap dl li, #mypage .mypage_main_row .person_info_wrap dl li {
+    display: inline-block;
+    margin: 6px 10px 4px 0;
+  }
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li .gender_icon, #advisor_profile .mypage_main_row .person_info_wrap dl li .gender_icon, #mypage .advisor_profile_main_row .person_info_wrap dl li .gender_icon, #mypage .mypage_main_row .person_info_wrap dl li .gender_icon {
+    width: 10px;
+  }
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li .area_icon, #advisor_profile .mypage_main_row .person_info_wrap dl li .area_icon, #mypage .advisor_profile_main_row .person_info_wrap dl li .area_icon, #mypage .mypage_main_row .person_info_wrap dl li .area_icon {
+    width: 12px;
+  }
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li .reject_icon, #advisor_profile .mypage_main_row .person_info_wrap dl li .reject_icon, #mypage .advisor_profile_main_row .person_info_wrap dl li .reject_icon, #mypage .mypage_main_row .person_info_wrap dl li .reject_icon {
+    width: 14px;
+  }
+  #advisor_profile .advisor_balloon, #mypage .advisor_balloon {
+    font-size: 1.3rem;
+    padding: 9px 10px 9px;
+    border-radius: 8px;
+  }
+}
+
+#advisor_profile .review_section, #advisor_profile .reserved_section, #mypage .review_section, #mypage .reserved_section {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2%;
+}
+
+#advisor_profile .review_section .review_block, #advisor_profile .review_section .reserved_block, #advisor_profile .reserved_section .review_block, #advisor_profile .reserved_section .reserved_block, #mypage .review_section .review_block, #mypage .review_section .reserved_block, #mypage .reserved_section .review_block, #mypage .reserved_section .reserved_block {
+  margin: 0 0 1.4rem;
+  padding: 0 0 18px;
+  border-bottom: 1px dotted #ccc;
+}
+
+#advisor_profile .review_section .review_block:last-child, #advisor_profile .review_section .reserved_block:last-child, #advisor_profile .reserved_section .review_block:last-child, #advisor_profile .reserved_section .reserved_block:last-child, #mypage .review_section .review_block:last-child, #mypage .review_section .reserved_block:last-child, #mypage .reserved_section .review_block:last-child, #mypage .reserved_section .reserved_block:last-child {
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+}
+
+#advisor_profile .review_section .stars, #advisor_profile .reserved_section .stars, #mypage .review_section .stars, #mypage .reserved_section .stars {
+  font-size: 1.6rem;
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 1.6rem;
+  line-height: 18px;
+  margin: 0 0 0 15px;
+  vertical-align: 2px;
+}
+
+#advisor_profile .review_section .stars:before, #advisor_profile .review_section .stars:after, #advisor_profile .reserved_section .stars:before, #advisor_profile .reserved_section .stars:after, #mypage .review_section .stars:before, #mypage .review_section .stars:after, #mypage .reserved_section .stars:before, #mypage .reserved_section .stars:after {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  content: '★★★★★';
+  display: inline-block;
+  height: 1.6rem;
+  text-transform: none;
+  letter-spacing: 0;
+  speak: none;
+}
+
+#advisor_profile .review_section .stars:before, #advisor_profile .reserved_section .stars:before, #mypage .review_section .stars:before, #mypage .reserved_section .stars:before {
+  color: #ccc;
+}
+
+#advisor_profile .review_section .stars:after, #advisor_profile .reserved_section .stars:after, #mypage .review_section .stars:after, #mypage .reserved_section .stars:after {
+  color: #f08300;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#advisor_profile .review_section .star3:after, #advisor_profile .reserved_section .star3:after, #mypage .review_section .star3:after, #mypage .reserved_section .star3:after {
+  width: 48px;
+}
+
+#advisor_profile .review_section .star5:after, #advisor_profile .reserved_section .star5:after, #mypage .review_section .star5:after, #mypage .reserved_section .star5:after {
+  width: 80px;
+}
+
+#advisor_profile .review_section .review_user_icon, #advisor_profile .review_section .reserved_user_icon, #advisor_profile .reserved_section .review_user_icon, #advisor_profile .reserved_section .reserved_user_icon, #mypage .review_section .review_user_icon, #mypage .review_section .reserved_user_icon, #mypage .reserved_section .review_user_icon, #mypage .reserved_section .reserved_user_icon {
+  width: 40px;
+  display: inline-block;
+}
+
+#advisor_profile .review_section .review_user_icon img, #advisor_profile .review_section .reserved_user_icon img, #advisor_profile .reserved_section .review_user_icon img, #advisor_profile .reserved_section .reserved_user_icon img, #mypage .review_section .review_user_icon img, #mypage .review_section .reserved_user_icon img, #mypage .reserved_section .review_user_icon img, #mypage .reserved_section .reserved_user_icon img {
+  width: 100%;
+  border-radius: 10000px;
+}
+
+#advisor_profile .review_section .review_user_name, #advisor_profile .review_section .reserved_user_name, #advisor_profile .reserved_section .review_user_name, #advisor_profile .reserved_section .reserved_user_name, #mypage .review_section .review_user_name, #mypage .review_section .reserved_user_name, #mypage .reserved_section .review_user_name, #mypage .reserved_section .reserved_user_name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  margin: 0 0 0 5px;
+}
+
+#advisor_profile .review_section .review_balloon, #advisor_profile .reserved_section .review_balloon, #mypage .review_section .review_balloon, #mypage .reserved_section .review_balloon {
+  font-size: 1.3rem;
+  position: relative;
+  padding: 13px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  margin: 21px 0 0;
+}
+
+#advisor_profile .review_section .review_balloon::before, #advisor_profile .reserved_section .review_balloon::before, #mypage .review_section .review_balloon::before, #mypage .reserved_section .review_balloon::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 15px;
+  top: -15px;
+  border-left: 20px solid #f7f7f7;
+  border-top: 20px solid #f7f7f7;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+#advisor_profile .review_section .review_balloon::after, #advisor_profile .reserved_section .review_balloon::after, #mypage .review_section .review_balloon::after, #mypage .reserved_section .review_balloon::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 30px;
+  top: -20px;
+  border-left: 20px solid #fff;
+  border-top: 20px solid #fff;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+#advisor_profile .review_section a.review_write_btn, #advisor_profile .reserved_section a.review_write_btn, #mypage .review_section a.review_write_btn, #mypage .reserved_section a.review_write_btn {
+  background-color: #f08300;
+  padding: 12px 12px 12px;
+  color: #fff;
+  border-radius: 4px;
+  width: 100%;
+  display: block;
+  font-size: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+#advisor_profile .review_section a.review_write_btn > span, #advisor_profile .reserved_section a.review_write_btn > span, #mypage .review_section a.review_write_btn > span, #mypage .reserved_section a.review_write_btn > span {
+  letter-spacing: .1em;
+}
+
+#advisor_profile .review_section a.review_write_btn > i, #advisor_profile .reserved_section a.review_write_btn > i, #mypage .review_section a.review_write_btn > i, #mypage .reserved_section a.review_write_btn > i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 12px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#advisor_profile .review_section a.disabled_review, #advisor_profile .reserved_section a.disabled_review, #mypage .review_section a.disabled_review, #mypage .reserved_section a.disabled_review {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#advisor_profile .review_section .no_review, #advisor_profile .reserved_section .no_review, #mypage .review_section .no_review, #mypage .reserved_section .no_review {
+  font-size: 1.2rem;
+  text-align: center;
+  display: block;
+  margin: 0 0 15px;
+}
+
+#advisor_profile .calender_section, #mypage .calender_section {
+  position: relative;
+}
+
+#advisor_profile .calender_section .calender_signup_overlay, #mypage .calender_section .calender_signup_overlay {
+  display: none;
+}
+
+#advisor_profile .calender_section table.disabled_calender, #mypage .calender_section table.disabled_calender {
+  opacity: 0.4;
+}
+
+#advisor_profile .calender_section table.disabled_calender a, #mypage .calender_section table.disabled_calender a {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay, #mypage .calender_section .disabled_calender + .calender_signup_overlay {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner, #mypage .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner {
+  width: 75%;
+}
+
+#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner > span, #mypage .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner > span {
+  font-size: 1.6rem;
+}
+
+#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner a.calender_signup_btn, #mypage .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner a.calender_signup_btn {
+  background: #f08300;
+  color: #fff;
+  padding: 18px 20px 18px;
+  margin: 15px 0 0;
+  border-radius: 5px;
+}
+
+#advisor_profile .calender_section table, #mypage .calender_section table {
+  table-layout: fixed;
+  width: 100%;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
+
+#advisor_profile .calender_section table tbody, #mypage .calender_section table tbody {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+#advisor_profile .calender_section table tbody tr, #mypage .calender_section table tbody tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+#advisor_profile .calender_section table tbody tr:nth-child(even) td, #mypage .calender_section table tbody tr:nth-child(even) td {
+  border-bottom: 2px solid #eee;
+}
+
+#advisor_profile .calender_section table thead, #advisor_profile .calender_section table tfoot, #mypage .calender_section table thead, #mypage .calender_section table tfoot {
+  display: table;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+
+#advisor_profile .calender_section table thead, #mypage .calender_section table thead {
+  table-layout: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  border-bottom: 1px solid #eee;
+}
+
+#advisor_profile .calender_section table thead tr td, #mypage .calender_section table thead tr td {
+  border-bottom: 3px solid #eee;
+}
+
+#advisor_profile .calender_section table tfoot, #mypage .calender_section table tfoot {
+  border-top: 1px solid #eee;
+}
+
+#advisor_profile .calender_section table tfoot tr td, #mypage .calender_section table tfoot tr td {
+  border-top: 2px solid #eee;
+}
+
+#advisor_profile .calender_section table th, #mypage .calender_section table th {
+  font-size: 1.4rem;
+  line-height: 48px;
+  height: 58px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#advisor_profile .calender_section table th span, #mypage .calender_section table th span {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+#advisor_profile .calender_section table td, #mypage .calender_section table td {
+  table-layout: fixed;
+  font-size: 1.6rem;
+  font-weight: bold;
+  height: 58px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#advisor_profile .calender_section table td > span, #mypage .calender_section table td > span {
+  display: block;
+  font-size: 1.4rem;
+}
+
+#advisor_profile .calender_section table td.sunday, #advisor_profile .calender_section table td.holiday, #mypage .calender_section table td.sunday, #mypage .calender_section table td.holiday {
+  color: #f08300;
+}
+
+#advisor_profile .calender_section table td.saturday, #mypage .calender_section table td.saturday {
+  color: #66A0FF;
+}
+
+#advisor_profile .calender_section table td.all_ok a, #advisor_profile .calender_section table td.web_ok a, #mypage .calender_section table td.all_ok a, #mypage .calender_section table td.web_ok a {
+  display: block;
+  color: #f08300;
+  font-weight: bold;
+  line-height: 58px;
+  height: 100%;
+}
+
+#advisor_profile .calender_section table td.all_ok a:hover, #advisor_profile .calender_section table td.web_ok a:hover, #mypage .calender_section table td.all_ok a:hover, #mypage .calender_section table td.web_ok a:hover {
+  background-color: #faf2d7;
+  opacity: 1;
+}
+
+#advisor_profile .calender_section table td.all_ng, #mypage .calender_section table td.all_ng {
+  background: #f7f7f7;
+  opacity: 0.5;
+}
+
+#advisor_profile .calender_section table .time, #mypage .calender_section table .time {
+  width: 18%;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+#advisor_profile .calender_section table .pagenation_btn_cell, #mypage .calender_section table .pagenation_btn_cell {
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+#advisor_profile .calender_section table .pagenation_btn_cell > a, #mypage .calender_section table .pagenation_btn_cell > a {
+  color: #f08300;
+  display: block;
+  background-color: #faf2d7;
+  margin: 0 auto;
+  padding: 7px;
+  border-radius: 10000px;
+}
+
+#advisor_profile .calender_section table .pagenation_btn_cell > a > img, #mypage .calender_section table .pagenation_btn_cell > a > img {
+  height: 11px;
+  vertical-align: -1px;
+}
+
+#advisor_profile .calender_section table .pagenation_btn_cell.disabled_pagenation, #mypage .calender_section table .pagenation_btn_cell.disabled_pagenation {
+  opacity: 0.5;
+}
+
+#advisor_profile .calender_section table .pagenation_btn_cell.disabled_pagenation a, #mypage .calender_section table .pagenation_btn_cell.disabled_pagenation a {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1080px) {
+  #advisor_profile .calender_section .review_section, #mypage .calender_section .review_section {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #advisor_profile .calender_section table td, #mypage .calender_section table td {
+    font-size: 1.4rem;
+  }
+  #advisor_profile .calender_section table td > span, #mypage .calender_section table td > span {
+    font-size: 1.2rem;
+  }
+  #advisor_profile .calender_section table .time, #mypage .calender_section table .time {
+    width: 13%;
+    font-size: 1.1rem;
+  }
+  #advisor_profile .calender_section table .pagenation_btn_cell, #mypage .calender_section table .pagenation_btn_cell {
+    font-size: 1.15rem;
+    padding: 0;
+  }
+  #advisor_profile .calender_section table .pagenation_btn_cell > a, #mypage .calender_section table .pagenation_btn_cell > a {
+    height: 100%;
+    border-radius: 0;
+    line-height: 58px;
+    padding: 0;
+  }
+  #advisor_profile .calender_section table .pagenation_btn_cell > a > img, #mypage .calender_section table .pagenation_btn_cell > a > img {
+    height: 9px;
+    vertical-align: -1px;
+  }
+}
+
+.modal_block a {
+  width: 100%;
+  text-align: center;
+  background: #123456;
+  display: block;
+  color: #fff;
+}
+
+.remodal_review {
+  padding: 0;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.remodal_review_ttl {
+  border-radius: 5px 5px 0 0;
+  background-color: #f7f7f7;
+  font-size: 1.7rem;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 0 15px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.remodal-cancel {
+  background: transparent;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  padding: 0;
+  width: 18px;
+}
+
+.remodal-cancel img {
+  width: 100%;
+}
+
+.remodal-cancel:hover, .remodal-cancel:focus {
+  background: transparent;
+  -o-transition: .4s;
+  transition: .4s;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+}
+
+.remodal-overlay {
+  background-image: url(../img/remodal_close_btn.png);
+  background-position: top 5030px right 5030px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  z-index: 10000 !important;
+}
+
+.review_form_wrap {
+  margin: 10px 0 0;
+  padding: 10px 20px 25px;
+}
+
+.review_form_wrap .review_form {
+  text-align: left;
+}
+
+.review_form_wrap .review_form .review_form_label {
+  font-size: 1.6rem;
+  padding: 0 0 0 7px;
+  border-left: 3px solid #f08300;
+}
+
+.review_form_wrap .review_form .review_submit {
+  background-color: #f08300;
+  padding: 12px 12px 12px;
+  color: #fff;
+  border-radius: 4px;
+  width: 50%;
+  display: block;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 20px auto 0;
+}
+
+.review_text_wrap {
+  margin: 30px 0 0;
+}
+
+.review_text_wrap textarea {
+  margin: 10px 0 0;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 12px 10px 12px;
+  border: 1px solid #ccc;
+  height: auto;
+  letter-spacing: .1em;
+}
+
+.evaluation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.evaluation input[type='radio'] {
+  display: none;
+}
+
+.evaluation label {
+  position: relative;
+  padding: 5px 20px 0 0;
+  color: gray;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.evaluation label:hover,
+.evaluation label:hover ~ label,
+.evaluation input[type='radio']:checked ~ label {
+  color: #f08300;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+  .remodal_review {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .remodal_review {
+    width: 95%;
+  }
+  .review_form_wrap {
+    padding: 10px 15px 20px;
+  }
+  .remodal-cancel {
+    right: 15px;
+  }
+}
+
+#mypage .person_icon_wrap {
+  margin-right: 2%;
+  width: 10%;
+}
+
+#mypage .person_icon_row {
+  border-radius: 5px;
+  padding: 15px;
+  position: relative;
+}
+
+#mypage .person_icon_row .person_info_wrap_inner a.profile_edit_btn {
+  color: #f08300;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#mypage .mypage_col_l {
+  width: 70%;
+  margin-right: 2%;
+}
+
+#mypage .mypage_col_r {
+  width: 28%;
+}
+
+#mypage .person_male {
+  background-color: #e1eafa;
+}
+
+#mypage .mypage_profile_section, #mypage .reserved_section {
+  margin: 30px 0 0;
+}
+
+#mypage .mypage_profile_section h3, #mypage .reserved_section h3 {
+  font-size: 1.5rem;
+  padding: 0 0 4px 7px;
+  border-left: 4px solid #f08300;
+  border-bottom: 1px dotted #ccc;
+}
+
+#mypage .mypage_profile_section a.profile_edit_btn, #mypage .reserved_section a.profile_edit_btn {
+  color: #f08300;
+  font-weight: 400;
+  float: right;
+  cursor: pointer;
+  margin: 0 15px 0 0;
+}
+
+#mypage .mypage_profile_section dl, #mypage .reserved_section dl {
+  margin: 6px 0 0;
+}
+
+#mypage .mypage_profile_section dl li, #mypage .reserved_section dl li {
+  font-size: 1.4rem;
+  padding: 11px 0 10px;
+  line-height: 2;
+  border-bottom: 1px dotted #ccc;
+}
+
+#mypage .mypage_profile_section dl li span, #mypage .reserved_section dl li span {
+  font-size: 1.2rem;
+  color: #888;
+  margin: 0 8px 0 0;
+}
+
+#mypage .mypage_profile_section dl li p, #mypage .reserved_section dl li p {
+  display: inline-block;
+  vertical-align: middle;
+  width: 91%;
+}
+
+#mypage .reserved_section {
+  position: static;
+  top: 0;
+  margin: 0;
+}
+
+#mypage .reserved_section .reserved_block {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 1080px) {
+  #mypage .mypage_col_l {
+    width: 100%;
+    margin-right: 0;
+  }
+  #mypage .mypage_col_r {
+    width: 100%;
+    margin: 15px 0 0;
+  }
+}
+
+footer .copyright {
+  text-align: center;
+  letter-spacing: 0.7px;
+  width: 100%;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    padding-top: 30px;
+  }
+  footer .footer_nav {
+    margin: 25px auto 0;
+  }
+  footer ul li {
+    width: auto;
+  }
+}

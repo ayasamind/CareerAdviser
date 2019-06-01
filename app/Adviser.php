@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Enums\Prefecture;
 
 class Adviser extends Authenticatable
 {
@@ -20,7 +21,7 @@ class Adviser extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'photo_url'
+        'name', 'email', 'password'
     ];
 
     /**
@@ -31,4 +32,24 @@ class Adviser extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function adviserProfile()
+    {
+        return $this->hasOne('App\AdviserProfile', 'adviser_id');
+    }
+
+    public static function getPrefectureList()
+    {
+        $keys = Prefecture::getKeys();
+        $values = Prefecture::getValues();
+
+        $list = [
+            null => '選択してください'
+        ];
+        foreach ($values as $index => $value) {
+            $list[$value] = Prefecture::getDescription($value);
+        }
+
+        return $list;
+    }
 }
