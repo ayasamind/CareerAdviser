@@ -1,0 +1,177 @@
+.advisor_card {
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.advisor_card01 {
+  background-image: url("../../img/adv01.png");
+}
+
+.advisor_card02 {
+  background-image: url("../../img/adv02.png");
+}
+
+.advisor_card03 {
+  background-image: url("../../img/adv03.png");
+}
+
+.advisor_card04 {
+  background-image: url("../../img/adv04.png");
+}
+
+.advisor_card05 {
+  background-image: url("../../img/adv05.png");
+}
+
+.card_male {
+  background-color: #66A0FF;
+}
+
+.card_male .advisor_card_more_btn {
+  background-color: #4089ff;
+}
+
+.card_female {
+  background-color: #faf2d7;
+}
+
+.card_female .advisor_card_more_btn {
+  background-color: #fabe00;
+}
+
+.advisor_card_message {
+  font-size: 1.4vw;
+  margin: 0 0 10px;
+  color: #000;
+  text-shadow: white 2px 0px, white -2px 0px, white 0px -2px, white 0px 2px, white 2px 2px, white -2px 2px, white 2px -2px, white -2px -2px, white 1px 2px, white -1px 2px, white 1px -2px, white -1px -2px, white 2px 1px, white -2px 1px, white 2px -1px, white -2px -1px;
+}
+
+.advisor_card_contents {
+  width: 87%;
+  position: absolute;
+  bottom: 3%;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.advisor_card_inner {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.advisor_card_name {
+  font-size: 2.5rem;
+}
+
+.advisor_card_name_en {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 0 0 0 5px;
+  color: #888;
+}
+
+.advisor_card_tag {
+  padding: 4px 12px 6px;
+  background-color: #222;
+  color: #fff;
+}
+
+.advisor_card_more_btn {
+  display: block;
+  border-radius: 10000px;
+  width: 100%;
+  color: #fff;
+  padding: 15px 0 15px;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.advisor_card_more_btn .fa-user-circle {
+  float: left;
+  margin-left: 15px;
+}
+
+.advisor_card_taglist li {
+  display: inline-block;
+  margin: 0 7px 7px 0;
+}
+
+.advisor_card_taglist li a {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: inline-block;
+  background-color: #f7f7f7;
+  padding: 4px 7px 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+  .advisor_card_message {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .advisor_card_inner {
+    padding: 8px 12px 12px;
+  }
+  .advisor_card_more_btn {
+    padding: 10px 0 10px;
+  }
+  .advisor_card_taglist li {
+    margin: 0 5px 5px 0;
+  }
+  .advisor_card_taglist li a {
+    font-size: 1.05rem;
+    padding: 3px 6px 4px;
+  }
+  .advisor_card_name {
+    font-size: 2.3rem;
+    display: block;
+  }
+  .advisor_card_contents {
+    width: 94%;
+    bottom: 1.5%;
+  }
+  .advisor_card_message {
+    margin: 0 0 5px;
+    font-size: 2rem;
+  }
+}
+
+.advisor_box {
+  min-height: 520px;
+  margin-top: 30px;
+}
+
+.advisor_row {
+  min-height: 700px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+  .advisor_box {
+    min-height: 620px;
+    width: 47.5%;
+    margin-right: 2.5%;
+  }
+  .advisor_box:nth-of-type(2n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .advisor_row {
+    margin-top: 30px;
+    min-height: 530px;
+  }
+  .advisor_box {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}

@@ -40,9 +40,9 @@ class AdvisersController extends AdminsController
     */
     public function show($id)
     {
-        $adviser = Adviser::findOrFail($id);
+        $adviser = Adviser::with(['AdviserProfile'])->findOrFail($id);
         return view('admin.advisers.show', [
-            'adviser' => $adviser
+            'adviser' => $adviser,
         ]);
     }
 
@@ -95,8 +95,10 @@ class AdvisersController extends AdminsController
     */
     public function edit(Adviser $adviser)
     {
+        $prefectures = Adviser::getPrefectureList();
         return view('admin.advisers.edit', [
-            'adviser' => $adviser
+            'adviser' => $adviser,
+            'prefectures' => $prefectures
         ]);
     }
 

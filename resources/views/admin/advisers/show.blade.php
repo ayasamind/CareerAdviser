@@ -7,19 +7,25 @@
             <div class="card">
                 <div class="card-header">アドバイザー詳細</div>
                 <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <a class="btn btn-primary" href="{{ route('admin.advisers.edit', [
+                        'id' => $adviser->id
+                    ]) }}">アドバイザー情報編集</a>
+                    <a class="btn btn-primary" target="_brank" href="{{ route('advisers.show', [ 'id' => $adviser->id ]) }}">公開画面を確認</a>
                     <table class="table">
                         <tr>
                             <th>プロフィール画像</th>
-                            <td>@if ($adviser->photo_url)
-                                    <img src="{{ $adviser->photo_url }}" width="200"/>
+                            <td>@if ($adviser->AdviserProfile)
+                                    <img src="{{ $adviser->AdviserProfile->photo_url }}" width="200"/>
                                 @else
                                     <img src="{{ asset('img/no_image.png') }}" width="200"/>
                                 @endif
                             </td>
-                        </tr>
-                        <tr>
-                            <th>ID</th>
-                            <td>{{ $adviser->id }}</td>
                         </tr>
                         <tr>
                             <th>名前</th>
@@ -29,19 +35,41 @@
                             <th>メールアドレス</th>
                             <td>{{ $adviser->email }}</td>
                         </tr>
-                            <th>登録日</th>
-                            <td>{{ $adviser->created_at }}</td>
-                        </tr>
+                        @if ($adviser->AdviserProfile)
+                            <tr>
+                                <th>性別</th>
+                                <td>{{ $adviser->AdviserProfile->genderLabel }}</td>
+                            </tr>
+                            <tr>
+                                <th>都道府県</th>
+                                <td>{{ $adviser->AdviserProfile->prefecture }}</td>
+                            </tr>
+                            <tr>
+                                <th>一言コメント</th>
+                                <td>{{ $adviser->AdviserProfile->comment }}</td>
+                            </tr>
+                            <tr>
+                                <th>自己紹介</th>
+                                <td>{{ $adviser->AdviserProfile->introduce }}</td>
+                            </tr>
+                            <tr>
+                                <th>紹介できる企業の業界</th>
+                                <td>{{ $adviser->AdviserProfile->industry }}</td>
+                            </tr>
+                            <tr>
+                                <th>紹介できる企業の数</th>
+                                <td>{{ $adviser->AdviserProfile->company_number }}</td>
+                            </tr>
+                            <tr>
+                                <th>紹介できる企業の所在地</th>
+                                <td>{{ $adviser->AdviserProfile->place }}</td>
+                            </tr>
+                            <tr>
+                                <th>面談実績</th>
+                                <td>{{ $adviser->AdviserProfile->performance }}</td>
+                            </tr>
+                        @endif
                     </table>
-                    <a class="btn btn-secondary" href="{{ route('admin.advisers.index') }}">戻る</a>
-                    <a class="btn btn-secondary" href="{{ route('admin.advisers.edit', [
-                        'adviser' => $adviser->id
-                    ]) }}">編集</a>
-                    <form style="display:inline" onsubmit="return confirm('本当に{{ $adviser->name }}を削除しますか？');" action="{{ route('admin.advisers.destroy',['adviser' => $adviser->id]) }}" method="POST">
-                        {{ csrf_field() }}
-                        <input type="hidden" name="_method" value="DELETE" />
-                        <button class="btn btn-danger" type="submit">削除</button>
-                    </form>
                 </div>
             </div>
         </div>
