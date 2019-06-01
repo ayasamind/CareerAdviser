@@ -24,7 +24,7 @@ class AdvisersController extends UsersController
     */
     public function index()
     {
-        $advisers = Adviser::orderByDesc('created_at')->paginate(10);
+        $advisers = Adviser::whereHas('AdviserProfile')->orderByDesc('created_at')->paginate(10);
         return view('user.advisers.index', [
             'advisers' => $advisers
         ]);
@@ -38,6 +38,9 @@ class AdvisersController extends UsersController
     public function show($id)
     {
         $adviser = Adviser::with(['AdviserProfile'])->findOrFail($id);
+        if (!$adviser->AdviserProfile) {
+            abort(404);
+        }
         return view('user.advisers.show', [
             'adviser' => $adviser
         ]);
