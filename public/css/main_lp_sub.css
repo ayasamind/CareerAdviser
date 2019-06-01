@@ -1,0 +1,234 @@
+@charset "UTF-8";
+.container_lp_sub {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* タイトルボーダー左右 */
+.ttl_bdr_ccc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-items: center;
+  text-align: center;
+}
+
+.ttl_bdr_ccc:before,
+.ttl_bdr_ccc:after {
+  border-top: 1px solid #ccc;
+  content: "";
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.ttl_bdr_ccc:before {
+  margin-right: 2rem;
+}
+
+.ttl_bdr_ccc:after {
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .ttl_bdr_ccc:before {
+    margin-right: 1rem;
+  }
+  .ttl_bdr_ccc:after {
+    margin-left: 1rem;
+  }
+}
+
+/* タイトルボーダー左右 */
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+  .container_lp_sub {
+    padding: 0 15px;
+    max-width: none;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container_lp_sub {
+    padding: 0 15px;
+    max-width: none;
+  }
+}
+
+.main_wrap {
+  background-color: #fafafa;
+  min-height: 91vh;
+  padding: 89px 0 70px;
+}
+
+.section_inner {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (max-width: 600px) {
+  .section_inner {
+    padding: 0;
+  }
+}
+
+.operating_company_table {
+  margin: 0 auto;
+  width: 70%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.operating_company_table tbody th {
+  text-align: left;
+}
+
+.operating_company_table th, .operating_company_table td {
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.operating_company_table th {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .company_inner {
+    padding: 13px 0 0 0;
+  }
+  .operating_company_table {
+    width: 100%;
+  }
+  .operating_company_table th, .operating_company_table td {
+    padding: 13px 15px 15px;
+    font-size: 1.3rem;
+  }
+  .operating_company_table tbody th {
+    width: 25%;
+  }
+}
+
+#login_main_wrap, #signup_main_wrap {
+  padding: 30px 0 50px;
+}
+
+.login_btn, .signup_btn {
+  padding: 20px 40px 20px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #06a1cc;
+  font-size: 1.8rem;
+  margin: 50px auto 0;
+  display: block;
+  width: 35%;
+  border-radius: 4px;
+}
+
+.sns_login_wrap_outer {
+  padding-bottom: 30px;
+}
+
+.sns_login_wrap {
+  padding: 30px;
+  margin: 30px auto 0;
+  background-color: #fafafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.fb_login {
+  background-color: #3B5998;
+  color: #fff;
+  padding: 16px 40px 16px 12px;
+  border-radius: 4px;
+}
+
+.fb_login .fa-facebook-square {
+  vertical-align: -2px;
+}
+
+.tw_login {
+  background-color: #00aced;
+  color: #fff;
+  padding: 16px 40px 16px 12px;
+  border-radius: 4px;
+  margin: 0 0 0 20px;
+}
+
+.tw_login .fa-twitter {
+  vertical-align: -2px;
+}
+
+.fb_login, .tw_login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+  html {
+    font-size: 78%;
+  }
+  #login_main_wrap, #signup_main_wrap {
+    padding: 50px 0 70px;
+  }
+  .login_section, .signup_section {
+    margin: 50px;
+  }
+  .fb_login, .tw_login {
+    width: 100%;
+  }
+  .login_btn, .signup_btn {
+    width: 60%;
+    padding: 25px 40px 25px;
+  }
+  .sns_login_wrap {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login_btn, .signup_btn {
+    width: 100%;
+    margin: 23px auto 0;
+  }
+  .sns_login_wrap {
+    padding: 15px;
+    margin: 30px auto 0;
+    display: block;
+  }
+  .login_inner, .signup_inner {
+    padding: 15px;
+  }
+  .login_inner .fb_login, .login_inner .tw_login, .signup_inner .fb_login, .signup_inner .tw_login {
+    width: 100%;
+    display: block;
+  }
+  .login_inner .tw_login, .signup_inner .tw_login {
+    margin: 10px 0 0 0;
+  }
+  .sns_login_wrap_outer {
+    padding-bottom: 7px;
+  }
+}

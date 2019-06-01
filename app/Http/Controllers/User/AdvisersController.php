@@ -15,18 +15,29 @@ class AdvisersController extends UsersController
 {
     public function __construct()
     {
-        $this->middleware('auth:user');
+    }
+
+     /**
+     * index
+     * アドバイザー一覧画面
+     * @author ayasamind
+    */
+    public function index()
+    {
+        $advisers = Adviser::orderByDesc('created_at')->paginate(10);
+        return view('user.advisers.index', [
+            'advisers' => $advisers
+        ]);
     }
 
     /**
-     * index
+     * show
      * アドバイザー詳細画面
      * @author ayasamind
-     * @return array
     */
     public function show($id)
     {
-        $adviser = Adviser::findOrFail($id);
+        $adviser = Adviser::with(['AdviserProfile'])->findOrFail($id);
         return view('user.advisers.show', [
             'adviser' => $adviser
         ]);
