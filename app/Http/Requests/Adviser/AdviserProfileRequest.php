@@ -27,7 +27,7 @@ class AdviserProfileRequest extends FormRequest
             // new profile
             $rules = [
                 'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:advisers,email,' . $this->id],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:advisers,email,' . $this->id . ',id'],
                 'AdviserProfile.photo' => ['required', 'image', 'mimes:jpeg,jpg,png'],
                 'AdviserProfile.gender' => ['required', 'integer'],
                 'AdviserProfile.prefecture_id' => ['required', 'integer'],
@@ -40,7 +40,7 @@ class AdviserProfileRequest extends FormRequest
         } else {
             $rules = [
                 'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:advisers,email,' . $this->id],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:advisers,email,' . $this->id . ',id'],
                 'AdviserProfile.photo' => ['image', 'mimes:jpeg,jpg,png'],
                 'AdviserProfile.gender' => ['required', 'integer'],
                 'AdviserProfile.prefecture_id' => ['required', 'integer'],
