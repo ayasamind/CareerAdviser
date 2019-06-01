@@ -1,6 +1,8 @@
 #!/bin/bash
 heroku config:set --app ca-com DB_CONNECTION=pgsql \
 APP_ENV=staging \
+LOCALE=ja \
+TIMEZONE="Asia/Tokyo" \
 DB_HOST=ec2-174-129-208-118.compute-1.amazonaws.com \
 DB_PORT=5432 \
 DB_DATABASE=dhchh9tl5r8ns \
