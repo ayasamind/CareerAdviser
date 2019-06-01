@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/adviser.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -42,11 +43,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('adviser.auth.login_form') }}">ログイン</a>
-                            </li>
-                        @else
+                        @auth('adviser')
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -55,10 +52,10 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('adviser.home') }}">
                                         マイページ
-                                     </a>
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('adviser.auth.logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         ログアウト
                                     </a>
 
@@ -67,7 +64,11 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('adviser.auth.login_form') }}">ログイン</a>
+                            </li>
+                        @endauth
                     </ul>
                 </div>
             </div>

@@ -20,6 +20,9 @@ Route::get('/email/verify/{id}', 'User\Auth\VerificationController@verify')->nam
 Route::get('/email/resend', 'User\Auth\VerificationController@resend')->name('verification.resend')->middleware(['web', 'auth:user']);
 Route::get('/email/show', 'User\Auth\VerificationController@show')->name('verification.notice')->middleware(['web','auth:user']);
 Route::post("/logout", "User\Auth\LoginController@logout")->name('user.logout');
+Route::get('/advisers', 'User\AdvisersController@index')->name('advisers.index');
+Route::get('/advisers/show/{id}', 'User\AdvisersController@show')->name('advisers.show');
+
 
 Route::middleware(['auth:user'])->name('user.')->group(function() {
     Route::get('/thanks', function () {
@@ -29,7 +32,6 @@ Route::middleware(['auth:user'])->name('user.')->group(function() {
 });
 
 Route::middleware(['verified', 'auth:user'])->name('user.')->group(function() {
-    Route::get('/advisers/show/{id}', 'User\AdvisersController@show')->name('advisers.show');
     Route::get('/users/edit', 'User\UsersController@edit')->name('users.edit');
     Route::put('/users/update', 'User\UsersController@update')->name('users.update');
 });

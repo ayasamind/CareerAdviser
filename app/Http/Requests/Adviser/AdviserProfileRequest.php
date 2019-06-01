@@ -1,0 +1,65 @@
+<?php
+namespace App\Http\Requests\Adviser;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\Response;
+
+class AdviserProfileRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        if (!$this->PhotoExist) {
+            // new profile
+            $rules = [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:advisers,email,' . $this->id],
+                'AdviserProfile.photo' => ['required', 'image', 'mimes:jpeg,jpg,png'],
+                'AdviserProfile.gender' => ['required', 'integer'],
+                'AdviserProfile.prefecture_id' => ['required', 'integer'],
+                'AdviserProfile.comment' => ['required', 'string'],
+                'AdviserProfile.introduce' => ['required', 'string'],
+                'AdviserProfile.industry' => ['required', 'string'],
+                'AdviserProfile.company_number' => ['required', 'string'],
+                'AdviserProfile.place' => ['required', 'string']
+            ];
+        } else {
+            $rules = [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:advisers,email,' . $this->id],
+                'AdviserProfile.photo' => ['image', 'mimes:jpeg,jpg,png'],
+                'AdviserProfile.gender' => ['required', 'integer'],
+                'AdviserProfile.prefecture_id' => ['required', 'integer'],
+                'AdviserProfile.comment' => ['required', 'string'],
+                'AdviserProfile.introduce' => ['required', 'string'],
+                'AdviserProfile.industry' => ['required', 'string'],
+                'AdviserProfile.company_number' => ['required', 'string'],
+                'AdviserProfile.place' => ['required', 'string']
+            ];
+        }
+        return $rules;
+    }
+
+    public function messages()
+    {
+        return [
+            'AdviserProfile.photo.required' => 'プロフィール画像は必須です',
+            'AdviserProfile.photo.image' => 'プロフィール画像には画像ファイルを指定してください',
+            'AdviserProfile.photo.mimes:jpeg,jpg,png' => 'jpeg, jpg, pngのいづれかの拡張子のみ対応しています',
+        ];
+    }
+}
