@@ -73,7 +73,11 @@
                             </tr>
                             <tr>
                                 <th>面談拒否</th>
-                                <td>{{ $adviser->AdviserProfile->deny_interview ? '面談拒否あり' : '面談拒否なし' }}</td>
+                                <td>
+                                    @if ($adviser->AdviserProfile)
+                                        {{ $adviser->AdviserProfile->deny_interview ? '面談拒否あり' : '面談拒否なし' }}
+                                    @endif
+                                </td>
                             </tr>
                             <tr>
                                 <th>紹介できる企業の業界</th>
