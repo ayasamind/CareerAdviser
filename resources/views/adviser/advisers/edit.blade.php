@@ -16,4 +16,5 @@
         </div>
     </div>
 </div>
+<script src="{{ asset("js/edit_adviser.js") }}"></script>
 @endsection

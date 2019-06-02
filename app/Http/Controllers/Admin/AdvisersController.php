@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Adviser;
 use App\AdviserProfile;
+use App\AdviserCareer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\AdminsController;
 use App\Http\Requests\Common\AdviserRequest;
@@ -13,12 +14,14 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\NewAdviserMail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use App\Interfaces\AdviserInterface;
 
 class AdvisersController extends AdminsController
 {
-    public function __construct()
+    public function __construct(AdviserInterface $AdviserUtils)
     {
         $this->middleware('auth:admin');
+        $this->AdviserUtils = $AdviserUtils;
     }
 
     /**
@@ -43,7 +46,7 @@ class AdvisersController extends AdminsController
     */
     public function show($id)
     {
-        $adviser = Adviser::with(['AdviserProfile'])->findOrFail($id);
+        $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer'])->findOrFail($id);
         return view('admin.advisers.show', [
             'adviser' => $adviser,
         ]);
@@ -137,32 +140,8 @@ class AdvisersController extends AdminsController
         $adviser->email = $data['email'];
         $adviser->save();
 
-        $profile = AdviserProfile::where(['adviser_id' => $adviser->id])->first();
-        if ($profile) {
-            $profile->photo_url = $photo_url ? $photo_url : $profile->photo_url;
-            $profile->gender = $data['AdviserProfile']['gender'];
-            $profile->prefecture_id = $data['AdviserProfile']['prefecture_id'];
-            $profile->comment = $data['AdviserProfile']['comment'];
-            $profile->introduce = $data['AdviserProfile']['introduce'];
-            $profile->industry = $data['AdviserProfile']['industry'];
-            $profile->company_number = $data['AdviserProfile']['company_number'];
-            $profile->place = $data['AdviserProfile']['place'];
-            $profile->performance = $data['AdviserProfile']['performance'];
-        } else {
-            $profile = new AdviserProfile([
-                'adviser_id'     => $adviser['id'],
-                'photo_url'      => $photo_url,
-                'gender'         => $data['AdviserProfile']['gender'],
-                'prefecture_id'  => $data['AdviserProfile']['prefecture_id'],
-                'comment'        => $data['AdviserProfile']['comment'],
-                'introduce'      => $data['AdviserProfile']['introduce'],
-                'industry'       => $data['AdviserProfile']['industry'],
-                'company_number' => $data['AdviserProfile']['company_number'],
-                'place'          => $data['AdviserProfile']['place'],
-                'performance'    => $data['AdviserProfile']['performance'],
-            ]);
-        }
-        $profile->save();
+        $this->AdviserUtils->saveProfile($adviser, $data, $photo_url);
+        $this->AdviserUtils->saveCareers($adviser, $data);
     }
 
     /**

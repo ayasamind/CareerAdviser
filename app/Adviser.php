@@ -3,10 +3,10 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Enums\Prefecture;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Adviser extends Authenticatable
 {
@@ -33,9 +33,14 @@ class Adviser extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function adviserProfile()
+    public function AdviserProfile()
     {
         return $this->hasOne('App\AdviserProfile', 'adviser_id');
+    }
+
+    public function AdviserCareer()
+    {
+        return $this->hasMany('App\AdviserCareer', 'adviser_id');
     }
 
     public static function getPrefectureList()

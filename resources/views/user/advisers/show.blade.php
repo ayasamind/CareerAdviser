@@ -32,8 +32,10 @@
                                                         <li class=""><img class="gender_icon" src="{{ asset("img/service/woman.svg") }}">女性</li>
                                                     @endif
                                                     <li><img class="area_icon" src="{{ asset("img/service/map.svg") }}">{{ $adviser->AdviserProfile->prefecture }}</li>
-													<li><img class="reject_icon" src="{{ asset("img/service/reject.svg") }}">面談拒否あり</li>
-												</dl>
+                                                    @if ($adviser->AdviserProfile->deny_interview)
+                                                        <li><img class="reject_icon" src="{{ asset("img/service/reject.svg") }}">面談拒否あり</li>
+                                                    @endif
+                                                </dl>
 											</div>
                                             <p class="voice_txt advisor_balloon advisor_balloon_female">{{ $adviser->AdviserProfile->comment }}</p>
 										</div>
@@ -55,9 +57,9 @@
 								<section class="work_history_section">
 									<h3>略歴</h3>
 									<dl>
-										<li><span>2010年</span>〇〇県立〇〇高校卒業</li>
-										<li><span>2014年</span>〇〇大学卒業</li>
-										<li><span>2015年</span>〇〇入社</li>
+                                        @foreach ($adviser->AdviserCareer as $career)
+                                            <li><span>{{ $career->year }}</span>{{ $career->career }}</li>
+                                        @endforeach
 									</dl>
 								</section>
 								<section class="work_history_section">
