@@ -35,7 +35,10 @@ class AdviserProfileRequest extends FormRequest
                 'AdviserProfile.introduce' => ['required', 'string'],
                 'AdviserProfile.industry' => ['required', 'string'],
                 'AdviserProfile.company_number' => ['required', 'string'],
-                'AdviserProfile.place' => ['required', 'string']
+                'AdviserProfile.place' => ['required', 'string'],
+                'AdviserProfile.deny_interview' => ['required', 'boolean'],
+                'AdviserCareer.*.year' => ['required', 'string'],
+                'AdviserCareer.*.career' => ['required', 'string'],
             ];
         } else {
             $rules = [
@@ -48,7 +51,10 @@ class AdviserProfileRequest extends FormRequest
                 'AdviserProfile.introduce' => ['required', 'string'],
                 'AdviserProfile.industry' => ['required', 'string'],
                 'AdviserProfile.company_number' => ['required', 'string'],
-                'AdviserProfile.place' => ['required', 'string']
+                'AdviserProfile.place' => ['required', 'string'],
+                'AdviserProfile.deny_interview' => ['required', 'boolean'],
+                'AdviserCareer.*.year' => ['required', 'string'],
+                'AdviserCareer.*.career' => ['required', 'string'],
             ];
         }
         return $rules;
