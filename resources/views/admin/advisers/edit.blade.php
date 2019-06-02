@@ -117,7 +117,8 @@
                     </div>
 
                     <div id="career-form">
-                        @foreach ($adviser->AdviserCareer as $key => $career)
+                        @if (!count($adviser->AdviserCareer))
+                            <?php $key = 0 ?>
                             <div class="row">
                                 <div class="col-md-10"></div>
                                 <button type="button" class="deleteCareer btn btn-danger col-md-1 float-right" data-delete="{{ $key }}">x</button>
@@ -151,7 +152,43 @@
                                 </div>
                             </div>
                             <div class="{{ 'row form'.$key }}"><div class="col-md-3"></div><hr class="col-md-6"/></div>
-                        @endforeach
+                        @else
+                            @foreach ($adviser->AdviserCareer as $key => $career)
+                                <div class="row">
+                                    <div class="col-md-10"></div>
+                                    <button type="button" class="deleteCareer btn btn-danger col-md-1 float-right" data-delete="{{ $key }}">x</button>
+                                </div>
+                                <div class="{{ 'form'.$key.' form-count' }}">
+                                    <div class="form-group row">
+                                        <label for="introduce" class="col-md-3 col-form-label text-md-right"></label>
+                                        <label for="introduce" class="col-md-2 col-form-label text-md-right">年度</label>
+                                        <div class="col-md-3">
+                                            {!! Form::text('AdviserCareer['.$key.'][year]', null, ['id'=>'year', 'class'=>'form-control '  . ($errors->has('adviser_career.'.$key.'.year') ? 'is-invalid' : ''), 'required'=>'required']) !!}
+
+                                            @if ($errors->has('adviser_career.'.$key.'.year'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('adviser_career.'.$key.'.year') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="introduce" class="col-md-3 col-form-label text-md-right"></label>
+                                        <label for="introduce" class="col-md-2 col-form-label text-md-right">略歴</label>
+                                        <div class="col-md-5">
+                                            {!! Form::text('AdviserCareer['.$key.'][career]', null, ['id'=>'career', 'class'=>'form-control '  . ($errors->has('adviser_career.'.$key.'.career') ? 'is-invalid' : ''), 'required'=>'required']) !!}
+
+                                            @if ($errors->has('adviser_career.'.$key.'.career'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('adviser_career.'.$key.'.career') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="{{ 'row form'.$key }}"><div class="col-md-3"></div><hr class="col-md-6"/></div>
+                            @endforeach
+                        @endif
                     </div>
                     <div class="form-group row">
                         <div class="col-md-6"></div>
