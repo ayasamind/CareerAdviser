@@ -102,6 +102,68 @@
 </div>
 
 <div class="form-group row">
+    <label for="introduce" class="col-md-4 col-form-label text-md-right">略歴</label>
+</div>
+
+<div id="career-form">
+    @foreach ($adviser->AdviserCareer as $key => $career)
+        <div class="row">
+            <div class="col-md-10"></div>
+            <button type="button" class="deleteCareer btn btn-danger col-md-1 float-right" data-delete="{{ $key }}">x</button>
+        </div>
+        <div class="{{ 'form'.$key.' form-count' }}">
+            <div class="form-group row">
+                <label for="introduce" class="col-md-3 col-form-label text-md-right"></label>
+                <label for="introduce" class="col-md-2 col-form-label text-md-right">年度</label>
+                <div class="col-md-3">
+                    {!! Form::text('AdviserCareer['.$key.'][year]', null, ['id'=>'year', 'class'=>'form-control '  . ($errors->has('adviser_career.'.$key.'.year') ? 'is-invalid' : ''), 'required'=>'required']) !!}
+
+                    @if ($errors->has('adviser_career.'.$key.'.year'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('adviser_career.'.$key.'.year') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="introduce" class="col-md-3 col-form-label text-md-right"></label>
+                <label for="introduce" class="col-md-2 col-form-label text-md-right">略歴</label>
+                <div class="col-md-5">
+                    {!! Form::text('AdviserCareer['.$key.'][career]', null, ['id'=>'career', 'class'=>'form-control '  . ($errors->has('adviser_career.'.$key.'.career') ? 'is-invalid' : ''), 'required'=>'required']) !!}
+
+                    @if ($errors->has('adviser_career.'.$key.'.career'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('adviser_career.'.$key.'.career') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+        <div class="{{ 'row form'.$key }}"><div class="col-md-3"></div><hr class="col-md-6"/></div>
+    @endforeach
+</div>
+
+<div class="form-group row">
+    <div class="col-md-6"></div>
+    <button type="button" id="addCareer" class="btn btn-primary col-md-2 float-right">略歴を追加</button>
+</div>
+
+<div class="form-group row">
+    <label for="gender" class="col-md-4 col-form-label text-md-right">面談拒否</label>
+
+    <div class="col-md-6">
+        {!! Form::select('AdviserProfile[deny_interview]', [null => '選択してください', 0 => '面談拒否なし', 1 => '面談拒否あり'], null, ['id'=>'gender', 'class'=>'form-control '  . ($errors->has('adviser_profile.deny_interview') ? 'is-invalid' : ''), 'required'=>'required']) !!}
+
+        @if ($errors->has('adviser_profile.deny_interview'))
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('adviser_profile.deny_interview') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+
+<div class="form-group row">
     <label for="industry" class="col-md-4 col-form-label text-md-right">紹介できる企業の業界</label>
 
     <div class="col-md-6">
