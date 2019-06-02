@@ -17,6 +17,7 @@ class CreateAdviserProfiles extends Migration
             $table->bigIncrements('id');
             $table->string('photo_url');
             $table->integer('adviser_id');
+            $table->boolean('deny_interview')->default(false);
             $table->integer('gender');
             $table->integer('prefecture_id');
             $table->text('comment');
