@@ -63,4 +63,10 @@ class AdviserUtils implements AdviserInterface
             );
         }
     }
+
+    public function saveTags($adviser, $data)
+    {
+        $adviser->Tag()->detach();
+        $adviser->Tag()->attach($data['Tag']);
+    }
 }
