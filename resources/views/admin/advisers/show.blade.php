@@ -76,6 +76,18 @@
                                 <th>面談実績</th>
                                 <td>{{ $adviser->AdviserProfile->performance }}</td>
                             </tr>
+                            <tr>
+                                <th>タグ</th>
+                                <td>
+                                    @foreach ($adviser->Tag as $key => $tag)
+                                        @if ($key+1 != count($adviser->Tag))
+                                            {{ $tag->name }},
+                                        @else
+                                            {{ $tag->name }}
+                                        @endif
+                                    @endforeach
+                                </td>
+                            </tr>
                         @endif
                     </table>
                 </div>

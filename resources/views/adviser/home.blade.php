@@ -111,6 +111,18 @@
                                     @endif
                                 </td>
                             </tr>
+                            <tr>
+                                <th>タグ</th>
+                                <td>
+                                    @foreach ($adviser->Tag as $key => $tag)
+                                        @if ($key+1 != count($adviser->Tag))
+                                            {{ $tag->name }},
+                                        @else
+                                            {{ $tag->name }}
+                                        @endif
+                                    @endforeach
+                                </td>
+                            </tr>
                     </table>
                 </div>
             </div>

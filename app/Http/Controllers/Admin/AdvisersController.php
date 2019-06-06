@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Adviser;
 use App\AdviserProfile;
 use App\AdviserCareer;
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\AdminsController;
 use App\Http\Requests\Common\AdviserRequest;
@@ -46,7 +47,7 @@ class AdvisersController extends AdminsController
     */
     public function show($id)
     {
-        $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer'])->findOrFail($id);
+        $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer', 'Tag'])->findOrFail($id);
         return view('admin.advisers.show', [
             'adviser' => $adviser,
         ]);
@@ -101,10 +102,12 @@ class AdvisersController extends AdminsController
     */
     public function edit(Adviser $adviser)
     {
+        $tags = Tag::all();
         $prefectures = Adviser::getPrefectureList();
         return view('admin.advisers.edit', [
             'adviser' => $adviser,
-            'prefectures' => $prefectures
+            'prefectures' => $prefectures,
+            'tags' => $tags
         ]);
     }
 
@@ -142,6 +145,7 @@ class AdvisersController extends AdminsController
 
         $this->AdviserUtils->saveProfile($adviser, $data, $photo_url);
         $this->AdviserUtils->saveCareers($adviser, $data);
+        $this->AdviserUtils->saveTags($adviser, $data);
     }
 
     /**

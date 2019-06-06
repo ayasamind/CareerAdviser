@@ -252,6 +252,27 @@
     </div>
 </div>
 
+<div class="form-group row">
+    <label for="tag" class="col-md-4 col-form-label text-md-right">タグ</label>
+    <div class="col-md-6">
+        <div>
+            @if ($errors->has('Tag'))
+                <span class="validate-error" role="alert">
+                    <strong>{{ $errors->first('Tag') }}</strong>
+                </span>
+            @endif
+        </div>
+        <br/>
+        @foreach ($tags as $key => $tag)
+            <div class="form-check">
+                {!! Form::checkbox('Tag[]', $tag->id, null,  ['id'=>'tag'.$key, 'class'=>'form-check-input']) !!}
+                <label class="form-check-label" for="{{ 'tag'.$key }}">{{ $tag->name }}</label>
+            </div>
+        @endforeach
+    </div>
+</div>
+
+
 
 <div class="form-group row mb-0">
     <div class="col-md-6 offset-md-4">

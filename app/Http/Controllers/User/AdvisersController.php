@@ -37,7 +37,7 @@ class AdvisersController extends UsersController
     */
     public function show($id)
     {
-        $adviser = Adviser::with(['AdviserProfile'])->findOrFail($id);
+        $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer', 'Tag'])->findOrFail($id);
         if (!$adviser->AdviserProfile) {
             abort(404);
         }
