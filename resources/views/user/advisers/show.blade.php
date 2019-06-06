@@ -41,13 +41,9 @@
 										</div>
 									</div>
 									<dl class="advisor_card_taglist mt15 txt_l">
-										<li><a href="">自己分析</a></li>
-										<li><a href="">企業研究</a></li>
-										<li><a href="">ES添削</a></li>
-										<li><a href="">面接対策</a></li>
-										<li><a href="">企業紹介</a></li>
-										<li><a href="">ウェブ面談可</a></li>
-										<li><a href="">自己分析ならお任せください</a></li>
+                                        @foreach ($adviser->Tag as $tag)
+                                            <li><a href="">{{ $tag->name }}</a></li>
+										@endforeach
 									</dl>
 								</section>
 								<section class="self_introduction_section">

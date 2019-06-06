@@ -4,6 +4,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
+use Illuminate\Validation\ValidationException;
 
 class AdviserProfileRequest extends FormRequest
 {
@@ -39,6 +40,7 @@ class AdviserProfileRequest extends FormRequest
                 'AdviserProfile.deny_interview' => ['required', 'boolean'],
                 'AdviserCareer.*.year' => ['required', 'string'],
                 'AdviserCareer.*.career' => ['required', 'string'],
+                'Tag' => ['required', 'present'],
             ];
         } else {
             $rules = [
@@ -55,6 +57,7 @@ class AdviserProfileRequest extends FormRequest
                 'AdviserProfile.deny_interview' => ['required', 'boolean'],
                 'AdviserCareer.*.year' => ['required', 'string'],
                 'AdviserCareer.*.career' => ['required', 'string'],
+                'Tag' => ['required', 'present'],
             ];
         }
         return $rules;
@@ -66,6 +69,13 @@ class AdviserProfileRequest extends FormRequest
             'AdviserProfile.photo.required' => 'プロフィール画像は必須です',
             'AdviserProfile.photo.image' => 'プロフィール画像には画像ファイルを指定してください',
             'AdviserProfile.photo.mimes:jpeg,jpg,png' => 'jpeg, jpg, pngのいづれかの拡張子のみ対応しています',
+            'Tag.required' => 'タグは最低一つ選択してください'
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        \Session::flash('error', 'アドバイザーの保存に失敗しました');
+        return parent::failedValidation($validator);
     }
 }

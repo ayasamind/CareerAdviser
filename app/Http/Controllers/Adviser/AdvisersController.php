@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Enums\Prefecture;
 use App\AdviserProfile;
 use App\AdviserCareer;
+use App\Tag;
 use Illuminate\Support\Facades\DB;
 use App\Interfaces\AdviserInterface;
 
@@ -38,9 +39,11 @@ class AdvisersController extends BaseController
     {
         $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer'])->findOrFail(Auth::user()->id);
         $prefectures = Adviser::getPrefectureList();
+        $tags = Tag::all();
         return view('adviser.advisers.edit', [
             'adviser' => $adviser,
-            'prefectures' => $prefectures
+            'prefectures' => $prefectures,
+            'tags' => $tags
         ]);
     }
 
@@ -78,5 +81,6 @@ class AdvisersController extends BaseController
 
         $this->AdviserUtils->saveProfile($adviser, $data, $photo_url);
         $this->AdviserUtils->saveCareers($adviser, $data);
+        $this->AdviserUtils->saveTags($adviser, $data);
     }
 }
