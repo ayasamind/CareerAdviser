@@ -6,7 +6,7 @@ volumes:
 services:
   nginx:
     image: nginx
-    container_name: "light-nginx"
+    container_name: "ca-com-nginx"
     ports:
       - "${PORT}:80"
     volumes:
@@ -15,14 +15,14 @@ services:
 
   php:
     build: ./server/docker/php
-    container_name: "light-php"
+    container_name: "ca-com-php"
     volumes:
       - ./:/var/www
 
   mysql:
     restart: always
     image: mysql:5.7
-    container_name: "light-mysql"
+    container_name: "ca-com-mysql"
     environment:
       MYSQL_ROOT_PASSWORD: ${DOCKER_DB_ROOT_PASS}
       MYSQL_USER: ${DOCKER_DB_USERNAME}

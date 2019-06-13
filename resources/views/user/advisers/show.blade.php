@@ -73,8 +73,13 @@
 							<h2>空き日程</h2>
 							<section class="advisor_profile_section_body">
 								<span class="mark_exp">○面談可 / △WEB面談のみ可 / ×面談不可</span>
-								<table>
-								<!-- <table class="disabled_calender"> -->
+                                <table
+                                    @auth('user')
+                                        class=""
+                                    @else
+                                        class="disabled_calender"
+                                    @endauth
+                                >
 								    <tbody>
 								    	<tr>
 									      <th class="time"></th>
@@ -409,7 +414,7 @@
 								  <div class="calender_signup_overlay">
 									<div class="calender_signup_overlay_inner">
 										<span class="ls25">面談を予約するには、登録が必要です</span>
-										<a href="https://line.me/R/ti/p/%40gay5294i" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">無料で登録する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+										<a href="{{ route('register') }}" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">無料で登録する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
 									</div>
 								  </div>
 							</section>

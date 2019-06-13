@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\User\UsersController;
 use App\Adviser;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends UsersController
+class HomeController extends Controller
 {
     /**
      * Create a new controller instance.

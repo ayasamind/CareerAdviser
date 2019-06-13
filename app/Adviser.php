@@ -43,6 +43,11 @@ class Adviser extends Authenticatable
         return $this->hasMany('App\AdviserCareer', 'adviser_id');
     }
 
+    public function AdviserSchedule()
+    {
+        return $this->hasMany('App\AdviserSchedule', 'adviser_id');
+    }
+
     public function Tag()
     {
         return $this->belongsToMany('App\Tag');

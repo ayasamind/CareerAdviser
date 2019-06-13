@@ -63,6 +63,8 @@ Route::prefix('adviser')->name('adviser.')->group(function () {
         Route::get("/", "Adviser\HomeController@index")->name('home');
         Route::get("/edit", "Adviser\AdvisersController@edit")->name('advisers.edit');
         Route::put("/update/{id}", "Adviser\AdvisersController@update")->name('advisers.update');
+        Route::get("/schedules/edit", "Adviser\SchedulesController@edit")->name('schedules.edit');
+        Route::put("/schedules/update/{id}", "Adviser\SchedulesController@update")->name('schedules.update');
     });
 });
 

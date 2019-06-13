@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Adviser;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Adviser;
 
-class HomeController extends Controller
+class SchedulesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,10 +24,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function edit()
     {
         $adviser = Auth::user();
-        return view('adviser.home', [
+        return view('adviser.schedules.edit', [
             'adviser' => $adviser
         ]);
     }

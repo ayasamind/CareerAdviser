@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\NewAdviserMail;
 use Illuminate\Support\Facades\DB;
 
-class AdvisersController extends UsersController
+class AdvisersController extends Controller
 {
     public function __construct()
     {
