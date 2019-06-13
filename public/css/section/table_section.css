@@ -1,69 +1,87 @@
 /* table common */
 table {
-  border-collapse: collapse; }
+  border-collapse: collapse;
+}
 
 /* table common */
 /* globall company table */
 .company_table {
   border-right: 1px solid #ccc;
   border-left: 1px solid #ccc;
-  margin-top: 80px; }
+  margin-top: 80px;
+}
 
 .company_table tbody th {
   width: 15%;
   border-right: 1px solid #ccc;
-  text-align: left; }
+  text-align: left;
+}
 
 .company_table th, .company_table td {
   padding: 20px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+}
 
 .company_table th {
   background-color: #fcfcfc;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 @media screen and (max-width: 600px) {
   .company_table {
-    margin-top: 60px; }
+    margin-top: 60px;
+  }
   .company_table th, .company_table td {
     padding: 13px 15px 15px;
-    font-size: 1.3rem; }
+    font-size: 1.3rem;
+  }
   .company_table tbody th {
-    width: 29%; } }
+    width: 29%;
+  }
+}
 
 /* globall company table */
 /* okashina este */
 #price {
-  margin-top: 400px; }
+  margin-top: 400px;
+}
 
 .price_ttl {
   font-size: 2.4rem;
   font-family: serif;
-  color: #ff6c94; }
+  color: #ff6c94;
+}
 
 .price_ttl_sub {
   font-size: 1.5rem;
-  color: #bababa; }
+  color: #bababa;
+}
 
 .price_ttl, .price_ttl_sub {
-  display: inline-block; }
+  display: inline-block;
+}
 
 .price_table {
   font-size: 1.6rem;
-  width: 100%; }
+  width: 100%;
+}
 
 .price_table tr {
-  border-bottom: 1px solid #bababa; }
+  border-bottom: 1px solid #bababa;
+}
 
 .price_table td {
-  padding: 15px 0 14px; }
+  padding: 15px 0 14px;
+}
 
 .price_table tbody {
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+}
 
 .right_cell {
-  text-align: right; }
+  text-align: right;
+}
 
 /* okashina este */

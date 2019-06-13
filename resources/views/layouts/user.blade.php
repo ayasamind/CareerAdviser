@@ -59,8 +59,11 @@
 	<link rel="stylesheet" href="{{ asset("css/section/faq_section.css") }}">
 	<link rel="stylesheet" href="{{ asset("css/section/advisor_card.css") }}">
 	<!-- カスタマイズ -->
-	<!-- <link rel="stylesheet" href="css/main.css") }}"> -->
-	<link rel="stylesheet" href="{{ asset("css/service/service.css") }}">
+    <!-- <link rel="stylesheet" href="css/main.css") }}"> -->
+    <link rel="stylesheet" href="{{ asset('css/main_lp_sub.css') }}">
+    <link rel="stylesheet" href="{{ asset("css/service/service.css") }}">
+    <link rel="stylesheet" href="{{ asset('css/footer_lp_sub.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	<!-- js -->
 	<script src="{{ asset("js/main.js") }}"></script>
 	<script src="{{ asset("js/modernizr-custom.js") }}"></script>
@@ -196,30 +199,48 @@
         </main>
     </div>
     <footer>
-        <div class="footer_inner container_service">
-            <div class="row footer_upper_row space_between center_flex_ver">
-                <div class="footer_brand">
-                    <a href="/">
-                        <img src="{{ asset("img/logo_wh.svg") }}" alt="">
-                    </a>
+        @auth('user')
+            <div class="footer_inner container_service">
+                <div class="row footer_upper_row space_between center_flex_ver">
+                    <div class="footer_brand">
+                        <a href="/">
+                            <img src="{{ asset('img/logo_wh.svg') }}" alt="">
+                        </a>
+                    </div>
+                    <!-- 横積み -->
+                    <div class="footer_nav">
+                        <ul class="flex flex_end">
+                            <li class="footer_nav_li"><a href="" class="fs14 fs13sp">利用規約</a></li>
+                            <li class="footer_nav_li"><a href="" class="fs14 fs13sp">プライバシーポリシー</a></li>
+                            <li class="footer_nav_li"><a href="" class="fs14 fs13sp">運営会社</a></li>
+                            <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">アドバイザー一覧</a></li> -->
+                            <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">よくある質問</a></li> -->
+                            <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">お問い合わせ</a></li> -->
+                        </ul>
+                    </div>
+                    <!-- 横積み -->
                 </div>
-                <!-- 横積み -->
-                <div class="footer_nav">
-                    <ul class="flex flex_end">
-                        <li class="footer_nav_li"><a href="" class="fs14 fs13sp">利用規約</a></li>
-                        <li class="footer_nav_li"><a href="" class="fs14 fs13sp">プライバシーポリシー</a></li>
-                        <li class="footer_nav_li"><a href="" class="fs14 fs13sp">運営会社</a></li>
-                        <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">アドバイザー一覧</a></li> -->
-                        <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">よくある質問</a></li> -->
-                        <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">お問い合わせ</a></li> -->
-                    </ul>
-                </div>
-                <!-- 横積み -->
             </div>
-        </div>
-        <!-- <p class="copyright">Copyright &copy; ownername All Rights Reserved.</p> -->
-        <small class="copyright block fs12 fs11sp">&copy; 2019<!-- <span id="thisYear"></span> --> RASHISA Inc.</small>
+            <!-- <p class="copyright">Copyright &copy; ownername All Rights Reserved.</p> -->
+            <small class="copyright block fs12 fs11sp">&copy; 2019<!-- <span id="thisYear"></span> --> RASHISA Inc.</small>
+        @endauth
+        @guest
+            <div class="footer_inner container">
+                <div class="row footer_upper_row space_between center_flex_ver">
+                    <!-- 横積み -->
+                    <div class="footer_nav">
+                        <ul class="flex flex_end">
+                            <li class="footer_nav_li"><a href="terms.php" class="fs12">利用規約</a></li>
+                            <li class="footer_nav_li"><a href="privacy.php" class="fs12">プライバシーポリシー</a></li>
+                            <li class="footer_nav_li"><a href="{{ route('company') }}" class="fs12">運営会社</a></li>
+                        </ul>
+                    </div>
+                    <small class="copyright_lp_sub block fs12 fs11sp">&copy; 2019<!-- <span id="thisYear"></span> --> RASHISA Inc.</small>
+                </div>
+            </div>
+        @endguest
     </footer>
+
     <script src="{{ asset("js/remodal.js") }}"></script>
     <script src="{{ asset("js/accordion_wp.js") }}""></script>
     <script src="{{ asset("js/lightbox.js") }}""></script>

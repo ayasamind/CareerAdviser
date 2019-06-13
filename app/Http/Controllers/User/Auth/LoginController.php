@@ -54,6 +54,12 @@ class LoginController extends UsersController
 
         $request->session()->invalidate();
 
-        return $this->loggedOut($request) ?: redirect('/login');
+        return $this->loggedOut($request) ?: redirect('/login')->with('success', 'ログアウトしました');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        // ログインしたら、ユーザー自身のプロフィールページへ移動
+        return redirect($this->redirectTo)->with('success', 'ログインしました');
     }
 }

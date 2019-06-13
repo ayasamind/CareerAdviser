@@ -1,51 +1,66 @@
 .error-404 {
   background-color: #fff;
   min-height: 90vh;
-  border-top: 1px solid #000; }
+  border-top: 1px solid #000;
+}
 
 .inner_404 {
   /* header-height */
-  padding-top: 80px; }
+  padding-top: 80px;
+}
 
 .inner_404 h1 {
   font-size: 2.8rem;
-  font-weight: 200; }
+  font-weight: 200;
+}
 
 .msg_404 {
-  font-size: 2.4rem; }
+  font-size: 2.4rem;
+}
 
 .inner_404 h1, .inner_404 p, .content_404, .inner_404 p a {
   text-align: center;
-  color: #000; }
+  color: #000;
+}
 
 .msg_url {
   font-size: 1.6rem;
-  margin-top: 40px; }
+  margin-top: 40px;
+}
 
 .error_msg {
   border: 1px solid #000;
   padding: 20px;
   font-size: 1.6rem;
   margin-top: 10px;
-  display: inline-block; }
+  display: inline-block;
+}
 
 .inner_404 p a {
   margin-top: 30px;
-  line-height: 1; }
+  line-height: 1;
+}
 
 .fa-caret-right {
   font-size: 1.5rem;
-  vertical-align: 0; }
+  vertical-align: 0;
+}
 
 @media screen and (max-width: 600px) {
   .inner_404 h1 {
-    font-size: 2.4rem; }
+    font-size: 2.4rem;
+  }
   .msg_404 {
-    font-size: 2.1rem; }
+    font-size: 2.1rem;
+  }
   .msg_url {
-    font-size: 1.4rem; }
+    font-size: 1.4rem;
+  }
   .error_msg {
     font-size: 1.4rem;
-    padding: 15px; }
+    padding: 15px;
+  }
   .inner_404 {
-    padding-top: 49px !important; } }
+    padding-top: 49px !important;
+  }
+}

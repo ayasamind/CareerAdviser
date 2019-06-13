@@ -1,5 +1,6 @@
 .hv_opacity:hover {
-  opacity: 0.5; }
+  opacity: 0.5;
+}
 
 .team_overlay {
   opacity: 0;
@@ -14,10 +15,12 @@
   transition: all .6s;
   -webkit-transition: all .6s;
   -moz-transition: all .6s;
-  padding: 25px 5px 25px; }
+  padding: 25px 5px 25px;
+}
 
 .team_overlay:hover {
-  opacity: 1; }
+  opacity: 1;
+}
 
 .team_info_wrap {
   -o-transition: all .6s;
@@ -28,18 +31,21 @@
   -moz-transform: translateY(70%);
   -ms-transform: translateY(70%);
   -o-transform: translateY(70%);
-  transform: translateY(70%); }
+  transform: translateY(70%);
+}
 
 .team_overlay:hover .team_info_wrap {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
-  transform: translateY(0); }
+  transform: translateY(0);
+}
 
 .team_overlay:hover .team_info_wrap {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
-  transform: translateY(0); }
+  transform: translateY(0);
+}
