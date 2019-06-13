@@ -1,42 +1,51 @@
 /* ------------------------contact */
 .contact_block {
-  margin-top: 40px; }
+  margin-top: 40px;
+}
 
 .contact_label_wrap {
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 
 .contact_label {
   font-size: 1.4rem;
-  font-weight: 500; }
+  font-weight: 500;
+}
 
 .required {
   font-size: 1.2rem;
   margin-left: 10px;
   display: inline-block;
-  color: #f08300; }
+  color: #f08300;
+}
 
 .contact_input {
   width: 100%;
   height: 50px;
   font-size: 1.5rem;
   padding: 3px 10px 3px;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+}
 
 .contact_input[type="checkbox"] {
   width: auto;
-  font-size: 2rem; }
+  font-size: 2rem;
+}
 
 .contact_input[type="select"] {
-  border: 1px solid #f00; }
+  border: 1px solid #f00;
+}
 
 .contact_textarea {
   width: 100%;
   font-size: 1.5rem;
   padding: 12px 10px 12px;
-  height: auto; }
+  height: auto;
+}
 
 .submit_wrap {
-  margin-top: 55px; }
+  margin-top: 55px;
+}
 
 .contact_submit {
   height: 80px;
@@ -50,12 +59,14 @@
   display: block;
   color: #fff;
   background: #555;
-  border: 2px solid #555; }
+  border: 2px solid #555;
+}
 
 .contact_submit:hover {
   color: #555;
   background: #fff;
-  border: 2px solid #555; }
+  border: 2px solid #555;
+}
 
 .contact_select {
   height: 50px;
@@ -70,42 +81,56 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-border-radius: 0px;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+}
 
 .wpcf7 {
-  width: 100%; }
+  width: 100%;
+}
 
 @media screen and (max-width: 600px) {
   .contact_label {
-    font-size: 1.4rem; }
+    font-size: 1.4rem;
+  }
   .required {
     margin-left: 4px;
-    font-size: 1.1rem; }
+    font-size: 1.1rem;
+  }
   .contact_ttl_bg {
     background-size: 345px auto;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+  }
   .contact_block {
-    margin-top: 23px; }
+    margin-top: 23px;
+  }
   .contact_input {
-    height: 40px;
-    padding: 3px 5px 3px; }
+    height: 52px;
+    padding: 3px 5px 3px;
+  }
   .contact_input .contact_textarea {
-    font-size: 1.6rem !important; }
+    font-size: 1.6rem !important;
+  }
   .contact_select {
     height: 40px;
     padding-left: 5px;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+  }
   .submit_wrap {
-    margin-top: 25px; }
+    margin-top: 25px;
+  }
   .contact_submit {
     height: 54px;
     width: 100%;
     line-height: 52px;
-    font-size: 1.8rem; }
+    font-size: 1.8rem;
+  }
   .wpcf7 {
-    margin-top: 0 !important; }
+    margin-top: 0 !important;
+  }
   .contact_input, .contact_textarea {
     font-size: 1.6rem;
-    padding: 5px 5px 5px; } }
+    padding: 5px 5px 5px;
+  }
+}
 
 /* ------------------------contact */

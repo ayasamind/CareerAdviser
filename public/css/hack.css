@@ -2,17 +2,21 @@
 /* ------------------------windows対応 */
 /* ------------------------windows対応 */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* Chrome */ }
+  /* Chrome */
+}
 
 _::-webkit-full-page-media, _:future, :root .xxxx {
   /* Safari キャッシュ残りやすいのでそれが原因できかないときは command option E */
-  padding: 0px; }
+  padding: 0px;
+}
 
 @-moz-document url-prefix() {
-  /* Firefox */ }
+  /* Firefox */
+}
 
 @media all and (-ms-high-contrast: none) {
-  /* IE10~ */ }
+  /* IE10~ */
+}
 
 /* ランドスケープ対応 */
 @media screen and (max-width: 667px) and (orientation: landscape) {
@@ -38,14 +42,21 @@ _::-webkit-full-page-media, _:future, :root .xxxx {
     -webkit-justify-content: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+  }
   .thanks_inner {
-    margin-top: 0; } }
+    margin-top: 0;
+  }
+}
 
 @media screen and (max-width: 667px) and (orientation: portrait) {
   .landscape_notice {
-    display: none; } }
+    display: none;
+  }
+}
 
 @media screen and (min-width: 668px) {
   .landscape_notice {
-    display: none; } }
+    display: none;
+  }
+}

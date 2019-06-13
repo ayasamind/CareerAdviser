@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* ==========================================================================
    Remodal's necessary styles
    ========================================================================== */
@@ -6,12 +5,14 @@
 html.remodal-is-locked {
   overflow: hidden;
   -ms-touch-action: none;
-  touch-action: none; }
+  touch-action: none;
+}
 
 /* Anti FOUC */
 .remodal,
 [data-remodal-id] {
-  display: none; }
+  display: none;
+}
 
 /* Necessary styles of the overlay */
 .remodal-overlay {
@@ -21,7 +22,8 @@ html.remodal-is-locked {
   right: -5000px;
   bottom: -5000px;
   left: -5000px;
-  display: none; }
+  display: none;
+}
 
 /* Necessary styles of the wrapper */
 .remodal-wrapper {
@@ -34,19 +36,22 @@ html.remodal-is-locked {
   display: none;
   overflow: auto;
   text-align: center;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+}
 
 .remodal-wrapper:after {
   display: inline-block;
   height: 100%;
   margin-left: -0.05em;
-  content: ""; }
+  content: "";
+}
 
 /* Fix iPad, iPhone glitches */
 .remodal-overlay,
 .remodal-wrapper {
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden; }
+  backface-visibility: hidden;
+}
 
 /* Necessary styles of the modal dialog */
 .remodal {
@@ -55,53 +60,10 @@ html.remodal-is-locked {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%; }
+  text-size-adjust: 100%;
+}
 
 .remodal-is-initialized {
   /* Disable Anti-FOUC */
-  display: inline-block; }
-
-/* ------------------カスタマイズ */
-.modal_block a {
-  height: 200px;
-  width: 100%;
-  text-align: center;
-  background: #123456;
-  display: block;
-  color: #fff; }
-
-.remodal {
-  padding: 20px 20px 0; }
-
-.remodal-cancel {
-  background: transparent;
-  color: #000;
-  margin-bottom: 10px; }
-
-.remodal-cancel:hover, .remodal-cancel:focus {
-  background: transparent;
-  border: 1px solid #000;
-  color: #000;
-  -o-transition: .4s;
-  transition: .4s;
-  -webkit-transition: .4s;
-  -moz-transition: .4s; }
-
-.remodal-overlay {
-  background-image: url(../img/remodal_close_btn.png);
-  background-position: top 5030px right 5030px;
-  background-repeat: no-repeat;
-  background-size: 20px;
-  background-color: black !important;
-  opacity: 0.9 !important;
-  z-index: 10000 !important; }
-
-@media screen and (max-width: 1024px) {
-  .remodal-overlay {
-    background-image: none; } }
-
-/* .fixed {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-} */
+  display: inline-block;
+}

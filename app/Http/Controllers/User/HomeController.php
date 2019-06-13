@@ -47,4 +47,9 @@ class HomeController extends UsersController
             'user' => $user
         ]);
     }
+
+    public function company()
+    {
+        return view('user.company');
+    }
 }
