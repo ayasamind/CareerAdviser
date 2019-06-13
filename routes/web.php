@@ -26,6 +26,7 @@ Route::get('/email/show', 'User\Auth\VerificationController@show')->name('verifi
 Route::post("/logout", "User\Auth\LoginController@logout")->name('user.logout');
 Route::get('/advisers', 'User\AdvisersController@index')->name('advisers.index');
 Route::get('/advisers/show/{id}', 'User\AdvisersController@show')->name('advisers.show');
+Route::get('/company', 'User\PageController@company')->name('company');
 
 
 Route::middleware(['auth:user'])->name('user.')->group(function() {

@@ -3,11 +3,126 @@
   background-color: #fdf9ef;
 }
 
+.home_main, .tag_unique_main {
+  background-color: #fff !important;
+}
+
 .container_service {
   /* コンテンツ幅 */
   max-width: 1024px;
   margin: 0 auto;
   width: 100%;
+}
+
+.breadcrumb_arrow {
+  margin: 0 5px 0 0;
+}
+
+.breadcrumb_arrow img {
+  height: 15px;
+}
+
+.breadcrumb_item {
+  font-size: 1.3rem;
+  padding: 2px 0 0 0;
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);
+  }
+}
+
+.md-radio {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.md-radio.md-radio-inline {
+  display: inline-block;
+}
+
+.md-radio input[type="radio"] {
+  display: none;
+}
+
+.md-radio input[type="radio"]:checked + label:before {
+  border-color: #444;
+  -webkit-animation: ripple 0.2s linear forwards;
+  animation: ripple 0.2s linear forwards;
+}
+
+.md-radio input[type="radio"]:checked + label:after {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.md-radio label {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  padding: 0 30px;
+  margin-bottom: 0;
+  cursor: pointer;
+  vertical-align: bottom;
+}
+
+.md-radio label:before, .md-radio label:after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transition-property: border-color, -webkit-transform;
+  transition-property: border-color, -webkit-transform;
+  -o-transition-property: transform, border-color;
+  transition-property: transform, border-color;
+  transition-property: transform, border-color, -webkit-transform;
+}
+
+.md-radio label:before {
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #888;
+}
+
+.md-radio label:after {
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  background: #444;
 }
 
 @media screen and (min-width: 600px) and (max-width: 1080px) {
@@ -37,7 +152,7 @@
 
 header {
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   background-color: #f08300;
   height: 48px;
@@ -128,15 +243,95 @@ header ul li a .nav_user_icon {
   }
 }
 
-#advisor_profile, #mypage {
+#home, #tag_unique {
+  padding: 48px 0 30px;
+}
+
+#home .tag_header, #tag_unique .tag_header {
+  background-color: #f7f7f7;
+  padding: 3px 0 3px;
+}
+
+#home .advisor_box, #tag_unique .advisor_box {
+  width: 32%;
+  margin-right: 2%;
+  margin-top: 15px;
+}
+
+#home .advisor_box:nth-of-type(3n), #tag_unique .advisor_box:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+  #home .advisor_box, #tag_unique .advisor_box {
+    min-height: 620px;
+    width: 48.75%;
+    margin-right: 2.5%;
+  }
+  #home .advisor_box:nth-of-type(3n), #tag_unique .advisor_box:nth-of-type(3n) {
+    margin-right: 2%;
+  }
+  #home .advisor_box:nth-of-type(2n), #tag_unique .advisor_box:nth-of-type(2n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #home .advisor_row, #tag_unique .advisor_row {
+    margin-top: 10px;
+  }
+  #home .advisor_box, #tag_unique .advisor_box {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  #home .advisor_box:nth-of-type(3n), #tag_unique .advisor_box:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  #home .advisor_box:nth-of-type(2n), #tag_unique .advisor_box:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  #home .advisor_box:last-child, #tag_unique .advisor_box:last-child {
+    margin-bottom: 0;
+  }
+}
+
+#tag_unique .tag_header {
+  text-align: center;
+  padding: 12px 0 12px;
+}
+
+#tag_unique .tag_header_inner {
+  position: relative;
+}
+
+#tag_unique .tag_header_back {
+  position: absolute;
+  left: 2px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+  #tag_unique .tag_header_back {
+    left: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #tag_unique .tag_header_back {
+    left: 11px;
+  }
+}
+
+#advisor_profile, #mypage, #confirm {
   padding: 70px 0 25px;
 }
 
-#advisor_profile section, #mypage section {
+#advisor_profile section, #mypage section, #confirm section {
   background-color: #fff;
 }
 
-#advisor_profile .advisor_profile_main_row h2, #advisor_profile .mypage_main_row h2, #mypage .advisor_profile_main_row h2, #mypage .mypage_main_row h2 {
+#advisor_profile .advisor_profile_main_row h2, #advisor_profile .mypage_main_row h2, #advisor_profile .confirm_main_row h2, #mypage .advisor_profile_main_row h2, #mypage .mypage_main_row h2, #mypage .confirm_main_row h2, #confirm .advisor_profile_main_row h2, #confirm .mypage_main_row h2, #confirm .confirm_main_row h2 {
   font-size: 1.6rem;
   line-height: 1;
   background-color: #f7f7f7;
@@ -147,79 +342,79 @@ header ul li a .nav_user_icon {
   border-left: 1px solid #ddd;
 }
 
-#advisor_profile .advisor_profile_main_row .advisor_profile_section_body, #advisor_profile .advisor_profile_main_row .mypage_section_body, #advisor_profile .mypage_main_row .advisor_profile_section_body, #advisor_profile .mypage_main_row .mypage_section_body, #mypage .advisor_profile_main_row .advisor_profile_section_body, #mypage .advisor_profile_main_row .mypage_section_body, #mypage .mypage_main_row .advisor_profile_section_body, #mypage .mypage_main_row .mypage_section_body {
+#advisor_profile .advisor_profile_main_row .advisor_profile_section_body, #advisor_profile .advisor_profile_main_row .mypage_section_body, #advisor_profile .mypage_main_row .advisor_profile_section_body, #advisor_profile .mypage_main_row .mypage_section_body, #advisor_profile .confirm_main_row .advisor_profile_section_body, #advisor_profile .confirm_main_row .mypage_section_body, #mypage .advisor_profile_main_row .advisor_profile_section_body, #mypage .advisor_profile_main_row .mypage_section_body, #mypage .mypage_main_row .advisor_profile_section_body, #mypage .mypage_main_row .mypage_section_body, #mypage .confirm_main_row .advisor_profile_section_body, #mypage .confirm_main_row .mypage_section_body, #confirm .advisor_profile_main_row .advisor_profile_section_body, #confirm .advisor_profile_main_row .mypage_section_body, #confirm .mypage_main_row .advisor_profile_section_body, #confirm .mypage_main_row .mypage_section_body, #confirm .confirm_main_row .advisor_profile_section_body, #confirm .confirm_main_row .mypage_section_body {
   padding: 15px 18px 15px;
   border-radius: 0 0 5px 5px;
   border: 1px solid #ddd;
 }
 
-#advisor_profile .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .advisor_profile_main_row .mypage_section_body .mark_exp, #advisor_profile .mypage_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .mypage_main_row .mypage_section_body .mark_exp, #mypage .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #mypage .advisor_profile_main_row .mypage_section_body .mark_exp, #mypage .mypage_main_row .advisor_profile_section_body .mark_exp, #mypage .mypage_main_row .mypage_section_body .mark_exp {
+#advisor_profile .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .advisor_profile_main_row .mypage_section_body .mark_exp, #advisor_profile .mypage_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .mypage_main_row .mypage_section_body .mark_exp, #advisor_profile .confirm_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .confirm_main_row .mypage_section_body .mark_exp, #mypage .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #mypage .advisor_profile_main_row .mypage_section_body .mark_exp, #mypage .mypage_main_row .advisor_profile_section_body .mark_exp, #mypage .mypage_main_row .mypage_section_body .mark_exp, #mypage .confirm_main_row .advisor_profile_section_body .mark_exp, #mypage .confirm_main_row .mypage_section_body .mark_exp, #confirm .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #confirm .advisor_profile_main_row .mypage_section_body .mark_exp, #confirm .mypage_main_row .advisor_profile_section_body .mark_exp, #confirm .mypage_main_row .mypage_section_body .mark_exp, #confirm .confirm_main_row .advisor_profile_section_body .mark_exp, #confirm .confirm_main_row .mypage_section_body .mark_exp {
   font-size: 1.1rem;
   font-weight: 700;
   margin: 0 0 6px;
   display: inline-block;
 }
 
-#advisor_profile .advisor_profile_main_row .person_info_wrap .person_name, #advisor_profile .mypage_main_row .person_info_wrap .person_name, #mypage .advisor_profile_main_row .person_info_wrap .person_name, #mypage .mypage_main_row .person_info_wrap .person_name {
+#advisor_profile .advisor_profile_main_row .person_info_wrap .person_name, #advisor_profile .mypage_main_row .person_info_wrap .person_name, #advisor_profile .confirm_main_row .person_info_wrap .person_name, #mypage .advisor_profile_main_row .person_info_wrap .person_name, #mypage .mypage_main_row .person_info_wrap .person_name, #mypage .confirm_main_row .person_info_wrap .person_name, #confirm .advisor_profile_main_row .person_info_wrap .person_name, #confirm .mypage_main_row .person_info_wrap .person_name, #confirm .confirm_main_row .person_info_wrap .person_name {
   font-size: 2.6rem;
 }
 
-#advisor_profile .advisor_profile_main_row .person_info_wrap dl, #advisor_profile .mypage_main_row .person_info_wrap dl, #mypage .advisor_profile_main_row .person_info_wrap dl, #mypage .mypage_main_row .person_info_wrap dl {
+#advisor_profile .advisor_profile_main_row .person_info_wrap dl, #advisor_profile .mypage_main_row .person_info_wrap dl, #advisor_profile .confirm_main_row .person_info_wrap dl, #mypage .advisor_profile_main_row .person_info_wrap dl, #mypage .mypage_main_row .person_info_wrap dl, #mypage .confirm_main_row .person_info_wrap dl, #confirm .advisor_profile_main_row .person_info_wrap dl, #confirm .mypage_main_row .person_info_wrap dl, #confirm .confirm_main_row .person_info_wrap dl {
   margin: 0 0 0 10px;
 }
 
-#advisor_profile .advisor_profile_main_row .person_info_wrap dl li, #advisor_profile .mypage_main_row .person_info_wrap dl li, #mypage .advisor_profile_main_row .person_info_wrap dl li, #mypage .mypage_main_row .person_info_wrap dl li {
+#advisor_profile .advisor_profile_main_row .person_info_wrap dl li, #advisor_profile .mypage_main_row .person_info_wrap dl li, #advisor_profile .confirm_main_row .person_info_wrap dl li, #mypage .advisor_profile_main_row .person_info_wrap dl li, #mypage .mypage_main_row .person_info_wrap dl li, #mypage .confirm_main_row .person_info_wrap dl li, #confirm .advisor_profile_main_row .person_info_wrap dl li, #confirm .mypage_main_row .person_info_wrap dl li, #confirm .confirm_main_row .person_info_wrap dl li {
   display: inline-block;
 }
 
-#advisor_profile .advisor_col_l, #mypage .advisor_col_l {
+#advisor_profile .advisor_col_l, #mypage .advisor_col_l, #confirm .advisor_col_l {
   width: 70%;
   margin-right: 2%;
 }
 
-#advisor_profile .advisor_col_r, #mypage .advisor_col_r {
+#advisor_profile .advisor_col_r, #mypage .advisor_col_r, #confirm .advisor_col_r {
   width: 28%;
 }
 
-#advisor_profile .person_icon_wrap, #mypage .person_icon_wrap {
+#advisor_profile .person_icon_wrap, #mypage .person_icon_wrap, #confirm .person_icon_wrap {
   margin-right: 2%;
   width: 20%;
 }
 
-#advisor_profile .person_icon_wrap img, #mypage .person_icon_wrap img {
+#advisor_profile .person_icon_wrap img, #mypage .person_icon_wrap img, #confirm .person_icon_wrap img {
   width: 100%;
   border-radius: 10000px;
 }
 
-#advisor_profile .person_female .person_icon_wrap img, #mypage .person_female .person_icon_wrap img {
+#advisor_profile .person_female .person_icon_wrap img, #mypage .person_female .person_icon_wrap img, #confirm .person_female .person_icon_wrap img {
   border: 5px solid #fabe00;
 }
 
-#advisor_profile .person_female .person_info_wrap .male_li, #mypage .person_female .person_info_wrap .male_li {
+#advisor_profile .person_female .person_info_wrap .male_li, #mypage .person_female .person_info_wrap .male_li, #confirm .person_female .person_info_wrap .male_li {
   display: none;
 }
 
-#advisor_profile .person_male .person_icon_wrap img, #mypage .person_male .person_icon_wrap img {
+#advisor_profile .person_male .person_icon_wrap img, #mypage .person_male .person_icon_wrap img, #confirm .person_male .person_icon_wrap img {
   border: 5px solid #66A0FF;
 }
 
-#advisor_profile .person_male .person_info_wrap .female_li, #mypage .person_male .person_info_wrap .female_li {
+#advisor_profile .person_male .person_info_wrap .female_li, #mypage .person_male .person_info_wrap .female_li, #confirm .person_male .person_info_wrap .female_li {
   display: none;
 }
 
-#advisor_profile .person_info_wrap, #mypage .person_info_wrap {
+#advisor_profile .person_info_wrap, #mypage .person_info_wrap, #confirm .person_info_wrap {
   width: 78%;
 }
 
-#advisor_profile .person_info_wrap .person_name, #mypage .person_info_wrap .person_name {
+#advisor_profile .person_info_wrap .person_name, #mypage .person_info_wrap .person_name, #confirm .person_info_wrap .person_name {
   font-size: 2.6rem;
 }
 
-#advisor_profile .person_info_wrap dl, #mypage .person_info_wrap dl {
+#advisor_profile .person_info_wrap dl, #mypage .person_info_wrap dl, #confirm .person_info_wrap dl {
   margin: 0 0 0 10px;
 }
 
-#advisor_profile .person_info_wrap dl li, #mypage .person_info_wrap dl li {
+#advisor_profile .person_info_wrap dl li, #mypage .person_info_wrap dl li, #confirm .person_info_wrap dl li {
   display: inline-block;
   font-size: 1.3rem;
   margin: 0 10px 0;
@@ -227,23 +422,23 @@ header ul li a .nav_user_icon {
   color: #888;
 }
 
-#advisor_profile .person_info_wrap dl li img, #mypage .person_info_wrap dl li img {
+#advisor_profile .person_info_wrap dl li img, #mypage .person_info_wrap dl li img, #confirm .person_info_wrap dl li img {
   margin-right: 5px;
 }
 
-#advisor_profile .person_info_wrap dl li .gender_icon, #mypage .person_info_wrap dl li .gender_icon {
+#advisor_profile .person_info_wrap dl li .gender_icon, #mypage .person_info_wrap dl li .gender_icon, #confirm .person_info_wrap dl li .gender_icon {
   width: 15px;
 }
 
-#advisor_profile .person_info_wrap dl li .area_icon, #mypage .person_info_wrap dl li .area_icon {
+#advisor_profile .person_info_wrap dl li .area_icon, #mypage .person_info_wrap dl li .area_icon, #confirm .person_info_wrap dl li .area_icon {
   width: 17px;
 }
 
-#advisor_profile .person_info_wrap dl li .reject_icon, #mypage .person_info_wrap dl li .reject_icon {
+#advisor_profile .person_info_wrap dl li .reject_icon, #mypage .person_info_wrap dl li .reject_icon, #confirm .person_info_wrap dl li .reject_icon {
   width: 20px;
 }
 
-#advisor_profile .advisor_balloon, #mypage .advisor_balloon {
+#advisor_profile .advisor_balloon, #mypage .advisor_balloon, #confirm .advisor_balloon {
   font-size: 1.4rem;
   position: relative;
   padding: 10px 15px 10px;
@@ -252,146 +447,162 @@ header ul li a .nav_user_icon {
   line-height: 1.45;
 }
 
-#advisor_profile .advisor_balloon_male, #mypage .advisor_balloon_male {
+#advisor_profile .advisor_balloon_male, #mypage .advisor_balloon_male, #confirm .advisor_balloon_male {
   color: #fff;
   background-color: #66A0FF;
 }
 
-#advisor_profile .advisor_balloon_male::before, #mypage .advisor_balloon_male::before {
+#advisor_profile .advisor_balloon_male::before, #mypage .advisor_balloon_male::before, #confirm .advisor_balloon_male::before {
   border-left: 20px solid #66A0FF;
   border-top: 20px solid #66A0FF;
 }
 
-#advisor_profile .advisor_balloon_female, #mypage .advisor_balloon_female {
+#advisor_profile .advisor_balloon_female, #mypage .advisor_balloon_female, #confirm .advisor_balloon_female {
   color: #000;
   background-color: #faf2d7;
 }
 
-#advisor_profile .advisor_balloon_female::before, #mypage .advisor_balloon_female::before {
+#advisor_profile .advisor_balloon_female::before, #mypage .advisor_balloon_female::before, #confirm .advisor_balloon_female::before {
   border-left: 20px solid #faf2d7;
   border-top: 20px solid #faf2d7;
 }
 
-#advisor_profile .self_introduction_section, #advisor_profile .work_history_section, #mypage .self_introduction_section, #mypage .work_history_section {
+#advisor_profile .self_introduction_section, #advisor_profile .work_history_section, #mypage .self_introduction_section, #mypage .work_history_section, #confirm .self_introduction_section, #confirm .work_history_section {
   margin: 30px 0 0;
 }
 
-#advisor_profile .self_introduction_section h3, #advisor_profile .work_history_section h3, #mypage .self_introduction_section h3, #mypage .work_history_section h3 {
+#advisor_profile .self_introduction_section h3, #advisor_profile .work_history_section h3, #mypage .self_introduction_section h3, #mypage .work_history_section h3, #confirm .self_introduction_section h3, #confirm .work_history_section h3 {
   font-size: 1.5rem;
   padding: 0 0 4px 7px;
   border-left: 4px solid #f08300;
   border-bottom: 1px dotted #ccc;
 }
 
-#advisor_profile .self_introduction_section, #mypage .self_introduction_section {
+#advisor_profile .self_introduction_section, #mypage .self_introduction_section, #confirm .self_introduction_section {
   font-size: 1.3rem;
 }
 
-#advisor_profile .self_introduction_section > p, #mypage .self_introduction_section > p {
+#advisor_profile .self_introduction_section > p, #mypage .self_introduction_section > p, #confirm .self_introduction_section > p {
   margin: 10px 0 0;
   line-height: 1.8;
   letter-spacing: 0.05em;
 }
 
-#advisor_profile .work_history_section dl, #mypage .work_history_section dl {
+#advisor_profile .work_history_section dl, #mypage .work_history_section dl, #confirm .work_history_section dl {
   margin: 6px 0 0;
 }
 
-#advisor_profile .work_history_section dl li, #mypage .work_history_section dl li {
+#advisor_profile .work_history_section dl li, #mypage .work_history_section dl li, #confirm .work_history_section dl li {
   font-size: 1.4rem;
   padding: 11px 0 10px;
   line-height: 2;
   border-bottom: 1px dotted #ccc;
 }
 
-#advisor_profile .work_history_section dl li span, #mypage .work_history_section dl li span {
+#advisor_profile .work_history_section dl li span, #mypage .work_history_section dl li span, #confirm .work_history_section dl li span {
   font-size: 1.2rem;
   color: #888;
   margin: 0 8px 0 0;
 }
 
+#advisor_profile .place_section h3, #mypage .place_section h3, #confirm .place_section h3 {
+  font-size: 1.5rem;
+  border-bottom: 1px dotted #ccc;
+  padding: 0 0 4px;
+}
+
+#advisor_profile .place_section p, #mypage .place_section p, #confirm .place_section p {
+  margin: 0 0 15px;
+  font-size: 1.1rem;
+  padding: 4px 0 0;
+}
+
+#advisor_profile .place_section iframe, #mypage .place_section iframe, #confirm .place_section iframe {
+  width: 100%;
+}
+
 @media screen and (max-width: 1080px) {
-  #advisor_profile, #mypage {
+  #advisor_profile, #mypage, #confirm {
     padding: 58px 10px 30px;
   }
-  #advisor_profile .advisor_col_l, #advisor_profile .mypage_col_l, #mypage .advisor_col_l, #mypage .mypage_col_l {
+  #advisor_profile .advisor_col_l, #advisor_profile .mypage_col_l, #mypage .advisor_col_l, #mypage .mypage_col_l, #confirm .advisor_col_l, #confirm .mypage_col_l {
     width: 100%;
     margin-right: 0;
   }
-  #advisor_profile .advisor_col_r, #mypage .advisor_col_r {
+  #advisor_profile .advisor_col_r, #mypage .advisor_col_r, #confirm .advisor_col_r {
     width: 100%;
     margin: 15px 0 0;
   }
 }
 
 @media screen and (max-width: 600px) {
-  #advisor_profile, #mypage {
+  #advisor_profile, #mypage, #confirm {
     padding: 60px auto 30px;
   }
-  #advisor_profile .advisor_profile_main_row .advisor_profile_section_body, #advisor_profile .advisor_profile_main_row .mypage_section_body, #advisor_profile .mypage_main_row .advisor_profile_section_body, #advisor_profile .mypage_main_row .mypage_section_body, #mypage .advisor_profile_main_row .advisor_profile_section_body, #mypage .advisor_profile_main_row .mypage_section_body, #mypage .mypage_main_row .advisor_profile_section_body, #mypage .mypage_main_row .mypage_section_body {
+  #advisor_profile .advisor_profile_main_row .advisor_profile_section_body, #advisor_profile .advisor_profile_main_row .mypage_section_body, #advisor_profile .mypage_main_row .advisor_profile_section_body, #advisor_profile .mypage_main_row .mypage_section_body, #advisor_profile .confirm_main_row .advisor_profile_section_body, #advisor_profile .confirm_main_row .mypage_section_body, #mypage .advisor_profile_main_row .advisor_profile_section_body, #mypage .advisor_profile_main_row .mypage_section_body, #mypage .mypage_main_row .advisor_profile_section_body, #mypage .mypage_main_row .mypage_section_body, #mypage .confirm_main_row .advisor_profile_section_body, #mypage .confirm_main_row .mypage_section_body, #confirm .advisor_profile_main_row .advisor_profile_section_body, #confirm .advisor_profile_main_row .mypage_section_body, #confirm .mypage_main_row .advisor_profile_section_body, #confirm .mypage_main_row .mypage_section_body, #confirm .confirm_main_row .advisor_profile_section_body, #confirm .confirm_main_row .mypage_section_body {
     padding: 15px 12px 15px;
   }
-  #advisor_profile .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .advisor_profile_main_row .mypage_section_body .mark_exp, #advisor_profile .mypage_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .mypage_main_row .mypage_section_body .mark_exp, #mypage .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #mypage .advisor_profile_main_row .mypage_section_body .mark_exp, #mypage .mypage_main_row .advisor_profile_section_body .mark_exp, #mypage .mypage_main_row .mypage_section_body .mark_exp {
+  #advisor_profile .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .advisor_profile_main_row .mypage_section_body .mark_exp, #advisor_profile .mypage_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .mypage_main_row .mypage_section_body .mark_exp, #advisor_profile .confirm_main_row .advisor_profile_section_body .mark_exp, #advisor_profile .confirm_main_row .mypage_section_body .mark_exp, #mypage .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #mypage .advisor_profile_main_row .mypage_section_body .mark_exp, #mypage .mypage_main_row .advisor_profile_section_body .mark_exp, #mypage .mypage_main_row .mypage_section_body .mark_exp, #mypage .confirm_main_row .advisor_profile_section_body .mark_exp, #mypage .confirm_main_row .mypage_section_body .mark_exp, #confirm .advisor_profile_main_row .advisor_profile_section_body .mark_exp, #confirm .advisor_profile_main_row .mypage_section_body .mark_exp, #confirm .mypage_main_row .advisor_profile_section_body .mark_exp, #confirm .mypage_main_row .mypage_section_body .mark_exp, #confirm .confirm_main_row .advisor_profile_section_body .mark_exp, #confirm .confirm_main_row .mypage_section_body .mark_exp {
     font-size: 1.1rem;
     font-weight: 700;
     margin: 0 0 6px;
     display: inline-block;
   }
-  #advisor_profile .advisor_profile_main_row .person_icon_wrap, #advisor_profile .mypage_main_row .person_icon_wrap, #mypage .advisor_profile_main_row .person_icon_wrap, #mypage .mypage_main_row .person_icon_wrap {
+  #advisor_profile .advisor_profile_main_row .person_icon_wrap, #advisor_profile .mypage_main_row .person_icon_wrap, #advisor_profile .confirm_main_row .person_icon_wrap, #mypage .advisor_profile_main_row .person_icon_wrap, #mypage .mypage_main_row .person_icon_wrap, #mypage .confirm_main_row .person_icon_wrap, #confirm .advisor_profile_main_row .person_icon_wrap, #confirm .mypage_main_row .person_icon_wrap, #confirm .confirm_main_row .person_icon_wrap {
     margin-right: 3%;
     width: 27%;
   }
-  #advisor_profile .advisor_profile_main_row .person_info_wrap, #advisor_profile .mypage_main_row .person_info_wrap, #mypage .advisor_profile_main_row .person_info_wrap, #mypage .mypage_main_row .person_info_wrap {
+  #advisor_profile .advisor_profile_main_row .person_info_wrap, #advisor_profile .mypage_main_row .person_info_wrap, #advisor_profile .confirm_main_row .person_info_wrap, #mypage .advisor_profile_main_row .person_info_wrap, #mypage .mypage_main_row .person_info_wrap, #mypage .confirm_main_row .person_info_wrap, #confirm .advisor_profile_main_row .person_info_wrap, #confirm .mypage_main_row .person_info_wrap, #confirm .confirm_main_row .person_info_wrap {
     width: 70%;
   }
-  #advisor_profile .advisor_profile_main_row .person_info_wrap .person_info_wrap_inner, #advisor_profile .mypage_main_row .person_info_wrap .person_info_wrap_inner, #mypage .advisor_profile_main_row .person_info_wrap .person_info_wrap_inner, #mypage .mypage_main_row .person_info_wrap .person_info_wrap_inner {
+  #advisor_profile .advisor_profile_main_row .person_info_wrap .person_info_wrap_inner, #advisor_profile .mypage_main_row .person_info_wrap .person_info_wrap_inner, #advisor_profile .confirm_main_row .person_info_wrap .person_info_wrap_inner, #mypage .advisor_profile_main_row .person_info_wrap .person_info_wrap_inner, #mypage .mypage_main_row .person_info_wrap .person_info_wrap_inner, #mypage .confirm_main_row .person_info_wrap .person_info_wrap_inner, #confirm .advisor_profile_main_row .person_info_wrap .person_info_wrap_inner, #confirm .mypage_main_row .person_info_wrap .person_info_wrap_inner, #confirm .confirm_main_row .person_info_wrap .person_info_wrap_inner {
     display: block;
   }
-  #advisor_profile .advisor_profile_main_row .person_info_wrap .person_name, #advisor_profile .mypage_main_row .person_info_wrap .person_name, #mypage .advisor_profile_main_row .person_info_wrap .person_name, #mypage .mypage_main_row .person_info_wrap .person_name {
+  #advisor_profile .advisor_profile_main_row .person_info_wrap .person_name, #advisor_profile .mypage_main_row .person_info_wrap .person_name, #advisor_profile .confirm_main_row .person_info_wrap .person_name, #mypage .advisor_profile_main_row .person_info_wrap .person_name, #mypage .mypage_main_row .person_info_wrap .person_name, #mypage .confirm_main_row .person_info_wrap .person_name, #confirm .advisor_profile_main_row .person_info_wrap .person_name, #confirm .mypage_main_row .person_info_wrap .person_name, #confirm .confirm_main_row .person_info_wrap .person_name {
     font-size: 2rem;
   }
-  #advisor_profile .advisor_profile_main_row .person_info_wrap dl, #advisor_profile .mypage_main_row .person_info_wrap dl, #mypage .advisor_profile_main_row .person_info_wrap dl, #mypage .mypage_main_row .person_info_wrap dl {
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl, #advisor_profile .mypage_main_row .person_info_wrap dl, #advisor_profile .confirm_main_row .person_info_wrap dl, #mypage .advisor_profile_main_row .person_info_wrap dl, #mypage .mypage_main_row .person_info_wrap dl, #mypage .confirm_main_row .person_info_wrap dl, #confirm .advisor_profile_main_row .person_info_wrap dl, #confirm .mypage_main_row .person_info_wrap dl, #confirm .confirm_main_row .person_info_wrap dl {
     margin: 0;
   }
-  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li, #advisor_profile .mypage_main_row .person_info_wrap dl li, #mypage .advisor_profile_main_row .person_info_wrap dl li, #mypage .mypage_main_row .person_info_wrap dl li {
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li, #advisor_profile .mypage_main_row .person_info_wrap dl li, #advisor_profile .confirm_main_row .person_info_wrap dl li, #mypage .advisor_profile_main_row .person_info_wrap dl li, #mypage .mypage_main_row .person_info_wrap dl li, #mypage .confirm_main_row .person_info_wrap dl li, #confirm .advisor_profile_main_row .person_info_wrap dl li, #confirm .mypage_main_row .person_info_wrap dl li, #confirm .confirm_main_row .person_info_wrap dl li {
     display: inline-block;
     margin: 6px 10px 4px 0;
   }
-  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li .gender_icon, #advisor_profile .mypage_main_row .person_info_wrap dl li .gender_icon, #mypage .advisor_profile_main_row .person_info_wrap dl li .gender_icon, #mypage .mypage_main_row .person_info_wrap dl li .gender_icon {
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li .gender_icon, #advisor_profile .mypage_main_row .person_info_wrap dl li .gender_icon, #advisor_profile .confirm_main_row .person_info_wrap dl li .gender_icon, #mypage .advisor_profile_main_row .person_info_wrap dl li .gender_icon, #mypage .mypage_main_row .person_info_wrap dl li .gender_icon, #mypage .confirm_main_row .person_info_wrap dl li .gender_icon, #confirm .advisor_profile_main_row .person_info_wrap dl li .gender_icon, #confirm .mypage_main_row .person_info_wrap dl li .gender_icon, #confirm .confirm_main_row .person_info_wrap dl li .gender_icon {
     width: 10px;
   }
-  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li .area_icon, #advisor_profile .mypage_main_row .person_info_wrap dl li .area_icon, #mypage .advisor_profile_main_row .person_info_wrap dl li .area_icon, #mypage .mypage_main_row .person_info_wrap dl li .area_icon {
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li .area_icon, #advisor_profile .mypage_main_row .person_info_wrap dl li .area_icon, #advisor_profile .confirm_main_row .person_info_wrap dl li .area_icon, #mypage .advisor_profile_main_row .person_info_wrap dl li .area_icon, #mypage .mypage_main_row .person_info_wrap dl li .area_icon, #mypage .confirm_main_row .person_info_wrap dl li .area_icon, #confirm .advisor_profile_main_row .person_info_wrap dl li .area_icon, #confirm .mypage_main_row .person_info_wrap dl li .area_icon, #confirm .confirm_main_row .person_info_wrap dl li .area_icon {
     width: 12px;
   }
-  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li .reject_icon, #advisor_profile .mypage_main_row .person_info_wrap dl li .reject_icon, #mypage .advisor_profile_main_row .person_info_wrap dl li .reject_icon, #mypage .mypage_main_row .person_info_wrap dl li .reject_icon {
+  #advisor_profile .advisor_profile_main_row .person_info_wrap dl li .reject_icon, #advisor_profile .mypage_main_row .person_info_wrap dl li .reject_icon, #advisor_profile .confirm_main_row .person_info_wrap dl li .reject_icon, #mypage .advisor_profile_main_row .person_info_wrap dl li .reject_icon, #mypage .mypage_main_row .person_info_wrap dl li .reject_icon, #mypage .confirm_main_row .person_info_wrap dl li .reject_icon, #confirm .advisor_profile_main_row .person_info_wrap dl li .reject_icon, #confirm .mypage_main_row .person_info_wrap dl li .reject_icon, #confirm .confirm_main_row .person_info_wrap dl li .reject_icon {
     width: 14px;
   }
-  #advisor_profile .advisor_balloon, #mypage .advisor_balloon {
+  #advisor_profile .advisor_balloon, #mypage .advisor_balloon, #confirm .advisor_balloon {
     font-size: 1.3rem;
     padding: 9px 10px 9px;
     border-radius: 8px;
   }
 }
 
-#advisor_profile .review_section, #advisor_profile .reserved_section, #mypage .review_section, #mypage .reserved_section {
+#advisor_profile .review_section, #advisor_profile .reserved_section, #mypage .review_section, #mypage .reserved_section, #confirm .review_section, #confirm .reserved_section {
   position: -webkit-sticky;
   position: sticky;
   top: 2%;
 }
 
-#advisor_profile .review_section .review_block, #advisor_profile .review_section .reserved_block, #advisor_profile .reserved_section .review_block, #advisor_profile .reserved_section .reserved_block, #mypage .review_section .review_block, #mypage .review_section .reserved_block, #mypage .reserved_section .review_block, #mypage .reserved_section .reserved_block {
+#advisor_profile .review_section .review_block, #advisor_profile .review_section .reserved_block, #advisor_profile .reserved_section .review_block, #advisor_profile .reserved_section .reserved_block, #mypage .review_section .review_block, #mypage .review_section .reserved_block, #mypage .reserved_section .review_block, #mypage .reserved_section .reserved_block, #confirm .review_section .review_block, #confirm .review_section .reserved_block, #confirm .reserved_section .review_block, #confirm .reserved_section .reserved_block {
   margin: 0 0 1.4rem;
   padding: 0 0 18px;
   border-bottom: 1px dotted #ccc;
 }
 
-#advisor_profile .review_section .review_block:last-child, #advisor_profile .review_section .reserved_block:last-child, #advisor_profile .reserved_section .review_block:last-child, #advisor_profile .reserved_section .reserved_block:last-child, #mypage .review_section .review_block:last-child, #mypage .review_section .reserved_block:last-child, #mypage .reserved_section .review_block:last-child, #mypage .reserved_section .reserved_block:last-child {
+#advisor_profile .review_section .review_block:last-child, #advisor_profile .review_section .reserved_block:last-child, #advisor_profile .reserved_section .review_block:last-child, #advisor_profile .reserved_section .reserved_block:last-child, #mypage .review_section .review_block:last-child, #mypage .review_section .reserved_block:last-child, #mypage .reserved_section .review_block:last-child, #mypage .reserved_section .reserved_block:last-child, #confirm .review_section .review_block:last-child, #confirm .review_section .reserved_block:last-child, #confirm .reserved_section .review_block:last-child, #confirm .reserved_section .reserved_block:last-child {
   margin: 0;
   padding: 0;
   border-bottom: none;
 }
 
-#advisor_profile .review_section .stars, #advisor_profile .reserved_section .stars, #mypage .review_section .stars, #mypage .reserved_section .stars {
+#advisor_profile .review_section .stars, #advisor_profile .reserved_section .stars, #mypage .review_section .stars, #mypage .reserved_section .stars, #confirm .review_section .stars, #confirm .reserved_section .stars {
   font-size: 1.6rem;
   position: relative;
   display: inline-block;
@@ -402,7 +613,7 @@ header ul li a .nav_user_icon {
   vertical-align: 2px;
 }
 
-#advisor_profile .review_section .stars:before, #advisor_profile .review_section .stars:after, #advisor_profile .reserved_section .stars:before, #advisor_profile .reserved_section .stars:after, #mypage .review_section .stars:before, #mypage .review_section .stars:after, #mypage .reserved_section .stars:before, #mypage .reserved_section .stars:after {
+#advisor_profile .review_section .stars:before, #advisor_profile .review_section .stars:after, #advisor_profile .reserved_section .stars:before, #advisor_profile .reserved_section .stars:after, #mypage .review_section .stars:before, #mypage .review_section .stars:after, #mypage .reserved_section .stars:before, #mypage .reserved_section .stars:after, #confirm .review_section .stars:before, #confirm .review_section .stars:after, #confirm .reserved_section .stars:before, #confirm .reserved_section .stars:after {
   position: absolute;
   top: 2px;
   left: 0;
@@ -414,42 +625,42 @@ header ul li a .nav_user_icon {
   speak: none;
 }
 
-#advisor_profile .review_section .stars:before, #advisor_profile .reserved_section .stars:before, #mypage .review_section .stars:before, #mypage .reserved_section .stars:before {
+#advisor_profile .review_section .stars:before, #advisor_profile .reserved_section .stars:before, #mypage .review_section .stars:before, #mypage .reserved_section .stars:before, #confirm .review_section .stars:before, #confirm .reserved_section .stars:before {
   color: #ccc;
 }
 
-#advisor_profile .review_section .stars:after, #advisor_profile .reserved_section .stars:after, #mypage .review_section .stars:after, #mypage .reserved_section .stars:after {
+#advisor_profile .review_section .stars:after, #advisor_profile .reserved_section .stars:after, #mypage .review_section .stars:after, #mypage .reserved_section .stars:after, #confirm .review_section .stars:after, #confirm .reserved_section .stars:after {
   color: #f08300;
   overflow: hidden;
   white-space: nowrap;
 }
 
-#advisor_profile .review_section .star3:after, #advisor_profile .reserved_section .star3:after, #mypage .review_section .star3:after, #mypage .reserved_section .star3:after {
+#advisor_profile .review_section .star3:after, #advisor_profile .reserved_section .star3:after, #mypage .review_section .star3:after, #mypage .reserved_section .star3:after, #confirm .review_section .star3:after, #confirm .reserved_section .star3:after {
   width: 48px;
 }
 
-#advisor_profile .review_section .star5:after, #advisor_profile .reserved_section .star5:after, #mypage .review_section .star5:after, #mypage .reserved_section .star5:after {
+#advisor_profile .review_section .star5:after, #advisor_profile .reserved_section .star5:after, #mypage .review_section .star5:after, #mypage .reserved_section .star5:after, #confirm .review_section .star5:after, #confirm .reserved_section .star5:after {
   width: 80px;
 }
 
-#advisor_profile .review_section .review_user_icon, #advisor_profile .review_section .reserved_user_icon, #advisor_profile .reserved_section .review_user_icon, #advisor_profile .reserved_section .reserved_user_icon, #mypage .review_section .review_user_icon, #mypage .review_section .reserved_user_icon, #mypage .reserved_section .review_user_icon, #mypage .reserved_section .reserved_user_icon {
+#advisor_profile .review_section .review_user_icon, #advisor_profile .review_section .reserved_user_icon, #advisor_profile .reserved_section .review_user_icon, #advisor_profile .reserved_section .reserved_user_icon, #mypage .review_section .review_user_icon, #mypage .review_section .reserved_user_icon, #mypage .reserved_section .review_user_icon, #mypage .reserved_section .reserved_user_icon, #confirm .review_section .review_user_icon, #confirm .review_section .reserved_user_icon, #confirm .reserved_section .review_user_icon, #confirm .reserved_section .reserved_user_icon {
   width: 40px;
   display: inline-block;
 }
 
-#advisor_profile .review_section .review_user_icon img, #advisor_profile .review_section .reserved_user_icon img, #advisor_profile .reserved_section .review_user_icon img, #advisor_profile .reserved_section .reserved_user_icon img, #mypage .review_section .review_user_icon img, #mypage .review_section .reserved_user_icon img, #mypage .reserved_section .review_user_icon img, #mypage .reserved_section .reserved_user_icon img {
+#advisor_profile .review_section .review_user_icon img, #advisor_profile .review_section .reserved_user_icon img, #advisor_profile .reserved_section .review_user_icon img, #advisor_profile .reserved_section .reserved_user_icon img, #mypage .review_section .review_user_icon img, #mypage .review_section .reserved_user_icon img, #mypage .reserved_section .review_user_icon img, #mypage .reserved_section .reserved_user_icon img, #confirm .review_section .review_user_icon img, #confirm .review_section .reserved_user_icon img, #confirm .reserved_section .review_user_icon img, #confirm .reserved_section .reserved_user_icon img {
   width: 100%;
   border-radius: 10000px;
 }
 
-#advisor_profile .review_section .review_user_name, #advisor_profile .review_section .reserved_user_name, #advisor_profile .reserved_section .review_user_name, #advisor_profile .reserved_section .reserved_user_name, #mypage .review_section .review_user_name, #mypage .review_section .reserved_user_name, #mypage .reserved_section .review_user_name, #mypage .reserved_section .reserved_user_name {
+#advisor_profile .review_section .review_user_name, #advisor_profile .review_section .reserved_user_name, #advisor_profile .reserved_section .review_user_name, #advisor_profile .reserved_section .reserved_user_name, #mypage .review_section .review_user_name, #mypage .review_section .reserved_user_name, #mypage .reserved_section .review_user_name, #mypage .reserved_section .reserved_user_name, #confirm .review_section .review_user_name, #confirm .review_section .reserved_user_name, #confirm .reserved_section .review_user_name, #confirm .reserved_section .reserved_user_name {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: .1em;
   margin: 0 0 0 5px;
 }
 
-#advisor_profile .review_section .review_balloon, #advisor_profile .reserved_section .review_balloon, #mypage .review_section .review_balloon, #mypage .reserved_section .review_balloon {
+#advisor_profile .review_section .review_balloon, #advisor_profile .reserved_section .review_balloon, #mypage .review_section .review_balloon, #mypage .reserved_section .review_balloon, #confirm .review_section .review_balloon, #confirm .reserved_section .review_balloon {
   font-size: 1.3rem;
   position: relative;
   padding: 13px;
@@ -458,7 +669,7 @@ header ul li a .nav_user_icon {
   margin: 21px 0 0;
 }
 
-#advisor_profile .review_section .review_balloon::before, #advisor_profile .reserved_section .review_balloon::before, #mypage .review_section .review_balloon::before, #mypage .reserved_section .review_balloon::before {
+#advisor_profile .review_section .review_balloon::before, #advisor_profile .reserved_section .review_balloon::before, #mypage .review_section .review_balloon::before, #mypage .reserved_section .review_balloon::before, #confirm .review_section .review_balloon::before, #confirm .reserved_section .review_balloon::before {
   content: '';
   position: absolute;
   display: block;
@@ -476,7 +687,7 @@ header ul li a .nav_user_icon {
   border-bottom: 20px solid transparent;
 }
 
-#advisor_profile .review_section .review_balloon::after, #advisor_profile .reserved_section .review_balloon::after, #mypage .review_section .review_balloon::after, #mypage .reserved_section .review_balloon::after {
+#advisor_profile .review_section .review_balloon::after, #advisor_profile .reserved_section .review_balloon::after, #mypage .review_section .review_balloon::after, #mypage .reserved_section .review_balloon::after, #confirm .review_section .review_balloon::after, #confirm .reserved_section .review_balloon::after {
   content: '';
   position: absolute;
   display: block;
@@ -494,7 +705,7 @@ header ul li a .nav_user_icon {
   border-bottom: 20px solid transparent;
 }
 
-#advisor_profile .review_section a.review_write_btn, #advisor_profile .reserved_section a.review_write_btn, #mypage .review_section a.review_write_btn, #mypage .reserved_section a.review_write_btn {
+#advisor_profile .review_section a.review_write_btn, #advisor_profile .reserved_section a.review_write_btn, #mypage .review_section a.review_write_btn, #mypage .reserved_section a.review_write_btn, #confirm .review_section a.review_write_btn, #confirm .reserved_section a.review_write_btn {
   background-color: #f08300;
   padding: 12px 12px 12px;
   color: #fff;
@@ -507,11 +718,11 @@ header ul li a .nav_user_icon {
   position: relative;
 }
 
-#advisor_profile .review_section a.review_write_btn > span, #advisor_profile .reserved_section a.review_write_btn > span, #mypage .review_section a.review_write_btn > span, #mypage .reserved_section a.review_write_btn > span {
+#advisor_profile .review_section a.review_write_btn > span, #advisor_profile .reserved_section a.review_write_btn > span, #mypage .review_section a.review_write_btn > span, #mypage .reserved_section a.review_write_btn > span, #confirm .review_section a.review_write_btn > span, #confirm .reserved_section a.review_write_btn > span {
   letter-spacing: .1em;
 }
 
-#advisor_profile .review_section a.review_write_btn > i, #advisor_profile .reserved_section a.review_write_btn > i, #mypage .review_section a.review_write_btn > i, #mypage .reserved_section a.review_write_btn > i {
+#advisor_profile .review_section a.review_write_btn > i, #advisor_profile .reserved_section a.review_write_btn > i, #mypage .review_section a.review_write_btn > i, #mypage .reserved_section a.review_write_btn > i, #confirm .review_section a.review_write_btn > i, #confirm .reserved_section a.review_write_btn > i {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -525,37 +736,37 @@ header ul li a .nav_user_icon {
   align-items: center;
 }
 
-#advisor_profile .review_section a.disabled_review, #advisor_profile .reserved_section a.disabled_review, #mypage .review_section a.disabled_review, #mypage .reserved_section a.disabled_review {
+#advisor_profile .review_section a.disabled_review, #advisor_profile .reserved_section a.disabled_review, #mypage .review_section a.disabled_review, #mypage .reserved_section a.disabled_review, #confirm .review_section a.disabled_review, #confirm .reserved_section a.disabled_review {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-#advisor_profile .review_section .no_review, #advisor_profile .reserved_section .no_review, #mypage .review_section .no_review, #mypage .reserved_section .no_review {
+#advisor_profile .review_section .no_review, #advisor_profile .reserved_section .no_review, #mypage .review_section .no_review, #mypage .reserved_section .no_review, #confirm .review_section .no_review, #confirm .reserved_section .no_review {
   font-size: 1.2rem;
   text-align: center;
   display: block;
   margin: 0 0 15px;
 }
 
-#advisor_profile .calender_section, #mypage .calender_section {
+#advisor_profile .calender_section, #mypage .calender_section, #confirm .calender_section {
   position: relative;
 }
 
-#advisor_profile .calender_section .calender_signup_overlay, #mypage .calender_section .calender_signup_overlay {
+#advisor_profile .calender_section .calender_signup_overlay, #mypage .calender_section .calender_signup_overlay, #confirm .calender_section .calender_signup_overlay {
   display: none;
 }
 
-#advisor_profile .calender_section table.disabled_calender, #mypage .calender_section table.disabled_calender {
+#advisor_profile .calender_section table.disabled_calender, #mypage .calender_section table.disabled_calender, #confirm .calender_section table.disabled_calender {
   opacity: 0.4;
 }
 
-#advisor_profile .calender_section table.disabled_calender a, #mypage .calender_section table.disabled_calender a {
+#advisor_profile .calender_section table.disabled_calender a, #mypage .calender_section table.disabled_calender a, #confirm .calender_section table.disabled_calender a {
   pointer-events: none;
   cursor: not-allowed;
 }
 
-#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay, #mypage .calender_section .disabled_calender + .calender_signup_overlay {
+#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay, #mypage .calender_section .disabled_calender + .calender_signup_overlay, #confirm .calender_section .disabled_calender + .calender_signup_overlay {
   background: rgba(0, 0, 0, 0.4);
   color: #fff;
   width: 100%;
@@ -578,15 +789,15 @@ header ul li a .nav_user_icon {
   border-radius: 5px;
 }
 
-#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner, #mypage .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner {
+#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner, #mypage .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner, #confirm .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner {
   width: 75%;
 }
 
-#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner > span, #mypage .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner > span {
+#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner > span, #mypage .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner > span, #confirm .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner > span {
   font-size: 1.6rem;
 }
 
-#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner a.calender_signup_btn, #mypage .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner a.calender_signup_btn {
+#advisor_profile .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner a.calender_signup_btn, #mypage .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner a.calender_signup_btn, #confirm .calender_section .disabled_calender + .calender_signup_overlay .calender_signup_overlay_inner a.calender_signup_btn {
   background: #f08300;
   color: #fff;
   padding: 18px 20px 18px;
@@ -594,20 +805,20 @@ header ul li a .nav_user_icon {
   border-radius: 5px;
 }
 
-#advisor_profile .calender_section table, #mypage .calender_section table {
+#advisor_profile .calender_section table, #mypage .calender_section table, #confirm .calender_section table {
   table-layout: fixed;
   width: 100%;
   border-top: 1px solid #eee;
   border-left: 1px solid #eee;
 }
 
-#advisor_profile .calender_section table tbody, #mypage .calender_section table tbody {
+#advisor_profile .calender_section table tbody, #mypage .calender_section table tbody, #confirm .calender_section table tbody {
   display: table;
   table-layout: fixed;
   width: 100%;
 }
 
-#advisor_profile .calender_section table tbody tr, #mypage .calender_section table tbody tr {
+#advisor_profile .calender_section table tbody tr, #mypage .calender_section table tbody tr, #confirm .calender_section table tbody tr {
   margin: 0;
   padding: 0;
   border: 0;
@@ -617,11 +828,11 @@ header ul li a .nav_user_icon {
   background: transparent;
 }
 
-#advisor_profile .calender_section table tbody tr:nth-child(even) td, #mypage .calender_section table tbody tr:nth-child(even) td {
+#advisor_profile .calender_section table tbody tr:nth-child(even) td, #mypage .calender_section table tbody tr:nth-child(even) td, #confirm .calender_section table tbody tr:nth-child(even) td {
   border-bottom: 2px solid #eee;
 }
 
-#advisor_profile .calender_section table thead, #advisor_profile .calender_section table tfoot, #mypage .calender_section table thead, #mypage .calender_section table tfoot {
+#advisor_profile .calender_section table thead, #advisor_profile .calender_section table tfoot, #mypage .calender_section table thead, #mypage .calender_section table tfoot, #confirm .calender_section table thead, #confirm .calender_section table tfoot {
   display: table;
   top: 0;
   left: 0;
@@ -629,7 +840,7 @@ header ul li a .nav_user_icon {
   background: #fff;
 }
 
-#advisor_profile .calender_section table thead, #mypage .calender_section table thead {
+#advisor_profile .calender_section table thead, #mypage .calender_section table thead, #confirm .calender_section table thead {
   table-layout: fixed;
   position: -webkit-sticky;
   position: sticky;
@@ -637,19 +848,19 @@ header ul li a .nav_user_icon {
   border-bottom: 1px solid #eee;
 }
 
-#advisor_profile .calender_section table thead tr td, #mypage .calender_section table thead tr td {
+#advisor_profile .calender_section table thead tr td, #mypage .calender_section table thead tr td, #confirm .calender_section table thead tr td {
   border-bottom: 3px solid #eee;
 }
 
-#advisor_profile .calender_section table tfoot, #mypage .calender_section table tfoot {
+#advisor_profile .calender_section table tfoot, #mypage .calender_section table tfoot, #confirm .calender_section table tfoot {
   border-top: 1px solid #eee;
 }
 
-#advisor_profile .calender_section table tfoot tr td, #mypage .calender_section table tfoot tr td {
+#advisor_profile .calender_section table tfoot tr td, #mypage .calender_section table tfoot tr td, #confirm .calender_section table tfoot tr td {
   border-top: 2px solid #eee;
 }
 
-#advisor_profile .calender_section table th, #mypage .calender_section table th {
+#advisor_profile .calender_section table th, #mypage .calender_section table th, #confirm .calender_section table th {
   font-size: 1.4rem;
   line-height: 48px;
   height: 58px;
@@ -659,12 +870,12 @@ header ul li a .nav_user_icon {
   text-align: center;
 }
 
-#advisor_profile .calender_section table th span, #mypage .calender_section table th span {
+#advisor_profile .calender_section table th span, #mypage .calender_section table th span, #confirm .calender_section table th span {
   font-size: 1.6rem;
   font-weight: bold;
 }
 
-#advisor_profile .calender_section table td, #mypage .calender_section table td {
+#advisor_profile .calender_section table td, #mypage .calender_section table td, #confirm .calender_section table td {
   table-layout: fixed;
   font-size: 1.6rem;
   font-weight: bold;
@@ -675,20 +886,20 @@ header ul li a .nav_user_icon {
   text-align: center;
 }
 
-#advisor_profile .calender_section table td > span, #mypage .calender_section table td > span {
+#advisor_profile .calender_section table td > span, #mypage .calender_section table td > span, #confirm .calender_section table td > span {
   display: block;
   font-size: 1.4rem;
 }
 
-#advisor_profile .calender_section table td.sunday, #advisor_profile .calender_section table td.holiday, #mypage .calender_section table td.sunday, #mypage .calender_section table td.holiday {
+#advisor_profile .calender_section table td.sunday, #advisor_profile .calender_section table td.holiday, #mypage .calender_section table td.sunday, #mypage .calender_section table td.holiday, #confirm .calender_section table td.sunday, #confirm .calender_section table td.holiday {
   color: #f08300;
 }
 
-#advisor_profile .calender_section table td.saturday, #mypage .calender_section table td.saturday {
+#advisor_profile .calender_section table td.saturday, #mypage .calender_section table td.saturday, #confirm .calender_section table td.saturday {
   color: #66A0FF;
 }
 
-#advisor_profile .calender_section table td.all_ok a, #advisor_profile .calender_section table td.web_ok a, #mypage .calender_section table td.all_ok a, #mypage .calender_section table td.web_ok a {
+#advisor_profile .calender_section table td.all_ok a, #advisor_profile .calender_section table td.web_ok a, #mypage .calender_section table td.all_ok a, #mypage .calender_section table td.web_ok a, #confirm .calender_section table td.all_ok a, #confirm .calender_section table td.web_ok a {
   display: block;
   color: #f08300;
   font-weight: bold;
@@ -696,28 +907,28 @@ header ul li a .nav_user_icon {
   height: 100%;
 }
 
-#advisor_profile .calender_section table td.all_ok a:hover, #advisor_profile .calender_section table td.web_ok a:hover, #mypage .calender_section table td.all_ok a:hover, #mypage .calender_section table td.web_ok a:hover {
+#advisor_profile .calender_section table td.all_ok a:hover, #advisor_profile .calender_section table td.web_ok a:hover, #mypage .calender_section table td.all_ok a:hover, #mypage .calender_section table td.web_ok a:hover, #confirm .calender_section table td.all_ok a:hover, #confirm .calender_section table td.web_ok a:hover {
   background-color: #faf2d7;
   opacity: 1;
 }
 
-#advisor_profile .calender_section table td.all_ng, #mypage .calender_section table td.all_ng {
+#advisor_profile .calender_section table td.all_ng, #mypage .calender_section table td.all_ng, #confirm .calender_section table td.all_ng {
   background: #f7f7f7;
   opacity: 0.5;
 }
 
-#advisor_profile .calender_section table .time, #mypage .calender_section table .time {
+#advisor_profile .calender_section table .time, #mypage .calender_section table .time, #confirm .calender_section table .time {
   width: 18%;
   font-size: 1.4rem;
   line-height: 1;
 }
 
-#advisor_profile .calender_section table .pagenation_btn_cell, #mypage .calender_section table .pagenation_btn_cell {
+#advisor_profile .calender_section table .pagenation_btn_cell, #mypage .calender_section table .pagenation_btn_cell, #confirm .calender_section table .pagenation_btn_cell {
   font-size: 1.3rem;
   padding: 10px;
 }
 
-#advisor_profile .calender_section table .pagenation_btn_cell > a, #mypage .calender_section table .pagenation_btn_cell > a {
+#advisor_profile .calender_section table .pagenation_btn_cell > a, #mypage .calender_section table .pagenation_btn_cell > a, #confirm .calender_section table .pagenation_btn_cell > a {
   color: #f08300;
   display: block;
   background-color: #faf2d7;
@@ -726,47 +937,47 @@ header ul li a .nav_user_icon {
   border-radius: 10000px;
 }
 
-#advisor_profile .calender_section table .pagenation_btn_cell > a > img, #mypage .calender_section table .pagenation_btn_cell > a > img {
+#advisor_profile .calender_section table .pagenation_btn_cell > a > img, #mypage .calender_section table .pagenation_btn_cell > a > img, #confirm .calender_section table .pagenation_btn_cell > a > img {
   height: 11px;
   vertical-align: -1px;
 }
 
-#advisor_profile .calender_section table .pagenation_btn_cell.disabled_pagenation, #mypage .calender_section table .pagenation_btn_cell.disabled_pagenation {
+#advisor_profile .calender_section table .pagenation_btn_cell.disabled_pagenation, #mypage .calender_section table .pagenation_btn_cell.disabled_pagenation, #confirm .calender_section table .pagenation_btn_cell.disabled_pagenation {
   opacity: 0.5;
 }
 
-#advisor_profile .calender_section table .pagenation_btn_cell.disabled_pagenation a, #mypage .calender_section table .pagenation_btn_cell.disabled_pagenation a {
+#advisor_profile .calender_section table .pagenation_btn_cell.disabled_pagenation a, #mypage .calender_section table .pagenation_btn_cell.disabled_pagenation a, #confirm .calender_section table .pagenation_btn_cell.disabled_pagenation a {
   pointer-events: none;
 }
 
 @media screen and (max-width: 1080px) {
-  #advisor_profile .calender_section .review_section, #mypage .calender_section .review_section {
+  #advisor_profile .calender_section .review_section, #mypage .calender_section .review_section, #confirm .calender_section .review_section {
     position: static;
   }
 }
 
 @media screen and (max-width: 600px) {
-  #advisor_profile .calender_section table td, #mypage .calender_section table td {
+  #advisor_profile .calender_section table td, #mypage .calender_section table td, #confirm .calender_section table td {
     font-size: 1.4rem;
   }
-  #advisor_profile .calender_section table td > span, #mypage .calender_section table td > span {
+  #advisor_profile .calender_section table td > span, #mypage .calender_section table td > span, #confirm .calender_section table td > span {
     font-size: 1.2rem;
   }
-  #advisor_profile .calender_section table .time, #mypage .calender_section table .time {
+  #advisor_profile .calender_section table .time, #mypage .calender_section table .time, #confirm .calender_section table .time {
     width: 13%;
     font-size: 1.1rem;
   }
-  #advisor_profile .calender_section table .pagenation_btn_cell, #mypage .calender_section table .pagenation_btn_cell {
+  #advisor_profile .calender_section table .pagenation_btn_cell, #mypage .calender_section table .pagenation_btn_cell, #confirm .calender_section table .pagenation_btn_cell {
     font-size: 1.15rem;
     padding: 0;
   }
-  #advisor_profile .calender_section table .pagenation_btn_cell > a, #mypage .calender_section table .pagenation_btn_cell > a {
+  #advisor_profile .calender_section table .pagenation_btn_cell > a, #mypage .calender_section table .pagenation_btn_cell > a, #confirm .calender_section table .pagenation_btn_cell > a {
     height: 100%;
     border-radius: 0;
     line-height: 58px;
     padding: 0;
   }
-  #advisor_profile .calender_section table .pagenation_btn_cell > a > img, #mypage .calender_section table .pagenation_btn_cell > a > img {
+  #advisor_profile .calender_section table .pagenation_btn_cell > a > img, #mypage .calender_section table .pagenation_btn_cell > a > img, #confirm .calender_section table .pagenation_btn_cell > a > img {
     height: 9px;
     vertical-align: -1px;
   }
@@ -916,22 +1127,18 @@ header ul li a .nav_user_icon {
   }
 }
 
-#mypage .person_icon_wrap {
+#mypage .person_icon_wrap, #confirm .person_icon_wrap {
   margin-right: 2%;
   width: 10%;
 }
 
-#mypage .person_icon_row {
+#mypage .person_icon_row, #confirm .person_icon_row {
   border-radius: 5px;
   padding: 15px;
   position: relative;
 }
 
-#mypage .person_icon_row .person_info_wrap_inner a.profile_edit_btn {
-  color: #f08300;
-  font-weight: 400;
-  cursor: pointer;
-  font-size: 1.5rem;
+#mypage .person_icon_row .profile_edit_btn_wrap, #confirm .person_icon_row .profile_edit_btn_wrap {
   position: absolute;
   right: 15px;
   top: 0;
@@ -945,79 +1152,557 @@ header ul li a .nav_user_icon {
   align-items: center;
 }
 
-#mypage .mypage_col_l {
+#mypage .person_icon_row .profile_edit_btn_wrap a.profile_edit_btn, #mypage .person_icon_row .profile_edit_btn_wrap a.profile_save_btn, #confirm .person_icon_row .profile_edit_btn_wrap a.profile_edit_btn, #confirm .person_icon_row .profile_edit_btn_wrap a.profile_save_btn {
+  color: #f08300;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+#mypage .mypage_col_l, #confirm .mypage_col_l {
   width: 70%;
   margin-right: 2%;
 }
 
-#mypage .mypage_col_r {
+#mypage .mypage_col_r, #confirm .mypage_col_r {
   width: 28%;
 }
 
-#mypage .person_male {
-  background-color: #e1eafa;
+#mypage .person_male, #confirm .person_male {
+  background-color: #f3f6fd;
 }
 
-#mypage .mypage_profile_section, #mypage .reserved_section {
+#mypage .mypage_profile_section, #mypage .reserved_section, #confirm .mypage_profile_section, #confirm .reserved_section {
   margin: 30px 0 0;
 }
 
-#mypage .mypage_profile_section h3, #mypage .reserved_section h3 {
+#mypage .mypage_profile_section h3, #mypage .reserved_section h3, #confirm .mypage_profile_section h3, #confirm .reserved_section h3 {
   font-size: 1.5rem;
   padding: 0 0 4px 7px;
   border-left: 4px solid #f08300;
   border-bottom: 1px dotted #ccc;
 }
 
-#mypage .mypage_profile_section a.profile_edit_btn, #mypage .reserved_section a.profile_edit_btn {
+#mypage .mypage_profile_section a.profile_edit_btn, #mypage .reserved_section a.profile_edit_btn, #confirm .mypage_profile_section a.profile_edit_btn, #confirm .reserved_section a.profile_edit_btn {
   color: #f08300;
-  font-weight: 400;
   float: right;
   cursor: pointer;
   margin: 0 15px 0 0;
 }
 
-#mypage .mypage_profile_section dl, #mypage .reserved_section dl {
+#mypage .mypage_profile_section dl, #mypage .reserved_section dl, #confirm .mypage_profile_section dl, #confirm .reserved_section dl {
   margin: 6px 0 0;
 }
 
-#mypage .mypage_profile_section dl li, #mypage .reserved_section dl li {
+#mypage .mypage_profile_section dl li, #mypage .reserved_section dl li, #confirm .mypage_profile_section dl li, #confirm .reserved_section dl li {
   font-size: 1.4rem;
   padding: 11px 0 10px;
   line-height: 2;
   border-bottom: 1px dotted #ccc;
 }
 
-#mypage .mypage_profile_section dl li span, #mypage .reserved_section dl li span {
+#mypage .mypage_profile_section dl li span, #mypage .reserved_section dl li span, #confirm .mypage_profile_section dl li span, #confirm .reserved_section dl li span {
   font-size: 1.2rem;
   color: #888;
   margin: 0 8px 0 0;
 }
 
-#mypage .mypage_profile_section dl li p, #mypage .reserved_section dl li p {
+#mypage .mypage_profile_section dl li p, #mypage .reserved_section dl li p, #confirm .mypage_profile_section dl li p, #confirm .reserved_section dl li p {
   display: inline-block;
   vertical-align: middle;
-  width: 91%;
+  width: 89%;
 }
 
-#mypage .reserved_section {
+#mypage .reserved_section, #confirm .reserved_section {
   position: static;
   top: 0;
   margin: 0;
 }
 
-#mypage .reserved_section .reserved_block {
+#mypage .reserved_section .reserved_block, #confirm .reserved_section .reserved_block {
   border-bottom: none;
+  position: relative;
+}
+
+#mypage .reserved_section .reserved_block iframe, #confirm .reserved_section .reserved_block iframe {
+  width: 100%;
+  margin: 4px 0 0;
+}
+
+#mypage .reserved_section .reserved_block .reserved_advisor_link, #confirm .reserved_section .reserved_block .reserved_advisor_link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#mypage .reserved_section .approval_status, #confirm .reserved_section .approval_status {
+  position: absolute;
+  right: 0px;
+  top: 3px;
+  padding: 6px 10px 6px;
+  line-height: 1;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+#mypage .reserved_section .approval_pending, #confirm .reserved_section .approval_pending {
+  background-color: #555;
+}
+
+#mypage .reserved_section .approval_accepted, #confirm .reserved_section .approval_accepted {
+  background-color: #06a1cc;
+}
+
+#mypage .reserved_section .approval_rejected, #confirm .reserved_section .approval_rejected {
+  background-color: #e52600;
 }
 
 @media screen and (max-width: 1080px) {
-  #mypage .mypage_col_l {
+  #mypage .mypage_col_l, #confirm .mypage_col_l {
     width: 100%;
     margin-right: 0;
   }
-  #mypage .mypage_col_r {
+  #mypage .mypage_col_r, #confirm .mypage_col_r {
     width: 100%;
     margin: 15px 0 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #mypage .mypage_profile_section dl li p, #mypage .reserved_section dl li p, #confirm .mypage_profile_section dl li p, #confirm .reserved_section dl li p {
+    width: 100%;
+  }
+}
+
+#confirm .confirm_main_row_inner {
+  margin: 2em 0 0;
+  border-radius: 4px;
+  width: 100%;
+}
+
+#confirm .confirm_main_row_inner h2 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#confirm .confirm_general_info {
+  padding: 0 30px 20px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+#confirm .confirm_general_info .person_icon_wrap {
+  width: 7%;
+}
+
+#confirm .confirm_general_info h3 {
+  font-size: 1.5rem;
+}
+
+#confirm .confirm_general_info .confirm_ttl {
+  margin: 20px 0 7px;
+}
+
+#confirm .confirm_general_info .confirm_date {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+#confirm .web_or_ftf_wrap {
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  margin: 30px 0 0;
+  padding: 20px;
+}
+
+#confirm .web_or_ftf_wrap .web_or_ftf_label {
+  font-weight: 700;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  margin: 0 5px 10px 0;
+}
+
+#confirm .web_or_ftf_wrap .web_or_ftf_required {
+  font-size: 1.1rem;
+  border: 1px solid #e52600;
+  border-radius: 3px;
+  padding: 4px 5px 4px;
+  line-height: 1;
+  color: #e52600;
+}
+
+#confirm .web_or_ftf_wrap .md-radio {
+  margin: 10px 0 0;
+}
+
+#confirm .confirm_submit_btn {
+  background: #06a1cc;
+  display: block;
+  width: 40%;
+  padding: 15px 0 15px;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1.7rem;
+  margin: 30px auto 15px;
+}
+
+@media screen and (max-width: 1080px) {
+  #confirm .confirm_main_row_inner {
+    margin: 1em 0 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #confirm .confirm_main_row_inner h2 {
+    font-size: 1.6rem;
+  }
+  #confirm .confirm_general_info {
+    padding: 0 18px 15px;
+  }
+  #confirm .confirm_general_info .person_icon_wrap {
+    width: 27%;
+  }
+  #confirm .confirm_submit_btn {
+    width: 100%;
+    font-size: 1.6rem;
+    margin: 30px auto 15px;
+  }
+}
+
+#done {
+  min-height: 90vh;
+}
+
+#done .done_main_row {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 2.4em 30px 0.8em;
+}
+
+#done .done_main_row_inner {
+  width: 100%;
+}
+
+#done .done_main_row_inner h2 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#done .done_general_info {
+  border: 1px solid #ccc;
+  padding: 2.4em;
+  margin: 2.4em 0 0;
+}
+
+#done .done_general_info h3 {
+  font-size: 1.3rem;
+  color: #888;
+}
+
+#done .done_general_info p {
+  font-size: 1.5rem;
+  margin: 2px 0 0;
+}
+
+#done .reject_alert {
+  background-color: #e52600;
+  color: #fff;
+  padding: 12px 15px 12px;
+  margin: 20px 0 0;
+  font-size: 1.2rem;
+}
+
+#done .done_txt {
+  margin: 20px 0 0;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+#done .done_txt a {
+  color: #f08300;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#done .back_to_top_btn {
+  background: #333;
+  display: block;
+  width: 40%;
+  padding: 15px 0 15px;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1.7rem;
+  margin: 30px auto 15px;
+}
+
+@media screen and (max-width: 600px) {
+  #done .done_main_row {
+    padding: 2.4em 15px 0.8em;
+  }
+  #done .done_main_row_inner h2 {
+    font-size: 1.6rem;
+  }
+  #done .back_to_top_btn {
+    width: 100%;
+    font-size: 1.6rem;
+    margin: 30px auto 15px;
+  }
+}
+
+.person_info_wrap_inner_edit, .uploadButton, .profile_dl_edit {
+  display: none !important;
+}
+
+.profile_edit_btn_wrap_sub {
+  display: none;
+}
+
+.edit_mode .person_info_wrap_inner_static, .edit_mode .profile_dl_static {
+  display: none !important;
+}
+
+.edit_mode .uploadButton {
+  display: block !important;
+  margin: 10px 0 0;
+  position: relative;
+  border-radius: 3px;
+  background: #eee;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.edit_mode .uploadButton:hover {
+  background: #fff;
+}
+
+.edit_mode .uploadButton input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.edit_mode .uploadValue {
+  display: none !important;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  padding: 3px;
+  color: #fff;
+}
+
+.edit_mode .person_info_wrap_inner_edit {
+  display: block !important;
+}
+
+.edit_mode .person_info_wrap_inner_edit > div > div {
+  margin: 10px 0 0;
+  padding: 14px 0 0;
+}
+
+.edit_mode .person_info_wrap_inner_edit > div > div:first-of-type {
+  margin: 0;
+  padding: 0;
+}
+
+.edit_mode .mypage_input_txt {
+  background-color: #fff;
+  padding: 0.25em 0.5em 0.25em;
+  font-size: 1.8rem;
+  border: 1px solid #ccc;
+}
+
+.edit_mode .profile_cancel_btn {
+  display: block;
+  font-size: 1.2rem;
+  margin: 0 15px 1px 0;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.edit_mode .edit_label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: block;
+  margin: 0 0 8px;
+}
+
+.edit_mode select {
+  /* reset */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* styling */
+  background-color: #fff;
+  font-size: 1.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1;
+  padding: 1em 3.5em 1em 2em;
+  background-image: url(../../img/arrow_down_bl.png);
+  background-position: center right 10px;
+  background-size: 11px auto;
+  background-repeat: no-repeat;
+}
+
+.edit_mode .profile_dl_edit {
+  display: block !important;
+}
+
+.edit_mode .basic_profile_input_txt {
+  background-color: #fff;
+  padding: 0.1em 0.5em 0.1em;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  max-width: 100px;
+  margin: 0 0 0 15px;
+}
+
+.edit_mode .profile_edit_btn_wrap_sub {
+  float: right;
+  margin: 0 15px 0 0;
+  display: block;
+}
+
+.edit_mode .profile_edit_btn_wrap_sub a.profile_cancel_btn {
+  display: inline-block;
+}
+
+.edit_mode .profile_edit_btn_wrap_sub a.profile_save_btn {
+  color: #f08300;
+  cursor: pointer;
+}
+
+.edit_mode .profile_edit_btn_sub {
+  display: none;
+}
+
+.edit_mode textarea {
+  display: inline-block;
+  vertical-align: middle;
+  width: 89%;
+  border: 1px solid #ccc;
+  padding: 0.1em 0.5em 0.1em;
+  font-size: 1.4rem;
+}
+
+.edit_mode .profile_dl_edit .company_preference_control {
+  display: inline-block;
+  position: relative;
+  padding-left: 26px;
+  margin: 8px 15px 8px 0;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.edit_mode .profile_dl_edit .company_preference_control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.edit_mode .profile_dl_edit .company_preference_control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+}
+
+.edit_mode .profile_dl_edit .company_preference_control:hover input ~ .company_preference_control__indicator,
+.edit_mode .profile_dl_edit .company_preference_control input:focus ~ .company_preference_control__indicator {
+  background: #ccc;
+}
+
+.edit_mode .profile_dl_edit .company_preference_control input:checked ~ .company_preference_control__indicator {
+  background: #f08300;
+}
+
+.edit_mode .profile_dl_edit .company_preference_control:hover input:not([disabled]):checked ~ .company_preference_control__indicator,
+.edit_mode .profile_dl_edit .company_preference_control input:checked:focus ~ .company_preference_control__indicator {
+  background: #eb6100;
+}
+
+.edit_mode .profile_dl_edit .company_preference_control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.edit_mode .profile_dl_edit .company_preference_control input:checked ~ .company_preference_control__indicator:after {
+  display: block;
+}
+
+.edit_mode .profile_dl_edit .company_preference_control--checkbox .company_preference_control__indicator:after {
+  left: 7px;
+  top: 4px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.edit_mode .profile_dl_edit .company_preference_control--checkbox input:disabled ~ .company_preference_control__indicator:after {
+  border-color: #7b7b7b;
+}
+
+@media screen and (max-width: 600px) {
+  .edit_mode .person_info_wrap {
+    margin: 20px 0 0;
+  }
+  .edit_mode .person_info_wrap .person_info_wrap_inner_edit input.mypage_input_txt {
+    width: 100%;
+  }
+  .edit_mode .basic_profile_input_txt {
+    padding: 0.1em 0.5em 0.1em;
+    max-width: none;
+    margin: 5px 0 5px 0;
+  }
+  .edit_mode select {
+    padding: 1em 2.5em 1em 1.2em;
+    background-position: center right 5px;
+  }
+  .edit_mode textarea {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #mypage .mypage_main_row .edit_mode .person_icon_wrap {
+    width: 100%;
+  }
+  #mypage .mypage_main_row .edit_mode .person_icon_wrap img {
+    width: 28%;
+  }
+  #mypage .mypage_main_row .edit_mode .person_info_wrap {
+    width: 100%;
+  }
+  #mypage .edit_mode.person_icon_row .profile_edit_btn_wrap {
+    position: static;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 20px 0 0;
+    padding: 15px 0 0;
+    border-top: 1px solid #ddd;
   }
 }
 

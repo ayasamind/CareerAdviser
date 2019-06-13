@@ -4,7 +4,8 @@ html {
   font-size: 62.5%;
   -webkit-font-feature-settings: "pkna";
   font-feature-settings: "pkna";
-  margin-top: 0 !important; }
+  margin-top: 0 !important;
+}
 
 body {
   margin: 0;
@@ -12,141 +13,193 @@ body {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   letter-spacing: .04em;
-  font-family: 'Noto Sans JP','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif; }
+  font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+}
 
 @media screen and (max-width: 321px) {
   body {
-    min-width: 375px; } }
+    min-width: 375px;
+  }
+}
 
 ul, ol, dl {
   padding: 0;
   margin: 0;
-  list-style: none; }
+  list-style: none;
+}
 
 p {
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 1.8; }
+  line-height: 1.8;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
+  margin: 0;
+}
 
 a {
   text-decoration: none;
-  color: #000; }
+  color: #000;
+}
+
+.underline {
+  text-decoration: underline;
+}
 
 a, input, button {
   -o-transition: all .4s;
   transition: all .4s;
   -webkit-transition: all .4s;
-  -moz-transition: all .4s; }
+  -moz-transition: all .4s;
+}
 
 a:hover, input:hover, button:hover {
-  opacity: 0.6; }
+  opacity: 0.6;
+}
+
+.sefif {
+  font-family: 游明朝体,游明朝,Yu Mincho,YuMincho,serif;
+}
 
 /* a[href^="tel:"] {
   cursor: default;
 } */
 @media screen and (min-width: 768px) {
   a[href^="tel:"] {
-    pointer-events: none; } }
+    pointer-events: none;
+  }
+}
 
 img {
   /* Chromeで縮小画像のぼやけを解消 */
-  -webkit-backface-visibility: hidden !important; }
+  -webkit-backface-visibility: hidden !important;
+}
 
 img, video {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .fl_l {
-  float: left; }
+  float: left;
+}
 
 .fl_r {
-  float: right; }
+  float: right;
+}
 
 .clearfix::after {
   content: "";
   display: table;
-  clear: both; }
+  clear: both;
+}
 
 .sections {
-  padding: 60px 0 0; }
+  padding: 60px 0 0;
+}
 
 .section_ttl {
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+}
 
 .section_ttl_sub {
   margin: 0 auto 0;
   text-align: center;
   letter-spacing: .175em;
-  color: #f08300; }
+  color: #f08300;
+}
 
 .container {
   /* コンテンツ幅 */
   max-width: 96%;
   margin: 0 auto;
-  width: 100%; }
+  width: 100%;
+}
 
 .container_reset {
-  max-width: none; }
+  max-width: none;
+}
 
 .uppercase {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 @media screen and (min-width: 600px) and (max-width: 1080px) {
   .container {
     padding: 0 15px;
     max-width: none;
-    width: auto; } }
+    width: auto;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .sections {
-    padding: 30px 0 30px; }
+    padding: 30px 0 30px;
+  }
   .section_ttl_sub {
-    margin: 6px auto 0; }
+    margin: 6px auto 0;
+  }
   .container {
     padding: 0 15px;
-    max-width: none; }
+    max-width: none;
+  }
   .container_reset {
-    padding: 0; } }
+    padding: 0;
+  }
+}
 
 /* クロームで青いfocusをreset */
 *:focus {
-  outline: none; }
+  outline: none;
+}
 
 /* 全固定ページで.entry-headerを非表示 */
 .page .entry-header {
-  display: none; }
+  display: none;
+}
 
 .pc_only {
-  display: block; }
+  display: block;
+}
 
 .pc_only_inline {
-  display: inline-block; }
+  display: inline-block;
+}
 
 @media screen and (max-width: 600px) {
   .pc_only {
-    display: none; }
+    display: none;
+  }
   .pc_only_inline {
-    display: none; } }
+    display: none;
+  }
+}
 
 .tb_sp_only, .tb_sp_only_inline {
-  display: none; }
+  display: none;
+}
 
 @media screen and (max-width: 1080px) {
   .tb_sp_only {
-    display: block; }
+    display: block;
+  }
   .tb_sp_only_inline {
-    display: inline-block; } }
+    display: inline-block;
+  }
+}
 
 .sp_only, .sp_only_inline {
-  display: none; }
+  display: none;
+}
 
 @media screen and (max-width: 600px) {
   .sp_only {
-    display: block; }
+    display: block;
+  }
   .tb_sp_only_inline {
-    display: inline-block; } }
+    display: inline-block;
+  }
+}
 
 /*-------------------common */
