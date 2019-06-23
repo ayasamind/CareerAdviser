@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Notifications\VerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\EmailVerificationJa;
 use App\Enums\Traits\GetPrefectureTrait;
 use App\Desire;
+use App\Notifications\PasswordResetNotification;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -92,5 +94,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getDesireCompanyTypeAttribute()
     {
         return $this->returnDesireLabel(Desire::DESIRE_TYPE_COMPANY_TYPE);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+      $this->notify(new PasswordResetNotification($token));
     }
 }

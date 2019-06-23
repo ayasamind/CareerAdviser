@@ -457,8 +457,8 @@
 							</section>
 						</section>
 					</div>
-					{{-- <div class="mypage_col_r">
-						<section class="reserved_section">
+					<div class="mypage_col_r">
+					{{-- <section class="reserved_section">
 							<h2>予約中の面談</h2>
 							<section class="advisor_profile_section_body">
 								<!-- <span class="no_reserved">予約中の面談はありません</span> -->
@@ -532,8 +532,89 @@
 									<span class="approval_status approval_rejected">不承認</span>
 								</div>
 							</section>
-						</section>
-					</div> --}}
+                        </section> --}}
+                        <section class="reserved_section detail_setting_section">
+                            <h2>詳細設定/プライバシー</h2>
+                            <div class="detail_setting_section_body_wrap">
+                                <section id="detail_setting_section" class="detail_setting_section_body">
+                                    <form class="profile_form">
+                                        <h3>登録情報
+                                            <a class="profile_edit_btn profile_edit_btn_sub">編集</a>
+                                            <div class="profile_edit_btn_wrap profile_edit_btn_wrap_sub">
+                                                <a class="profile_cancel_btn">キャンセル</a>
+                                                <a id="save_email" class="profile_save_btn">保存</a>
+                                            </div>
+                                        </h3>
+                                        <dl class="profile_dl_static">
+                                            <!-- <li><span>内定数</span>3</li> -->
+                                            <li>
+                                                <span>登録メールアドレス</span>
+                                                <p id="email-label">{{ $user->email }}</p>
+                                            </li>
+                                        </dl>
+                                        <dl class="profile_dl_edit">
+                                            <li>
+                                                <span>新しいメールアドレス</span>
+                                                {!! Form::email('email', $user->email, ['id'=>'input_email', 'class'=>'mypage_input_txt', 'required'=>'required']) !!}
+                                                <span class="validate-error">
+                                                    <br/>
+                                                    <strong id="validate-email"></strong>
+                                                </span>
+                                            </li>
+                                        </dl>
+                                    </form>
+                                </section>
+
+                                <section id="password_setting_section" class="detail_setting_section_body">
+                                    <form class="profile_form">
+                                        <h3>パスワード
+                                            <a class="profile_edit_btn profile_edit_btn_sub">編集</a>
+                                            <div class="profile_edit_btn_wrap profile_edit_btn_wrap_sub">
+                                                <a class="profile_cancel_btn">キャンセル</a>
+                                                <a id="save_password" class="profile_save_btn">保存</a>
+                                            </div>
+                                        </h3>
+                                        <dl class="profile_dl_static">
+                                            <!-- <li><span>内定数</span>3</li> -->
+                                            <li>
+                                                <span>現在のパスワード</span>
+                                                <p>*******</p>
+                                            </li>
+                                        </dl>
+                                        <dl class="profile_dl_edit">
+                                            <li>
+                                                <span>新しいパスワード</span>
+                                                <input name="password" type="password" class="contact_input" id="input_password" placeholder="" required>
+                                                <span class="validate-error">
+                                                    <br/>
+                                                    <strong id="validate-password"></strong>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span>新しいパスワード(確認)</span>
+                                                <input name="password_confirmation" type="password" class="contact_input" id="input_password_confirm" placeholder="" required>
+                                                <span class="validate-error">
+                                                    <br/>
+                                                    <strong id="validate-password_confirmation"></strong>
+                                                </span>
+                                            </li>
+                                        </dl>
+                                    </form>
+                                </section>
+
+                            </div>
+                        </section>
+                        <button class="logout">
+                            <a href="{{ route('user.logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                ログアウト
+                            </a>
+                            <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </button>
+					</div>
 				</div>
 			</section>
 		</main><!-- #main -->
