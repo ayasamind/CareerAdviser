@@ -72,19 +72,20 @@
 	<!-- プラグイン -->
 	<script src="{{ asset("js/animsition.min.js") }}"></script>
 	<script src="{{ asset("js/easing.js") }}"></script>
-	<script src="{{ asset("js/inview.js") }}"></script>
+    <script src="{{ asset("js/inview.js") }}"></script>
+    <script src="{{ asset("js/remodal.min.js") }}"></script>
 	<!-- 残りはfooterで -->
 
 	<!-- js -->
 	<script>
-	jQuery(document).ready(function($){
-	    var ua = navigator.userAgent;
-	    if((ua.indexOf('iPhone') > 0) || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)){
-	        $('head').prepend('<meta name="viewport" content="width=device-width,initial-scale=1">');
-	    } else {
-	        $('head').prepend('<meta name="viewport" content="width=1080">');
-	    }
-	});
+        $(document).ready(function($){
+            var ua = navigator.userAgent;
+            if((ua.indexOf('iPhone') > 0) || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)){
+                $('head').prepend('<meta name="viewport" content="width=device-width,initial-scale=1">');
+            } else {
+                $('head').prepend('<meta name="viewport" content="width=1080">');
+            }
+        });
 	</script>
 	<script>
 		$(window).on('load',function(){
@@ -95,7 +96,10 @@
 		    $("header").remove();
 		  }
 		});
-	</script>
+    </script>
+    <script>
+        url = "{{ url('') }}"
+    </script>
 </head>
 <body>
     <div id="app">
@@ -185,17 +189,20 @@
             </div>
         </nav>
         @if (session('success'))
-            <div class="alert alert-success" role="alert">
+            <div id="server-success" class="alert alert-success" role="alert">
                 {{ session('success') }}
             </div>
         @endif
         @if (session('error'))
-            <div class="alert alert-error" role="alert">
+            <div id="server-error" class="alert alert-danger" role="alert">
                 {{ session('error') }}
             </div>
         @endif
         <main class="py-4">
             @yield('content')
+            <div id="fade" class="hide">
+                <div class="typing_loader"></div>
+            </div>
         </main>
     </div>
     <footer>
@@ -240,8 +247,7 @@
             </div>
         @endguest
     </footer>
-
-    <script src="{{ asset("js/remodal.js") }}"></script>
+    @yield('script')
     <script src="{{ asset("js/accordion_wp.js") }}""></script>
     <script src="{{ asset("js/lightbox.js") }}""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
@@ -267,23 +273,23 @@
         });
     </script>
     <script>
-    jQuery(function($) {
-        var topBtn=$('#pageTop');
-        topBtn.hide();
-        //◇ボタンの表示設定
-        $(window).scroll(function(){
-        if($(this).scrollTop()>150){
-            topBtn.fadeIn(800);
-        }else{
-            topBtn.fadeOut(800);
-        }
+        $(function($) {
+            var topBtn=$('#pageTop');
+            topBtn.hide();
+            //◇ボタンの表示設定
+            $(window).scroll(function(){
+            if($(this).scrollTop()>150){
+                topBtn.fadeIn(800);
+            }else{
+                topBtn.fadeOut(800);
+            }
+            });
+            topBtn.click(function(){
+            $('body,html').animate({
+            scrollTop: 0},600);
+            return false;
+            });
         });
-        topBtn.click(function(){
-        $('body,html').animate({
-        scrollTop: 0},600);
-        return false;
-        });
-    });
     </script>
 </body>
 </html>
