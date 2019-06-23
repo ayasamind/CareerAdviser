@@ -26,7 +26,6 @@ Route::get('/email/show', 'User\Auth\VerificationController@show')->name('verifi
 Route::post("/logout", "User\Auth\LoginController@logout")->name('user.logout');
 Route::get('/advisers', 'User\AdvisersController@index')->name('advisers.index');
 Route::get('/advisers/show/{id}', 'User\AdvisersController@show')->name('advisers.show');
-Route::get('/company', 'User\PageController@company')->name('company');
 Route::get('/password/reset', 'User\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('/password/email', 'User\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('/password/reset/{token}', 'User\Auth\ResetPasswordController@showResetForm')->name('password.reset');
@@ -80,3 +79,7 @@ Route::prefix('adviser')->name('adviser.')->group(function () {
 Route::get('/', function () {
     return view('top');
 });
+
+Route::get('/company', function () {
+    return view('user.company');
+})->name('company');
