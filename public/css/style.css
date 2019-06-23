@@ -30,11 +30,6 @@
     display: none;
 }
 
-.invalid-feedback {
-    display: initial;
-    font-size: 130%;
-}
-
 .disable {
     background-color: gray !important;
     border-color: #ccc;
