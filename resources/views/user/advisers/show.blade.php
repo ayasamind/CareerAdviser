@@ -3,11 +3,11 @@
 @section('content')
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<div class="landscape_notice">
+			{{-- <div class="landscape_notice">
 				<p class="landscape_notice_txt">
 					このウェブサイトは横画面には対応しておりません。<br>スマートフォンの向きを縦にしてご閲覧ください。
 				</p>
-			</div>
+			</div> --}}
 			<section id="advisor_profile" class="container_service">
 				<div class="row advisor_profile_main_row">
 					<div class="advisor_col_l">

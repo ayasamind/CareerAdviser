@@ -16,11 +16,11 @@
 <div id="ajax-message-error" class="alert alert-danger hide" role="alert"></div>
 <div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<div class="landscape_notice">
+			{{-- <div class="landscape_notice">
 				<p class="landscape_notice_txt">
 					このウェブサイトは横画面には対応しておりません。<br>スマートフォンの向きを縦にしてご閲覧ください。
                 </p>
-            </div>
+            </div> --}}
             <section id="mypage" class="container_service">
 				<div class="row mypage_main_row">
 					<div class="mypage_col_l">
