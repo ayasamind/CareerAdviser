@@ -48,6 +48,8 @@ Route::middleware(['verified', 'auth:user'])->name('user.')->group(function() {
     Route::post('users/uploadPhoto', 'User\UsersController@uploadPhoto')->name('users.upload_photo');
     Route::post('users/updateEmail', 'User\UsersController@updateEmail')->name('users.update_email');
     Route::post('users/updatePassword', 'User\UsersController@updatePassword')->name('users.update_password');
+    Route::get('/adviser/confirm/{id}/{dt}/{type}', 'User\AdvisersController@confirm')->name('adviser_confirm');
+    Route::post('/adviser/saveRequest', 'User\AdvisersController@saveRequest')->name('save_request');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
