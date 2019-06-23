@@ -116,6 +116,9 @@
                 <nav>
                     <ul id="ul_current">
                         @auth('user')
+                            <li href="{{ route('advisers.index') }}">
+                                <a class="nav_li_a fs14 fs16sp font-white" href="{{ route('advisers.index') }}">アドバイザー一覧</a>
+                            </li>
                             <li href="{{ route('user.mypage') }}">
                                 <a class="nav_li_a fs14 fs16sp" href="{{ route('user.mypage') }}"><img src="{{ asset("img/service/default_usericon.jpg") }}" alt="マイページ" class="nav_user_icon"></a>
                             </li>
