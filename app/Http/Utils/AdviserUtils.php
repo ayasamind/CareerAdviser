@@ -66,7 +66,6 @@ class AdviserUtils implements AdviserInterface
 
     public function saveTags($adviser, $data)
     {
-        $adviser->Tag()->detach();
-        $adviser->Tag()->attach($data['Tag']);
+        $adviser->Tag()->sync($data['Tag']);
     }
 }

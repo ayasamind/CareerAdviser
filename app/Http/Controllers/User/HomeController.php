@@ -32,14 +32,6 @@ class HomeController extends UsersController
         ]);
     }
 
-    public function mypage()
-    {
-        $user = Auth::user();
-        return view('user.mypage', [
-            'user' => $user
-        ]);
-    }
-
     public function settings()
     {
         $user = Auth::user();

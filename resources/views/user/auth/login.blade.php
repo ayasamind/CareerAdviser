@@ -44,9 +44,9 @@
 									</div> -->
 									<input name="email" type="email" class="contact_input" id="input_email" placeholder="メールアドレス" required>
                                     @if ($errors->has('email'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
+                                        {{-- <span class="invalid-feedback" role="alert"> --}}
+                                            <strong class="validate-error">{{ $errors->first('email') }}</strong>
+                                        {{-- </span> --}}
                                     @endif
                                 </div>
 								<!-- form block -->
@@ -58,9 +58,9 @@
 									</div> -->
 									<input name="password" type="password" class="contact_input" id="input_password" placeholder="パスワード" required>
                                     @if ($errors->has('password'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
+                                        {{-- <span class="invalid-feedback" role="alert"> --}}
+                                            <strong class="validate-error">{{ $errors->first('password') }}</strong>
+                                        {{-- </span> --}}
                                     @endif
                                 </div>
 								<!-- form block -->

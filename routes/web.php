@@ -33,12 +33,17 @@ Route::middleware(['auth:user'])->name('user.')->group(function() {
     Route::get('/thanks', function () {
         return view('user.thanks');
     });
-    Route::get("/mypage", "User\HomeController@mypage")->name('mypage');
+    Route::get("/mypage", "User\UsersController@view")->name('mypage');
 });
 
 Route::middleware(['verified', 'auth:user'])->name('user.')->group(function() {
     Route::get('/users/edit', 'User\UsersController@edit')->name('users.edit');
     Route::put('/users/update', 'User\UsersController@update')->name('users.update');
+    Route::post('/users/updateUserName', 'User\UsersController@updateUserName')->name('users.update_user_name');
+    Route::post('/users/updateUniversity', 'User\UsersController@updateUniversity')->name('users.update_university');
+    Route::post('/users/updateInformalDecision', 'User\UsersController@updateInformalDecision')->name('users.update_informal_decision');
+    Route::post('/users/updateDesire', 'User\UsersController@updateDesire')->name('users.update_desire');
+    Route::post('users/uploadPhoto', 'User\UsersController@uploadPhoto')->name('users.upload_photo');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
