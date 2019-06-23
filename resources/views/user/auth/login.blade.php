@@ -3,11 +3,11 @@
 @section('content')
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<div class="landscape_notice">
+			{{-- <div class="landscape_notice">
 				<p class="landscape_notice_txt">
 					このウェブサイトは横画面には対応しておりません。<br>スマートフォンの向きを縦にしてご閲覧ください。
 				</p>
-			</div>
+			</div> --}}
 			<section id="login_main_wrap" class="main_wrap">
 				<div class="section_ttl_wrap login_ttl_wrap mb30 mb50tb">
 					<h2 class="section_ttl login_ttl fs23 fs18sp fw400">
