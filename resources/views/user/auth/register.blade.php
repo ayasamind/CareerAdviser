@@ -26,12 +26,12 @@
 							</div>
 							<div class="sns_signup_wrap_outer">
 								<div class="sns_signup_wrap">
-									<a href="#" class="fb_login fs15 fw700">
+									<button type="button" href="#" class="fb_login fs15 fw700 disable" disabled>
 										<i class="fab fa-facebook-square fs26 mr40"></i>facebookで新規登録
-									</a>
-									<a href="#" class="tw_login fs15 fw700">
+                                    </button>
+									<button type="button" href="#" class="tw_login fs15 fw700 disable" disabled>
 										<i class="fab fa-twitter fs26 mr40"></i>Twitterで新規登録
-									</a>
+                                    </button>
 								</div>
 							</div>
 							<span class="fs14 block txt_c center_block signup_or ttl_bdr_ccc">または</span>

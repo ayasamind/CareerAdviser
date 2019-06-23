@@ -204,6 +204,7 @@ header ul {
 
 header ul li {
   border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
   height: 100%;
 }
 
@@ -396,6 +397,10 @@ header ul li a .nav_user_icon {
 
 #advisor_profile .person_male .person_icon_wrap img, #mypage .person_male .person_icon_wrap img, #confirm .person_male .person_icon_wrap img {
   border: 5px solid #66A0FF;
+}
+
+#advisor_profile .person_male .person_info_wrap .female_li, #mypage .person_male .person_info_wrap .female_li, #confirm .person_male .person_info_wrap .female_li {
+  display: none;
 }
 
 #advisor_profile .person_info_wrap, #mypage .person_info_wrap, #confirm .person_info_wrap {
@@ -1025,7 +1030,7 @@ header ul li a .nav_user_icon {
 }
 
 .remodal-overlay {
-  background-image: url(../../img/remodal_close_btn.png);
+  background-image: url(../img/remodal_close_btn.png);
   background-position: top 5030px right 5030px;
   background-repeat: no-repeat;
   background-size: 20px;
@@ -1212,7 +1217,7 @@ header ul li a .nav_user_icon {
 #mypage .reserved_section, #confirm .reserved_section {
   position: static;
   top: 0;
-  margin: 0;
+  margin: 0 0 10px;
 }
 
 #mypage .reserved_section .reserved_block, #confirm .reserved_section .reserved_block {
@@ -1253,6 +1258,26 @@ header ul li a .nav_user_icon {
 
 #mypage .reserved_section .approval_rejected, #confirm .reserved_section .approval_rejected {
   background-color: #e52600;
+}
+
+#mypage .detail_setting_section_body_wrap, #confirm .detail_setting_section_body_wrap {
+  border: 1px solid #ddd;
+  border-radius: 0 0 5px 5px;
+  padding: 15px 18px 15px;
+}
+
+#mypage .detail_setting_section_body, #confirm .detail_setting_section_body {
+  padding: 15px 0 15px;
+}
+
+#mypage .logout, #confirm .logout {
+  width: 100%;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 15px 0 15px;
+  line-height: 1;
 }
 
 @media screen and (max-width: 1080px) {
@@ -1564,7 +1589,7 @@ header ul li a .nav_user_icon {
   padding: 0.1em 0.5em 0.1em;
   font-size: 1.4rem;
   border: 1px solid #ccc;
-  width: 500px;
+  max-width: 100px;
   margin: 0 0 0 15px;
 }
 
