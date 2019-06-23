@@ -64,6 +64,7 @@
     <link rel="stylesheet" href="{{ asset("css/service/service.css") }}">
     <link rel="stylesheet" href="{{ asset('css/footer_lp_sub.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset("css/user.css") }}">
 	<!-- js -->
 	<script src="{{ asset("js/main.js") }}"></script>
 	<script src="{{ asset("js/modernizr-custom.js") }}"></script>

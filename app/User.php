@@ -30,7 +30,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'desire_industry',
         'desire_prefecture',
         'desire_job',
-        'desire_company_type'];
+        'desire_company_type',
+        'gender_label'
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -99,5 +101,16 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendPasswordResetNotification($token)
     {
       $this->notify(new PasswordResetNotification($token));
+    }
+
+    public function getGenderLabelAttribute()
+    {
+        $label = '';
+        if ($this->gender == 1) {
+            $label = '男性';
+        } else {
+            $label = '女性';
+        }
+        return $label;
     }
 }
