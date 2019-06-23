@@ -45,6 +45,10 @@
     border-color: #ccc;
 }
 
+.font-white {
+    color: white;
+}
+
 #fade {
     position:fixed;
     top:0px;
