@@ -30,6 +30,22 @@ $(document).ready(function() {
     $('#company_preference_profile_section .profile_cancel_btn').click(function(){
         $('#company_preference_profile_section .profile_form').removeClass('edit_mode');
     });
+
+    $('#detail_setting_section .profile_edit_btn,#detail_setting_section .profile_save_btn').click(function(){
+        $('#detail_setting_section .profile_form').addClass('edit_mode');
+    });
+
+    $('#detail_setting_section .profile_cancel_btn').click(function() {
+        $('#detail_setting_section .profile_form').removeClass('edit_mode');
+    })
+
+    $('#password_setting_section .profile_edit_btn,#password_setting_section .profile_save_btn').click(function(){
+        $('#password_setting_section .profile_form').addClass('edit_mode');
+    });
+
+    $('#password_setting_section .profile_cancel_btn').click(function(){
+        $('#password_setting_section .profile_form').removeClass('edit_mode');
+    })
 });
 
 $(document).on("click", ".cant_edit1", function() {
@@ -321,7 +337,6 @@ $(document).on('change', 'input[type="file"]', function(e) {
                 })
             } else {
                $(".preview").data('url', response.url)
-               console.log($(".preview").data('url'))
             }
         },
     ).fail(
@@ -347,3 +362,91 @@ $(document).on('change', 'input[type="file"]', function(e) {
 
     reader.readAsDataURL(file);
 });
+
+$(document).on('click', '#save_email', function () {
+    $("#server-success").addClass('hide')
+    $("#server-error").addClass('hide')
+    $("#validate-email").text('')
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var email = $('#input_email').val()
+    var data = {
+        email,
+        _token: CSRF_TOKEN,
+    }
+    $.ajax({
+        url: url+'/users/updateEmail',
+        type: 'post',
+        data: data,
+        dataType: 'json',
+        beforeSend: function(){
+            $('#fade').removeClass('hide');
+            $('#ajax-message-success').addClass('hide');
+            $('#ajax-message-error').addClass('hide');
+        }
+    }).done(
+        function (response) {
+            $('#fade').addClass('hide');
+            if (response.status === 'error') {
+                $('#ajax-message-error').removeClass('hide');
+                $('#ajax-message-error').text(response.message);
+                Object.keys(response.validate).forEach(value => {
+                    $("#validate-" + value).text(response.validate[value])
+                })
+            } else {
+                $('#ajax-message-success').removeClass('hide');
+                $('#detail_setting_section .profile_form').toggleClass('edit_mode');
+                $('#ajax-message-success').text(response.message);
+                $("#email-label").text(email)
+            }
+        },
+    ).fail(
+        function (e) {
+            console.log(e)
+        }
+    )
+})
+
+$(document).on('click', '#save_password', function () {
+    $("#server-success").addClass('hide')
+    $("#server-error").addClass('hide')
+    $("#validate-password").text('')
+    $("#validate-password_confirm").text('')
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var password = $('#input_password').val()
+    var password_confirmation = $('#input_password_confirm').val()
+    var data = {
+        password,
+        password_confirmation,
+        _token: CSRF_TOKEN,
+    }
+    $.ajax({
+        url: url+'/users/updatePassword',
+        type: 'post',
+        data: data,
+        dataType: 'json',
+        beforeSend: function(){
+            $('#fade').removeClass('hide');
+            $('#ajax-message-success').addClass('hide');
+            $('#ajax-message-error').addClass('hide');
+        }
+    }).done(
+        function (response) {
+            $('#fade').addClass('hide');
+            if (response.status === 'error') {
+                $('#ajax-message-error').removeClass('hide');
+                $('#ajax-message-error').text(response.message);
+                Object.keys(response.validate).forEach(value => {
+                    $("#validate-" + value).text(response.validate[value])
+                })
+            } else {
+                $('#ajax-message-success').removeClass('hide');
+                $('#password_setting_section .profile_form').toggleClass('edit_mode');
+                $('#ajax-message-success').text(response.message);
+            }
+        },
+    ).fail(
+        function (e) {
+            console.log(e)
+        }
+    )
+})

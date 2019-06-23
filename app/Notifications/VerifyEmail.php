@@ -3,16 +3,16 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Messages\MailMessage;
 
-
-class EmailVerificationJa extends Notification
+class PasswordResetNotification extends Notification
 {
-    public static $toMailCallback;
     use Queueable;
     protected $title = '会員登録 キャリアアドバイザー.com';
 
@@ -21,9 +21,9 @@ class EmailVerificationJa extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($token)
     {
-        //
+      $this->token = $token;
     }
 
     /**
@@ -52,15 +52,16 @@ class EmailVerificationJa extends Notification
             ]);
     }
 
-    protected function verificationUrl($notifiable)
+    /**
+     * Get the array representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toArray($notifiable)
     {
-        return URL::temporarySignedRoute(
-            'verification.verify', Carbon::now()->addMinutes(60), ['id' => $notifiable->getKey()]
-        );
-    }
-
-    public static function toMailUsing($callback)
-    {
-        static::$toMailCallback = $callback;
+        return [
+            //
+        ];
     }
 }

@@ -27,7 +27,10 @@ Route::post("/logout", "User\Auth\LoginController@logout")->name('user.logout');
 Route::get('/advisers', 'User\AdvisersController@index')->name('advisers.index');
 Route::get('/advisers/show/{id}', 'User\AdvisersController@show')->name('advisers.show');
 Route::get('/company', 'User\PageController@company')->name('company');
-
+Route::get('/password/reset', 'User\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('/password/email', 'User\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('/password/reset/{token}', 'User\Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('/password/reset', 'User\Auth\ResetPasswordController@reset')->name('password.update');
 
 Route::middleware(['auth:user'])->name('user.')->group(function() {
     Route::get('/thanks', function () {
@@ -44,6 +47,8 @@ Route::middleware(['verified', 'auth:user'])->name('user.')->group(function() {
     Route::post('/users/updateInformalDecision', 'User\UsersController@updateInformalDecision')->name('users.update_informal_decision');
     Route::post('/users/updateDesire', 'User\UsersController@updateDesire')->name('users.update_desire');
     Route::post('users/uploadPhoto', 'User\UsersController@uploadPhoto')->name('users.upload_photo');
+    Route::post('users/updateEmail', 'User\UsersController@updateEmail')->name('users.update_email');
+    Route::post('users/updatePassword', 'User\UsersController@updatePassword')->name('users.update_password');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
