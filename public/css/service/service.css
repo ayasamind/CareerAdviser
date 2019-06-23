@@ -399,9 +399,9 @@ header ul li a .nav_user_icon {
   border: 5px solid #66A0FF;
 }
 
-#advisor_profile .person_male .person_info_wrap .female_li, #mypage .person_male .person_info_wrap .female_li, #confirm .person_male .person_info_wrap .female_li {
+/* #advisor_profile .person_male .person_info_wrap .female_li, #mypage .person_male .person_info_wrap .female_li, #confirm .person_male .person_info_wrap .female_li {
   display: none;
-}
+} */
 
 #advisor_profile .person_info_wrap, #mypage .person_info_wrap, #confirm .person_info_wrap {
   width: 78%;
@@ -1030,10 +1030,11 @@ header ul li a .nav_user_icon {
 }
 
 .remodal-overlay {
-  background-image: url(../img/remodal_close_btn.png);
+  background-image: url(../../img/remodal_close_btn.png);
   background-position: top 5030px right 5030px;
   background-repeat: no-repeat;
   background-size: 20px;
+  width: 500px;
   background-color: rgba(0, 0, 0, 0.5) !important;
   z-index: 10000 !important;
 }
@@ -1589,7 +1590,8 @@ header ul li a .nav_user_icon {
   padding: 0.1em 0.5em 0.1em;
   font-size: 1.4rem;
   border: 1px solid #ccc;
-  max-width: 100px;
+  /* max-width: 100px; */
+  width: 500px;
   margin: 0 0 0 15px;
 }
 
