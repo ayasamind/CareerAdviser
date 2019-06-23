@@ -21,9 +21,9 @@
 <meta name="description" content="キャリアアドバイザー.comは最高の就活を送るために、自分に最適なキャリアアドバイザーを探すことができるキャリアアドバイザーの口コミ比較サイトです！">
 <!-- OGP基本共通設定 -->
 <meta property="og:title" content="" />
-<meta property="og:type" content="" />
-<meta property="og:url" content="" />
-<meta property="og:image" content="img/ogp_img.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ca-com.life/img/" />
+<meta property="og:image" content="https://ca-com.life/img/ogp_img.jpg" />
 <meta property="og:site_name" content="" />
 <meta property="og:description" content="" />
 <!--facebook/LINE-->
@@ -81,6 +81,7 @@
 <link rel="stylesheet" href="css/section/contact_section.css">
 <link rel="stylesheet" href="css/section/table_section.css">
 <link rel="stylesheet" href="css/section/faq_section.css">
+<link rel="stylesheet" href="css/section/advisor_card.css">
 <!-- カスタマイズ -->
 <link rel="stylesheet" href="css/main.css">
 <!-- js -->
@@ -109,7 +110,7 @@
           gtag('js', new Date());
           gtag('config', 'UA-113345802-1');
   </script>
-<!-- Google Analytics --?>>
+<!-- Google Analytics -->
 
 <!-- js -->
 <script>
@@ -357,6 +358,31 @@ jQuery(document).ready(function($){
 					<div class="banner_slider_wrap center_flex_ver">
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
+
+								<div class="swiper-slide advisor_card advisor_card06 card_female">
+									<div class="advisor_card_contents">
+										<p class="advisor_card_message sefif lh15">
+											どんなキャリアを選んでも、最後は自分にぴったりの仕事にたどり着ける!
+										</p>
+										<div class="advisor_card_inner">
+											<p class="fw700 ls15">
+												<span class="advisor_card_name">吉田 佳奈</span>
+												<span class="advisor_card_name_en">Kana Yoshida</span>
+											</p>
+											<dl class="advisor_card_taglist mt15 txt_l">
+												<li><a href="">自己分析</a></li>
+												<li><a href="">業界研究</a></li>
+												<li><a href="">企業研究</a></li>
+												<li><a href="">企業紹介</a></li>
+											</dl>
+											<a href="https://note.mu/rashisa0123/n/n51a3519b57ec" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
+												<i class="fas fa-user-circle fs28"></i>
+												<span>インタビュー記事へ</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
 								<div class="swiper-slide advisor_card advisor_card05 card_female">
 									<div class="advisor_card_contents">
 										<p class="advisor_card_message sefif lh15">
@@ -545,6 +571,31 @@ jQuery(document).ready(function($){
 						</p>
 					</div>
 					<div class="contents row advisor_row">
+
+						<div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card06 card_female">
+							<div class="advisor_card_contents">
+								<p class="advisor_card_message sefif lh15">
+									どんなキャリアを選んでも、最後は自分にぴったりの仕事にたどり着ける!
+								</p>
+								<div class="advisor_card_inner">
+									<p class="fw700 ls15">
+										<span class="advisor_card_name">吉田 佳奈</span>
+										<span class="advisor_card_name_en">Kana Yoshida</span>
+									</p>
+									<dl class="advisor_card_taglist mt15 txt_l">
+										<li><a href="">自己分析</a></li>
+										<li><a href="">業界研究</a></li>
+										<li><a href="">企業研究</a></li>
+										<li><a href="">企業紹介</a></li>
+									</dl>
+									<a href="https://note.mu/rashisa0123/n/n51a3519b57ec" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
+										<i class="fas fa-user-circle fs28"></i>
+										<span>インタビュー記事へ</span>
+									</a>
+								</div>
+							</div>
+						</div>
+
 						<div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card05 card_female">
 							<div class="advisor_card_contents">
 								<p class="advisor_card_message sefif fs14vw lh15">

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewAdviserMail;
 use Illuminate\Support\Facades\DB;
+use App\Tag;
 
 class AdvisersController extends UsersController
 {
@@ -25,8 +26,10 @@ class AdvisersController extends UsersController
     public function index()
     {
         $advisers = Adviser::whereHas('AdviserProfile')->orderByDesc('created_at')->paginate(10);
+        $tags = Tag::all();
         return view('user.advisers.index', [
-            'advisers' => $advisers
+            'advisers' => $advisers,
+            'tags'     => $tags
         ]);
     }
 

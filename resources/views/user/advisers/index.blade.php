@@ -1,7 +1,60 @@
 @extends('layouts.user')
 
 @section('content')
-<div class="container">
+<div id="primary" class="content-area">
+		<main id="main" class="site-main home_main">
+			{{-- <div class="landscape_notice">
+				<p class="landscape_notice_txt">
+					このウェブサイトは横画面には対応しておりません。<br>スマートフォンの向きを縦にしてご閲覧ください。
+				</p>
+			</div> --}}
+
+			<section id="home" class="sections">
+				<div class="tag_header">
+					<h2 class="container_service lh21">タグで探す</h2>
+					<dl class="advisor_card_taglist container_service">
+                        @foreach ($tags as $tag)
+                            <li><a href="">{{ $tag->name }}</a></li>
+                        @endforeach
+					</dl>
+				</div>
+				<div class="container_service home_inner">
+                    <div class="contents row advisor_row">
+                        @foreach ($advisers as $adviser)
+                            <div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card05 card_female">
+                                <div class="advisor_card_contents">
+                                    <p class="advisor_card_message sefif fs14vw lh15">
+                                        {{ $adviser->AdviserProfile->comment }}
+                                    </p>
+                                    <div class="advisor_card_inner">
+                                        <p class="fw700 ls15">
+                                            <span class="advisor_card_name">{{ $adviser->name }}</span>
+                                            {{-- <span class="advisor_card_name_en">Momoko Yamaguchi</span> --}}
+                                        </p>
+                                        <dl class="advisor_card_taglist mt15 txt_l">
+                                            @foreach ($adviser->Tag as $tag)
+                                                <li><a href="">{{ $tag->name }}</a></li>
+                                            @endforeach
+                                            <!-- <li><a href="">埼玉出身</a></li>
+                                            <li><a href="">ディズニー大好き</a></li> -->
+                                            <!-- <li><a href="">今の自分を変えたい人お待ちしてます</a></li> -->
+                                        </dl>
+                                        <a href="{{ route('advisers.show', [
+                                            'id' => $adviser->id
+                                        ])  }}" class="advisor_card_more_btn fw700 fs17 mt10">
+                                            <i class="fas fa-user-circle fs28"></i>
+                                            <span>プロフィールをみる</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+				</div>
+			</section>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
@@ -31,5 +84,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

@@ -44,12 +44,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     ログイン
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        パスワードを忘れた場合
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>
