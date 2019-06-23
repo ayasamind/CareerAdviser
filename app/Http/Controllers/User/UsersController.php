@@ -13,6 +13,8 @@ use App\Http\Requests\User\UpdateUniversityRequest;
 use App\Http\Requests\User\UpdateInformalDecisionRequest;
 use App\Http\Requests\User\UpdateDesireRequest;
 use App\Http\Requests\User\UserFileUploadRequest;
+use App\Http\Requests\User\UpdateEmailRequest;
+use App\Http\Requests\User\UpdatePasswordRequest;
 use App\User;
 use App\UserProfile;
 use App\Desire;
@@ -214,5 +216,32 @@ class UsersController extends BaseController
         $profile->save();
 
         $user->Desire()->sync($data['desire']);
+    }
+
+    public function updateEmail(UpdateEmailRequest $request)
+    {
+        if (!$request->ajax()) {
+            abort(404);
+        }
+        $user = Auth::user();
+        $user->profile = $request->email;
+        return response()->json([
+            'message' => 'ユーザー情報を編集しました',
+            'status' => 'success'
+        ], Response::HTTP_OK);
+    }
+
+    public function updatePassword(UpdatePasswordRequest $request)
+    {
+        if (!$request->ajax()) {
+            abort(404);
+        }
+        $user = Auth::user();
+        $user->password = bcrypt($request->password);
+        $user->update();
+        return response()->json([
+            'message' => 'ユーザー情報を編集しました',
+            'status' => 'success'
+        ], Response::HTTP_OK);
     }
 }

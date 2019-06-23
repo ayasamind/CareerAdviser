@@ -116,21 +116,9 @@
                 <nav>
                     <ul id="ul_current">
                         @auth('user')
-                            <li class="nav_li nav_li_menu" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><a class="nav_li_a fs14 fs16sp" href="#about"><img src="{{ asset("img/service/default_usericon.jpg") }}" alt="マイページ" class="nav_user_icon"></a></li>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('user.mypage') }}">マイページ</a>
-                                <a class="dropdown-item" href="{{ route('user.logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    ログアウト
-                                </a>
-
-                                <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                            <li class="nav_li nav_li_menu"><a class="nav_li_a fs14 fs16sp" href="#advisor"><img src="{{ asset("img/service/chat.svg") }}" alt="チャット"></a></li>
-                            <li class="nav_li nav_li_menu"><a class="nav_li_a fs14 fs16sp" href="#flow"><img src="{{ asset("img/service/info.svg") }}" alt="お知らせ"></a></li>
+                            <li href="{{ route('user.mypage') }}">
+                                <a class="nav_li_a fs14 fs16sp" href="{{ route('user.mypage') }}"><img src="{{ asset("img/service/default_usericon.jpg") }}" alt="マイページ" class="nav_user_icon"></a>
+                            </li>
                         @endauth
                     </ul>
                 </nav>

@@ -30,6 +30,21 @@
     display: none;
 }
 
+.invalid-feedback {
+    display: initial;
+    font-size: 130%;
+}
+
+.disable {
+    background-color: gray !important;
+    border-color: #ccc;
+}
+
+.disable:hover {
+    background-color: gray !important;
+    border-color: #ccc;
+}
+
 #fade {
     position:fixed;
     top:0px;

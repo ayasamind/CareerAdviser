@@ -44,6 +44,8 @@ Route::middleware(['verified', 'auth:user'])->name('user.')->group(function() {
     Route::post('/users/updateInformalDecision', 'User\UsersController@updateInformalDecision')->name('users.update_informal_decision');
     Route::post('/users/updateDesire', 'User\UsersController@updateDesire')->name('users.update_desire');
     Route::post('users/uploadPhoto', 'User\UsersController@uploadPhoto')->name('users.upload_photo');
+    Route::post('users/updateEmail', 'User\UsersController@updateEmail')->name('users.update_email');
+    Route::post('users/updatePassword', 'User\UsersController@updatePassword')->name('users.update_password');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
