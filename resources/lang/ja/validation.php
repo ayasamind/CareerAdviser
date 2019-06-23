@@ -142,10 +142,15 @@ return [
     */
 
     'attributes' => [
-        "email" => "メールアドレス",
-        "password" => "パスワード",
-        "name" => "名前",
-        "photo" => "プロフィール画像"
+        "email"        => "メールアドレス",
+        "password"     => "パスワード",
+        "name"         => "名前",
+        "photo"        => "プロフィール画像",
+        "gender"       => "性別",
+        "prefecture"   => "地域",
+        "graduate_year"=> "卒業年度",
+        "birthday"     => "生年月日",
+        "university"   => "大学",
     ],
 
 ];
