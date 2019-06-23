@@ -73,32 +73,54 @@
 							<h2>空き日程</h2>
 							<section class="advisor_profile_section_body">
 								<span class="mark_exp">○面談可 / △WEB面談のみ可 / ×面談不可</span>
-								<table>
-								<!-- <table class="disabled_calender"> -->
+                                <table
+                                    @guest
+                                        class="disabled_calender"
+                                    @endguest
+                                >
 								    <tbody>
 								    	<tr>
 									      <th class="time"></th>
-									        <th class="month" colspan="7"><span>5</span>月</th>
+                                            <th class="month" colspan="7"><span>{{ $week[0]->month }}</span>月</th>
 									      <th class="time"></th>
 								    	</tr>
 								    </tbody>
 								    <thead>
 								      <tr>
-								        <td class="time pagenation_btn_cell pagenation_btn_cell_prev disabled_pagenation">
-								        	<a href="">
+                                        <td
+                                            <?php $carbon = new \Carbon\Carbon() ?>
+                                            @if ($carbon->addDay(2)->format('Y-m-d') == $week[0]->format('Y-m-d'))
+                                                class="time pagenation_btn_cell pagenation_btn_cell_prev disabled_pagenation"
+                                            @else
+                                                class="time pagenation_btn_cell pagenation_btn_cell_prev"
+                                            @endif
+                                        >
+                                            <a href="{{ route("advisers.show", [
+                                                'id' => $adviser->id,
+                                                'param' => $week[0],
+                                                'type'  => 'before'
+                                            ]) }}">
 								        		<img src="{{ asset("img/svg/arrow3_l.svg") }}">
 								        		<span>前週</span>
 								        	</a>
-								        </td>
-								            <td class="sunday">19<span>日</span></td>
-								            <td>20<span>月</span></td>
-								            <td>21<span>火</span></td>
-								            <td>22<span>水</span></td>
-								            <td>23<span>木</span></td>
-								            <td>24<span>金</span></td>
-								            <td class="saturday">25<span>土</span></td>
+                                        </td>
+                                        @foreach ($week as $day)
+                                            <td
+                                                @if ($day->isSunday())
+                                                    class="sunday"
+                                                @elseif ($day->isSaturday())
+                                                    class="sunday"
+                                                @endif
+                                            >{{ $day->day }}
+                                                <span>{{ $day->formatLocalized('%a') }}</span>
+                                            </td>
+                                        @endforeach
 								        <td class="time pagenation_btn_cell pagenation_btn_cell_next">
-								        	<a href="">
+								        	<a href="{{ route("advisers.show", [
+                                                'id' => $adviser->id,
+                                                'param' => $week[0],
+                                                'type'  => 'after'
+                                            ]) }}">
 								        		<span>翌週</span>
 								        		<img src="{{ asset("img/svg/arrow3_r.svg") }}">
 								        	</a>
@@ -106,302 +128,58 @@
 								      </tr>
 								    </thead>
 								    <tbody>
-								      <tr>
-								        <td class="time">10:00</td>
-								          <td class="web_ok"><a href="confirm.php">△</a></td>
-								          <td class="web_ok"><a href="confirm.php">△</a></td>
-								          <td class="web_ok"><a href="confirm.php">△</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">10:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">10:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								        <td class="time">10:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">11:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								        <td class="time">11:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">11:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								        <td class="time">11:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">12:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								        <td class="time">12:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">12:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								        <td class="time">12:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">13:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								        <td class="time">13:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">13:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								        <td class="time">13:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">14:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								        <td class="time">14:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">14:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								        <td class="time">14:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">15:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								        <td class="time">15:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">15:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								        <td class="time">15:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">16:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">16:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">16:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">16:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">17:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">17:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">17:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">17:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">18:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">18:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">18:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">18:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">19:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">19:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">19:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">19:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">20:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">20:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">20:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">20:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">21:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">21:00</td>
-								      </tr>
-								      <tr>
-								        <td class="time">21:30</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">21:30</td>
-								      </tr>
-								      <tr>
-								        <td class="time">22:00</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ng">×</td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								          <td class="all_ok"><a href="confirm.php">○</a></td>
-								        <td class="time">22:00</td>
-								      </tr>
+                                        @for ($i = 0; $i <=11; $i++)
+                                            <tr>
+                                                <td class="time">{{ $i + 10 }}:00</td>
+                                                    @include("user.advisers._schedule", ['week' => $week, 'schedules' => $schedules, 'index' => $i * 2, 'date' => $i + 10 . ":00", 'id' => $adviser->id])
+                                                <td class="time">{{ $i + 10 }}:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="time">{{ $i + 10 }}:30</td>
+                                                    @include("user.advisers._schedule", ['week' => $week, 'schedules' => $schedules, 'index' => $i * 2 + 1, 'date' => $i + 10 . ":30", 'id' => $adviser->id])
+                                                <td class="time">{{ $i + 10 }}:30</td>
+                                            </tr>
+                                        @endfor
 								    </tbody>
 								    <tfoot>
 								      <tr>
-								        <td class="time pagenation_btn_cell pagenation_btn_cell_prev disabled_pagenation">
-								        	<a href="">
+                                        <td
+                                            <?php $carbon = new \Carbon\Carbon() ?>
+                                            @if ($carbon->addDay(2)->format('Y-m-d') == $week[0]->format('Y-m-d'))
+                                                class="time pagenation_btn_cell pagenation_btn_cell_prev disabled_pagenation"
+                                            @else
+                                                class="time pagenation_btn_cell pagenation_btn_cell_prev"
+                                            @endif
+                                        >
+                                            <a href="{{ route("advisers.show", [
+                                                'id' => $adviser->id,
+                                                'param' => $week[0],
+                                                'type'  => 'before'
+                                            ]) }}">
 								        		<img src="{{ asset("img/svg/arrow3_l.svg") }}">
 								        		<span>前週</span>
-								        	</a>
-								        </td>
-								            <td class="sunday">19<span>日</span></td>
-								            <td>20<span>月</span></td>
-								            <td>21<span>火</span></td>
-								            <td>22<span>水</span></td>
-								            <td>23<span>木</span></td>
-								            <td>24<span>金</span></td>
-								            <td class="saturday">25<span>土</span></td>
+                                            </a>
+                                        </td>
+                                        @foreach ($week as $day)
+                                            <td
+                                                @if ($day->isSunday())
+                                                    class="sunday"
+                                                @elseif ($day->isSaturday())
+                                                    class="sunday"
+                                                @endif
+                                            >{{ $day->day }}
+                                                <span>{{ $day->formatLocalized('%a') }}</span>
+                                            </td>
+                                        @endforeach
 								        <td class="time pagenation_btn_cell pagenation_btn_cell_next">
-								        	<a href="">
-								        		<span>翌週</span>
-								        		<img src="{{ asset("img/svg/arrow3_r.svg") }}">
-								        	</a>
+                                            <a href="{{ route("advisers.show", [
+                                                'id' => $adviser->id,
+                                                'param' => $week[0],
+                                                'type'  => 'after'
+                                            ]) }}">
+                                                <span>翌週</span>
+                                                <img src="{{ asset("img/svg/arrow3_r.svg") }}">
+                                            </a>
 								        </td>
 								      </tr>
 								    </tfoot>
@@ -409,7 +187,7 @@
 								  <div class="calender_signup_overlay">
 									<div class="calender_signup_overlay_inner">
 										<span class="ls25">面談を予約するには、登録が必要です</span>
-										<a href="https://line.me/R/ti/p/%40gay5294i" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">無料で登録する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                                        <a href="{{ route('register') }}" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">無料で登録する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
 									</div>
 								  </div>
 							</section>

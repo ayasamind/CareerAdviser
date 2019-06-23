@@ -120,7 +120,13 @@
                                 <a class="nav_li_a fs14 fs16sp font-white" href="{{ route('advisers.index') }}">アドバイザー一覧</a>
                             </li>
                             <li href="{{ route('user.mypage') }}">
-                                <a class="nav_li_a fs14 fs16sp" href="{{ route('user.mypage') }}"><img src="{{ asset("img/service/default_usericon.jpg") }}" alt="マイページ" class="nav_user_icon"></a>
+                                <a class="nav_li_a fs14 fs16sp" href="{{ route('user.mypage') }}">
+                                    @if (Auth::user()->UserProfile)
+                                        <img src="{{ Auth::user()->UserProfile->photo_url ? Auth::user()->UserProfile->photo_url : asset("img/service/default_usericon.jpg") }}" alt="マイページ" class="nav_user_icon">
+                                    @else
+                                        <img src="{{ asset("img/service/default_usericon.jpg") }}" alt="マイページ" class="nav_user_icon">
+                                    @endif
+                                </a>
                             </li>
                         @endauth
                     </ul>
