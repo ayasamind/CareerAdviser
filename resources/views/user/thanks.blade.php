@@ -13,7 +13,7 @@
                 <div class="login_content">
                     <div class="txt_c">
                     <a href="/" class="block width30 center_block width50sp mt20sp">
-                        <img src="<?php print $Path; ?>img/logo_ver.svg" alt="キャリアアドバイザー.com" class="width100">
+                        <img src="{{ asset('img/logo_ver.svg') }}" alt="キャリアアドバイザー.com" class="width100">
                     </a>
                     </div>
                     <span class="fs16 fw700 block txt_c center_block mt50">登録いただいたメールアドレスに、本登録用のメールを送信しました。メールを確認して、登録を完了してください。</span>

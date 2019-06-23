@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use App\Http\Controllers\User\UsersController;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Verified;
+use Illuminate\Auth\Access\AuthorizationException;
 
 class VerificationController extends UsersController
 {
@@ -46,5 +48,22 @@ class VerificationController extends UsersController
         return $request->user()->hasVerifiedEmail()
             ? redirect($this->redirectPath())
             : view('user.auth.verify');
+    }
+
+    public function verify(Request $request)
+    {
+        if ($request->route('id') != $request->user()->getKey()) {
+            throw new AuthorizationException;
+        }
+
+        if ($request->user()->hasVerifiedEmail()) {
+            return redirect($this->redirectPath());
+        }
+
+        if ($request->user()->markEmailAsVerified()) {
+            event(new Verified($request->user()));
+        }
+
+        return redirect($this->redirectPath())->with('verified', true)->with('success', '会員登録が完了しました。ユーザー情報詳細を編集してください。');
     }
 }
