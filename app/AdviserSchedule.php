@@ -15,7 +15,7 @@ class AdviserSchedule extends Model
 
     protected $fillable = [
         'adviser_id',
-        'data',
+        'date',
         'type'
     ];
 

@@ -21,6 +21,7 @@ class CreateMeetingRequests extends Migration
             $table->integer('type');
             $table->integer('status');
             $table->text('place')->nullable();
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }

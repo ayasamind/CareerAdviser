@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class NewMeetingMail extends Mailable
+class ApprovedMeetingMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,11 +16,9 @@ class NewMeetingMail extends Mailable
      *
      * @return void
      */
-    public function __construct($meetingRequest, $user, $adviser)
+    public function __construct($meetingRequest)
     {
         $this->meetingRequest = $meetingRequest;
-        $this->user = $user;
-        $this->adviser = $adviser;
     }
 
     /**
@@ -31,12 +29,10 @@ class NewMeetingMail extends Mailable
     public function build()
     {
         return $this
-          ->subject('【キャリアアドバイザー.com】面談の申し込みがありました')
-          ->view('emails.user.newMeeting')
+          ->subject('【キャリアアドバイザー.com】面談が承認されました')
+          ->view('emails.adviser.approvedMeeting')
           ->with([
               'meetingRequest' => $this->meetingRequest,
-              'user' => $this->user,
-              'adviser' => $this->adviser
           ]);
     }
 }

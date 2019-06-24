@@ -139,7 +139,7 @@ class AdvisersController extends UsersController
     private function newMeeting($data)
     {
         $user = Auth::user();
-        MeetingRequest::create([
+        $meetingRequest = MeetingRequest::create([
             'adviser_id' => $data['adviser_id'],
             'user_id'    => $user->id,
             'date'       => new Carbon($data['date']),
@@ -148,6 +148,6 @@ class AdvisersController extends UsersController
             'place'      => $data['place']
         ]);
         $adviser = Adviser::find($data['adviser_id']);
-        Mail::to($adviser->email)->send(new NewMeetingMail($adviser, $user));
+        Mail::to($adviser->email)->send(new NewMeetingMail($meetingRequest, $user, $adviser));
     }
 }
