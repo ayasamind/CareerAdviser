@@ -112,6 +112,7 @@ return [
     'unique'               => ':attributeの値は既に存在しています',
     'uploaded'             => ':attributeのアップロードに失敗しました',
     'url'                  => ':attributeに正しい形式を指定してください',
+    'max_number' => ':attributeは最大:paramつまで選択できます',
 
     /*
     |--------------------------------------------------------------------------
@@ -151,6 +152,7 @@ return [
         "graduate_year"=> "卒業年度",
         "birthday"     => "生年月日",
         "university"   => "大学",
+        "Tag"          => "タグ"
     ],
 
 ];
