@@ -69,11 +69,13 @@
                                                     @else
                                                         <li id="gender_area"></li>
                                                     @endif
-                                                    <li id="prefecture_area">
-                                                        <img class="area_icon" src="{{ asset("img/service/map.svg") }}">
-                                                        @if ($user->UserProfile)
-                                                            {{ $user->UserProfile->prefecture }}
-                                                        @endif
+                                                    <li>
+                                                        <div id="prefecture_area">
+                                                            <img class="area_icon" src="{{ asset("img/service/map.svg") }}">
+                                                            @if ($user->UserProfile)
+                                                                {{ $user->UserProfile->prefecture }}
+                                                            @endif
+                                                        </div>
                                                     </li>
                                                 </dl>
 												<div class="profile_edit_btn_wrap">
@@ -155,19 +157,25 @@
 										</h3>
 										<dl class="profile_dl_static">
                                             <li><span>大学/学部/学科</span>
-                                                @if ($user->UserProfile)
-                                                    <div id="university-label">{{ $user->UserProfile->university  }}</div>
-                                                @endif
+                                                <div id="university-label">
+                                                    @if ($user->UserProfile)
+                                                        {{ $user->UserProfile->university  }}
+                                                    @endif
+                                                </div>
                                             </li>
                                             <li><span>卒業年度</span>
-                                                @if ($user->UserProfile)
-                                                    <div id="graduate_year-label">{{ $user->UserProfile->graduate_year }}</div>
-                                                @endif
+                                                <div id="graduate_year-label">
+                                                    @if ($user->UserProfile)
+                                                        {{ $user->UserProfile->graduate_year }}
+                                                    @endif
+                                                </div>
                                             </li>
                                             <li><span>生年月日</span>
-                                                @if ($user->UserProfile)
-                                                    <div id="birthday-label">{{ $user->UserProfile->birthday ? $user->UserProfile->birthday->format('Y年m月d日') : "" }}</div>
-                                                @endif
+                                                <div id="birthday-label">
+                                                    @if ($user->UserProfile)
+                                                        {{ $user->UserProfile->birthday ? $user->UserProfile->birthday->format('Y年m月d日') : "" }}
+                                                    @endif
+                                                </div>
                                             </li>
 										</dl>
 										<dl class="profile_dl_edit">

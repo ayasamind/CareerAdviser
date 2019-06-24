@@ -85,12 +85,12 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getDesirePrefectureAttribute()
     {
-        return $this->returnDesireLabel(Desire::DESIRE_TYPE_JOB);
+        return $this->returnDesireLabel(Desire::DESIRE_TYPE_PREFECTURE);
     }
 
     public function getDesireJobAttribute()
     {
-        return $this->returnDesireLabel(Desire::DESIRE_TYPE_PREFECTURE);
+        return $this->returnDesireLabel(Desire::DESIRE_TYPE_JOB);
     }
 
     public function getDesireCompanyTypeAttribute()

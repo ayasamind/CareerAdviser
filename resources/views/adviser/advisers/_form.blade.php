@@ -6,7 +6,9 @@
             <img src="{{ $adviser->AdviserProfile->photo_url }}" width="200"/>
             {!! Form::hidden('PhotoExist', 'photo_url', ['id'=>'photo', 'class'=>'form-control-file '  . ($errors->has('adviser_profile.photo') ? 'is-invalid' : '')]) !!}
         @else
-            <img src="{{ asset('img/no_image.png') }}" width="200"/>
+            <div class="preview">
+                <img src="{{ asset('img/no_image.png') }}" width="200"/>
+            </div>
         @endif
         {!! Form::file('AdviserProfile[photo]', null, ['id'=>'photo', 'class'=>'form-control-file '  . ($errors->has('adviser_profile.photo') ? 'is-invalid' : '')]) !!}
         @if ($errors->has('AdviserProfile.photo'))

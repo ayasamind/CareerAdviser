@@ -40,7 +40,7 @@ class AdviserProfileRequest extends FormRequest
                 'AdviserProfile.deny_interview' => ['required', 'boolean'],
                 'AdviserCareer.*.year' => ['required', 'string'],
                 'AdviserCareer.*.career' => ['required', 'string'],
-                'Tag' => ['required', 'present'],
+                'Tag' => ['required', 'present', 'max_number:8'],
             ];
         } else {
             $rules = [
@@ -57,7 +57,7 @@ class AdviserProfileRequest extends FormRequest
                 'AdviserProfile.deny_interview' => ['required', 'boolean'],
                 'AdviserCareer.*.year' => ['required', 'string'],
                 'AdviserCareer.*.career' => ['required', 'string'],
-                'Tag' => ['required', 'present'],
+                'Tag' => ['required', 'present', 'max_number:8'],
             ];
         }
         return $rules;
