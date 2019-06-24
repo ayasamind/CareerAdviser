@@ -75,7 +75,7 @@ Route::prefix('adviser')->name('adviser.')->group(function () {
         Route::get("/", "Adviser\HomeController@index")->name('home');
         Route::get("/edit", "Adviser\AdvisersController@edit")->name('advisers.edit');
         Route::put("/update/{id}", "Adviser\AdvisersController@update")->name('advisers.update');
-        Route::resource('/requests', 'Adviser\MeetingRequestsController')->only(['index', 'show', 'edit']);
+        Route::resource('/requests', 'Adviser\MeetingRequestsController')->only(['index', 'edit', 'update']);
         Route::get('/users/{id}', 'Adviser\UsersController@show')->name('user.show');
     });
 });

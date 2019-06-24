@@ -28,12 +28,16 @@
                             <td>{{ $request->type_label }}</td>
                             <td>{{ $request->status_label }}</td>
                             <td>
-                                <a class="btn btn-primary" href="{{ route('admin.advisers.show', [
-                                    'adviser' => $request->id
-                                ]) }}">詳細</a>
-                                <a class="btn btn-primary" href="{{ route('admin.advisers.edit', [
-                                    'adviser' => $request->id
+                                @if ($request->status == \App\MeetingRequest::STATUS_TYPE_UNAPPROVED)
+                                <a class="btn btn-primary" href="{{ route('adviser.requests.edit', [
+                                    'request' => $request->id
                                 ]) }}">編集</a>
+                                @else
+                                <a class="btn btn-secondary" href="{{ route('adviser.requests.edit', [
+                                    'request' => $request->id
+                                ]) }}">詳細</a>
+                                @endif
+                            </a>
                             </td>
                         </tr>
                     @endforeach

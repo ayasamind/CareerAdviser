@@ -62,7 +62,7 @@ class MeetingRequest extends Model
             $label = self::STATUS_LABEL_UNAPPROVED;
         } elseif ($this->status == self::STATUS_TYPE_APPROVED) {
             $label = self::STATUS_LABEL_APPROVED;
-        } elseif ($this->status == self::STATUS_TYP_DENIED) {
+        } elseif ($this->status == self::STATUS_TYPE_DENIED) {
             $label = self::STATUS_LABEL_DENIED;
         }
         return $label;
