@@ -11,15 +11,42 @@ a.disabled {
 
 @media screen and (max-width: 600px) {
   .section_ttl_sub {
-    line-height: 1; } }
+    line-height: 1;
+  }
+}
 
 .advisor_card {
   border-radius: 15px;
   background-size: cover;
   background-position: center;
-  position: relative; }
+  position: relative;
+}
 
-.advisor_card01 {
+.advisor_card_img_wrap {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.advisor_card_img_wrap img {
+  width: 87%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+  top: 0;
+}
+
+.advisor_card06 .advisor_card_img_wrap img {
+  width: 70%;
+}
+
+/* .advisor_card01 {
   background-image: url("../img/adv01.png"); }
 
 .advisor_card02 {
@@ -35,7 +62,7 @@ a.disabled {
   background-image: url("../img/adv05.png"); }
 
 .advisor_card06 {
-  background-image: url("../img/adv06.png"); }
+  background-image: url("../img/adv06.png"); } */
 
 .card_male {
   background-color: #66A0FF; }
@@ -216,7 +243,7 @@ a.disabled {
 .banner_slider_wrap {
   width: 68%;
   margin: 0 2% 0 2%;
-  height: 700px; }
+  height: 620px; }
   .banner_slider_wrap .swiper-container {
     height: 100%; }
 
@@ -232,7 +259,7 @@ a.disabled {
   .banner_slider_wrap {
     width: 100%;
     margin: 0 15px 0 2%;
-    height: 620px; } }
+    height: 600px; } }
 
 @media screen and (max-width: 600px) {
   #banner {
@@ -246,7 +273,7 @@ a.disabled {
   .banner_slider_wrap {
     width: 100%;
     margin: 0 15px 0 2%;
-    height: 530px; } }
+    height: 500px; } }
 
 .about_box {
   width: 26%;
