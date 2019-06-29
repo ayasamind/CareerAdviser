@@ -360,7 +360,10 @@ jQuery(document).ready(function($){
 							<div class="swiper-wrapper">
 
 								<div class="swiper-slide advisor_card advisor_card06 card_female">
-									<div class="advisor_card_contents">
+                                    <div class="advisor_card_img_wrap">
+                                        <img src="img/adv06.png">
+                                    </div>
+                                    <div class="advisor_card_contents">
 										<p class="advisor_card_message sefif lh15">
 											どんなキャリアを選んでも、最後は自分にぴったりの仕事にたどり着ける!
 										</p>
