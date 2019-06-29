@@ -319,7 +319,7 @@ jQuery(document).ready(function($){
 					<ul>
 						<!-- <li class="fs16 fs25tb fs15sp txt_tc_deep signup_header_li"><a href="/signUp">新規登録</a></li>
 						<li>または</li> -->
-						<li class="fs16 fs25tb fs18sp login_header_li ml0sp mr0sp"><a href="https://line.me/R/ti/p/%40gay5294i">無料で使ってみる(LINE＠)<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a></li>
+                        <li class="fs16 fs25tb fs18sp login_header_li ml0sp mr0sp"><a href="{{ route('register') }}">無料で使ってみる<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a></li>
 					</ul>
 				</li>
 				<!-- <li class="nav_li"><a class="nav_li_a fs14 fs22tb fs13sp" href="#contents04">menu</a></li>
@@ -352,164 +352,46 @@ jQuery(document).ready(function($){
 							あなただけの<br>アドバイザーを
 						</p>
 						<!-- <a href="#" class="btn-square fb_login">facebookでログイン</a>今後実装 -->
-						<a href="https://line.me/R/ti/p/%40gay5294i" class="login_hero fs24 fs22sp txt_c fw700 mt40 mt20tb mt15sp block ls25 ls15_sp">無料で使ってみる(LINE＠)<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                        <a href="{{ route('register') }}" class="login_hero fs24 fs22sp txt_c fw700 mt40 mt20tb mt15sp block ls25 ls15_sp">無料で使ってみる<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
 						<a href="https://form.run/@ca-contact" target="_blank" class="for_worker fs12 mt10 mt7sp fw700 block txt_888">キャリアアドバイザーの方はこちら</a>
 					</div>
 					<div class="banner_slider_wrap center_flex_ver">
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 
-								<div class="swiper-slide advisor_card advisor_card06 card_female">
-                                    <div class="advisor_card_img_wrap">
-                                        <img src="img/adv06.png">
+                                @foreach ($advisers as $adviser)
+                                    <div
+                                        @if ($adviser->AdviserProfile->gender == 1)
+                                            class="swiper-slide advisor_card advisor_card06 card_male"
+                                        @else
+                                            class="swiper-slide advisor_card advisor_card06 card_female"
+                                        @endif
+                                        >
+                                        <div class="advisor_card_img_wrap">
+                                            <img src="{{ $adviser->AdviserProfile->photo_url }}">
+                                        </div>
+                                        <div class="advisor_card_contents">
+                                            <p class="advisor_card_message sefif lh15">
+                                                {{ $adviser->AdviserProfile->comment }}
+                                            </p>
+                                            <div class="advisor_card_inner">
+                                                <p class="fw700 ls15">
+                                                    <span class="advisor_card_name">{{ $adviser->name }}</span>
+                                                    {{-- <span class="advisor_card_name_en">Kana Yoshida</span> --}}
+                                                </p>
+                                                <dl class="advisor_card_taglist mt15 txt_l">
+                                                    @foreach ($adviser->Tag as $tag)
+                                                        <li><a href="">{{ $tag->name }}</a></li>
+                                                    @endforeach
+                                                </dl>
+                                                <a href="https://note.mu/rashisa0123/n/n51a3519b57ec" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
+                                                    <i class="fas fa-user-circle fs28"></i>
+                                                    <span>インタビュー記事へ</span>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="advisor_card_contents">
-										<p class="advisor_card_message sefif lh15">
-											どんなキャリアを選んでも、最後は自分にぴったりの仕事にたどり着ける!
-										</p>
-										<div class="advisor_card_inner">
-											<p class="fw700 ls15">
-												<span class="advisor_card_name">吉田 佳奈</span>
-												<span class="advisor_card_name_en">Kana Yoshida</span>
-											</p>
-											<dl class="advisor_card_taglist mt15 txt_l">
-												<li><a href="">自己分析</a></li>
-												<li><a href="">業界研究</a></li>
-												<li><a href="">企業研究</a></li>
-												<li><a href="">企業紹介</a></li>
-											</dl>
-											<a href="https://note.mu/rashisa0123/n/n51a3519b57ec" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-												<i class="fas fa-user-circle fs28"></i>
-												<span>インタビュー記事へ</span>
-											</a>
-										</div>
-									</div>
-								</div>
-
-								<div class="swiper-slide advisor_card advisor_card05 card_female">
-									<div class="advisor_card_contents">
-										<p class="advisor_card_message sefif lh15">
-											「変わってるね」と言われるあなた、お待ちしております！
-										</p>
-										<div class="advisor_card_inner">
-											<p class="fw700 ls15">
-												<span class="advisor_card_name">山口 桃子</span>
-												<span class="advisor_card_name_en">Momoko Yamaguchi</span>
-											</p>
-											<dl class="advisor_card_taglist mt15 txt_l">
-												<li><a href="">自己分析</a></li>
-												<li><a href="">面接対策</a></li>
-												<li><a href="">ウェブ面談可</a></li>
-												<li><a href="">東京就職に強い</a></li>
-												<!-- <li><a href="">埼玉出身</a></li>
-												<li><a href="">ディズニー大好き</a></li> -->
-												<li><a href="">今の自分を変えたい人お待ちしてます</a></li>
-											</dl>
-											<a href="https://note.mu/rashisa0123/n/nf9af5bb0c18b" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-												<i class="fas fa-user-circle fs28"></i>
-												<span>インタビュー記事へ</span>
-											</a>
-										</div>
-									</div>
-								</div>
-
-								<div class="swiper-slide advisor_card advisor_card04 card_female">
-									<div class="advisor_card_contents">
-										<p class="advisor_card_message sefif lh15">
-											軸ってひとりじゃなかなか見つかりませんよね。その軸を私と一緒に考えませんか？
-										</p>
-										<div class="advisor_card_inner">
-											<p class="fw700 ls15">
-												<span class="advisor_card_name">山本 愛生</span>
-												<span class="advisor_card_name_en">Aoi Yamamoto</span>
-											</p>
-											<dl class="advisor_card_taglist mt15 txt_l">
-												<li><a href="">自己分析</a></li>
-												<li><a href="">企業研究</a></li>
-												<li><a href="">ES添削</a></li>
-												<li><a href="">面接対策</a></li>
-												<li><a href="">企業紹介</a></li>
-												<li><a href="">ウェブ面談可</a></li>
-												<!-- <li><a href="">神奈川出身</a></li>
-												<li><a href="">ダンス</a></li>
-												<li><a href="">お散歩</a></li> -->
-												<li><a href="">自己分析ならお任せください</a></li>
-											</dl>
-											<a href="https://note.mu/rashisa0123/n/n658bf87a608a" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-												<i class="fas fa-user-circle fs28"></i>
-												<span>インタビュー記事へ</span>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide advisor_card advisor_card02 card_male">
-									<div class="advisor_card_contents">
-										<p class="advisor_card_message sefif lh15">
-											私は何となく “大手” に就職して後悔しました。あなたはどうですか？
-										</p>
-										<div class="advisor_card_inner">
-											<p class="fw700 ls15">
-												<span class="advisor_card_name">原田 公陽</span>
-												<span class="advisor_card_name_en">Koyo HARADA</span>
-											</p>
-											<dl class="advisor_card_taglist mt15 txt_l">
-												<li><a href="">自己分析</a></li>
-												<li><a href="">業界研究</a></li>
-												<li><a href="">企業研究</a></li>
-												<li><a href="">ES添削</a></li>
-												<li><a href="">面接対策</a></li>
-												<li><a href="">企業紹介</a></li>
-												<li><a href="">ウェブ面談可</a></li>
-												<!-- <li><a href="">広島出身</a></li>
-												<li><a href="">趣味豊富</a></li>
-												<li><a href="">フットサル</a></li>
-												<li><a href="">スポーツ観戦</a></li>
-												<li><a href="">旅行</a></li>
-												<li><a href="">食べ歩き</a></li> -->
-												<li><a href="">自分に合う企業を知りたい人お待ちしてます</a></li>
-											</dl>
-											<a href="https://note.mu/rashisa0123/n/na5c2e086b2c3" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-												<i class="fas fa-user-circle fs28"></i>
-												<span>インタビュー記事へ</span>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide advisor_card advisor_card03 card_female">
-									<div class="advisor_card_contents">
-										<p class="advisor_card_message sefif lh15">
-											就活嫌でしょ？面倒くさいでしょ？
-											一旦、私と話しましょう！
-										</p>
-										<div class="advisor_card_inner">
-											<p class="fw700 ls15">
-												<span class="advisor_card_name">稲石 千奈未</span>
-												<span class="advisor_card_name_en">CHINAMI INAISHI</span>
-											</p>
-											<dl class="advisor_card_taglist mt15 txt_l">
-												<li><a href="">自己分析</a></li>
-												<li><a href="">業界研究</a></li>
-												<li><a href="">企業研究</a></li>
-												<li><a href="">職種研究</a></li>
-												<li><a href="">ES添削</a></li>
-												<li><a href="">面接対策</a></li>
-												<li><a href="">GD対策</a></li>
-												<li><a href="">企業紹介</a></li>
-												<li><a href="">Web面談可</a></li>
-												<!-- <li><a href="">茨城出身</a></li>
-												<li><a href="">音楽</a></li>
-												<li><a href="">バンド</a></li>
-												<li><a href="">フェス</a></li>
-												<li><a href="">アウトドア系全般</a></li> -->
-												<li><a href="">就活に対してネガティブなイメージ壊します</a></li>
-											</dl>
-											<a href="https://note.mu/rashisa0123/n/n30bce1db3b96" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-												<i class="fas fa-user-circle fs28"></i>
-												<span>インタビュー記事へ</span>
-											</a>
-										</div>
-									</div>
-								</div>
+                                @endforeach
 							</div>
 							<!-- If we need pagination -->
 							<!-- <div class="swiper-pagination"></div> -->
@@ -556,10 +438,10 @@ jQuery(document).ready(function($){
 
 			<section id="lp_signup" class="mt60 mt0sp">
 				<div class="container">
-					<a href="https://line.me/R/ti/p/%40gay5294i" class="signup_line_btn fs20vw fs32tb fw700">
-						キャリアアドバイザー.comを<br class="sp_only">無料で使ってみる(LINE＠)
+                    <a href="{{ route('register') }}" class="signup_line_btn fs20vw fs32tb fw700">
+						キャリアアドバイザー.comを<br class="sp_only">無料で使ってみる
 					</a>
-					<span class="fs15 mt15 txt_c txt_wh block">上のボタンをクリックし、キャリアアドバイザー.comのLINE@を友達追加してください。</span>
+					<span class="fs15 mt15 txt_c txt_wh block">上のボタンをクリックし、キャリアアドバイザー.comの会員登録をしてください</span>
 				</div>
 			</section>
 
@@ -575,155 +457,39 @@ jQuery(document).ready(function($){
 					</div>
 					<div class="contents row advisor_row">
 
-						<div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card06 card_female">
-							<div class="advisor_card_contents">
-								<p class="advisor_card_message sefif lh15">
-									どんなキャリアを選んでも、最後は自分にぴったりの仕事にたどり着ける!
-								</p>
-								<div class="advisor_card_inner">
-									<p class="fw700 ls15">
-										<span class="advisor_card_name">吉田 佳奈</span>
-										<span class="advisor_card_name_en">Kana Yoshida</span>
-									</p>
-									<dl class="advisor_card_taglist mt15 txt_l">
-										<li><a href="">自己分析</a></li>
-										<li><a href="">業界研究</a></li>
-										<li><a href="">企業研究</a></li>
-										<li><a href="">企業紹介</a></li>
-									</dl>
-									<a href="https://note.mu/rashisa0123/n/n51a3519b57ec" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-										<i class="fas fa-user-circle fs28"></i>
-										<span>インタビュー記事へ</span>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card05 card_female">
-							<div class="advisor_card_contents">
-								<p class="advisor_card_message sefif fs14vw lh15">
-									「変わってるね」と言われるあなた、お待ちしております！
-								</p>
-								<div class="advisor_card_inner">
-									<p class="fw700 ls15">
-										<span class="advisor_card_name">山口 桃子</span>
-										<span class="advisor_card_name_en">Momoko Yamaguchi</span>
-									</p>
-									<dl class="advisor_card_taglist mt15 txt_l">
-										<li><a href="">自己分析</a></li>
-										<li><a href="">面接対策</a></li>
-										<li><a href="">ウェブ面談可</a></li>
-										<li><a href="">東京就職に強い</a></li>
-										<!-- <li><a href="">埼玉出身</a></li>
-										<li><a href="">ディズニー大好き</a></li> -->
-										<li><a href="">今の自分を変えたい人お待ちしてます</a></li>
-									</dl>
-									<a href="https://note.mu/rashisa0123/n/nf9af5bb0c18b" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-										<i class="fas fa-user-circle fs28"></i>
-										<span>インタビュー記事へ</span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card04 card_female">
-							<div class="advisor_card_contents">
-								<p class="advisor_card_message sefif fs15vw lh15">
-									軸ってひとりじゃなかなか見つかりませんよね。
-									その軸を私と一緒に考えませんか？
-								</p>
-								<div class="advisor_card_inner">
-									<p class="fw700 ls15">
-										<span class="advisor_card_name">山本 愛生</span>
-										<span class="advisor_card_name_en">Aki Yamamoto</span>
-									</p>
-									<dl class="advisor_card_taglist mt15 txt_l">
-										<li><a href="">自己分析</a></li>
-										<li><a href="">企業研究</a></li>
-										<li><a href="">ES添削</a></li>
-										<li><a href="">面接対策</a></li>
-										<li><a href="">企業紹介</a></li>
-										<li><a href="">ウェブ面談可</a></li>
-										<!-- <li><a href="">神奈川出身</a></li>
-										<li><a href="">ダンス</a></li>
-										<li><a href="">お散歩</a></li> -->
-										<li><a href="">自己分析ならお任せください</a></li>
-									</dl>
-									<a href="https://note.mu/rashisa0123/n/n658bf87a608a" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-										<i class="fas fa-user-circle fs28"></i>
-										<span>インタビュー記事へ</span>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card02 card_male">
-							<div class="advisor_card_contents">
-								<p class="advisor_card_message sefif fs12vw lh15">
-									私は何となく “大手” に就職して後悔しました。あなたはどうですか？
-								</p>
-								<div class="advisor_card_inner">
-									<p class="fw700 ls15">
-										<span class="advisor_card_name">原田 公陽</span>
-										<span class="advisor_card_name_en">Koyo Harada</span>
-									</p>
-									<dl class="advisor_card_taglist mt15 txt_l">
-										<li><a href="">自己分析</a></li>
-										<li><a href="">業界研究</a></li>
-										<li><a href="">企業研究</a></li>
-										<li><a href="">ES添削</a></li>
-										<li><a href="">面接対策</a></li>
-										<li><a href="">企業紹介</a></li>
-										<li><a href="">ウェブ面談可</a></li>
-										<!-- <li><a href="">広島出身</a></li>
-										<li><a href="">趣味豊富</a></li>
-										<li><a href="">フットサル</a></li>
-										<li><a href="">スポーツ観戦</a></li>
-										<li><a href="">旅行</a></li>
-										<li><a href="">食べ歩き</a></li> -->
-										<li><a href="">自分に合う企業を知りたい人お待ちしてます</a></li>
-									</dl>
-									<a href="https://note.mu/rashisa0123/n/na5c2e086b2c3" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-										<i class="fas fa-user-circle fs28"></i>
-										<span>インタビュー記事へ</span>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card03 card_female">
-							<div class="advisor_card_contents">
-								<p class="advisor_card_message sefif fs12vw lh15">
-									就活嫌でしょ？面倒くさいでしょ？一旦、私と話しましょう！
-								</p>
-								<div class="advisor_card_inner">
-									<p class="fw700 ls15">
-										<span class="advisor_card_name">稲石 千奈未</span>
-										<span class="advisor_card_name_en">CHINAMI INAISHI</span>
-									</p>
-									<dl class="advisor_card_taglist mt15 txt_l">
-										<li><a href="">自己分析</a></li>
-										<li><a href="">業界研究</a></li>
-										<li><a href="">企業研究</a></li>
-										<li><a href="">職種研究</a></li>
-										<li><a href="">ES添削</a></li>
-										<li><a href="">面接対策</a></li>
-										<li><a href="">GD対策</a></li>
-										<li><a href="">企業紹介</a></li>
-										<li><a href="">Web面談可</a></li>
-										<!-- <li><a href="">茨城出身</a></li>
-										<li><a href="">音楽</a></li>
-										<li><a href="">バンド</a></li>
-										<li><a href="">フェス</a></li>
-										<li><a href="">アウトドア系全般</a></li> -->
-										<li><a href="">就活に対してネガティブなイメージ壊します</a></li>
-									</dl>
-									<a href="https://note.mu/rashisa0123/n/n30bce1db3b96" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
-										<i class="fas fa-user-circle fs28"></i>
-										<span>インタビュー記事へ</span>
-									</a>
-								</div>
-							</div>
-						</div>
+                        @foreach ($advisers as $adviser)
+                            <div
+                                @if ($adviser->AdviserProfile->gender == 1)
+                                    class="box4 box1_sp txt_c advisor_box advisor_card advisor_card06 card_male"
+                                @else
+                                    class="box4 box1_sp txt_c advisor_box advisor_card advisor_card06 card_female"
+                                @endif
+                            >
+                                <div class="advisor_card_img_wrap">
+                                    <img src="{{ $adviser->AdviserProfile->photo_url }}">
+                                </div>
+                                <div class="advisor_card_contents">
+                                    <p class="advisor_card_message sefif lh15">
+                                        {{ $adviser->AdviserProfile->comment }}
+                                    </p>
+                                    <div class="advisor_card_inner">
+                                        <p class="fw700 ls15">
+                                            <span class="advisor_card_name">  {{ $adviser->name }}</span>
+                                            {{-- <span class="advisor_card_name_en">Kana Yoshida</span> --}}
+                                        </p>
+                                        <dl class="advisor_card_taglist mt15 txt_l">
+                                            @foreach ($adviser->Tag as $tag)
+                                                <li><a href="">{{ $tag->name }}</a></li>
+                                            @endforeach
+                                        </dl>
+                                        <a href="https://note.mu/rashisa0123/n/n51a3519b57ec" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
+                                            <i class="fas fa-user-circle fs28"></i>
+                                            <span>インタビュー記事へ</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
 					</div>
 				</div>
 			</section>
@@ -1144,10 +910,10 @@ jQuery(document).ready(function($){
 
 			<section id="lp_signup" class="mt60 mt0sp">
 				<div class="container">
-					<a href="https://line.me/R/ti/p/%40gay5294i" class="signup_line_btn fs20vw fs32tb fw700">
-						キャリアアドバイザー.comを<br class="sp_only">無料で使ってみる(LINE＠)
+                    <a href="{{ route('register') }}" class="signup_line_btn fs20vw fs32tb fw700">
+						キャリアアドバイザー.comを<br class="sp_only">無料で使ってみる
 					</a>
-					<span class="fs15 mt15 txt_c txt_wh block">上のボタンをクリックし、キャリアアドバイザー.comのLINE@を友達追加してください。</span>
+					<span class="fs15 mt15 txt_c txt_wh block">上のボタンをクリックし、キャリアアドバイザー.comの会員登録をしてください</span>
 				</div>
 			</section>
 

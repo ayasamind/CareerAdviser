@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\NewAdviserMail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use App\Interfaces\AdviserInterface;
+use App\Repositories\Adviser\AdviserInterface;
 
 class AdvisersController extends AdminsController
 {
