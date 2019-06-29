@@ -44,7 +44,11 @@
                                         @foreach ($adviser->Tag as $tag)
                                             <li><a href="">{{ $tag->name }}</a></li>
 										@endforeach
-									</dl>
+                                    </dl>
+                                    <a href="https://note.mu/rashisa0123/n/n658bf87a608a" target="_blank" class="to_interview_btn">
+										<span>インタビュー記事を見る</span>
+										<i class="fas fa-external-link-alt ml50"></i>
+									</a>
 								</section>
 								<section class="self_introduction_section">
 									<h3>自己紹介</h3>

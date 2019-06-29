@@ -22,6 +22,9 @@
                     <div class="contents row advisor_row">
                         @foreach ($advisers as $adviser)
                             <div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card05 card_female">
+                                <div class="advisor_card_img_wrap">
+                                    <img src="{{  $adviser->AdviserProfile->photo_url }}">
+                                </div>
                                 <div class="advisor_card_contents">
                                     <p class="advisor_card_message sefif fs14vw lh15">
                                         {{ $adviser->AdviserProfile->comment }}
