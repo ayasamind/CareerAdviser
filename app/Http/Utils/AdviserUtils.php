@@ -2,7 +2,7 @@
 
 namespace App\Http\Utils;
 
-use App\Interfaces\AdviserInterface;
+use App\Repositories\Adviser\AdviserInterface;
 use App\Adviser;
 use App\AdviserProfile;
 use App\AdviserCareer;

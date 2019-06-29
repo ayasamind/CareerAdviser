@@ -3,8 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Interfaces\AdviserInterface;
-
+use App\Repositories\Adviser\AdviserInterface;
+use App\Repositories\Slack\SlackRepositoryInterface;
+use App\Repositories\Slack\SlackRepository;
 use App\Http\Utils\AdviserUtils;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(AdviserInterface::class, AdviserUtils::class);
+        $this->app->bind(SlackRepositoryInterface::class, SlackRepository::class);
     }
 }
