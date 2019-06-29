@@ -384,9 +384,11 @@ jQuery(document).ready(function($){
                                                         <li><a href="">{{ $tag->name }}</a></li>
                                                     @endforeach
                                                 </dl>
-                                                <a href="https://note.mu/rashisa0123/n/n51a3519b57ec" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
+                                                <a href="{{ route('advisers.show', [
+                                                    'id' => $adviser->id
+                                                ])  }}" class="advisor_card_more_btn fw700 fs17 mt10">
                                                     <i class="fas fa-user-circle fs28"></i>
-                                                    <span>インタビュー記事へ</span>
+                                                    <span>プロフィールをみる</span>
                                                 </a>
                                             </div>
                                         </div>

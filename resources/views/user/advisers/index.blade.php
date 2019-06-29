@@ -1,6 +1,19 @@
 @extends('layouts.user')
 
 @section('content')
+@if (session('resent'))
+    <div class="alert alert-success" role="alert">
+        認証メールを再送信しました！
+    </div>
+@endif
+@if ($user)
+    @if (!$user->email_verified_at)
+        <div class="alert alert-success" role="alert">
+            Eメールによる認証が完了していません。
+            もし認証用のメールを受け取っていない場合、 <a href="{{ route('verification.resend') }}">こちらのリンク</a>をクリックして、認証メールを受け取ってください。
+        </div>
+    @endif
+@endif
 <div id="primary" class="content-area">
 		<main id="main" class="site-main home_main">
 			{{-- <div class="landscape_notice">
@@ -21,7 +34,13 @@
 				<div class="container_service home_inner">
                     <div class="contents row advisor_row">
                         @foreach ($advisers as $adviser)
-                            <div class="box4 box1_sp txt_c advisor_box advisor_card advisor_card05 card_female">
+                            <div
+                                @if ($adviser->AdviserProfile->gender == 1)
+                                    class="box4 box1_sp txt_c advisor_box advisor_card advisor_card05 card_male"
+                                @else
+                                    class="box4 box1_sp txt_c advisor_box advisor_card advisor_card05 card_female"
+                                @endif
+                            >
                                 <div class="advisor_card_img_wrap">
                                     <img src="{{  $adviser->AdviserProfile->photo_url }}">
                                 </div>
