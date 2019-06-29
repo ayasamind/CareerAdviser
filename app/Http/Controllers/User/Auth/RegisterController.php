@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Http\Controllers\User\UsersController;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth;
+use App\Notifications\Slack;
+use App\Repositories\Slack\SlackRepositoryInterface;
 
 class RegisterController extends UsersController
 {
@@ -36,9 +41,41 @@ class RegisterController extends UsersController
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(SlackRepositoryInterface $SlackRepository)
     {
         $this->middleware('guest:user');
+        $this->SlackRepository = $SlackRepository;
+    }
+
+     /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+        $txt1 = "新規会員登録がありました。\n";
+        $txt2 = "会員名:" . $request->name . "\n 紹介者:";
+        $txt3 = $request->introduce ? $request->introduce . "\n" : "なし\n";
+        $txt4 = "メールアドレス:" . $request->email;
+        $message = [
+            'name' => $request->name,
+            'introduce' => $request->introduce,
+            'email' => $request->email,
+            'url' => route('admin.users.show', [
+                'id' => $user->id
+            ])
+        ];
+        $this->SlackRepository->notify(new Slack($message));
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
     }
 
     /**

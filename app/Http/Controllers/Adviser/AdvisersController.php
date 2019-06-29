@@ -15,7 +15,7 @@ use App\AdviserProfile;
 use App\AdviserCareer;
 use App\Tag;
 use Illuminate\Support\Facades\DB;
-use App\Interfaces\AdviserInterface;
+use App\Repositories\Adviser\AdviserInterface;
 
 
 class AdvisersController extends BaseController
