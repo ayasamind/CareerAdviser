@@ -16,6 +16,7 @@ if(env('APP_ENV') !== 'local'){
     URL::forceScheme('https');
 }
 
+Route::get("/", "User\PageController@top")->name('top');
 Route::get("/login", "User\Auth\LoginController@showLoginForm")->name('login_form')->middleware('guest');
 Route::post("/login", "User\Auth\LoginController@login")->name('login');
 Route::get("/register", "User\Auth\RegisterController@showRegistrationForm")->name('register_form')->middleware('guest');
@@ -78,10 +79,6 @@ Route::prefix('adviser')->name('adviser.')->group(function () {
         Route::resource('/requests', 'Adviser\MeetingRequestsController')->only(['index', 'edit', 'update']);
         Route::get('/users/{id}', 'Adviser\UsersController@show')->name('user.show');
     });
-});
-
-Route::get('/', function () {
-    return view('top');
 });
 
 Route::get('/company', function () {

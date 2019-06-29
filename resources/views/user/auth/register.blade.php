@@ -107,7 +107,7 @@
 									<div class="contact_label_wrap">
 										<label class="contact_label"  for="person_who_introduced">紹介者名（いる場合）</label>
 									</div>
-									<input name="紹介者名（いる場合）" type="text" class="contact_input" id="person_who_introduced" placeholder="">
+									<input name="introduce" type="text" class="contact_input" id="person_who_introduced" placeholder="">
                                 </div>
                                 <!-- form block -->
 
