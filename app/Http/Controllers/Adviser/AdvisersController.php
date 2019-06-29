@@ -17,7 +17,6 @@ use App\Tag;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\Adviser\AdviserInterface;
 
-
 class AdvisersController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;

@@ -33,9 +33,14 @@ class AdvisersController extends UsersController
     {
         $advisers = Adviser::whereHas('AdviserProfile')->orderByDesc('created_at')->paginate(10);
         $tags = Tag::all();
+        $user = null;
+        if (Auth::check()) {
+            $user = Auth::user();
+        }
         return view('user.advisers.index', [
             'advisers' => $advisers,
-            'tags'     => $tags
+            'tags'     => $tags,
+            'user'     => $user
         ]);
     }
 
@@ -97,11 +102,17 @@ class AdvisersController extends UsersController
         if (!$adviser->AdviserProfile) {
             abort(404);
         }
+
+        $user = null;
+        if (Auth::check()) {
+            $user = Auth::user();
+        }
         return view('user.advisers.show', [
             'adviser' => $adviser,
             'week'    => $week,
             'schedules' => $schedules,
-            'array' => $array
+            'array' => $array,
+            'user' => $user
         ]);
     }
 
