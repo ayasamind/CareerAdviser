@@ -100,7 +100,16 @@
 									</div>
 									<input name="password_confirmation" type="password" class="contact_input" id="input_password_confirm" placeholder="" required>
 								</div>
-								<!-- form block -->
+                                <!-- form block -->
+
+                                <!-- form block -->
+                                <div class="contact_block">
+									<div class="contact_label_wrap">
+										<label class="contact_label"  for="person_who_introduced">紹介者名（いる場合）</label>
+									</div>
+									<input name="紹介者名（いる場合）" type="text" class="contact_input" id="person_who_introduced" placeholder="">
+                                </div>
+                                <!-- form block -->
 
 								<!-- remember-me -->
 								<!-- <div class="contact_block txt_c fs16">
