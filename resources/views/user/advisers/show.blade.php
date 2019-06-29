@@ -1,6 +1,19 @@
 @extends('layouts.user')
 
 @section('content')
+    @if (session('resent'))
+        <div class="alert alert-success" role="alert">
+            認証メールを再送信しました！
+        </div>
+    @endif
+    @if ($user)
+        @if (!$user->email_verified_at)
+            <div class="alert alert-success" role="alert">
+                Eメールによる認証が完了していません。
+                もし認証用のメールを受け取っていない場合、 <a href="{{ route('verification.resend') }}">こちらのリンク</a>をクリックして、認証メールを受け取ってください。
+            </div>
+        @endif
+    @endif
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 			{{-- <div class="landscape_notice">
@@ -15,7 +28,13 @@
 							<h2>プロフィール</h2>
 							<section class="advisor_profile_section_body">
 								<section>
-									<div class="row center_flex_ver person_female">
+                                    <div
+                                        @if ($adviser->AdviserProfile->gender == 1)
+                                            class="row center_flex_ver person_male"
+                                        @else
+                                            class="row center_flex_ver person_female"
+                                        @endif
+                                    >
 										<div class="person_icon_wrap">
 											<img src="{{ $adviser->AdviserProfile->photo_url }}">
 										</div>
@@ -80,6 +99,12 @@
                                 <table
                                     @guest
                                         class="disabled_calender"
+                                    @else
+                                        @if ($user)
+                                            @if (!$user->email_verified_at)
+                                                class="disabled_calender"
+                                            @endif
+                                        @endif
                                     @endguest
                                 >
 								    <tbody>
@@ -190,8 +215,17 @@
 								  </table>
 								  <div class="calender_signup_overlay">
 									<div class="calender_signup_overlay_inner">
-										<span class="ls25">面談を予約するには、登録が必要です</span>
-                                        <a href="{{ route('register') }}" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">無料で登録する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                                        @guest
+                                            <span class="ls25">面談を予約するには、登録が必要です</span>
+                                            <a href="{{ route('register') }}" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">無料で登録する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                                        @else
+                                            @if ($user)
+                                                @if (!$user->email_verified_at)
+                                                    <span class="ls25">面談を予約するには、メール認証が必要です</span>
+                                                    <a href="{{ route('verification.resend') }}" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">認証メールを再送する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                                                @endif
+                                            @endif
+                                        @endguest
 									</div>
 								  </div>
 							</section>
