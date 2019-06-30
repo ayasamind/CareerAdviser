@@ -140,11 +140,10 @@ class AdvisersController extends UsersController
 
     public function saveRequest(Request $request)
     {
-        $this->newMeeting($request->all());
-        return redirect()->route('advisers.show', [
-            'id' => $request->adviser_id
-        ])
-            ->with('success', '面談を申し込みました');
+        $meetingRequest = $this->newMeeting($request->all());
+        return redirect()->route('user.done_request', [
+            'id' => $meetingRequest->id
+        ])->with('success', '面談を申し込みました');
     }
 
     private function newMeeting($data)
@@ -160,5 +159,17 @@ class AdvisersController extends UsersController
         ]);
         $adviser = Adviser::find($data['adviser_id']);
         Mail::to($adviser->email)->send(new NewMeetingMail($meetingRequest, $user, $adviser));
+        return $meetingRequest;
+    }
+
+    public function done($id)
+    {
+        $meetingRequet = MeetingRequest::with(['Adviser'])->findOrFail($id);
+        if (Auth::user()->id !== $meetingRequet->user_id) {
+            abort(404);
+        }
+        return view('user.advisers.done', [
+            'meetingRequest' => $meetingRequet,
+        ]);
     }
 }
