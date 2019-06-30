@@ -118,6 +118,7 @@ class AdvisersController extends UsersController
 
     public function confirm($id, $date, $online)
     {
+        $date = new Carbon($date);
         $user = User::with(['UserProfile'])->findOrFail(Auth::user()->id);
         $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer', 'Tag'])->findOrFail($id);
         $axisList = Desire::where(['type' => Desire::DESIRE_TYPE_AXIS])->pluck('name', 'id');
