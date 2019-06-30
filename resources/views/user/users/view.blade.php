@@ -612,7 +612,8 @@
 
                             </div>
                         </section>
-                        <button class="logout">
+                        <button class="logout" href="{{ route('user.logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <a href="{{ route('user.logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">

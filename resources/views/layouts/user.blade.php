@@ -130,6 +130,14 @@
                                 </a>
                             </li>
                         @endauth
+                        @guest
+                        <li href="{{ route('login') }}">
+                            <a class="nav_li_a fs14 fs16sp font-white" href="{{ route('login') }}">ログイン</a>
+                        </li>
+                        <li href="{{ route('register') }}">
+                            <a class="nav_li_a fs14 fs16sp font-white" href="{{ route('register') }}">会員登録</a>
+                        </li>
+                        @endguest
                     </ul>
                 </nav>
 
@@ -220,8 +228,8 @@
                     <!-- 横積み -->
                     <div class="footer_nav">
                         <ul class="flex flex_end">
-                            <li class="footer_nav_li"><a href="" class="fs14 fs13sp">利用規約</a></li>
-                            <li class="footer_nav_li"><a href="" class="fs14 fs13sp">プライバシーポリシー</a></li>
+                            <li class="footer_nav_li"><a href="{{ route('terms') }}" class="fs14 fs13sp">利用規約</a></li>
+                            <li class="footer_nav_li"><a href="{{ route('policy') }}" class="fs14 fs13sp">プライバシーポリシー</a></li>
                             <li class="footer_nav_li"><a href="{{ route('company') }}" class="fs14 fs13sp">運営会社</a></li>
                             <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">アドバイザー一覧</a></li> -->
                             <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">よくある質問</a></li> -->
@@ -240,8 +248,8 @@
                     <!-- 横積み -->
                     <div class="footer_nav">
                         <ul class="flex flex_end">
-                            <li class="footer_nav_li"><a href="terms.php" class="fs12">利用規約</a></li>
-                            <li class="footer_nav_li"><a href="privacy.php" class="fs12">プライバシーポリシー</a></li>
+                            <li class="footer_nav_li"><a href="{{ route('terms') }}" class="fs12">利用規約</a></li>
+                            <li class="footer_nav_li"><a href="{{ route('policy') }}" class="fs12">プライバシーポリシー</a></li>
                             <li class="footer_nav_li"><a href="{{ route('company') }}" class="fs12">運営会社</a></li>
                         </ul>
                     </div>
