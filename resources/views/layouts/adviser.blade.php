@@ -45,6 +45,9 @@
                         <!-- Authentication Links -->
                         @auth('adviser')
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('adviser.schedules.index') }}">スケジュール</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('adviser.requests.index') }}">面談申請一覧</a>
                             </li>
                             <li class="nav-item dropdown">
