@@ -44,6 +44,11 @@
     color: white;
 }
 
+.edit_mode .basic_profile_input_txt {
+    width: 500px;
+    max-width: 500px;
+}
+
 #fade {
     position:fixed;
     top:0px;

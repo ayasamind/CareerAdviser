@@ -152,7 +152,11 @@ return [
         "graduate_year"=> "卒業年度",
         "birthday"     => "生年月日",
         "university"   => "大学",
-        "Tag"          => "タグ"
+        "Tag"          => "タグ",
+        "desire"       => "会社選び",
+        "axis_reason"  => "理由",
+        "informal_decision" => "内定数",
+        "situation"         => "選考状況"
     ],
 
 ];
