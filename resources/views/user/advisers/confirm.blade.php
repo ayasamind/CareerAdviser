@@ -24,7 +24,7 @@
 							<h3 class="confirm_ttl">アドバイザー情報</h3>
 							<div class="row center_flex_ver person_female">
 								<div class="person_icon_wrap">
-									<img src="{{ $adviser->AdviserProfile->photo_url }}">
+									<img src="{{ $adviser->AdviserProfile->photo_url ? $adviser->AdviserProfile->photo_url : asset('img/service/default_usericon.jpg') }}">
 								</div>
 								<div class="person_info_wrap">
 									<div class="person_info_wrap_inner center_flex_ver">
@@ -47,9 +47,11 @@
 								</div>
 							</div>
 							<h3 class="confirm_ttl">日時</h3>
-                            <p class="confirm_date">{{ $date }}</p>
-							{{-- <h3 class="confirm_ttl">場所</h3>
-							<p class="confirm_date">〒810-0001 福岡県福岡市中央区 天神3-15-1 にちりんビル3F</p> --}}
+                            <p class="confirm_date">{{ $date->format('Y年m月d日 H:i') }}</p>
+							<h3 class="confirm_ttl">場所</h3>
+							<p class="confirm_date">
+                                <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ $adviser->AdviserProfile->meeting_place }}">{{ $adviser->AdviserProfile->meeting_place }}</a>
+                            </p>
 						</div>
 						<section class="profile_section">
 							<section class="mypage_section_body">

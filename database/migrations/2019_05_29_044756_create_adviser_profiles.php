@@ -15,7 +15,7 @@ class CreateAdviserProfiles extends Migration
     {
         Schema::create('adviser_profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('photo_url');
+            $table->string('photo_url')->nullable();
             $table->integer('adviser_id');
             $table->boolean('deny_interview')->default(false);
             $table->integer('gender');
@@ -26,6 +26,8 @@ class CreateAdviserProfiles extends Migration
             $table->text('company_number');
             $table->text('place');
             $table->text('performance');
+            $table->text('meeting_place');
+            $table->text('article_url')->nullable();
             $table->timestamps();
         });
     }

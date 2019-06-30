@@ -17,7 +17,9 @@ class AdviserProfile extends Model
         'industry',
         'company_number',
         'place',
-        'performance'
+        'performance',
+        'meeting_place',
+        'article_url'
     ];
 
     protected $appends = ['prefecture', 'genderLabel'];

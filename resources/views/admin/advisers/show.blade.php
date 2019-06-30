@@ -17,9 +17,9 @@
                         <tr>
                             <th>プロフィール画像</th>
                             <td>@if ($adviser->AdviserProfile)
-                                    <img src="{{ $adviser->AdviserProfile->photo_url }}" width="200"/>
+                                    <img src="{{ $adviser->AdviserProfile->photo_url ? $adviser->AdviserProfile->photo_url : asset('img/service/default_usericon.jpg') }}" width="200"/>
                                 @else
-                                    <img src="{{ asset('img/no_image.png') }}" width="200"/>
+                                    <img src="{{ asset('img/service/default_usericon.jpg') }}" width="200"/>
                                 @endif
                             </td>
                         </tr>
@@ -76,6 +76,14 @@
                                 <th>面談実績</th>
                                 <td>{{ $adviser->AdviserProfile->performance }}</td>
                             </tr>
+                            <tr>
+                                <th>面談場所住所</th>
+                                <td>{{ $adviser->AdviserProfile->meeting_place }}</td>
+                            </tr>
+                            <tr>
+                                <th>インタビュー記事URL</th>
+                                    <td>{{ $adviser->AdviserProfile->article_url }}</td>
+                                </tr>
                             <tr>
                                 <th>タグ</th>
                                 <td>
