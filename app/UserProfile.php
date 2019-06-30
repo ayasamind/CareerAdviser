@@ -20,7 +20,8 @@ class UserProfile extends Model
         'industry',
         'job_type',
         'place',
-        'company_type'
+        'company_type',
+        'prefecture_id'
     ];
 
     protected $dates = ['birthday'];

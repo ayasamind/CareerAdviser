@@ -61,6 +61,7 @@
                                     'required'=>'required',
                                     'cols' => '140',
                                     'rows' => '6',
+                                    'placeholder' => '拒否の場合:「求められている企業が紹介できないため」など'
                                 ]) !!}
                                 @if ($errors->has('comment'))
                                     <span class="invalid-feedback" role="alert">
@@ -95,7 +96,6 @@
 
 <script>
 $(document).on("click", ".approve", function() {
-    console.log('aaa')
     if ({{ $duplicateFlag }} > 0) {
         confirm("同じ日程に別の面談予約が入っていますが、本当に承認しますか？")
     }
