@@ -199,9 +199,9 @@
                 <!-- 横積み -->
                 <div class="footer_nav">
                     <ul class="flex flex_end">
-                        <li class="footer_nav_li"><a href="" class="fs14 fs13sp">利用規約</a></li>
-                        <li class="footer_nav_li"><a href="" class="fs14 fs13sp">プライバシーポリシー</a></li>
-                        <li class="footer_nav_li"><a href="" class="fs14 fs13sp">運営会社</a></li>
+                        <li class="footer_nav_li"><a href="{{ route('terms') }}" class="fs14 fs13sp">利用規約</a></li>
+                        <li class="footer_nav_li"><a href="{{ route('policy') }}" class="fs14 fs13sp">プライバシーポリシー</a></li>
+                        <li class="footer_nav_li"><a href="{{ route('company') }}" class="fs14 fs13sp">運営会社</a></li>
                         <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">アドバイザー一覧</a></li> -->
                         <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">よくある質問</a></li> -->
                         <!-- <li class="footer_nav_li"><a href="" class="fs14 fs13sp">お問い合わせ</a></li> -->
