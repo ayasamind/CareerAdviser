@@ -36,7 +36,7 @@
                                         @endif
                                     >
 										<div class="person_icon_wrap">
-											<img src="{{ $adviser->AdviserProfile->photo_url }}">
+											<img src="{{ $adviser->AdviserProfile->photo_url ? $adviser->AdviserProfile->photo_url : asset('img/service/default_usericon.jpg') }}">
 										</div>
 										<div class="person_info_wrap">
 											<div class="person_info_wrap_inner center_flex_ver">
@@ -56,7 +56,14 @@
                                                     @endif
                                                 </dl>
 											</div>
-                                            <p class="voice_txt advisor_balloon advisor_balloon_female">{{ $adviser->AdviserProfile->comment }}</p>
+                                            <p
+                                                @if($adviser->AdviserProfile->gender == 1)
+                                                    class="voice_txt advisor_balloon advisor_balloon_male"
+                                                @else
+                                                    class="voice_txt advisor_balloon advisor_balloon_female"
+                                                @endif
+                                            >{{ $adviser->AdviserProfile->comment }}</p>
+                                            <a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ $adviser->AdviserProfile->meeting_place }}" class="txt_link voice_txt advisor_balloon">面談場所: {{ $adviser->AdviserProfile->meeting_place }}</a>
 										</div>
 									</div>
 									<dl class="advisor_card_taglist mt15 txt_l">
@@ -64,7 +71,7 @@
                                             <li><a href="">{{ $tag->name }}</a></li>
 										@endforeach
                                     </dl>
-                                    <a href="https://note.mu/rashisa0123/n/n658bf87a608a" target="_blank" class="to_interview_btn">
+                                    <a href="{{ $adviser->AdviserProfile->article_url ? $adviser->AdviserProfile->article_url : "#" }}" target="_blank" class="to_interview_btn">
 										<span>インタビュー記事を見る</span>
 										<i class="fas fa-external-link-alt ml50"></i>
 									</a>

@@ -42,7 +42,7 @@
                                 @endif
                             >
                                 <div class="advisor_card_img_wrap">
-                                    <img src="{{  $adviser->AdviserProfile->photo_url }}">
+                                    <img src="{{ $adviser->AdviserProfile->photo_url }}">
                                 </div>
                                 <div class="advisor_card_contents">
                                     <p class="advisor_card_message sefif fs14vw lh15">

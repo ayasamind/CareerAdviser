@@ -3,19 +3,12 @@
 
     <div class="col-md-6">
         @if ($adviser->AdviserProfile)
-            <img src="{{ $adviser->AdviserProfile->photo_url }}" width="200"/>
+            <img src="{{ $adviser->AdviserProfile->photo_url ? $adviser->AdviserProfile->photo_url : asset('img/service/default_usericon.jpg') }}" width="200"/>
             {!! Form::hidden('PhotoExist', 'photo_url', ['id'=>'photo', 'class'=>'form-control-file '  . ($errors->has('adviser_profile.photo') ? 'is-invalid' : '')]) !!}
         @else
             <div class="preview">
-                <img src="{{ asset('img/no_image.png') }}" width="200"/>
+                <img src="{{ asset('img/service/default_usericon.jpg') }}" width="200"/>
             </div>
-        @endif
-        {!! Form::file('AdviserProfile[photo]', null, ['id'=>'photo', 'class'=>'form-control-file '  . ($errors->has('adviser_profile.photo') ? 'is-invalid' : '')]) !!}
-        @if ($errors->has('AdviserProfile.photo'))
-            <span class="validate-error">
-                <br/>
-                <strong>{{ $errors->first('AdviserProfile.photo') }}</strong>
-            </span>
         @endif
     </div>
 </div>
@@ -255,6 +248,32 @@
 </div>
 
 <div class="form-group row">
+    <label for="meeting_place" class="col-md-4 col-form-label text-md-right">面談場所</label>
+
+    <div class="col-md-6">
+        {!! Form::text('AdviserProfile[meeting_place]', null, ['id'=>'meeting_place', 'class'=>'form-control '  . ($errors->has('adviser_profile.meeting_place') ? 'is-invalid' : ''), 'required'=>'required']) !!}
+        @if ($errors->has('adviser_profile.meeting_place'))
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('adviser_profile.meeting_place') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="article_url" class="col-md-4 col-form-label text-md-right">インタビュー記事URL</label>
+
+    <div class="col-md-6">
+        {!! Form::text('AdviserProfile[article_url]', null, ['id'=>'article_url', 'class'=>'form-control '  . ($errors->has('adviser_profile.article_url') ? 'is-invalid' : '')]) !!}
+        @if ($errors->has('adviser_profile.article_url'))
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('adviser_profile.article_url') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group row">
     <label for="tag" class="col-md-4 col-form-label text-md-right">タグ</label>
     <div class="col-md-6">
         <div>
@@ -273,8 +292,6 @@
         @endforeach
     </div>
 </div>
-
-
 
 <div class="form-group row mb-0">
     <div class="col-md-6 offset-md-4">
