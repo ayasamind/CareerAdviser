@@ -23,6 +23,7 @@ use Carbon\Carbon;
 use App\Enums\Traits\GetPrefectureTrait;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use App\MeetingRequest;
 
 class UsersController extends BaseController
 {
@@ -36,6 +37,7 @@ class UsersController extends BaseController
     public function view()
     {
         $user = User::with(['UserProfile'])->findOrFail(Auth::user()->id);
+        $meetingRequests = MeetingRequest::with(['Adviser'])->where('user_id', $user->id)->orderByDesc('created_at')->paginate(3);
         $prefectures = $this->getPrefectureList();
         $axisList = Desire::where(['type' => Desire::DESIRE_TYPE_AXIS])->pluck('name', 'id');
         $industryList = Desire::where(['type' => Desire::DESIRE_TYPE_INDUSTRY])->pluck('name', 'id');
@@ -50,7 +52,8 @@ class UsersController extends BaseController
             'industryList' => $industryList,
             'jobList' => $jobList,
             'prefectureList' => $prefectureList,
-            'companyTypeList' => $companyTypeList
+            'companyTypeList' => $companyTypeList,
+            'meetingRequests' => $meetingRequests
         ]);
     }
 

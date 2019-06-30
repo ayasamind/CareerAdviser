@@ -466,81 +466,48 @@
 						</section>
 					</div>
 					<div class="mypage_col_r">
-					{{-- <section class="reserved_section">
+					<section class="reserved_section">
 							<h2>予約中の面談</h2>
 							<section class="advisor_profile_section_body">
-								<!-- <span class="no_reserved">予約中の面談はありません</span> -->
-								<div class="reserved_block">
-									<span class="reserved_user_icon"><img src="../../img/advisor_img/AkiYamamoto.png"></span>
-									<a href="../advisor/advisor_profile.php" class="reserved_advisor_link">
-										<span class="reserved_user_name">山本 愛生</span>
-									</a>
-									<span>さん</span>
-									<dl>
-										<li><span>日時</span>5/28 14:00~</li>
-										<li><span>形式</span>対面</li>
-										<li>
-											<span>場所</span>
-											<p class="lh15">〒810-0001 福岡県福岡市中央区 天神3-15-1 にちりんビル3F</p>
-											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4711768677585!2d130.39526891520308!3d33.59307718073346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541918e9ac5d915%3A0x9136f8c60302bd6c!2z44CSODEwLTAwMDEg56aP5bKh55yM56aP5bKh5biC5Lit5aSu5Yy65aSp56We77yT5LiB55uu77yR77yV4oiS77yRIOOBq-OBoeOCiuOCk-ODk-ODqzNG!5e0!3m2!1sja!2sjp!4v1560150859406!5m2!1sja!2sjp" frameborder="0" style="border:0" allowfullscreen></iframe>
-										</li>
-										<li>
-											<span>電話番号</span>
-											<a href="tel:09012345678">090-1234-5678</a>
-										</li>
-									</dl>
-									<span class="approval_status approval_pending">承認待ち</span>
-									<!-- <span class="approval_status approval_accepted">承認済み</span> -->
-									<!-- <span class="approval_status approval_rejected">不承認</span> -->
-								</div>
-								<div class="reserved_block">
-										<span class="reserved_user_icon"><img src="../../img/advisor_img/AkiYamamoto.png"></span>
-										<a href="../advisor/advisor_profile.php" class="reserved_advisor_link">
-											<span class="reserved_user_name">山本 愛生</span>
-										</a>
-										<span>さん</span>
-									<dl>
-										<li><span>日時</span>5/28 14:00~</li>
-										<li><span>形式</span>対面</li>
-										<li>
-											<span>場所</span>
-											<p class="lh15">〒810-0001 福岡県福岡市中央区 天神3-15-1 にちりんビル3F</p>
-											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4711768677585!2d130.39526891520308!3d33.59307718073346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541918e9ac5d915%3A0x9136f8c60302bd6c!2z44CSODEwLTAwMDEg56aP5bKh55yM56aP5bKh5biC5Lit5aSu5Yy65aSp56We77yT5LiB55uu77yR77yV4oiS77yRIOOBq-OBoeOCiuOCk-ODk-ODqzNG!5e0!3m2!1sja!2sjp!4v1560150859406!5m2!1sja!2sjp" frameborder="0" style="border:0" allowfullscreen></iframe>
-										</li>
-										<li>
-											<span>電話番号</span>
-											<a href="tel:09012345678">090-1234-5678</a>
-										</li>
-									</dl>
-									<!-- <span class="approval_status approval_pending">承認待ち</span> -->
-									<span class="approval_status approval_accepted">承認済み</span>
-									<!-- <span class="approval_status approval_rejected">不承認</span> -->
-								</div>
-								<div class="reserved_block">
-										<span class="reserved_user_icon"><img src="../../img/advisor_img/AkiYamamoto.png"></span>
-										<a href="../advisor/advisor_profile.php" class="reserved_advisor_link">
-											<span class="reserved_user_name">山本 愛生</span>
-										</a>
-										<span>さん</span>
-									<dl>
-										<li><span>日時</span>5/28 14:00~</li>
-										<li><span>形式</span>対面</li>
-										<li>
-											<span>場所</span>
-											<p class="lh15">〒810-0001 福岡県福岡市中央区 天神3-15-1 にちりんビル3F</p>
-											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.4711768677585!2d130.39526891520308!3d33.59307718073346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541918e9ac5d915%3A0x9136f8c60302bd6c!2z44CSODEwLTAwMDEg56aP5bKh55yM56aP5bKh5biC5Lit5aSu5Yy65aSp56We77yT5LiB55uu77yR77yV4oiS77yRIOOBq-OBoeOCiuOCk-ODk-ODqzNG!5e0!3m2!1sja!2sjp!4v1560150859406!5m2!1sja!2sjp" frameborder="0" style="border:0" allowfullscreen></iframe>
-										</li>
-										<li>
-											<span>電話番号</span>
-											<a href="tel:09012345678">090-1234-5678</a>
-										</li>
-									</dl>
-									<!-- <span class="approval_status approval_pending">承認待ち</span> -->
-									<!-- <span class="approval_status approval_accepted">承認済み</span> -->
-									<span class="approval_status approval_rejected">不承認</span>
-								</div>
+                                @if (!$meetingRequests)
+                                    <span class="no_reserved">予約中の面談はありません</span>
+                                @else
+                                    @foreach ($meetingRequests as $request)
+                                        <div class="reserved_block">
+                                            <span class="reserved_user_icon"><img src="{{ $request->Adviser->AdviserProfile->photo_url ? $request->Adviser->AdviserProfile->photo_url : asset('img/service/default_usericon.jpg') }}"></span>
+                                            <a href="{{ route('advisers.show', [
+                                                'id' => $request->Adviser->id
+                                            ]) }}" class="reserved_advisor_link">
+                                                <span class="reserved_user_name">{{ $request->Adviser->name }}</span>
+                                            </a>
+                                            <span>さん</span>
+                                            <dl>
+                                                <li><span>日時</span>{{ $request->date->format('Y年m月d日 H:i') }}</li>
+                                                <li><span>形式</span>{{ $request->type_label }}</li>
+                                                <li>
+                                                    <span>場所</span>
+                                                    <p class="lh15">{{ $request->Adviser->AdviserProfile->meeting_place }}</p>
+                                                    <iframe src="https://maps.google.co.jp/maps?output=embed&q={{ $request->Adviser->AdviserProfile->meeting_place }}" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                                </li>
+                                                {{-- <li>
+                                                    <span>電話番号</span>
+                                                    <a href="tel:09012345678">090-1234-5678</a>
+                                                </li> --}}
+                                            </dl>
+                                            <span
+                                            @if ($request->status == 1)
+                                                class="approval_status approval_pending"
+                                            @elseif ($request->status == 2)
+                                                class="approval_status approval_accepted"
+                                            @else
+                                                class="approval_status approval_rejected"
+                                            @endif
+                                            >{{ $request->status_label }}</span>
+                                        </div>
+                                    @endforeach
+                                @endif
 							</section>
-                        </section> --}}
+                        </section>
                         <section class="reserved_section detail_setting_section">
                             <h2>詳細設定/プライバシー</h2>
                             <div class="detail_setting_section_body_wrap">
