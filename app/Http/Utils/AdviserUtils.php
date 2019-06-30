@@ -36,6 +36,8 @@ class AdviserUtils implements AdviserInterface
             $profile->place = $data['AdviserProfile']['place'];
             $profile->performance = $data['AdviserProfile']['performance'];
             $profile->deny_interview = $data['AdviserProfile']['deny_interview'];
+            $profile->meeting_place = $data['AdviserProfile']['meeting_place'];
+            $profile->article_url = $data['AdviserProfile']['article_url'];
         } else {
             $profile = new AdviserProfile([
                 'adviser_id'     => $adviser['id'],
@@ -48,7 +50,9 @@ class AdviserUtils implements AdviserInterface
                 'company_number' => $data['AdviserProfile']['company_number'],
                 'place'          => $data['AdviserProfile']['place'],
                 'performance'    => $data['AdviserProfile']['performance'],
-                'deny_interview' => $data['AdviserProfile']['deny_interview']
+                'deny_interview' => $data['AdviserProfile']['deny_interview'],
+                'meeting_place'  => $data['AdviserProfile']['meeting_place'],
+                'article_url'    => $data['AdviserProfile']['article_url'],
             ]);
         }
         $profile->save();

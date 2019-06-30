@@ -155,6 +155,8 @@ return [
         "Tag"          => "タグ",
         "desire"       => "会社選び",
         "axis_reason"  => "理由",
+        "meeting_place" => "面談場所",
+        "article_url"   => "インタビュー記事のURL",
         "informal_decision" => "内定数",
         "situation"         => "選考状況"
     ],

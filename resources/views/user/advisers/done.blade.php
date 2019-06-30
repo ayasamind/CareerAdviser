@@ -25,7 +25,7 @@
 							<h3 class="mt20">日時</h3>
                             <p>{{ $meetingRequest->date->format('Y年m月d日 H:i') }}</p>
 							<h3 class="mt20">場所</h3>
-							<p>〒810-0001 福岡県福岡市中央区 天神3-15-1 にちりんビル3F</p>
+							<p><a class="txt_link" target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ $meetingRequest->adviser->AdviserProfile->meeting_place }}">{{ $meetingRequest->adviser->AdviserProfile->meeting_place }}</a></p>
 							<span class="mt20 fw700">*無断キャンセルは絶対にお辞めください。アドバイザーの方に多大な迷惑がかかります。</span>
 						</div>
                         <p class="done_txt">日程などの詳細は、<a href="{{ route('user.mypage') }}">マイページ</a>からいつでも確認できます。</p>
