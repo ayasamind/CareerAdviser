@@ -13,6 +13,10 @@ class AdviserSchedule extends Model
     const ONLINE_FLAG_TRUE     = 1;
     const ONLINE_FLAG_FALSE    = 2;
 
+    const SCHEDULE_LABEL_OK = "◯";
+    const SCHEDULE_LABEL_ONLINE = "△";
+    const SCHEDULE_LABEL_NG = "×";
+
     protected $fillable = [
         'adviser_id',
         'date',
@@ -66,6 +70,15 @@ class AdviserSchedule extends Model
             "20:59:59",
             "21:30:00",
             "21:59:59",
+        ];
+    }
+
+    public static function getScheduleLists()
+    {
+        return [
+            null => self::SCHEDULE_LABEL_OK,
+            self::SCHEDULE_TYPE_ONLINE => self::SCHEDULE_LABEL_ONLINE,
+            self::SCHEDULE_TYPE_NG => self::SCHEDULE_LABEL_NG
         ];
     }
 }
