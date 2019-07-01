@@ -131,12 +131,12 @@
                             </li>
                         @endauth
                         @guest
-                        <li href="{{ route('login') }}">
-                            <a class="nav_li_a fs14 fs16sp font-white" href="{{ route('login') }}">ログイン</a>
-                        </li>
-                        <li href="{{ route('register') }}">
-                            <a class="nav_li_a fs14 fs16sp font-white" href="{{ route('register') }}">会員登録</a>
-                        </li>
+                            <li href="{{ route('register') }}">
+                                <a class="nav_li_a fs14 fs16sp font-white" href="{{ route('register') }}">会員登録</a>
+                            </li>
+                            <li href="{{ route('login') }}">
+                                <a class="nav_li_a fs14 fs16sp font-white" href="{{ route('login') }}">ログイン</a>
+                            </li>
                         @endguest
                     </ul>
                 </nav>
