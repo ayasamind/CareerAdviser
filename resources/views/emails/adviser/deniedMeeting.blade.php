@@ -1,7 +1,7 @@
 こんにちは{{$meetingRequest->User->name}}さん
 <br>
 {{ $meetingRequest->Adviser->name }}さんとの面談は承認されませんでした。
-以下のURLから詳細を確認してください。
+<a href="{{ route('user.mypage') }}">マイページ</a>から詳細を確認してください。
 <br>
 
 <table>
