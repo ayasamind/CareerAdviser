@@ -16,6 +16,7 @@ use App\AdviserCareer;
 use App\Tag;
 use Illuminate\Support\Facades\DB;
 use App\Repositories\Adviser\AdviserInterface;
+use App\Http\Requests\Adviser\UpdatePasswordRequest;
 
 class AdvisersController extends BaseController
 {
@@ -81,5 +82,19 @@ class AdvisersController extends BaseController
         $this->AdviserUtils->saveProfile($adviser, $data, $photo_url);
         $this->AdviserUtils->saveCareers($adviser, $data);
         $this->AdviserUtils->saveTags($adviser, $data);
+    }
+
+    public function changePassword()
+    {
+        return view('adviser.advisers.password');
+    }
+
+    public function updtePassword(UpdatePasswordRequest $request)
+    {
+        $adviser = Auth::user();
+        $adviser->password = bcrypt($request->password);
+        $adviser->update();
+        return redirect()->route('adviser.home')
+            ->with('success', 'パスワードを編集しました');
     }
 }

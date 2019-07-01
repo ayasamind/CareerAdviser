@@ -72,6 +72,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
 Route::prefix('adviser')->name('adviser.')->group(function () {
     Route::get("/login", "Adviser\Auth\LoginController@showLoginForm")->name('auth.login_form');
     Route::post("/login", "Adviser\Auth\LoginController@login")->name('auth.login');
+    // Route::get('/password/reset', 'Adviser\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    // Route::post('/password/email', 'Adviser\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    // Route::get('/password/reset/{token}', 'Adviser\Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    // Route::post('/password/reset', 'Adviser\Auth\ResetPasswordController@reset')->name('password.update');
     Route::middleware('auth:adviser')->group(function () {
         Route::post("/logout", "Adviser\Auth\LoginController@logout")->name('auth.logout');
         Route::get("/", "Adviser\HomeController@index")->name('home');
@@ -82,6 +86,8 @@ Route::prefix('adviser')->name('adviser.')->group(function () {
         Route::get('/schedules/{id}/edit', 'Adviser\AdviserSchedulesController@edit')->name('schedules.edit');
         Route::post('/schedules/{id}/update', 'Adviser\AdviserSchedulesController@update')->name('schedules.update');
         Route::get('/users/{id}', 'Adviser\UsersController@show')->name('user.show');
+        Route::get('/password/change', 'Adviser\AdvisersController@changePassword')->name('password.change');
+        Route::post('/password/update', 'Adviser\AdvisersController@updtePassword')->name('password.update');
     });
 });
 
