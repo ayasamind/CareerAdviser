@@ -469,7 +469,7 @@
 					<section class="reserved_section">
 							<h2>予約中の面談</h2>
 							<section class="advisor_profile_section_body">
-                                @if (!$meetingRequests)
+                                @if (!count($meetingRequests))
                                     <span class="no_reserved">予約中の面談はありません</span>
                                 @else
                                     @foreach ($meetingRequests as $request)

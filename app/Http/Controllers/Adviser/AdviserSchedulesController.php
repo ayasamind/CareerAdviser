@@ -155,23 +155,33 @@ class AdviserSchedulesController extends Controller
 
         $params = [];
         foreach ($data['schedules'] as $schedule => $type) {
-            if ($type['type']) {
+            if ($type['id']) {
                 $params[] = [
                     'date'       => new Carbon($schedule),
                     'id'         => $type['id'],
                     'adviser_id' => $adviser_id,
                     'type'       => $type['type']
                 ];
+            } elseif ($type['type']) {
+                // 新規
+                AdviserSchedule::create([
+                    'date'       => new Carbon($schedule),
+                    'id'         => $type['id'],
+                    'adviser_id' => $adviser_id,
+                    'type'       => $type['type']
+                ]);
             }
         }
 
         foreach ($params as $param) {
-            if ($param['id']) {
+            if ($param['type']) {
+                // 編集
                 $AdviserSchedule = AdviserSchedule::find($param['id']);
                 $AdviserSchedule->type = $param['type'];
                 $AdviserSchedule->save();
             } else {
-                AdviserSchedule::create($param);
+                // 削除
+                AdviserSchedule::destroy($param['id']);
             }
         };
         return redirect()->route('adviser.schedules.index')
