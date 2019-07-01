@@ -49,8 +49,8 @@ class MeetingRequestsController extends Controller
         $meetingRequest->update();
 
         if ($meetingRequest->status == MeetingRequest::STATUS_TYPE_APPROVED) {
-            Mail::to($meetingRequest->User->email)->send(new ApprovedMeetingMail($meetingRequest));
             $this->saveSchedule($meetingRequest);
+            Mail::to($meetingRequest->User->email)->send(new ApprovedMeetingMail($meetingRequest));
             $message = '面談を承認しました';
         } elseif ($meetingRequest->status == MeetingRequest::STATUS_TYPE_DENIED) {
             Mail::to($meetingRequest->User->email)->send(new DeniedMeetingMail($meetingRequest));
@@ -61,10 +61,21 @@ class MeetingRequestsController extends Controller
 
     private function saveSchedule($meetingRequest)
     {
-        AdviserSchedule::create([
-            'adviser_id' => $meetingRequest->adviser_id,
-            'date'       => $meetingRequest->date,
-            'type'       => AdviserSchedule::SCHEDULE_TYPE_NG
-        ]);
+        $schedule = AdviserSchedule::where('adviser_id', $meetingRequest->adviser_id)
+            ->whereBetween('date', [$meetingRequest->date,  $meetingRequest->date->addMinutes(30)])->first();
+
+        if ($schedule) {
+            $schedule->type = AdviserSchedule::SCHEDULE_TYPE_NG;
+            $schedule->update();
+        } else {
+            if ($meetingRequest->date->minute === 30) {
+                $date = $meetingRequest->date->addSeconds(1);
+            }
+            AdviserSchedule::create([
+                'adviser_id' => $meetingRequest->adviser_id,
+                'date'       => $date,
+                'type'       => AdviserSchedule::SCHEDULE_TYPE_NG
+            ]);
+        }
     }
 }

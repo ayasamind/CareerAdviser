@@ -29,7 +29,7 @@ class VerificationController extends UsersController
      *
      * @var string
      */
-    protected $redirectTo = '/advisers';
+    protected $redirectTo = '/verified';
 
     /**
      * Create a new controller instance.
@@ -64,6 +64,6 @@ class VerificationController extends UsersController
             event(new Verified($request->user()));
         }
 
-        return redirect($this->redirectPath())->with('verified', true)->with('success', '会員登録が完了しました。ユーザー情報詳細を編集してください。');
+        return redirect($this->redirectPath())->with('verified', true)->with('success', '会員登録が完了しました。ログインしてユーザー情報詳細を編集してください。');
     }
 }
