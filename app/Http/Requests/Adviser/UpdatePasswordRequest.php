@@ -6,7 +6,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
-class UpdateMeetingRequest extends FormRequest
+class UpdatePasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,6 @@ class UpdateMeetingRequest extends FormRequest
      */
     public function authorize()
     {
-
         return true;
     }
     /**
@@ -26,7 +25,7 @@ class UpdateMeetingRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'comment' => ['required'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
         return $rules;
     }

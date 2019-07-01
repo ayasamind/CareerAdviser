@@ -29,4 +29,9 @@ class ForgotPasswordController extends AdvisersController
     {
         $this->middleware('guest:adviser');
     }
+
+    public function showLinkRequestForm()
+    {
+        return view('adviser.auth.passwords.email');
+    }
 }

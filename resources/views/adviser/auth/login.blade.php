@@ -46,6 +46,7 @@
                                 </button>
                             </div>
                         </div>
+                        {{-- <a href="{{ route('adviser.password.request') }}">パスワードを忘れた場合</a> --}}
                     </form>
                 </div>
             </div>
