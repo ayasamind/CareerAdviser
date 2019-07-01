@@ -317,9 +317,9 @@ jQuery(document).ready(function($){
 				<li class="nav_li nav_li_menu"><a class="nav_li_a fs14 fs22tb fs16sp" href="#contact">お問い合わせ</a></li>
 				<li class="nav_li ml15sp signup_header_li_wrap">
 					<ul>
-						<!-- <li class="fs16 fs25tb fs15sp txt_tc_deep signup_header_li"><a href="/signUp">新規登録</a></li>
-						<li>または</li> -->
-                        <li class="fs16 fs25tb fs18sp login_header_li ml0sp mr0sp"><a href="{{ route('register') }}">無料で使ってみる<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a></li>
+						<li class="fs16 fs25tb fs15sp txt_tc_deep signup_header_li"><a href="{{ route('register') }}">新規登録</a></li>
+						{{-- <li>または</li> --}}
+                        <li class="fs16 fs25tb fs18sp login_header_li ml0sp mr0sp"><a href="{{ route('login') }}">ログイン<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a></li>
 					</ul>
 				</li>
 				<!-- <li class="nav_li"><a class="nav_li_a fs14 fs22tb fs13sp" href="#contents04">menu</a></li>
@@ -352,7 +352,7 @@ jQuery(document).ready(function($){
 							あなただけの<br>アドバイザーを
 						</p>
 						<!-- <a href="#" class="btn-square fb_login">facebookでログイン</a>今後実装 -->
-                        <a href="{{ route('register') }}" class="login_hero fs24 fs22sp txt_c fw700 mt40 mt20tb mt15sp block ls25 ls15_sp">無料で使ってみる<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                        <a href="{{ route('login') }}" class="login_hero fs24 fs22sp txt_c fw700 mt40 mt20tb mt15sp block ls25 ls15_sp">ログイン<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
 						<a href="https://form.run/@ca-contact" target="_blank" class="for_worker fs12 mt10 mt7sp fw700 block txt_888">キャリアアドバイザーの方はこちら</a>
 					</div>
 					<div class="banner_slider_wrap center_flex_ver">
@@ -388,7 +388,7 @@ jQuery(document).ready(function($){
                                                     'id' => $adviser->id
                                                 ])  }}" class="advisor_card_more_btn fw700 fs17 mt10">
                                                     <i class="fas fa-user-circle fs28"></i>
-                                                    <span>プロフィールをみる</span>
+                                                    <span>プロフィールを見る</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -441,9 +441,8 @@ jQuery(document).ready(function($){
 			<section id="lp_signup" class="mt60 mt0sp">
 				<div class="container">
                     <a href="{{ route('register') }}" class="signup_line_btn fs20vw fs32tb fw700">
-						キャリアアドバイザー.comを<br class="sp_only">無料で使ってみる
+						キャリアアドバイザー.comに<br class="sp_only">無料で登録
 					</a>
-					<span class="fs15 mt15 txt_c txt_wh block">上のボタンをクリックし、キャリアアドバイザー.comの会員登録をしてください</span>
 				</div>
 			</section>
 
@@ -484,9 +483,11 @@ jQuery(document).ready(function($){
                                                 <li><a href="">{{ $tag->name }}</a></li>
                                             @endforeach
                                         </dl>
-                                        <a href="https://note.mu/rashisa0123/n/n51a3519b57ec" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
+                                        <a href="{{ route('advisers.show', [
+                                            'id' => $adviser->id
+                                        ])  }}" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
                                             <i class="fas fa-user-circle fs28"></i>
-                                            <span>インタビュー記事へ</span>
+                                            <span>プロフィールを見る</span>
                                         </a>
                                     </div>
                                 </div>
@@ -913,7 +914,7 @@ jQuery(document).ready(function($){
 			<section id="lp_signup" class="mt60 mt0sp">
 				<div class="container">
                     <a href="{{ route('register') }}" class="signup_line_btn fs20vw fs32tb fw700">
-						キャリアアドバイザー.comを<br class="sp_only">無料で使ってみる
+						キャリアアドバイザー.comに<br class="sp_only">無料で登録
 					</a>
 					<span class="fs15 mt15 txt_c txt_wh block">上のボタンをクリックし、キャリアアドバイザー.comの会員登録をしてください</span>
 				</div>
