@@ -59,6 +59,7 @@
                                     <a class="dropdown-item" href="{{ route('adviser.home') }}">
                                         マイページ
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('adviser.password.change') }}">パスワード変更</a>
                                     <a class="dropdown-item" href="{{ route('adviser.auth.logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
