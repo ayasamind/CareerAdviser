@@ -96,3 +96,7 @@ Route::get('/policy', function () {
 Route::get('/terms', function () {
     return view('user.terms');
 })->name('terms');
+
+Route::get('/verified', function () {
+    return view('user.verified');
+})->name('verified_email');
