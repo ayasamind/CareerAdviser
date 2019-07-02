@@ -29,9 +29,17 @@ class AdvisersController extends UsersController
      * アドバイザー一覧画面
      * @author ayasamind
     */
-    public function index()
+    public function index(Request $request)
     {
-        $advisers = Adviser::whereHas('AdviserProfile')->orderByDesc('created_at')->paginate(10);
+        if ($request->query('tag')) {
+            $tagId = $request->query('tag');
+            $advisers = Adviser::whereHas('AdviserProfile')
+                ->whereHas('tag', function ($query) use ($tagId) {
+                    $query->where('tags.id', $tagId);
+                })->orderByDesc('created_at')->paginate(10);
+        } else {
+            $advisers = Adviser::whereHas('AdviserProfile')->orderByDesc('created_at')->paginate(10);
+        }
         $tags = Tag::all();
         $user = null;
         if (Auth::check()) {

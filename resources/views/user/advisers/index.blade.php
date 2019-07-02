@@ -27,7 +27,9 @@
 					<h2 class="container_service lh21">タグで探す</h2>
 					<dl class="advisor_card_taglist container_service">
                         @foreach ($tags as $tag)
-                            <li><a href="">{{ $tag->name }}</a></li>
+                    <li><a href="{{ route('advisers.index', [
+                        'tag' => $tag->id
+                    ]) }}">{{ $tag->name }}</a></li>
                         @endforeach
 					</dl>
 				</div>
@@ -55,7 +57,9 @@
                                         </p>
                                         <dl class="advisor_card_taglist mt15 txt_l">
                                             @foreach ($adviser->Tag as $tag)
-                                                <li><a href="">{{ $tag->name }}</a></li>
+                                                <li><a href="{{ route('advisers.index', [
+                                                    'tag' => $tag->id
+                                                ]) }}">{{ $tag->name }}</a></li>
                                             @endforeach
                                             <!-- <li><a href="">埼玉出身</a></li>
                                             <li><a href="">ディズニー大好き</a></li> -->
