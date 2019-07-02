@@ -485,7 +485,7 @@ jQuery(document).ready(function($){
                                         </dl>
                                         <a href="{{ route('advisers.show', [
                                             'id' => $adviser->id
-                                        ])  }}" target="_blank" class="advisor_card_more_btn fw700 fs17 mt10">
+                                        ])  }}" class="advisor_card_more_btn fw700 fs17 mt10">
                                             <i class="fas fa-user-circle fs28"></i>
                                             <span>プロフィールを見る</span>
                                         </a>
