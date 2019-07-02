@@ -381,7 +381,9 @@ jQuery(document).ready(function($){
                                                 </p>
                                                 <dl class="advisor_card_taglist mt15 txt_l">
                                                     @foreach ($adviser->Tag as $tag)
-                                                        <li><a href="">{{ $tag->name }}</a></li>
+                                                        <li><a href="{{ route('advisers.index', [
+                                                            'tag' => $tag->id
+                                                        ]) }}">{{ $tag->name }}</a></li>
                                                     @endforeach
                                                 </dl>
                                                 <a href="{{ route('advisers.show', [
@@ -480,7 +482,9 @@ jQuery(document).ready(function($){
                                         </p>
                                         <dl class="advisor_card_taglist mt15 txt_l">
                                             @foreach ($adviser->Tag as $tag)
-                                                <li><a href="">{{ $tag->name }}</a></li>
+                                                <li><a href="{{ route('advisers.index', [
+                                                    'tag' => $tag->id
+                                                ]) }}">{{ $tag->name }}</a></li>
                                             @endforeach
                                         </dl>
                                         <a href="{{ route('advisers.show', [
