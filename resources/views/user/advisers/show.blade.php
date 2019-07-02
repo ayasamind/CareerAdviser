@@ -68,7 +68,9 @@
 									</div>
 									<dl class="advisor_card_taglist mt15 txt_l">
                                         @foreach ($adviser->Tag as $tag)
-                                            <li><a href="">{{ $tag->name }}</a></li>
+                                            <li><a href="{{ route('advisers.index', [
+                                                'tag' => $tag->id
+                                            ]) }}">{{ $tag->name }}</a></li>
 										@endforeach
                                     </dl>
                                     <a href="{{ $adviser->AdviserProfile->article_url ? $adviser->AdviserProfile->article_url : "#" }}" target="_blank" class="to_interview_btn">
