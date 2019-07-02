@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Aws\Laravel\AwsServiceProvider::class,
         App\Providers\ValidatorServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -229,6 +230,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'AWS' => Aws\Laravel\AwsFacade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
