@@ -32,6 +32,11 @@ Route::post('/password/email', 'User\Auth\ForgotPasswordController@sendResetLink
 Route::get('/password/reset/{token}', 'User\Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('/password/reset', 'User\Auth\ResetPasswordController@reset')->name('password.update');
 
+// ログインURL
+Route::get('auth/twitter', 'User\Auth\RegisterController@redirectToProvider')->name('auth.twitter');
+// コールバックURL
+Route::get('auth/twitter/callback', 'User\Auth\RegisterController@handleProviderCallback');
+
 Route::middleware(['auth:user'])->name('user.')->group(function() {
     Route::get('/thanks', function () {
         return view('user.thanks');

@@ -72,7 +72,8 @@ class Slack extends Notification
                         'ユーザー名' => $content['name'],
                         '紹介者' => $content['introduce'] ?  $content['introduce'] : 'なし',
                         'メールアドレス' => $content['email'],
-                        '日時' => \Carbon\Carbon::now()->toDateTimeString()
+                        '日時' => \Carbon\Carbon::now()->toDateTimeString(),
+                        '登録方法' => $content['client'] ? $content['client'] : 'フォーム'
                     ]);
             });
     }
