@@ -33,9 +33,10 @@ class AdvisersController extends UsersController
     {
         if ($request->query('tag')) {
             $tagId = $request->query('tag');
-            $advisers = Adviser::whereHas('tag', function ($query) use ($tagId) {
-                $query->where('tags.id', $tagId);
-            })->orderByDesc('created_at')->paginate(10);
+            $advisers = Adviser::whereHas('AdviserProfile')
+                ->whereHas('tag', function ($query) use ($tagId) {
+                    $query->where('tags.id', $tagId);
+                })->orderByDesc('created_at')->paginate(10);
         } else {
             $advisers = Adviser::whereHas('AdviserProfile')->orderByDesc('created_at')->paginate(10);
         }
