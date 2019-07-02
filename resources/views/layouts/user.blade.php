@@ -24,7 +24,7 @@
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css" rel="stylesheet">
 	<!-- webfont -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
 	<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 	<!-- webfont -->
 	<link rel="stylesheet" href="{{ asset("icomoon/style.css") }}">
