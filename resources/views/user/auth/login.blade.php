@@ -28,9 +28,9 @@
                                     <button type="button" href="#" class="fb_login fs15 fw700 disable" disabled>
 										<i class="fab fa-facebook-square fs26 mr40"></i>facebookでログイン
                                     </button>
-									<button type="button" href="#" class="tw_login fs15 fw700 disable" disabled>
+                                    <a href="{{ route('auth.twitter') }}" class="tw_login fs15 fw700">
 										<i class="fab fa-twitter fs26 mr40"></i>Twitterでログイン
-									</button>
+									</a>
 								</div>
 							</div>
 							<span class="fs14 block txt_c center_block login_or ttl_bdr_ccc">または</span>
