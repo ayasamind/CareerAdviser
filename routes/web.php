@@ -66,6 +66,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/advisers', 'Admin\AdvisersController')->except(['update']);
         Route::put("/update/{id}", "Admin\AdvisersController@update")->name('advisers.update');
         Route::resource('/users', 'Admin\UsersController')->only(['index', 'show', 'destroy']);
+        Route::resource('/requests', 'Admin\MeetingRequestsController')->only(['index', 'show']);
     });
 });
 

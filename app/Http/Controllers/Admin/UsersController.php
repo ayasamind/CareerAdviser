@@ -35,7 +35,7 @@ class UsersController extends AdminsController
     */
     public function show($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::with(['UserProfile', 'Desire'])->findOrFail($id);
         return view('admin.users.show', [
             'user' => $user
         ]);
