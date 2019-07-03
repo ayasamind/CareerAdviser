@@ -25,7 +25,7 @@
 			<section id="home" class="sections">
 				<div class="tag_header">
 					<h2 class="container_service lh21">タグで探す</h2>
-					<dl class="advisor_card_taglist container_service">
+					<dl class="advisor_card_taglist_tag container_service">
                         @foreach ($tags as $tag)
                     <li><a href="{{ route('advisers.index', [
                         'tag' => $tag->id
