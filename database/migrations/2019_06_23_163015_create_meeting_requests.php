@@ -23,6 +23,8 @@ class CreateMeetingRequests extends Migration
             $table->text('place')->nullable();
             $table->text('comment')->nullable();
             $table->timestamps();
+
+            $table->index('adviser_id');
         });
     }
 

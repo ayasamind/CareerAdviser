@@ -19,6 +19,8 @@ class CreateAdviserSchedules extends Migration
             $table->datetime('date');
             $table->integer('type');
             $table->timestamps();
+
+            $table->index('adviser_id');
         });
     }
 

@@ -18,6 +18,9 @@ class CreateDesireUser extends Migration
             $table->integer('user_id');
             $table->integer('desire_id');
             $table->timestamps();
+
+            $table->index('user_id');
+            $table->index('desire_id');
         });
     }
 
