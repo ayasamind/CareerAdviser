@@ -138,6 +138,11 @@
     }
   }
 
+  .advisor_card_taglist {
+    height: 82px;
+    overflow-y: scroll;
+  }
+
   .advisor_box {
     min-height: 620px;
     margin-top: 30px;
