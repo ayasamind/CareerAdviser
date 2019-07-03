@@ -19,6 +19,7 @@ class CreateAdviserCareers extends Migration
             $table->text('year');
             $table->text('career');
             $table->timestamps();
+            $table->index('adviser_id');
         });
     }
 

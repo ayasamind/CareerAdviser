@@ -29,6 +29,7 @@ class CreateAdviserProfiles extends Migration
             $table->text('meeting_place');
             $table->text('article_url')->nullable();
             $table->timestamps();
+            $table->index('adviser_id');
         });
     }
 

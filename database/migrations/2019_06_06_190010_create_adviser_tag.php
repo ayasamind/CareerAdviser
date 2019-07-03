@@ -18,6 +18,9 @@ class CreateAdviserTag extends Migration
             $table->integer('tag_id');
             $table->integer('adviser_id');
             $table->timestamps();
+
+            $table->index('adviser_id');
+            $table->index('tag_id');
         });
     }
 
