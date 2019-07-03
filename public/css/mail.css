@@ -9,14 +9,14 @@ a {
 
 .complete-wrapper {
 	width: 60%;
-	margin:300px; 	
+	margin:300px;
 	/* text-align: center; */
 	font-size: 1.15em;
 }
 
 .complete-message-wrapper {
 	margin: 150px auto 0;
-	height: 400px; 	
+	height: 400px;
 	width: 60%;
 }
 
@@ -26,10 +26,10 @@ a {
 
 .complete-message {
 	font-size: 0.9em;
-	margin-top: 30px;	
+	margin-top: 30px;
 }
 
-.back-to-top-btn {	
+.back-to-top-btn {
 	width: 160px;
 	background-color: #008cd6;
 	text-align: center;
@@ -38,14 +38,14 @@ a {
 	border: none;
 }
 
-.back-to-top-btn a {	
+.back-to-top-btn a {
 	font-size: 14px;
 	padding: 10px;
 	color: #fff;
 	display: block;
 }
 
-.back-to-top-btn a:hover {	
+.back-to-top-btn a:hover {
 	text-decoration: none;
 	opacity: 0.8;
 }
@@ -102,7 +102,7 @@ h3 {
 
 
 /* @media screen and (min-width:480px) and ( max-width:768px){  */
-@media screen and ( max-width:768px){ 
+@media screen and ( max-width:768px){
     /*　画面サイズが768px以下はここを読み込む（スマホ）　*/
     /* 区切り縦線 スマホ版の時のみ表示 */
     .complete-message-wrapper {
