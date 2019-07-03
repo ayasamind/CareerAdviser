@@ -104,6 +104,21 @@
     border: 1px solid #ddd;
   }
 
+  .advisor_card_taglist_tag li {
+    display: inline-block;
+    margin: 0 7px 7px 0;
+  }
+
+  .advisor_card_taglist_tag li a {
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: inline-block;
+    background-color: #f7f7f7;
+    padding: 4px 7px 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+
   @media screen and (min-width: 600px) and (max-width: 1080px) {
     .advisor_card_message {
       font-size: 2rem;
