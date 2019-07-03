@@ -75,7 +75,7 @@ a.disabled {
     background-color: #fabe00; }
 
 .advisor_card_message {
-  font-size: 1.4vw;
+  font-size: 1.3vw;
   margin: 0 0 10px;
   color: #000;
   text-shadow: white 2px 0px, white -2px 0px, white 0px -2px, white 0px 2px, white 2px 2px, white -2px 2px, white 2px -2px, white -2px -2px, white 1px 2px, white -1px 2px, white 1px -2px, white -1px -2px, white 2px 1px, white -2px 1px, white 2px -1px, white -2px -1px; }
@@ -119,18 +119,26 @@ a.disabled {
     float: left;
     margin-left: 15px; }
 
+  .advisor_card_taglist {
+    height: 82px;
+    overflow-y: scroll;
+  }
+
 .advisor_card_taglist li {
   display: inline-block;
-  margin: 0 7px 7px 0; }
-  .advisor_card_taglist li a {
-    font-weight: 700;
-    font-size: 1.2rem;
-    display: inline-block;
-    background-color: #f7f7f7;
-    padding: 4px 7px 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    pointer-events: none; }
+  margin: 0 7px 7px 0;
+}
+
+.advisor_card_taglist li a {
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: inline-block;
+  background-color: #f7f7f7;
+  padding: 4px 7px 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  pointer-events: none;
+}
 
 @media screen and (min-width: 600px) and (max-width: 1080px) {
   .advisor_card_message {
@@ -141,6 +149,10 @@ a.disabled {
     padding: 8px 12px 12px; }
   .advisor_card_more_btn {
     padding: 10px 0 10px; }
+
+  .advisor_card_taglist {
+    height: auto;
+  }
   .advisor_card_taglist li {
     margin: 0 5px 5px 0; }
     .advisor_card_taglist li a {
@@ -154,7 +166,9 @@ a.disabled {
     bottom: 1.5%; }
   .advisor_card_message {
     margin: 0 0 5px;
-    font-size: 2rem; } }
+    font-size: 2rem;
+  }
+}
 
 .header_inner {
   -webkit-box-pack: justify;
@@ -188,7 +202,8 @@ a.disabled {
 
 @media screen and (max-width: 600px) {
   .nav_overlay ul li {
-    height: 15%; } }
+    height: 15%; }
+}
 
 #banner {
   padding-top: 80px; }
@@ -259,7 +274,9 @@ a.disabled {
   .banner_slider_wrap {
     width: 100%;
     margin: 0 15px 0 2%;
-    height: 600px; } }
+    height: 600px;
+  }
+}
 
 @media screen and (max-width: 600px) {
   #banner {
