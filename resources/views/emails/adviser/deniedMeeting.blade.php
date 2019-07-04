@@ -18,3 +18,5 @@
         <td>{{$meetingRequest->comment}}</td>
     </tr>
 </table>
+
+@include('emails.element._footer')

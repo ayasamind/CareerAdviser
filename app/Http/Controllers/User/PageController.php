@@ -13,7 +13,7 @@ class PageController extends UsersController
 
     public function top()
     {
-        $advisers = Adviser::whereHas('AdviserProfile')->orderByDesc('created_at')->paginate(10);
+        $advisers = Adviser::whereHas('AdviserProfile')->orderByDesc('created_at')->paginate(15);
         return view('top', [
             'advisers' => $advisers,
         ]);

@@ -16,3 +16,5 @@
     <td>{{$meetingRequest->date->format('Y年m月d日 H:i')}}</td>
 </tr>
 </table>
+
+@include('emails.element._footer')

@@ -12,3 +12,5 @@
 </p>
 </body>
 </html>
+
+@include('emails.element._footer')
