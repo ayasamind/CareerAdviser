@@ -19,3 +19,5 @@
     <td>{{$pass}}</td>
 </tr>
 </table>
+
+@include('emails.element._footer')

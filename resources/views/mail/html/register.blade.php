@@ -11,8 +11,7 @@
 <p id="button">
   <a href="{{$url}}">認証</a>
 </p>
-<p>
-    本メールに心当たりのない場合、メールを破棄してください。
-</p>
 </body>
 </html>
+
+@include('emails.element._footer')
