@@ -26,7 +26,7 @@ class HomeController extends UsersController
      */
     public function index()
     {
-        $advisers = Adviser::paginate(10);
+        $advisers = Adviser::paginate(15);
         return view('top', [
             'advisers' => $advisers
         ]);
