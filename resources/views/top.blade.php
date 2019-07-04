@@ -523,7 +523,15 @@ jQuery(document).ready(function($){
 							<i class="fas fa-arrow-right fs20 center_flex"></i>
 							<div class="inline_block flow_box">
 								<div class="flow_icon_wrap">
-									<img src="img/flow02.svg" alt="" class="flow_icon block center_block">
+									<img src="img/flow04.svg" alt="日程を選択" class="flow_icon block center_block">
+								</div>
+								<h3 class="fs19 fs17sp txt_c mt15 txt_tc">日程を選択</h3>
+								<!-- <p class="fs14 mt10">テキスト</p> -->
+							</div>
+							<i class="fas fa-arrow-right fs20 center_flex"></i>
+							<div class="inline_block flow_box">
+								<div class="flow_icon_wrap">
+									<img src="img/flow02.svg" alt="面談申請" class="flow_icon block center_block">
 								</div>
 								<h3 class="fs19 fs17sp txt_c mt15 txt_tc">面談申請</h3>
 								<!-- <p class="fs14 mt10">テキスト</p> -->
@@ -531,17 +539,9 @@ jQuery(document).ready(function($){
 							<i class="fas fa-arrow-right fs20 center_flex"></i>
 							<div class="inline_block flow_box">
 								<div class="flow_icon_wrap">
-									<img src="img/flow03.svg" alt="" class="flow_icon block center_block">
+									<img src="img/flow04-2.svg" alt="面談確定" class="flow_icon block center_block">
 								</div>
-								<h3 class="fs19 fs17sp txt_c mt15 txt_tc">チャット開始</h3>
-								<!-- <p class="fs14 mt10">テキスト</p> -->
-							</div>
-							<i class="fas fa-arrow-right fs20 center_flex"></i>
-							<div class="inline_block flow_box">
-								<div class="flow_icon_wrap">
-									<img src="img/flow04.svg" alt="" class="flow_icon block center_block">
-								</div>
-								<h3 class="fs19 fs17sp txt_c mt15 txt_tc">日程を決める</h3>
+								<h3 class="fs19 fs17sp txt_c mt15 txt_tc">面談確定</h3>
 								<!-- <p class="fs14 mt10">テキスト</p> -->
 							</div>
 						</div>
