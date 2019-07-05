@@ -33,12 +33,15 @@ class AdvisersController extends UsersController
     {
         if ($request->query('tag')) {
             $tagId = $request->query('tag');
-            $advisers = Adviser::whereHas('AdviserProfile')
+            $advisers = Adviser::public()->whereHas('AdviserProfile')
                 ->whereHas('tag', function ($query) use ($tagId) {
                     $query->where('tags.id', $tagId);
                 })->orderByDesc('created_at')->paginate(10);
         } else {
-            $advisers = Adviser::whereHas('AdviserProfile')->orderByDesc('created_at')->paginate(15);
+            $advisers = Adviser::public()
+                ->whereHas('AdviserProfile')
+                ->orderByDesc('created_at')
+                ->paginate(15);
         }
         $tags = Tag::all();
         $user = null;
@@ -59,6 +62,10 @@ class AdvisersController extends UsersController
     */
     public function show(Request $request, $id)
     {
+        $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer', 'Tag'])->findOrFail($id);
+        if (!$adviser->public_flag) {
+            abort(404);
+        }
         if ($request->query('type')) {
             $Carbon0 = new Carbon($request->query('param')['date']);
             if ($request->query('type') == 'before') {
@@ -80,7 +87,6 @@ class AdvisersController extends UsersController
         $Carbon6 = new Carbon($baseDay);
         $Carbon7 = new Carbon($baseDay);
         $Carbon8 = new Carbon($baseDay);
-        $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer', 'Tag'])->findOrFail($id);
         $week = [
             $Carbon1->addDay(2),
             $Carbon2->addDay(3),
@@ -128,7 +134,7 @@ class AdvisersController extends UsersController
     {
         $date = new Carbon($date);
         $user = User::with(['UserProfile'])->findOrFail(Auth::user()->id);
-        $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer', 'Tag'])->findOrFail($id);
+        $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer', 'Tag'])->public()->findOrFail($id);
         $axisList = Desire::where(['type' => Desire::DESIRE_TYPE_AXIS])->pluck('name', 'id');
         $industryList = Desire::where(['type' => Desire::DESIRE_TYPE_INDUSTRY])->pluck('name', 'id');
         $jobList = Desire::where(['type' => Desire::DESIRE_TYPE_JOB])->pluck('name', 'id');
@@ -166,7 +172,7 @@ class AdvisersController extends UsersController
             'status'     => MeetingRequest::STATUS_TYPE_UNAPPROVED,
             'place'      => $data['place']
         ]);
-        $adviser = Adviser::find($data['adviser_id']);
+        $adviser = Adviser::find($data['adviser_id'])->public();
         Mail::to($adviser->email)->send(new NewMeetingMail($meetingRequest, $user, $adviser));
         return $meetingRequest;
     }
