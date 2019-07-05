@@ -57,6 +57,36 @@
                     </div>
 
                     <div class="form-group row">
+                        <label for="public_flag" class="col-md-4 col-form-label text-md-right">公開/非公開</label>
+
+                        <div class="col-md-6">
+                            公開  {!! Form::radio('public_flag', 1) !!}
+                            非公開  {!! Form::radio('public_flag', 0) !!}
+
+                            @if ($errors->has('public_flag'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('public_flag') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="schedule_flag" class="col-md-4 col-form-label text-md-right">日程調整カレンダーの表示</label>
+
+                        <div class="col-md-6">
+                            表示  {!! Form::radio('schedule_flag', 1) !!}
+                            非表示  {!! Form::radio('schedule_flag', 0) !!}
+
+                            @if ($errors->has('schedule_flag'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('schedule_flag') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label for="gender" class="col-md-4 col-form-label text-md-right">性別</label>
 
                         <div class="col-md-6">

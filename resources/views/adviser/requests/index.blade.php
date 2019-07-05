@@ -30,8 +30,8 @@
                                     {{ $request->User->email }}
                                 </a>
                             </td>
-                            <td>{{ $request->date->format('Y年m月d日 H:i') }}</td>
-                            <td>{{ $request->type_label }}</td>
+                            <td>{{ $request->is_no_schedule ?  "未定" : $request->date->format('Y年m月d日 H:i') }}</td>
+                            <td>{{ $request->is_no_schedule ? "未定" : $request->type_label }}</td>
                             <td>{{ $request->status_label }}</td>
                             <td>
                                 @if ($request->status == \App\MeetingRequest::STATUS_TYPE_UNAPPROVED)

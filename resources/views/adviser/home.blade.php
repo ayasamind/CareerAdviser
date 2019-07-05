@@ -31,6 +31,14 @@
                             <th>メールアドレス</th>
                             <td>{{ $adviser->email }}</td>
                         </tr>
+                        <tr>
+                            <th>公開/非公開</th>
+                            <td>{{ $adviser->public_label }}</td>
+                        </tr>
+                        <tr>
+                            <th>日程調整カレンダーの表示</th>
+                            <td>{{ $adviser->schedule_label }}</td>
+                        </tr>
                             <tr>
                                 <th>性別</th>
                                 <td>
