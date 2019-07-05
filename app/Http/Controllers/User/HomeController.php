@@ -26,7 +26,11 @@ class HomeController extends UsersController
      */
     public function index()
     {
-        $advisers = Adviser::paginate(15);
+        $advisers = Adviser::public()
+            ->whereHas('AdviserProfile')
+            ->orderByDesc('created_at')
+            ->paginate(15);
+
         return view('top', [
             'advisers' => $advisers
         ]);
