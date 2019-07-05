@@ -21,7 +21,9 @@
                         <tr>
                             <th>メールアドレス</th>
                             <td>
-                                {{ $meetingRequest->User->email }}
+                                <a href="mailto:{{ $meetingRequest->User->email }}">
+                                    {{ $meetingRequest->User->email }}
+                                </a>
                             </td>
                         </tr>
                         <tr>
