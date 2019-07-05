@@ -77,7 +77,23 @@
 										<span>インタビュー記事を見る</span>
 										<i class="fas fa-external-link-alt ml50"></i>
 									</a>
-								</section>
+                                </section>
+                                @if (!$adviser->schedule_flag)
+                                    <div class="advisor_card_inner">
+                                        <a href="{{ route('user.send_request', [
+                                            'id' => $adviser->id
+                                        ])  }}" style="background:#fabe00;"
+                                            @guest
+                                                class="advisor_card_more_btn fw700 fs17 mt10 guest"
+                                            @else
+                                                class="advisor_card_more_btn fw700 fs17 mt10 user"
+                                            @endguest
+                                        >
+                                            <i class="fas fa-user-circle fs28"></i>
+                                            <span>面談依頼を送る(アドバイザーに通知がいきます)</span>
+                                        </a>
+                                    </div>
+                                @endif
 								<section class="self_introduction_section">
 									<h3>自己紹介</h3>
                                     <p>{{ $adviser->AdviserProfile->introduce }}</p>
@@ -100,145 +116,162 @@
 									</dl>
 								</section>
 							</section>
-						</section>
-						<section class="calender_section mt15">
-							<h2>空き日程</h2>
-							<section class="advisor_profile_section_body">
-								<span class="mark_exp">○面談可 / △WEB面談のみ可 / ×面談不可</span>
-                                <table
-                                    @guest
-                                        class="disabled_calender"
-                                    @else
-                                        @if ($user)
-                                            @if (!$user->email_verified_at)
-                                                class="disabled_calender"
-                                            @endif
-                                        @endif
-                                    @endguest
-                                >
-								    <tbody>
-								    	<tr>
-									      <th class="time"></th>
-                                            <th class="month" colspan="7"><span>{{ $week[0]->month }}</span>月</th>
-									      <th class="time"></th>
-								    	</tr>
-								    </tbody>
-								    <thead>
-								      <tr>
-                                        <td
-                                            <?php $carbon = new \Carbon\Carbon() ?>
-                                            @if ($carbon->addDay(2)->format('Y-m-d') == $week[0]->format('Y-m-d'))
-                                                class="time pagenation_btn_cell pagenation_btn_cell_prev disabled_pagenation"
-                                            @else
-                                                class="time pagenation_btn_cell pagenation_btn_cell_prev"
-                                            @endif
-                                        >
-                                            <a href="{{ route("advisers.show", [
-                                                'id' => $adviser->id,
-                                                'param' => $week[0],
-                                                'type'  => 'before'
-                                            ]) }}">
-								        		<img src="{{ asset("img/svg/arrow3_l.svg") }}">
-								        		<span>前週</span>
-								        	</a>
-                                        </td>
-                                        @foreach ($week as $day)
-                                            <td
-                                                @if ($day->isSunday())
-                                                    class="sunday"
-                                                @elseif ($day->isSaturday())
-                                                    class="sunday"
-                                                @endif
-                                            >{{ $day->day }}
-                                                <span>{{ $day->formatLocalized('%a') }}</span>
-                                            </td>
-                                        @endforeach
-								        <td class="time pagenation_btn_cell pagenation_btn_cell_next">
-								        	<a href="{{ route("advisers.show", [
-                                                'id' => $adviser->id,
-                                                'param' => $week[0],
-                                                'type'  => 'after'
-                                            ]) }}">
-								        		<span>翌週</span>
-								        		<img src="{{ asset("img/svg/arrow3_r.svg") }}">
-								        	</a>
-								        </td>
-								      </tr>
-								    </thead>
-								    <tbody>
-                                        @for ($i = 0; $i <=11; $i++)
-                                            <tr>
-                                                <td class="time">{{ $i + 10 }}:00</td>
-                                                    @include("user.advisers._schedule", ['week' => $week, 'schedules' => $schedules, 'index' => $i * 2, 'date' => $i + 10 . ":00", 'id' => $adviser->id])
-                                                <td class="time">{{ $i + 10 }}:00</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="time">{{ $i + 10 }}:30</td>
-                                                    @include("user.advisers._schedule", ['week' => $week, 'schedules' => $schedules, 'index' => $i * 2 + 1, 'date' => $i + 10 . ":30", 'id' => $adviser->id])
-                                                <td class="time">{{ $i + 10 }}:30</td>
-                                            </tr>
-                                        @endfor
-								    </tbody>
-								    <tfoot>
-								      <tr>
-                                        <td
-                                            <?php $carbon = new \Carbon\Carbon() ?>
-                                            @if ($carbon->addDay(2)->format('Y-m-d') == $week[0]->format('Y-m-d'))
-                                                class="time pagenation_btn_cell pagenation_btn_cell_prev disabled_pagenation"
-                                            @else
-                                                class="time pagenation_btn_cell pagenation_btn_cell_prev"
-                                            @endif
-                                        >
-                                            <a href="{{ route("advisers.show", [
-                                                'id' => $adviser->id,
-                                                'param' => $week[0],
-                                                'type'  => 'before'
-                                            ]) }}">
-								        		<img src="{{ asset("img/svg/arrow3_l.svg") }}">
-								        		<span>前週</span>
-                                            </a>
-                                        </td>
-                                        @foreach ($week as $day)
-                                            <td
-                                                @if ($day->isSunday())
-                                                    class="sunday"
-                                                @elseif ($day->isSaturday())
-                                                    class="sunday"
-                                                @endif
-                                            >{{ $day->day }}
-                                                <span>{{ $day->formatLocalized('%a') }}</span>
-                                            </td>
-                                        @endforeach
-								        <td class="time pagenation_btn_cell pagenation_btn_cell_next">
-                                            <a href="{{ route("advisers.show", [
-                                                'id' => $adviser->id,
-                                                'param' => $week[0],
-                                                'type'  => 'after'
-                                            ]) }}">
-                                                <span>翌週</span>
-                                                <img src="{{ asset("img/svg/arrow3_r.svg") }}">
-                                            </a>
-								        </td>
-								      </tr>
-								    </tfoot>
-								  </table>
-								  <div class="calender_signup_overlay">
-									<div class="calender_signup_overlay_inner">
+                        </section>
+                        @if ($adviser->schedule_flag)
+                            <section class="calender_section mt15">
+                                <h2>空き日程</h2>
+                                <section class="advisor_profile_section_body">
+                                    <span class="mark_exp">○面談可 / △WEB面談のみ可 / ×面談不可</span>
+                                    <table
                                         @guest
-                                            <span class="ls25">面談を予約するには、登録が必要です</span>
-                                            <a href="{{ route('register') }}" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">無料で登録する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                                            class="disabled_calender"
                                         @else
                                             @if ($user)
                                                 @if (!$user->email_verified_at)
-                                                    <span class="ls25">面談を予約するには、メール認証が必要です</span>
-                                                    <a href="{{ route('verification.resend') }}" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">認証メールを再送する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                                                    class="disabled_calender"
                                                 @endif
                                             @endif
                                         @endguest
-									</div>
-								  </div>
-							</section>
-						</section>
+                                    >
+                                        <tbody>
+                                            <tr>
+                                            <th class="time"></th>
+                                                <th class="month" colspan="7"><span>{{ $week[0]->month }}</span>月</th>
+                                            <th class="time"></th>
+                                            </tr>
+                                        </tbody>
+                                        <thead>
+                                        <tr>
+                                            <td
+                                                <?php $carbon = new \Carbon\Carbon() ?>
+                                                @if ($carbon->addDay(2)->format('Y-m-d') == $week[0]->format('Y-m-d'))
+                                                    class="time pagenation_btn_cell pagenation_btn_cell_prev disabled_pagenation"
+                                                @else
+                                                    class="time pagenation_btn_cell pagenation_btn_cell_prev"
+                                                @endif
+                                            >
+                                                <a href="{{ route("advisers.show", [
+                                                    'id' => $adviser->id,
+                                                    'param' => $week[0],
+                                                    'type'  => 'before'
+                                                ]) }}">
+                                                    <img src="{{ asset("img/svg/arrow3_l.svg") }}">
+                                                    <span>前週</span>
+                                                </a>
+                                            </td>
+                                            @foreach ($week as $day)
+                                                <td
+                                                    @if ($day->isSunday())
+                                                        class="sunday"
+                                                    @elseif ($day->isSaturday())
+                                                        class="sunday"
+                                                    @endif
+                                                >{{ $day->day }}
+                                                    <span>{{ $day->formatLocalized('%a') }}</span>
+                                                </td>
+                                            @endforeach
+                                            <td class="time pagenation_btn_cell pagenation_btn_cell_next">
+                                                <a href="{{ route("advisers.show", [
+                                                    'id' => $adviser->id,
+                                                    'param' => $week[0],
+                                                    'type'  => 'after'
+                                                ]) }}">
+                                                    <span>翌週</span>
+                                                    <img src="{{ asset("img/svg/arrow3_r.svg") }}">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for ($i = 0; $i <=11; $i++)
+                                                <tr>
+                                                    <td class="time">{{ $i + 10 }}:00</td>
+                                                        @include("user.advisers._schedule", ['week' => $week, 'schedules' => $schedules, 'index' => $i * 2, 'date' => $i + 10 . ":00", 'id' => $adviser->id])
+                                                    <td class="time">{{ $i + 10 }}:00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="time">{{ $i + 10 }}:30</td>
+                                                        @include("user.advisers._schedule", ['week' => $week, 'schedules' => $schedules, 'index' => $i * 2 + 1, 'date' => $i + 10 . ":30", 'id' => $adviser->id])
+                                                    <td class="time">{{ $i + 10 }}:30</td>
+                                                </tr>
+                                            @endfor
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td
+                                                <?php $carbon = new \Carbon\Carbon() ?>
+                                                @if ($carbon->addDay(2)->format('Y-m-d') == $week[0]->format('Y-m-d'))
+                                                    class="time pagenation_btn_cell pagenation_btn_cell_prev disabled_pagenation"
+                                                @else
+                                                    class="time pagenation_btn_cell pagenation_btn_cell_prev"
+                                                @endif
+                                            >
+                                                <a href="{{ route("advisers.show", [
+                                                    'id' => $adviser->id,
+                                                    'param' => $week[0],
+                                                    'type'  => 'before'
+                                                ]) }}">
+                                                    <img src="{{ asset("img/svg/arrow3_l.svg") }}">
+                                                    <span>前週</span>
+                                                </a>
+                                            </td>
+                                            @foreach ($week as $day)
+                                                <td
+                                                    @if ($day->isSunday())
+                                                        class="sunday"
+                                                    @elseif ($day->isSaturday())
+                                                        class="sunday"
+                                                    @endif
+                                                >{{ $day->day }}
+                                                    <span>{{ $day->formatLocalized('%a') }}</span>
+                                                </td>
+                                            @endforeach
+                                            <td class="time pagenation_btn_cell pagenation_btn_cell_next">
+                                                <a href="{{ route("advisers.show", [
+                                                    'id' => $adviser->id,
+                                                    'param' => $week[0],
+                                                    'type'  => 'after'
+                                                ]) }}">
+                                                    <span>翌週</span>
+                                                    <img src="{{ asset("img/svg/arrow3_r.svg") }}">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    <div class="calender_signup_overlay">
+                                        <div class="calender_signup_overlay_inner">
+                                            @guest
+                                                <span class="ls25">面談を予約するには、登録が必要です</span>
+                                                <a href="{{ route('register') }}" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">無料で登録する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                                            @else
+                                                @if ($user)
+                                                    @if (!$user->email_verified_at)
+                                                        <span class="ls25">面談を予約するには、メール認証が必要です</span>
+                                                        <a href="{{ route('verification.resend') }}" class="calender_signup_btn fs24 fs22sp txt_c fw700 block ls25 ls15_sp">認証メールを再送する<!-- <i class="fas fa-sign-in-alt ml5"></i> --></a>
+                                                    @endif
+                                                @endif
+                                            @endguest
+                                        </div>
+                                    </div>
+                                </section>
+                            </section>
+                        @else
+                            <div class="advisor_card_inner">
+                                <a href="{{ route('user.send_request', [
+                                    'id' => $adviser->id
+                                ])  }}" style="background:#fabe00;"
+                                    @guest
+                                        class="advisor_card_more_btn fw700 fs17 mt10 guest"
+                                    @else
+                                        class="advisor_card_more_btn fw700 fs17 mt10 user"
+                                    @endguest
+                                >
+                                    <i class="fas fa-user-circle fs28"></i>
+                                    <span>面談依頼を送る(アドバイザーに通知がいきます)</span>
+                                </a>
+                            </div>
+                        @endif
 					</div>
 					<div class="advisor_col_r">
 						{{-- <section class="review_section">
@@ -302,5 +335,23 @@
 				</div>
 			</section>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+    </div><!-- #primary -->
+    <form id="request-form" action="{{ route('user.send_request', [
+        'id' => $adviser->id
+    ]) }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+@endsection
+
+@section('script')
+    <script>
+        $(document).on('click', '.guest', function () {
+            alert('面談依頼には会員登録が必要です')
+            return false
+        })
+        $(document).on('click', '.user', function () {
+            event.preventDefault();
+            document.getElementById('request-form').submit();
+        })
+    </script>
 @endsection

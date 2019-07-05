@@ -77,7 +77,9 @@ class AdvisersController extends BaseController
     {
         $adviser->name = $data['name'];
         $adviser->email = $data['email'];
-        $adviser->save();
+        $adviser->public_flag = $data['public_flag'];
+        $adviser->schedule_flag = $data['schedule_flag'];
+        $adviser->update();
 
         $this->AdviserUtils->saveProfile($adviser, $data, $photo_url);
         $this->AdviserUtils->saveCareers($adviser, $data);

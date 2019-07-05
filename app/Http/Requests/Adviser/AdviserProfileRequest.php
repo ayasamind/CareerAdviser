@@ -29,7 +29,8 @@ class AdviserProfileRequest extends FormRequest
             $rules = [
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:advisers,email,' . $this->id . ',id'],
-                'AdviserProfile.photo' => ['image', 'mimes:jpeg,jpg,png'],
+                'public_flag' => ['required'],
+                'schedule_flag' => ['required'],
                 'AdviserProfile.gender' => ['required', 'integer'],
                 'AdviserProfile.prefecture_id' => ['required', 'integer'],
                 'AdviserProfile.comment' => ['required', 'string'],
@@ -47,7 +48,8 @@ class AdviserProfileRequest extends FormRequest
             $rules = [
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:advisers,email,' . $this->id . ',id'],
-                'AdviserProfile.photo' => ['image', 'mimes:jpeg,jpg,png'],
+                'public_flag' => ['required'],
+                'schedule_flag' => ['required'],
                 'AdviserProfile.gender' => ['required', 'integer'],
                 'AdviserProfile.prefecture_id' => ['required', 'integer'],
                 'AdviserProfile.comment' => ['required', 'string'],
