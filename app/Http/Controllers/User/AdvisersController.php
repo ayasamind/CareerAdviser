@@ -181,4 +181,23 @@ class AdvisersController extends UsersController
             'meetingRequest' => $meetingRequet,
         ]);
     }
+
+    public function sendRequest(Request $request)
+    {
+        if (!Auth::check() || !$request->query('id')) {
+            abort(404);
+        }
+        $data = [
+            'adviser_id' => $request->query('id'),
+            'user_id'    => Auth::user()->id,
+            'date'       => null,
+            'type'       => MeetingRequest::MEETING_TYPE_NO_SCHEDULE,
+            'status'     => MeetingRequest::STATUS_TYPE_UNAPPROVED,
+            'place'      => null,
+        ];
+        $meetingRequest = $this->newMeeting($data);
+        return redirect()->route('user.done_request', [
+            'id' => $meetingRequest->id
+        ])->with('success', '面談を申し込みました');
+    }
 }

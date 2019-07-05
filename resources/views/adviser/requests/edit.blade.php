@@ -28,11 +28,11 @@
                         </tr>
                         <tr>
                             <th>希望面談日時</th>
-                            <td>{{ $meetingRequest->date->format('Y年m月d日 H:i') }}</td>
+                            <td>{{ $meetingRequest->is_no_schedule ?  "未定" : $meetingRequest->date->format('Y年m月d日 H:i') }}</td>
                         </tr>
                         <tr>
                             <th>希望面談形式</th>
-                            <td>{{ $meetingRequest->type_label }}
+                            <td>{{ $meetingRequest->is_no_schedule ? "未定" : $meetingRequest->type_label }}
                                 @if ($duplicateFlag)
                                     <span role="alert" class="validate-error">
                                         <strong>※既に別の面談予約が入っています</strong>
