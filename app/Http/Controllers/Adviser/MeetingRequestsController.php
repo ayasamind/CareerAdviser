@@ -49,7 +49,10 @@ class MeetingRequestsController extends Controller
         $meetingRequest->update();
 
         if ($meetingRequest->status == MeetingRequest::STATUS_TYPE_APPROVED) {
-            $this->saveSchedule($meetingRequest);
+            // 日程調整ありの予約の場合、その日程をxに変更する
+            if (!$meetingRequest->is_no_schedule) {
+                $this->saveSchedule($meetingRequest);
+            }
             Mail::to($meetingRequest->User->email)->send(new ApprovedMeetingMail($meetingRequest));
             $message = '面談を承認しました';
         } elseif ($meetingRequest->status == MeetingRequest::STATUS_TYPE_DENIED) {

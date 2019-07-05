@@ -23,11 +23,15 @@
 							<h3>アドバイザー</h3>
                             <p>{{ $meetingRequest->adviser->name }}</p>
 							<h3 class="mt20">日時</h3>
-                            <p>{{ $meetingRequest->date->format('Y年m月d日 H:i') }}</p>
-							<h3 class="mt20">場所</h3>
-							<p><a class="txt_link" target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ $meetingRequest->adviser->AdviserProfile->meeting_place }}">{{ $meetingRequest->adviser->AdviserProfile->meeting_place }}</a></p>
-							<span class="mt20 fw700">*無断キャンセルは絶対にお辞めください。アドバイザーの方に多大な迷惑がかかります。</span>
-						</div>
+                            <p>{{ $meetingRequest->is_no_schedule ?  "未定" : $meetingRequest->date->format('Y年m月d日 H:i') }}</p>
+                            @if (!$meetingRequest->is_no_schedule)
+                                <h3 class="mt20">場所</h3>
+                                <p><a class="txt_link" target="_blank" href="https://www.google.com/maps/search/?api=1&query={{ $meetingRequest->adviser->AdviserProfile->meeting_place }}">{{ $meetingRequest->adviser->AdviserProfile->meeting_place }}</a></p>
+                                <span class="mt20 fw700">*無断キャンセルは絶対にお辞めください。アドバイザーの方に多大な迷惑がかかります。</span>
+                            @else
+                                <span class="mt20 fw700">*後日、アドバイザーからメールが届きます。メールの確認をよろしくお願いします。</span>
+                            @endif
+                        </div>
                         <p class="done_txt">日程などの詳細は、<a href="{{ route('user.mypage') }}">マイページ</a>からいつでも確認できます。</p>
                         <a href="{{ route('advisers.index') }}" class="back_to_top_btn">トップへ戻る</a>
 					</div>

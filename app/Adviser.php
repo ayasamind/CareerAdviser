@@ -22,8 +22,10 @@ class Adviser extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password'
+        'name', 'email', 'password', 'schedule_flag', 'public_flag'
     ];
+
+    protected $appends = ['public_label', 'schedule_label'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -47,5 +49,15 @@ class Adviser extends Authenticatable
     public function Tag()
     {
         return $this->belongsToMany('App\Tag');
+    }
+
+    public function getPublicLabelAttribute()
+    {
+        return $this->public_flag ? "公開" : "非公開";
+    }
+
+    public function getScheduleLabelAttribute()
+    {
+        return $this->schedule_flag ? "表示" : "非表示";
     }
 }

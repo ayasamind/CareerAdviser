@@ -9,9 +9,11 @@ class MeetingRequest extends Model
 {
     const MEETING_TYPE_NORMAL = 1;
     const MEETING_TYPE_ONLINE = 2;
+    const MEETING_TYPE_NO_SCHEDULE = 3;
 
     const MEETING_LABEL_NORMAL = "対面";
     const MEETING_LABEL_ONLINE = "Web";
+    const MEETING_LABEL_NO_SCHEDULE = "日程調整なし";
 
     const STATUS_TYPE_UNAPPROVED = 1; // 未承認
     const STATUS_TYPE_APPROVED   = 2; // 承認
@@ -32,7 +34,7 @@ class MeetingRequest extends Model
 
     protected $dates = ['date'];
 
-    protected $appends = ['type_label', 'status_label'];
+    protected $appends = ['type_label', 'status_label', 'is_no_schedule'];
 
     public function Adviser()
     {
@@ -66,5 +68,10 @@ class MeetingRequest extends Model
             $label = self::STATUS_LABEL_DENIED;
         }
         return $label;
+    }
+
+    public function getIsNoScheduleAttribute()
+    {
+        return $this->type === MeetingRequest::MEETING_TYPE_NO_SCHEDULE;
     }
 }

@@ -9,6 +9,7 @@ class AdviserSchedule extends Model
 {
     const SCHEDULE_TYPE_ONLINE = 1;
     const SCHEDULE_TYPE_NG     = 2;
+    const SCHEDULE_TYPE_NO_SCHEDULE = 3;
 
     const ONLINE_FLAG_TRUE     = 1;
     const ONLINE_FLAG_FALSE    = 2;

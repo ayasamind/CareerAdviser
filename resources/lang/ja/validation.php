@@ -158,7 +158,9 @@ return [
         "meeting_place" => "面談場所",
         "article_url"   => "インタビュー記事のURL",
         "informal_decision" => "内定数",
-        "situation"         => "選考状況"
+        "situation"         => "選考状況",
+        "public_flag" => "公開/非公開",
+        "schedule_flag" => "日程調整カレンダーの表示"
     ],
 
 ];

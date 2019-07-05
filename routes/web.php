@@ -57,6 +57,7 @@ Route::middleware(['verified', 'auth:user'])->name('user.')->group(function() {
     Route::get('/advisers/confirm/{id}/{dt}/{type}', 'User\AdvisersController@confirm')->name('adviser_confirm');
     Route::post('/advisers/saveRequest', 'User\AdvisersController@saveRequest')->name('save_request');
     Route::get('/advisers/done/{id}', 'User\AdvisersController@done')->name('done_request');
+    Route::post('/advisers/sendRequest', 'User\AdvisersController@sendRequest')->name('send_request');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {

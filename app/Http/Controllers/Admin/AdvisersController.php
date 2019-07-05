@@ -133,7 +133,9 @@ class AdvisersController extends AdminsController
             return $this->updateAdviser($request->all(), $photo_url, $adviser);
         });
 
-        return redirect()->route('admin.advisers.index')
+        return redirect()->route('admin.advisers.show', [
+            'id' => $adviser->id
+        ])
             ->with('success', 'アドバイザー情報を編集しました');
     }
 
@@ -141,7 +143,9 @@ class AdvisersController extends AdminsController
     {
         $adviser->name = $data['name'];
         $adviser->email = $data['email'];
-        $adviser->save();
+        $adviser->public_flag = $data['public_flag'];
+        $adviser->schedule_flag = $data['schedule_flag'];
+        $adviser->update();
 
         $this->AdviserUtils->saveProfile($adviser, $data, $photo_url);
         $this->AdviserUtils->saveCareers($adviser, $data);

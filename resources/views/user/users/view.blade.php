@@ -482,7 +482,7 @@
                                             </a>
                                             <span>さん</span>
                                             <dl>
-                                                <li><span>日時</span>{{ $request->date->format('Y年m月d日 H:i') }}</li>
+                                                <li><span>日時</span>{{ $request->is_no_schedule ?  "未定" : $request->date->format('Y年m月d日 H:i') }}</li>
                                                 <li><span>形式</span>{{ $request->type_label }}</li>
                                                 <li>
                                                     <span>場所</span>
