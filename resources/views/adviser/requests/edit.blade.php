@@ -19,6 +19,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>メールアドレス</th>
+                            <td>
+                                {{ $meetingRequest->User->email }}
+                            </td>
+                        </tr>
+                        <tr>
                             <th>希望面談日時</th>
                             <td>{{ $meetingRequest->date->format('Y年m月d日 H:i') }}</td>
                         </tr>

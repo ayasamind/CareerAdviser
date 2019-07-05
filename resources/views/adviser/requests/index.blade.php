@@ -11,6 +11,7 @@
                     <table class="table">
                         <tr>
                             <th>名前</th>
+                            <th>メールアドレス</th>
                             <th>希望面談日時</th>
                             <th>希望面談形式</th>
                             <th>ステータス</th>
@@ -24,6 +25,7 @@
                                 ]) }}">
                                 {{ $request->User->name }}
                             </td>
+                            <td> {{ $request->User->email }}</td>
                             <td>{{ $request->date->format('Y年m月d日 H:i') }}</td>
                             <td>{{ $request->type_label }}</td>
                             <td>{{ $request->status_label }}</td>
