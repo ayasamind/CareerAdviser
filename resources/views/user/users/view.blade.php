@@ -489,10 +489,10 @@
                                                     <p class="lh15">{{ $request->Adviser->AdviserProfile->meeting_place }}</p>
                                                     <iframe src="https://maps.google.co.jp/maps?output=embed&q={{ $request->Adviser->AdviserProfile->meeting_place }}" frameborder="0" style="border:0" allowfullscreen></iframe>
                                                 </li>
-                                                {{-- <li>
-                                                    <span>電話番号</span>
-                                                    <a href="tel:09012345678">090-1234-5678</a>
-                                                </li> --}}
+                                                <li>
+                                                    <span>メールアドレス</span>
+                                                    <a href="mailto:{{ $request->Adviser->email }}">{{ $request->Adviser->email }}</a>
+                                                </li>
                                             </dl>
                                             <span
                                             @if ($request->status == 1)

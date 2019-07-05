@@ -25,7 +25,11 @@
                                 ]) }}">
                                 {{ $request->User->name }}
                             </td>
-                            <td> {{ $request->User->email }}</td>
+                            <td>
+                                <a href="mailto:{{ $request->User->email }}">
+                                    {{ $request->User->email }}
+                                </a>
+                            </td>
                             <td>{{ $request->date->format('Y年m月d日 H:i') }}</td>
                             <td>{{ $request->type_label }}</td>
                             <td>{{ $request->status_label }}</td>
