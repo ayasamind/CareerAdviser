@@ -105,7 +105,11 @@ class AdvisersController extends UsersController
         }
 
         $schedules = AdviserSchedule::where(['adviser_id' => $adviser->id])
-            ->whereBetween('date', [$week[0],  $Carbon8->addDay(9)])->get();
+            ->whereBetween('date', [$week[0],  $Carbon8->addDay(9)])
+            ->select('date')
+            ->distinct()
+            ->addSelect('adviser_id', 'type')
+            ->get();
 
         if (!$adviser->AdviserProfile) {
             abort(404);
