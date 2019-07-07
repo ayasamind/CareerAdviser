@@ -60,4 +60,9 @@ class Adviser extends Authenticatable
     {
         return $this->schedule_flag ? "表示" : "非表示";
     }
+
+    public function scopePublic($query)
+    {
+        return $query->where('public_flag', true);
+    }
 }
