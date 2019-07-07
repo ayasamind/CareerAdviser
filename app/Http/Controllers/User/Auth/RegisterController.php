@@ -81,7 +81,8 @@ class RegisterController extends UsersController
             'url' => route('admin.users.show', [
                 'id' => $user->id
             ]),
-            'client' => $client
+            'client' => $client,
+            'twitter_id' => $user->twitter_id
         ];
         $this->SlackRepository->notify(new Slack($message));
     }

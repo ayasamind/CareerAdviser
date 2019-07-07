@@ -73,7 +73,8 @@ class Slack extends Notification
                         '紹介者' => $content['introduce'] ?  $content['introduce'] : 'なし',
                         'メールアドレス' => $content['email'],
                         '日時' => \Carbon\Carbon::now()->toDateTimeString(),
-                        '登録方法' => $content['client'] ? $content['client'] : 'フォーム'
+                        '登録方法' => $content['client'] ? $content['client'] : 'フォーム',
+                        'Twitter_id' => $content['twitter_id'] ? "https://twitter.com/intent/user?user_id=".$content['twitter_id'] : ""
                     ]);
             });
     }
