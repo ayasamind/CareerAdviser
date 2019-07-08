@@ -37,15 +37,17 @@
                     @guest
                     @else
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route("admin.advisers.index") }}">アドバイザー一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route("admin.users.index") }}">ユーザー一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route("admin.requests.index") }}">面談申請一覧</a>
-                        </li>
+                        @auth('admin')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route("admin.advisers.index") }}">アドバイザー一覧</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route("admin.users.index") }}">ユーザー一覧</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route("admin.requests.index") }}">面談申請一覧</a>
+                            </li>
+                        @endauth
                     </ul>
                     @endguest
 
