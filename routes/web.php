@@ -41,6 +41,9 @@ Route::middleware(['auth:user'])->name('user.')->group(function() {
     Route::get('/thanks', function () {
         return view('user.thanks');
     });
+    Route::get('/thanks_twitter', function () {
+        return view('user.thanks_twitter');
+    });
     Route::get("/mypage", "User\UsersController@view")->name('mypage');
 });
 
