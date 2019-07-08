@@ -36,7 +36,7 @@
                             <td>{{ $meetingRequest->date->format('Y年m月d日 H:i') }}</td>
                         <tr>
                             <th>希望面談形式</th>
-                            <td>{{ $meetingRequest->status_label }}</td>
+                            <td>{{ $meetingRequest->type_label }}</td>
                         </tr>
                         <tr>
                             <th>ステータス</th>
