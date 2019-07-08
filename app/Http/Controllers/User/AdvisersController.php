@@ -17,11 +17,14 @@ use Illuminate\Support\Facades\Auth;
 use App\Desire;
 use App\MeetingRequest;
 use App\Mail\NewMeetingMail;
+use App\Repositories\Slack\SlackRepositoryInterface;
+use App\Notifications\NewRequestSlack;
 
 class AdvisersController extends UsersController
 {
-    public function __construct()
+    public function __construct(SlackRepositoryInterface $SlackRepository)
     {
+        $this->SlackRepository = $SlackRepository;
     }
 
      /**
@@ -176,8 +179,17 @@ class AdvisersController extends UsersController
             'status'     => MeetingRequest::STATUS_TYPE_UNAPPROVED,
             'place'      => $data['place']
         ]);
-        $adviser = Adviser::find($data['adviser_id'])->public();
+        $adviser = Adviser::find($data['adviser_id']);
         Mail::to($adviser->email)->send(new NewMeetingMail($meetingRequest, $user, $adviser));
+        $message = [
+            'url' => route('admin.requests.show', [
+                'id' => $meetingRequest->id
+            ]),
+            'user_name' => $user->name,
+            'adviser_name' => $adviser->name,
+            'date' => new Carbon($data['date']),
+        ];
+        $this->SlackRepository->notify(new NewRequestSlack($message));
         return $meetingRequest;
     }
 

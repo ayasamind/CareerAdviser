@@ -16,6 +16,8 @@ use App\Repositories\Slack\SlackRepositoryInterface;
 use Socialite;
 use App\UserProfile;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Auth\Events\Verified;
+use Carbon\Carbon;
 
 class RegisterController extends UsersController
 {
@@ -141,7 +143,7 @@ class RegisterController extends UsersController
         } else {
             $user = $this->createUserByTwitter($twitterUser);
             Auth::login($user, true);
-            return redirect('/thanks');
+            return redirect('/thanks_twitter');
         }
     }
 
@@ -152,9 +154,10 @@ class RegisterController extends UsersController
             'email' => $twitterUser->email,
             'twitter_id' => $twitterUser->id,
             'photo_url' => $twitterUser->avatar_original,
-            'introduce' => null
+            'introduce' => null,
+            'email_verified_at' => new Carbon()
         ];
-        event(new Registered($user = $this->twitterCreate($data)));
+        $user = $this->twitterCreate($data);
         $this->afterRegistered($data, $user, 'Twitter');
         return $user;
     }
@@ -165,7 +168,8 @@ class RegisterController extends UsersController
             $user = User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
-                'twitter_id' => $data['twitter_id']
+                'twitter_id' => $data['twitter_id'],
+                'email_verified_at' => $data['email_verified_at']
             ]);
             UserProfile::create([
                 'user_id' => $user->id,
