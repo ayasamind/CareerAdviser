@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">面談申請一覧</div>
 
@@ -16,6 +16,7 @@
                             <th>希望面談日時</th>
                             <th>希望面談形式</th>
                             <th>ステータス</th>
+                            <th>申請日</th>
                             <th></th>
                         </tr>
                     @foreach ($meetingRequests as $request)
@@ -23,19 +24,20 @@
                             <td>{{ $request->id }}</td>
                             <td>
                                 <a href="{{ route('admin.users.show', [
-                                    'id' => $request->User->id
+                                    'id' => $request['User']['id']
                                 ]) }}">
-                                {{ $request->User->name }}
+                                {{ $request['User']['name'] }}
                             </td>
                             <td>
                                 <a href="{{ route('admin.advisers.show', [
-                                    'id' => $request->Adviser->id
+                                    'id' => $request['Adviser']['id']
                                 ]) }}">
                                 {{ $request->Adviser->name }}
                             </td>
                             <td>{{ $request->date->format('Y年m月d日 H:i') }}</td>
                             <td>{{ $request->type_label }}</td>
                             <td>{{ $request->status_label }}</td>
+                            <td>{{ $request->created_at }}</td>
                             <td>
                                 <a class="btn btn-secondary" href="{{ route('admin.requests.show', [
                                     'request' => $request->id
