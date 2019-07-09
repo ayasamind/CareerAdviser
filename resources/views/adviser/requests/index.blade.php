@@ -21,13 +21,13 @@
                         <tr>
                             <td>
                                 <a href="{{ route('adviser.user.show', [
-                                    'id' => $request->User->id
+                                    'id' => $request['User']['id']
                                 ]) }}">
-                                {{ $request->User->name }}
+                                {{ $request['User']['name'] }}
                             </td>
                             <td>
-                                <a href="mailto:{{ $request->User->email }}">
-                                    {{ $request->User->email }}
+                                <a href="mailto:{{ $request['User']['email'] }}">
+                                    {{ $request['User']['email'] }}
                                 </a>
                             </td>
                             <td>{{ $request->is_no_schedule ?  "未定" : $request->date->format('Y年m月d日 H:i') }}</td>

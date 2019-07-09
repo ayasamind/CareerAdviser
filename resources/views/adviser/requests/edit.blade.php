@@ -13,16 +13,16 @@
                             <th>名前</th>
                             <td>
                                 <a href="{{ route('adviser.user.show', [
-                                    'id' => $meetingRequest->User->id
+                                    'id' => $meetingRequest['User']['id']
                                 ]) }}">
-                                {{ $meetingRequest->User->name }}
+                                {{ $meetingRequest['User']['name'] }}
                             </td>
                         </tr>
                         <tr>
                             <th>メールアドレス</th>
                             <td>
-                                <a href="mailto:{{ $meetingRequest->User->email }}">
-                                    {{ $meetingRequest->User->email }}
+                                <a href="mailto:{{ $meetingRequest['User']['email'] }}">
+                                    {{ $meetingRequest['User']['email'] }}
                                 </a>
                             </td>
                         </tr>

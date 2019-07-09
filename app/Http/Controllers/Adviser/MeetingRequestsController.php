@@ -10,6 +10,7 @@ use App\Mail\ApprovedMeetingMail;
 use App\Mail\DeniedMeetingMail;
 use Illuminate\Support\Facades\Mail;
 use App\AdviserSchedule;
+use Illuminate\Support\Facades\Auth;
 
 class MeetingRequestsController extends Controller
 {
@@ -20,7 +21,7 @@ class MeetingRequestsController extends Controller
 
     public function index()
     {
-        $requests = MeetingRequest::orderByDesc('created_at')->paginate(10);
+        $requests = MeetingRequest::with('User')->where('adviser_id', Auth::user()->id)->orderByDesc('created_at')->paginate(10);
         return view('adviser.requests.index', [
             'requests' => $requests,
         ]);
@@ -29,6 +30,9 @@ class MeetingRequestsController extends Controller
     public function edit($id)
     {
         $meetingRequest = MeetingRequest::with('User')->find($id);
+        if ($meetingRequest->adviser_id !== Auth::user()->id) {
+            abort(404);
+        }
         $duplicateFlag = MeetingRequest::where('date', $meetingRequest->date)
             ->where('id', '!=', $id)
             ->where('status', MeetingRequest::STATUS_TYPE_APPROVED)
