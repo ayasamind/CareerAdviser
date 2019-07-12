@@ -77,6 +77,8 @@ class MeetingRequestsController extends Controller
         } else {
             if ($meetingRequest->date->minute === 30) {
                 $date = $meetingRequest->date->addSeconds(1);
+            } else {
+                $date = $meetingRequest->date;
             }
             AdviserSchedule::create([
                 'adviser_id' => $meetingRequest->adviser_id,
