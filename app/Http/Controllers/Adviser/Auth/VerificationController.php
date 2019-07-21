@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Adviser\Auth;
 
 use App\Http\Controllers\Adviser\AdvisersController;
 use Illuminate\Foundation\Auth\VerifiesEmails;

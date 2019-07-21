@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/app/Http</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../.css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../.css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="../.css/style.css" rel="stylesheet" type="text/css">
+  <link href="../.css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">/var/www/app</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Http</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controllers/User/Auth/LoginController.php.html#11">App\Http\Controllers\User\Auth\LoginController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateUserNameRequest.php.html#9">App\Http\Requests\User\UpdateUserNameRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/ForgotPasswordController.php.html#8">App\Http\Controllers\Admin\Auth\ForgotPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#22">App\Http\Controllers\User\Auth\RegisterController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/ResetPasswordController.php.html#15">App\Http\Controllers\User\Auth\ResetPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/VerificationController.php.html#12">App\Http\Controllers\User\Auth\VerificationController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/HomeController.php.html#10">App\Http\Controllers\User\HomeController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UserFileUploadRequest.php.html#9">App\Http\Requests\User\UserFileUploadRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Authenticate.php.html#7">App\Http\Middleware\Authenticate</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#23">App\Http\Controllers\User\AdvisersController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/AdviserProfileRequest.php.html#9">App\Http\Requests\Adviser\AdviserProfileRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/UpdateMeetingRequest.php.html#9">App\Http\Requests\Adviser\UpdateMeetingRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/UpdatePasswordRequest.php.html#9">App\Http\Requests\Adviser\UpdatePasswordRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateUniversityRequest.php.html#9">App\Http\Requests\User\UpdateUniversityRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateDesireRequest.php.html#9">App\Http\Requests\User\UpdateDesireRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateEmailRequest.php.html#9">App\Http\Requests\User\UpdateEmailRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/ForgotPasswordController.php.html#9">App\Http\Controllers\User\Auth\ForgotPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/UsersController.php.html#10">App\Http\Controllers\Adviser\UsersController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdatePasswordRequest.php.html#9">App\Http\Requests\User\UpdatePasswordRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/UsersController.php.html#9">App\Http\Controllers\Admin\UsersController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UserRequest.php.html#9">App\Http\Requests\User\UserRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/RegisterController.php.html#11">App\Http\Controllers\Admin\Auth\RegisterController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/ResetPasswordController.php.html#8">App\Http\Controllers\Admin\Auth\ResetPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/VerificationController.php.html#8">App\Http\Controllers\Admin\Auth\VerificationController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/HomeController.php.html#8">App\Http\Controllers\Admin\HomeController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/MeetingRequestsController.php.html#14">App\Http\Controllers\Admin\MeetingRequestsController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#17">App\Http\Controllers\Adviser\AdviserSchedulesController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#15">App\Http\Controllers\Adviser\MeetingRequestsController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdvisersController.php.html#21">App\Http\Controllers\Adviser\AdvisersController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/ForgotPasswordController.php.html#8">App\Http\Controllers\Adviser\Auth\ForgotPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/LoginController.php.html#10">App\Http\Controllers\Adviser\Auth\LoginController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/ResetPasswordController.php.html#8">App\Http\Controllers\Adviser\Auth\ResetPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/VerificationController.php.html#8">App\Http\Controllers\Adviser\Auth\VerificationController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/HomeController.php.html#9">App\Http\Controllers\Adviser\HomeController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateInformalDecisionRequest.php.html#9">App\Http\Requests\User\UpdateInformalDecisionRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/AdviserUtils.php.html#10">App\Http\Utils\AdviserUtils</a></td><td class="text-right">9%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#28">App\Http\Controllers\User\UsersController</a></td><td class="text-right">15%</td></tr>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#20">App\Http\Controllers\Admin\AdvisersController</a></td><td class="text-right">29%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/LoginController.php.html#10">App\Http\Controllers\Admin\Auth\LoginController</a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Requests/Common/AdviserRequest.php.html#8">App\Http\Requests\Common\AdviserRequest</a></td><td class="text-right">66%</td></tr>
+       <tr><td><a href="Controllers/User/PageController.php.html#8">App\Http\Controllers\User\PageController</a></td><td class="text-right">80%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controllers/User/UsersController.php.html#28">App\Http\Controllers\User\UsersController</a></td><td class="text-right">473</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#23">App\Http\Controllers\User\AdvisersController</a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#17">App\Http\Controllers\Adviser\AdviserSchedulesController</a></td><td class="text-right">420</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#22">App\Http\Controllers\User\Auth\RegisterController</a></td><td class="text-right">210</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#15">App\Http\Controllers\Adviser\MeetingRequestsController</a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdvisersController.php.html#21">App\Http\Controllers\Adviser\AdvisersController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#20">App\Http\Controllers\Admin\AdvisersController</a></td><td class="text-right">62</td></tr>
+       <tr><td><a href="Controllers/User/Auth/VerificationController.php.html#12">App\Http\Controllers\User\Auth\VerificationController</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Utils/AdviserUtils.php.html#10">App\Http\Utils\AdviserUtils</a></td><td class="text-right">43</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/LoginController.php.html#10">App\Http\Controllers\Adviser\Auth\LoginController</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Controllers/User/Auth/LoginController.php.html#11">App\Http\Controllers\User\Auth\LoginController</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Requests/Adviser/AdviserProfileRequest.php.html#9">App\Http\Requests\Adviser\AdviserProfileRequest</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/LoginController.php.html#10">App\Http\Controllers\Admin\Auth\LoginController</a></td><td class="text-right">16</td></tr>
+       <tr><td><a href="Middleware/Authenticate.php.html#7">App\Http\Middleware\Authenticate</a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Requests/Common/AdviserRequest.php.html#8">App\Http\Requests\Common\AdviserRequest</a></td><td class="text-right">3</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#34"><abbr title="App\Http\Controllers\Admin\AdvisersController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/HomeController.php.html#47"><abbr title="App\Http\Controllers\User\HomeController::company">company</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#237"><abbr title="App\Http\Controllers\User\UsersController::updatePassword">updatePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#224"><abbr title="App\Http\Controllers\User\UsersController::updateEmail">updateEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#207"><abbr title="App\Http\Controllers\User\UsersController::saveDesires">saveDesires</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#195"><abbr title="App\Http\Controllers\User\UsersController::updateDesire">updateDesire</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#178"><abbr title="App\Http\Controllers\User\UsersController::saveInformalDecisions">saveInformalDecisions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#165"><abbr title="App\Http\Controllers\User\UsersController::updateInformalDecision">updateInformalDecision</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#146"><abbr title="App\Http\Controllers\User\UsersController::saveUniversities">saveUniversities</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#133"><abbr title="App\Http\Controllers\User\UsersController::updateUniversity">updateUniversity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#111"><abbr title="App\Http\Controllers\User\UsersController::saveUserNames">saveUserNames</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#98"><abbr title="App\Http\Controllers\User\UsersController::updateUserName">updateUserName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#79"><abbr title="App\Http\Controllers\User\UsersController::uploadPhoto">uploadPhoto</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#68"><abbr title="App\Http\Controllers\User\UsersController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#60"><abbr title="App\Http\Controllers\User\UsersController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/PageController.php.html#22"><abbr title="App\Http\Controllers\User\PageController::company">company</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/HomeController.php.html#39"><abbr title="App\Http\Controllers\User\HomeController::settings">settings</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/AdviserProfileRequest.php.html#16"><abbr title="App\Http\Requests\Adviser\AdviserProfileRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/HomeController.php.html#27"><abbr title="App\Http\Controllers\User\HomeController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/HomeController.php.html#17"><abbr title="App\Http\Controllers\User\HomeController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/VerificationController.php.html#53"><abbr title="App\Http\Controllers\User\Auth\VerificationController::verify">verify</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/VerificationController.php.html#46"><abbr title="App\Http\Controllers\User\Auth\VerificationController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/VerificationController.php.html#39"><abbr title="App\Http\Controllers\User\Auth\VerificationController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/ResetPasswordController.php.html#47"><abbr title="App\Http\Controllers\User\Auth\ResetPasswordController::showResetForm">showResetForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/ResetPasswordController.php.html#42"><abbr title="App\Http\Controllers\User\Auth\ResetPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#165"><abbr title="App\Http\Controllers\User\Auth\RegisterController::twitterCreate">twitterCreate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#150"><abbr title="App\Http\Controllers\User\Auth\RegisterController::createUserByTwitter">createUserByTwitter</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#133"><abbr title="App\Http\Controllers\User\Auth\RegisterController::handleProviderCallback">handleProviderCallback</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#128"><abbr title="App\Http\Controllers\User\Auth\RegisterController::redirectToProvider">redirectToProvider</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#122"><abbr title="App\Http\Controllers\User\Auth\RegisterController::showRegistrationForm">showRegistrationForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#113"><abbr title="App\Http\Controllers\User\Auth\RegisterController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#98"><abbr title="App\Http\Controllers\User\Auth\RegisterController::validator">validator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Middleware/Authenticate.php.html#15"><abbr title="App\Http\Middleware\Authenticate::redirectTo">redirectTo</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/AdviserProfileRequest.php.html#25"><abbr title="App\Http\Requests\Adviser\AdviserProfileRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#61"><abbr title="App\Http\Controllers\User\Auth\RegisterController::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdatePasswordRequest.php.html#25"><abbr title="App\Http\Requests\User\UpdatePasswordRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/AdviserUtils.php.html#61"><abbr title="App\Http\Utils\AdviserUtils::saveCareers">saveCareers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/AdviserUtils.php.html#25"><abbr title="App\Http\Utils\AdviserUtils::saveProfile">saveProfile</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UserRequest.php.html#25"><abbr title="App\Http\Requests\User\UserRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UserRequest.php.html#16"><abbr title="App\Http\Requests\User\UserRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UserFileUploadRequest.php.html#33"><abbr title="App\Http\Requests\User\UserFileUploadRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UserFileUploadRequest.php.html#25"><abbr title="App\Http\Requests\User\UserFileUploadRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UserFileUploadRequest.php.html#16"><abbr title="App\Http\Requests\User\UserFileUploadRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateUserNameRequest.php.html#35"><abbr title="App\Http\Requests\User\UpdateUserNameRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateUserNameRequest.php.html#25"><abbr title="App\Http\Requests\User\UpdateUserNameRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateUserNameRequest.php.html#16"><abbr title="App\Http\Requests\User\UpdateUserNameRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateUniversityRequest.php.html#35"><abbr title="App\Http\Requests\User\UpdateUniversityRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateUniversityRequest.php.html#25"><abbr title="App\Http\Requests\User\UpdateUniversityRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateUniversityRequest.php.html#16"><abbr title="App\Http\Requests\User\UpdateUniversityRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdatePasswordRequest.php.html#33"><abbr title="App\Http\Requests\User\UpdatePasswordRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdatePasswordRequest.php.html#16"><abbr title="App\Http\Requests\User\UpdatePasswordRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/AdviserProfileRequest.php.html#70"><abbr title="App\Http\Requests\Adviser\AdviserProfileRequest::messages">messages</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateInformalDecisionRequest.php.html#34"><abbr title="App\Http\Requests\User\UpdateInformalDecisionRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateInformalDecisionRequest.php.html#25"><abbr title="App\Http\Requests\User\UpdateInformalDecisionRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateInformalDecisionRequest.php.html#16"><abbr title="App\Http\Requests\User\UpdateInformalDecisionRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateEmailRequest.php.html#33"><abbr title="App\Http\Requests\User\UpdateEmailRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateEmailRequest.php.html#25"><abbr title="App\Http\Requests\User\UpdateEmailRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateEmailRequest.php.html#16"><abbr title="App\Http\Requests\User\UpdateEmailRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateDesireRequest.php.html#34"><abbr title="App\Http\Requests\User\UpdateDesireRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateDesireRequest.php.html#25"><abbr title="App\Http\Requests\User\UpdateDesireRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/User/UpdateDesireRequest.php.html#16"><abbr title="App\Http\Requests\User\UpdateDesireRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/UpdatePasswordRequest.php.html#25"><abbr title="App\Http\Requests\Adviser\UpdatePasswordRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/UpdatePasswordRequest.php.html#16"><abbr title="App\Http\Requests\Adviser\UpdatePasswordRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/UpdateMeetingRequest.php.html#26"><abbr title="App\Http\Requests\Adviser\UpdateMeetingRequest::rules">rules</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/UpdateMeetingRequest.php.html#16"><abbr title="App\Http\Requests\Adviser\UpdateMeetingRequest::authorize">authorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Adviser/AdviserProfileRequest.php.html#80"><abbr title="App\Http\Requests\Adviser\AdviserProfileRequest::failedValidation">failedValidation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#73"><abbr title="App\Http\Controllers\User\Auth\RegisterController::afterRegistered">afterRegistered</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#49"><abbr title="App\Http\Controllers\User\Auth\RegisterController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#48"><abbr title="App\Http\Controllers\Admin\AdvisersController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/HomeController.php.html#15"><abbr title="App\Http\Controllers\Admin\HomeController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdvisersController.php.html#27"><abbr title="App\Http\Controllers\Adviser\AdvisersController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#199"><abbr title="App\Http\Controllers\Adviser\AdviserSchedulesController::saveSchedule">saveSchedule</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#159"><abbr title="App\Http\Controllers\Adviser\AdviserSchedulesController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#90"><abbr title="App\Http\Controllers\Adviser\AdviserSchedulesController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#24"><abbr title="App\Http\Controllers\Adviser\AdviserSchedulesController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#19"><abbr title="App\Http\Controllers\Adviser\AdviserSchedulesController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/UsersController.php.html#50"><abbr title="App\Http\Controllers\Admin\UsersController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/UsersController.php.html#36"><abbr title="App\Http\Controllers\Admin\UsersController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/UsersController.php.html#22"><abbr title="App\Http\Controllers\Admin\UsersController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/UsersController.php.html#11"><abbr title="App\Http\Controllers\Admin\UsersController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/MeetingRequestsController.php.html#29"><abbr title="App\Http\Controllers\Admin\MeetingRequestsController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/MeetingRequestsController.php.html#21"><abbr title="App\Http\Controllers\Admin\MeetingRequestsController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/MeetingRequestsController.php.html#16"><abbr title="App\Http\Controllers\Admin\MeetingRequestsController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/HomeController.php.html#25"><abbr title="App\Http\Controllers\Admin\HomeController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/VerificationController.php.html#35"><abbr title="App\Http\Controllers\Admin\Auth\VerificationController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdvisersController.php.html#56"><abbr title="App\Http\Controllers\Adviser\AdvisersController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/ResetPasswordController.php.html#35"><abbr title="App\Http\Controllers\Admin\Auth\ResetPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/RegisterController.php.html#78"><abbr title="App\Http\Controllers\Admin\Auth\RegisterController::guard">guard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/RegisterController.php.html#73"><abbr title="App\Http\Controllers\Admin\Auth\RegisterController::showRegistrationForm">showRegistrationForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/RegisterController.php.html#64"><abbr title="App\Http\Controllers\Admin\Auth\RegisterController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/RegisterController.php.html#49"><abbr title="App\Http\Controllers\Admin\Auth\RegisterController::validator">validator</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/RegisterController.php.html#38"><abbr title="App\Http\Controllers\Admin\Auth\RegisterController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/LoginController.php.html#55"><abbr title="App\Http\Controllers\Admin\Auth\LoginController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/LoginController.php.html#42"><abbr title="App\Http\Controllers\Admin\Auth\LoginController::showLoginForm">showLoginForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/ForgotPasswordController.php.html#28"><abbr title="App\Http\Controllers\Admin\Auth\ForgotPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#161"><abbr title="App\Http\Controllers\Admin\AdvisersController::destroy">destroy</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#142"><abbr title="App\Http\Controllers\Admin\AdvisersController::updateAdviser">updateAdviser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#120"><abbr title="App\Http\Controllers\Admin\AdvisersController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#103"><abbr title="App\Http\Controllers\Admin\AdvisersController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#63"><abbr title="App\Http\Controllers\Admin\AdvisersController::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdvisersController.php.html#38"><abbr title="App\Http\Controllers\Adviser\AdvisersController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdvisersController.php.html#76"><abbr title="App\Http\Controllers\Adviser\AdvisersController::updateAdviser">updateAdviser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/LoginController.php.html#60"><abbr title="App\Http\Controllers\User\Auth\LoginController::authenticated">authenticated</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#171"><abbr title="App\Http\Controllers\User\AdvisersController::newMeeting">newMeeting</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/UsersController.php.html#17"><abbr title="App\Http\Controllers\Adviser\UsersController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#25"><abbr title="App\Http\Controllers\User\AdvisersController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#35"><abbr title="App\Http\Controllers\User\AdvisersController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#66"><abbr title="App\Http\Controllers\User\AdvisersController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#140"><abbr title="App\Http\Controllers\User\AdvisersController::confirm">confirm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#163"><abbr title="App\Http\Controllers\User\AdvisersController::saveRequest">saveRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#196"><abbr title="App\Http\Controllers\User\AdvisersController::done">done</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#69"><abbr title="App\Http\Controllers\Adviser\MeetingRequestsController::saveSchedule">saveSchedule</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#207"><abbr title="App\Http\Controllers\User\AdvisersController::sendRequest">sendRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/ForgotPasswordController.php.html#29"><abbr title="App\Http\Controllers\User\Auth\ForgotPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/ForgotPasswordController.php.html#34"><abbr title="App\Http\Controllers\User\Auth\ForgotPasswordController::showLinkRequestForm">showLinkRequestForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/LoginController.php.html#38"><abbr title="App\Http\Controllers\User\Auth\LoginController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/LoginController.php.html#43"><abbr title="App\Http\Controllers\User\Auth\LoginController::showLoginForm">showLoginForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/User/Auth/LoginController.php.html#51"><abbr title="App\Http\Controllers\User\Auth\LoginController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/UsersController.php.html#12"><abbr title="App\Http\Controllers\Adviser\UsersController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#48"><abbr title="App\Http\Controllers\Adviser\MeetingRequestsController::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdvisersController.php.html#89"><abbr title="App\Http\Controllers\Adviser\AdvisersController::changePassword">changePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/LoginController.php.html#50"><abbr title="App\Http\Controllers\Adviser\Auth\LoginController::guard">guard</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdvisersController.php.html#94"><abbr title="App\Http\Controllers\Adviser\AdvisersController::updtePassword">updtePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/ForgotPasswordController.php.html#28"><abbr title="App\Http\Controllers\Adviser\Auth\ForgotPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/ForgotPasswordController.php.html#33"><abbr title="App\Http\Controllers\Adviser\Auth\ForgotPasswordController::showLinkRequestForm">showLinkRequestForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/LoginController.php.html#37"><abbr title="App\Http\Controllers\Adviser\Auth\LoginController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/LoginController.php.html#42"><abbr title="App\Http\Controllers\Adviser\Auth\LoginController::showLoginForm">showLoginForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/LoginController.php.html#55"><abbr title="App\Http\Controllers\Adviser\Auth\LoginController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#30"><abbr title="App\Http\Controllers\Adviser\MeetingRequestsController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/ResetPasswordController.php.html#35"><abbr title="App\Http\Controllers\Adviser\Auth\ResetPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/VerificationController.php.html#35"><abbr title="App\Http\Controllers\Adviser\Auth\VerificationController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/HomeController.php.html#16"><abbr title="App\Http\Controllers\Adviser\HomeController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/HomeController.php.html#26"><abbr title="App\Http\Controllers\Adviser\HomeController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#17"><abbr title="App\Http\Controllers\Adviser\MeetingRequestsController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#22"><abbr title="App\Http\Controllers\Adviser\MeetingRequestsController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Utils/AdviserUtils.php.html#71"><abbr title="App\Http\Utils\AdviserUtils::saveTags">saveTags</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Requests/Common/AdviserRequest.php.html#24"><abbr title="App\Http\Requests\Common\AdviserRequest::rules">rules</abbr></a></td><td class="text-right">60%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#66"><abbr title="App\Http\Controllers\User\AdvisersController::show">show</abbr></a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#24"><abbr title="App\Http\Controllers\Adviser\AdviserSchedulesController::index">index</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#90"><abbr title="App\Http\Controllers\Adviser\AdviserSchedulesController::edit">edit</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdviserSchedulesController.php.html#159"><abbr title="App\Http\Controllers\Adviser\AdviserSchedulesController::update">update</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#48"><abbr title="App\Http\Controllers\Adviser\MeetingRequestsController::update">update</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controllers/User/Auth/VerificationController.php.html#53"><abbr title="App\Http\Controllers\User\Auth\VerificationController::verify">verify</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Controllers/Admin/AdvisersController.php.html#120"><abbr title="App\Http\Controllers\Admin\AdvisersController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#133"><abbr title="App\Http\Controllers\User\Auth\RegisterController::handleProviderCallback">handleProviderCallback</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#207"><abbr title="App\Http\Controllers\User\AdvisersController::sendRequest">sendRequest</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#69"><abbr title="App\Http\Controllers\Adviser\MeetingRequestsController::saveSchedule">saveSchedule</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#35"><abbr title="App\Http\Controllers\User\AdvisersController::index">index</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controllers/Adviser/AdvisersController.php.html#56"><abbr title="App\Http\Controllers\Adviser\AdvisersController::update">update</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Utils/AdviserUtils.php.html#25"><abbr title="App\Http\Utils\AdviserUtils::saveProfile">saveProfile</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#79"><abbr title="App\Http\Controllers\User\UsersController::uploadPhoto">uploadPhoto</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#237"><abbr title="App\Http\Controllers\User\UsersController::updatePassword">updatePassword</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#133"><abbr title="App\Http\Controllers\User\UsersController::updateUniversity">updateUniversity</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Middleware/Authenticate.php.html#15"><abbr title="App\Http\Middleware\Authenticate::redirectTo">redirectTo</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#224"><abbr title="App\Http\Controllers\User\UsersController::updateEmail">updateEmail</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Requests/Adviser/AdviserProfileRequest.php.html#25"><abbr title="App\Http\Requests\Adviser\AdviserProfileRequest::rules">rules</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#207"><abbr title="App\Http\Controllers\User\UsersController::saveDesires">saveDesires</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#195"><abbr title="App\Http\Controllers\User\UsersController::updateDesire">updateDesire</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#178"><abbr title="App\Http\Controllers\User\UsersController::saveInformalDecisions">saveInformalDecisions</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#165"><abbr title="App\Http\Controllers\User\UsersController::updateInformalDecision">updateInformalDecision</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#146"><abbr title="App\Http\Controllers\User\UsersController::saveUniversities">saveUniversities</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#73"><abbr title="App\Http\Controllers\User\Auth\RegisterController::afterRegistered">afterRegistered</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#111"><abbr title="App\Http\Controllers\User\UsersController::saveUserNames">saveUserNames</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/UsersController.php.html#98"><abbr title="App\Http\Controllers\User\UsersController::updateUserName">updateUserName</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/Auth/VerificationController.php.html#46"><abbr title="App\Http\Controllers\User\Auth\VerificationController::show">show</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/LoginController.php.html#42"><abbr title="App\Http\Controllers\Admin\Auth\LoginController::showLoginForm">showLoginForm</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/Auth/RegisterController.php.html#61"><abbr title="App\Http\Controllers\User\Auth\RegisterController::register">register</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/Auth/LoginController.php.html#51"><abbr title="App\Http\Controllers\User\Auth\LoginController::logout">logout</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/Auth/LoginController.php.html#43"><abbr title="App\Http\Controllers\User\Auth\LoginController::showLoginForm">showLoginForm</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/User/AdvisersController.php.html#196"><abbr title="App\Http\Controllers\User\AdvisersController::done">done</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/Adviser/MeetingRequestsController.php.html#30"><abbr title="App\Http\Controllers\Adviser\MeetingRequestsController::edit">edit</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/LoginController.php.html#55"><abbr title="App\Http\Controllers\Adviser\Auth\LoginController::logout">logout</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/Adviser/Auth/LoginController.php.html#42"><abbr title="App\Http\Controllers\Adviser\Auth\LoginController::showLoginForm">showLoginForm</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controllers/Admin/Auth/LoginController.php.html#55"><abbr title="App\Http\Controllers\Admin\Auth\LoginController::logout">logout</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Utils/AdviserUtils.php.html#61"><abbr title="App\Http\Utils\AdviserUtils::saveCareers">saveCareers</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Requests/Common/AdviserRequest.php.html#24"><abbr title="App\Http\Requests\Common\AdviserRequest::rules">rules</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 6.1.4</a> using <a href="https://secure.php.net/" target="_top">PHP 7.2.5</a> with <a href="https://xdebug.org/">Xdebug 2.7.2</a> and <a href="https://phpunit.de/">PHPUnit 7.5.7</a> at Sun Jul 21 16:37:36 JST 2019.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../.js/jquery.min.js" type="text/javascript"></script>
+  <script src="../.js/d3.min.js" type="text/javascript"></script>
+  <script src="../.js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([35,1,1,1,1,0,0,1,0,1,0,9], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([136,0,0,0,0,0,0,1,0,0,0,12], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[100,0,"<a href=\"Controllers\/Admin\/AdminsController.php.html#10\">App\\Http\\Controllers\\Admin\\AdminsController<\/a>"],[29.629629629629626,12,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#20\">App\\Http\\Controllers\\Admin\\AdvisersController<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/ForgotPasswordController.php.html#8\">App\\Http\\Controllers\\Admin\\Auth\\ForgotPasswordController<\/a>"],[33.33333333333333,6,"<a href=\"Controllers\/Admin\/Auth\/LoginController.php.html#10\">App\\Http\\Controllers\\Admin\\Auth\\LoginController<\/a>"],[0,5,"<a href=\"Controllers\/Admin\/Auth\/RegisterController.php.html#11\">App\\Http\\Controllers\\Admin\\Auth\\RegisterController<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/ResetPasswordController.php.html#8\">App\\Http\\Controllers\\Admin\\Auth\\ResetPasswordController<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/VerificationController.php.html#8\">App\\Http\\Controllers\\Admin\\Auth\\VerificationController<\/a>"],[0,2,"<a href=\"Controllers\/Admin\/HomeController.php.html#8\">App\\Http\\Controllers\\Admin\\HomeController<\/a>"],[0,3,"<a href=\"Controllers\/Admin\/MeetingRequestsController.php.html#14\">App\\Http\\Controllers\\Admin\\MeetingRequestsController<\/a>"],[0,4,"<a href=\"Controllers\/Admin\/UsersController.php.html#9\">App\\Http\\Controllers\\Admin\\UsersController<\/a>"],[0,20,"<a href=\"Controllers\/Adviser\/AdviserSchedulesController.php.html#17\">App\\Http\\Controllers\\Adviser\\AdviserSchedulesController<\/a>"],[0,8,"<a href=\"Controllers\/Adviser\/AdvisersController.php.html#21\">App\\Http\\Controllers\\Adviser\\AdvisersController<\/a>"],[0,2,"<a href=\"Controllers\/Adviser\/Auth\/ForgotPasswordController.php.html#8\">App\\Http\\Controllers\\Adviser\\Auth\\ForgotPasswordController<\/a>"],[0,6,"<a href=\"Controllers\/Adviser\/Auth\/LoginController.php.html#10\">App\\Http\\Controllers\\Adviser\\Auth\\LoginController<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/Auth\/ResetPasswordController.php.html#8\">App\\Http\\Controllers\\Adviser\\Auth\\ResetPasswordController<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/Auth\/VerificationController.php.html#8\">App\\Http\\Controllers\\Adviser\\Auth\\VerificationController<\/a>"],[0,2,"<a href=\"Controllers\/Adviser\/HomeController.php.html#9\">App\\Http\\Controllers\\Adviser\\HomeController<\/a>"],[0,11,"<a href=\"Controllers\/Adviser\/MeetingRequestsController.php.html#15\">App\\Http\\Controllers\\Adviser\\MeetingRequestsController<\/a>"],[0,2,"<a href=\"Controllers\/Adviser\/UsersController.php.html#10\">App\\Http\\Controllers\\Adviser\\UsersController<\/a>"],[100,0,"<a href=\"Controllers\/Controller.php.html#10\">App\\Http\\Controllers\\Controller<\/a>"],[0,20,"<a href=\"Controllers\/User\/AdvisersController.php.html#23\">App\\Http\\Controllers\\User\\AdvisersController<\/a>"],[0,2,"<a href=\"Controllers\/User\/Auth\/ForgotPasswordController.php.html#9\">App\\Http\\Controllers\\User\\Auth\\ForgotPasswordController<\/a>"],[0,6,"<a href=\"Controllers\/User\/Auth\/LoginController.php.html#11\">App\\Http\\Controllers\\User\\Auth\\LoginController<\/a>"],[0,14,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#22\">App\\Http\\Controllers\\User\\Auth\\RegisterController<\/a>"],[0,2,"<a href=\"Controllers\/User\/Auth\/ResetPasswordController.php.html#15\">App\\Http\\Controllers\\User\\Auth\\ResetPasswordController<\/a>"],[0,7,"<a href=\"Controllers\/User\/Auth\/VerificationController.php.html#12\">App\\Http\\Controllers\\User\\Auth\\VerificationController<\/a>"],[0,4,"<a href=\"Controllers\/User\/HomeController.php.html#10\">App\\Http\\Controllers\\User\\HomeController<\/a>"],[80,3,"<a href=\"Controllers\/User\/PageController.php.html#8\">App\\Http\\Controllers\\User\\PageController<\/a>"],[15.079365079365079,27,"<a href=\"Controllers\/User\/UsersController.php.html#28\">App\\Http\\Controllers\\User\\UsersController<\/a>"],[100,0,"<a href=\"Kernel.php.html#7\">App\\Http\\Kernel<\/a>"],[0,2,"<a href=\"Middleware\/Authenticate.php.html#7\">App\\Http\\Middleware\\Authenticate<\/a>"],[100,0,"<a href=\"Middleware\/CheckForMaintenanceMode.php.html#7\">App\\Http\\Middleware\\CheckForMaintenanceMode<\/a>"],[100,0,"<a href=\"Middleware\/EncryptCookies.php.html#7\">App\\Http\\Middleware\\EncryptCookies<\/a>"],[100,1,"<a href=\"Middleware\/RedirectIfAuthenticated.php.html#8\">App\\Http\\Middleware\\RedirectIfAuthenticated<\/a>"],[100,0,"<a href=\"Middleware\/TrimStrings.php.html#7\">App\\Http\\Middleware\\TrimStrings<\/a>"],[100,0,"<a href=\"Middleware\/TrustProxies.php.html#8\">App\\Http\\Middleware\\TrustProxies<\/a>"],[100,0,"<a href=\"Middleware\/VerifyCsrfToken.php.html#7\">App\\Http\\Middleware\\VerifyCsrfToken<\/a>"],[0,5,"<a href=\"Requests\/Adviser\/AdviserProfileRequest.php.html#9\">App\\Http\\Requests\\Adviser\\AdviserProfileRequest<\/a>"],[0,2,"<a href=\"Requests\/Adviser\/UpdateMeetingRequest.php.html#9\">App\\Http\\Requests\\Adviser\\UpdateMeetingRequest<\/a>"],[0,2,"<a href=\"Requests\/Adviser\/UpdatePasswordRequest.php.html#9\">App\\Http\\Requests\\Adviser\\UpdatePasswordRequest<\/a>"],[66.66666666666666,3,"<a href=\"Requests\/Common\/AdviserRequest.php.html#8\">App\\Http\\Requests\\Common\\AdviserRequest<\/a>"],[0,3,"<a href=\"Requests\/User\/UpdateDesireRequest.php.html#9\">App\\Http\\Requests\\User\\UpdateDesireRequest<\/a>"],[0,3,"<a href=\"Requests\/User\/UpdateEmailRequest.php.html#9\">App\\Http\\Requests\\User\\UpdateEmailRequest<\/a>"],[0,3,"<a href=\"Requests\/User\/UpdateInformalDecisionRequest.php.html#9\">App\\Http\\Requests\\User\\UpdateInformalDecisionRequest<\/a>"],[0,3,"<a href=\"Requests\/User\/UpdatePasswordRequest.php.html#9\">App\\Http\\Requests\\User\\UpdatePasswordRequest<\/a>"],[0,3,"<a href=\"Requests\/User\/UpdateUniversityRequest.php.html#9\">App\\Http\\Requests\\User\\UpdateUniversityRequest<\/a>"],[0,3,"<a href=\"Requests\/User\/UpdateUserNameRequest.php.html#9\">App\\Http\\Requests\\User\\UpdateUserNameRequest<\/a>"],[0,3,"<a href=\"Requests\/User\/UserFileUploadRequest.php.html#9\">App\\Http\\Requests\\User\\UserFileUploadRequest<\/a>"],[0,2,"<a href=\"Requests\/User\/UserRequest.php.html#9\">App\\Http\\Requests\\User\\UserRequest<\/a>"],[9.75609756097561,7,"<a href=\"Utils\/AdviserUtils.php.html#10\">App\\Http\\Utils\\AdviserUtils<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#22\">App\\Http\\Controllers\\Admin\\AdvisersController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#34\">App\\Http\\Controllers\\Admin\\AdvisersController::index<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#48\">App\\Http\\Controllers\\Admin\\AdvisersController::show<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#63\">App\\Http\\Controllers\\Admin\\AdvisersController::create<\/a>"],[100,1,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#74\">App\\Http\\Controllers\\Admin\\AdvisersController::store<\/a>"],[100,1,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#82\">App\\Http\\Controllers\\Admin\\AdvisersController::createAdviser<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#103\">App\\Http\\Controllers\\Admin\\AdvisersController::edit<\/a>"],[0,3,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#120\">App\\Http\\Controllers\\Admin\\AdvisersController::update<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#142\">App\\Http\\Controllers\\Admin\\AdvisersController::updateAdviser<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/AdvisersController.php.html#161\">App\\Http\\Controllers\\Admin\\AdvisersController::destroy<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/ForgotPasswordController.php.html#28\">App\\Http\\Controllers\\Admin\\Auth\\ForgotPasswordController::__construct<\/a>"],[100,1,"<a href=\"Controllers\/Admin\/Auth\/LoginController.php.html#37\">App\\Http\\Controllers\\Admin\\Auth\\LoginController::__construct<\/a>"],[0,2,"<a href=\"Controllers\/Admin\/Auth\/LoginController.php.html#42\">App\\Http\\Controllers\\Admin\\Auth\\LoginController::showLoginForm<\/a>"],[100,1,"<a href=\"Controllers\/Admin\/Auth\/LoginController.php.html#50\">App\\Http\\Controllers\\Admin\\Auth\\LoginController::guard<\/a>"],[0,2,"<a href=\"Controllers\/Admin\/Auth\/LoginController.php.html#55\">App\\Http\\Controllers\\Admin\\Auth\\LoginController::logout<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/RegisterController.php.html#38\">App\\Http\\Controllers\\Admin\\Auth\\RegisterController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/RegisterController.php.html#49\">App\\Http\\Controllers\\Admin\\Auth\\RegisterController::validator<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/RegisterController.php.html#64\">App\\Http\\Controllers\\Admin\\Auth\\RegisterController::create<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/RegisterController.php.html#73\">App\\Http\\Controllers\\Admin\\Auth\\RegisterController::showRegistrationForm<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/RegisterController.php.html#78\">App\\Http\\Controllers\\Admin\\Auth\\RegisterController::guard<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/ResetPasswordController.php.html#35\">App\\Http\\Controllers\\Admin\\Auth\\ResetPasswordController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/Auth\/VerificationController.php.html#35\">App\\Http\\Controllers\\Admin\\Auth\\VerificationController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/HomeController.php.html#15\">App\\Http\\Controllers\\Admin\\HomeController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/HomeController.php.html#25\">App\\Http\\Controllers\\Admin\\HomeController::index<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/MeetingRequestsController.php.html#16\">App\\Http\\Controllers\\Admin\\MeetingRequestsController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/MeetingRequestsController.php.html#21\">App\\Http\\Controllers\\Admin\\MeetingRequestsController::index<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/MeetingRequestsController.php.html#29\">App\\Http\\Controllers\\Admin\\MeetingRequestsController::show<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/UsersController.php.html#11\">App\\Http\\Controllers\\Admin\\UsersController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/UsersController.php.html#22\">App\\Http\\Controllers\\Admin\\UsersController::index<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/UsersController.php.html#36\">App\\Http\\Controllers\\Admin\\UsersController::show<\/a>"],[0,1,"<a href=\"Controllers\/Admin\/UsersController.php.html#50\">App\\Http\\Controllers\\Admin\\UsersController::destroy<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/AdviserSchedulesController.php.html#19\">App\\Http\\Controllers\\Adviser\\AdviserSchedulesController::__construct<\/a>"],[0,6,"<a href=\"Controllers\/Adviser\/AdviserSchedulesController.php.html#24\">App\\Http\\Controllers\\Adviser\\AdviserSchedulesController::index<\/a>"],[0,6,"<a href=\"Controllers\/Adviser\/AdviserSchedulesController.php.html#90\">App\\Http\\Controllers\\Adviser\\AdviserSchedulesController::edit<\/a>"],[0,6,"<a href=\"Controllers\/Adviser\/AdviserSchedulesController.php.html#159\">App\\Http\\Controllers\\Adviser\\AdviserSchedulesController::update<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/AdviserSchedulesController.php.html#199\">App\\Http\\Controllers\\Adviser\\AdviserSchedulesController::saveSchedule<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/AdvisersController.php.html#27\">App\\Http\\Controllers\\Adviser\\AdvisersController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/AdvisersController.php.html#38\">App\\Http\\Controllers\\Adviser\\AdvisersController::edit<\/a>"],[0,3,"<a href=\"Controllers\/Adviser\/AdvisersController.php.html#56\">App\\Http\\Controllers\\Adviser\\AdvisersController::update<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/AdvisersController.php.html#76\">App\\Http\\Controllers\\Adviser\\AdvisersController::updateAdviser<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/AdvisersController.php.html#89\">App\\Http\\Controllers\\Adviser\\AdvisersController::changePassword<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/AdvisersController.php.html#94\">App\\Http\\Controllers\\Adviser\\AdvisersController::updtePassword<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/Auth\/ForgotPasswordController.php.html#28\">App\\Http\\Controllers\\Adviser\\Auth\\ForgotPasswordController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/Auth\/ForgotPasswordController.php.html#33\">App\\Http\\Controllers\\Adviser\\Auth\\ForgotPasswordController::showLinkRequestForm<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/Auth\/LoginController.php.html#37\">App\\Http\\Controllers\\Adviser\\Auth\\LoginController::__construct<\/a>"],[0,2,"<a href=\"Controllers\/Adviser\/Auth\/LoginController.php.html#42\">App\\Http\\Controllers\\Adviser\\Auth\\LoginController::showLoginForm<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/Auth\/LoginController.php.html#50\">App\\Http\\Controllers\\Adviser\\Auth\\LoginController::guard<\/a>"],[0,2,"<a href=\"Controllers\/Adviser\/Auth\/LoginController.php.html#55\">App\\Http\\Controllers\\Adviser\\Auth\\LoginController::logout<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/Auth\/ResetPasswordController.php.html#35\">App\\Http\\Controllers\\Adviser\\Auth\\ResetPasswordController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/Auth\/VerificationController.php.html#35\">App\\Http\\Controllers\\Adviser\\Auth\\VerificationController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/HomeController.php.html#16\">App\\Http\\Controllers\\Adviser\\HomeController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/HomeController.php.html#26\">App\\Http\\Controllers\\Adviser\\HomeController::index<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/MeetingRequestsController.php.html#17\">App\\Http\\Controllers\\Adviser\\MeetingRequestsController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/MeetingRequestsController.php.html#22\">App\\Http\\Controllers\\Adviser\\MeetingRequestsController::index<\/a>"],[0,2,"<a href=\"Controllers\/Adviser\/MeetingRequestsController.php.html#30\">App\\Http\\Controllers\\Adviser\\MeetingRequestsController::edit<\/a>"],[0,4,"<a href=\"Controllers\/Adviser\/MeetingRequestsController.php.html#48\">App\\Http\\Controllers\\Adviser\\MeetingRequestsController::update<\/a>"],[0,3,"<a href=\"Controllers\/Adviser\/MeetingRequestsController.php.html#69\">App\\Http\\Controllers\\Adviser\\MeetingRequestsController::saveSchedule<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/UsersController.php.html#12\">App\\Http\\Controllers\\Adviser\\UsersController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/Adviser\/UsersController.php.html#17\">App\\Http\\Controllers\\Adviser\\UsersController::show<\/a>"],[0,1,"<a href=\"Controllers\/User\/AdvisersController.php.html#25\">App\\Http\\Controllers\\User\\AdvisersController::__construct<\/a>"],[0,3,"<a href=\"Controllers\/User\/AdvisersController.php.html#35\">App\\Http\\Controllers\\User\\AdvisersController::index<\/a>"],[0,8,"<a href=\"Controllers\/User\/AdvisersController.php.html#66\">App\\Http\\Controllers\\User\\AdvisersController::show<\/a>"],[0,1,"<a href=\"Controllers\/User\/AdvisersController.php.html#140\">App\\Http\\Controllers\\User\\AdvisersController::confirm<\/a>"],[0,1,"<a href=\"Controllers\/User\/AdvisersController.php.html#163\">App\\Http\\Controllers\\User\\AdvisersController::saveRequest<\/a>"],[0,1,"<a href=\"Controllers\/User\/AdvisersController.php.html#171\">App\\Http\\Controllers\\User\\AdvisersController::newMeeting<\/a>"],[0,2,"<a href=\"Controllers\/User\/AdvisersController.php.html#196\">App\\Http\\Controllers\\User\\AdvisersController::done<\/a>"],[0,3,"<a href=\"Controllers\/User\/AdvisersController.php.html#207\">App\\Http\\Controllers\\User\\AdvisersController::sendRequest<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/ForgotPasswordController.php.html#29\">App\\Http\\Controllers\\User\\Auth\\ForgotPasswordController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/ForgotPasswordController.php.html#34\">App\\Http\\Controllers\\User\\Auth\\ForgotPasswordController::showLinkRequestForm<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/LoginController.php.html#38\">App\\Http\\Controllers\\User\\Auth\\LoginController::__construct<\/a>"],[0,2,"<a href=\"Controllers\/User\/Auth\/LoginController.php.html#43\">App\\Http\\Controllers\\User\\Auth\\LoginController::showLoginForm<\/a>"],[0,2,"<a href=\"Controllers\/User\/Auth\/LoginController.php.html#51\">App\\Http\\Controllers\\User\\Auth\\LoginController::logout<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/LoginController.php.html#60\">App\\Http\\Controllers\\User\\Auth\\LoginController::authenticated<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#49\">App\\Http\\Controllers\\User\\Auth\\RegisterController::__construct<\/a>"],[0,2,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#61\">App\\Http\\Controllers\\User\\Auth\\RegisterController::register<\/a>"],[0,2,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#73\">App\\Http\\Controllers\\User\\Auth\\RegisterController::afterRegistered<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#98\">App\\Http\\Controllers\\User\\Auth\\RegisterController::validator<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#113\">App\\Http\\Controllers\\User\\Auth\\RegisterController::create<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#122\">App\\Http\\Controllers\\User\\Auth\\RegisterController::showRegistrationForm<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#128\">App\\Http\\Controllers\\User\\Auth\\RegisterController::redirectToProvider<\/a>"],[0,3,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#133\">App\\Http\\Controllers\\User\\Auth\\RegisterController::handleProviderCallback<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#150\">App\\Http\\Controllers\\User\\Auth\\RegisterController::createUserByTwitter<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/RegisterController.php.html#165\">App\\Http\\Controllers\\User\\Auth\\RegisterController::twitterCreate<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/ResetPasswordController.php.html#42\">App\\Http\\Controllers\\User\\Auth\\ResetPasswordController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/ResetPasswordController.php.html#47\">App\\Http\\Controllers\\User\\Auth\\ResetPasswordController::showResetForm<\/a>"],[0,1,"<a href=\"Controllers\/User\/Auth\/VerificationController.php.html#39\">App\\Http\\Controllers\\User\\Auth\\VerificationController::__construct<\/a>"],[0,2,"<a href=\"Controllers\/User\/Auth\/VerificationController.php.html#46\">App\\Http\\Controllers\\User\\Auth\\VerificationController::show<\/a>"],[0,4,"<a href=\"Controllers\/User\/Auth\/VerificationController.php.html#53\">App\\Http\\Controllers\\User\\Auth\\VerificationController::verify<\/a>"],[0,1,"<a href=\"Controllers\/User\/HomeController.php.html#17\">App\\Http\\Controllers\\User\\HomeController::__construct<\/a>"],[0,1,"<a href=\"Controllers\/User\/HomeController.php.html#27\">App\\Http\\Controllers\\User\\HomeController::index<\/a>"],[0,1,"<a href=\"Controllers\/User\/HomeController.php.html#39\">App\\Http\\Controllers\\User\\HomeController::settings<\/a>"],[0,1,"<a href=\"Controllers\/User\/HomeController.php.html#47\">App\\Http\\Controllers\\User\\HomeController::company<\/a>"],[100,1,"<a href=\"Controllers\/User\/PageController.php.html#10\">App\\Http\\Controllers\\User\\PageController::__construct<\/a>"],[100,1,"<a href=\"Controllers\/User\/PageController.php.html#14\">App\\Http\\Controllers\\User\\PageController::top<\/a>"],[0,1,"<a href=\"Controllers\/User\/PageController.php.html#22\">App\\Http\\Controllers\\User\\PageController::company<\/a>"],[100,1,"<a href=\"Controllers\/User\/UsersController.php.html#32\">App\\Http\\Controllers\\User\\UsersController::__construct<\/a>"],[100,1,"<a href=\"Controllers\/User\/UsersController.php.html#37\">App\\Http\\Controllers\\User\\UsersController::view<\/a>"],[0,1,"<a href=\"Controllers\/User\/UsersController.php.html#60\">App\\Http\\Controllers\\User\\UsersController::edit<\/a>"],[0,1,"<a href=\"Controllers\/User\/UsersController.php.html#68\">App\\Http\\Controllers\\User\\UsersController::update<\/a>"],[0,3,"<a href=\"Controllers\/User\/UsersController.php.html#79\">App\\Http\\Controllers\\User\\UsersController::uploadPhoto<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#98\">App\\Http\\Controllers\\User\\UsersController::updateUserName<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#111\">App\\Http\\Controllers\\User\\UsersController::saveUserNames<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#133\">App\\Http\\Controllers\\User\\UsersController::updateUniversity<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#146\">App\\Http\\Controllers\\User\\UsersController::saveUniversities<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#165\">App\\Http\\Controllers\\User\\UsersController::updateInformalDecision<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#178\">App\\Http\\Controllers\\User\\UsersController::saveInformalDecisions<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#195\">App\\Http\\Controllers\\User\\UsersController::updateDesire<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#207\">App\\Http\\Controllers\\User\\UsersController::saveDesires<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#224\">App\\Http\\Controllers\\User\\UsersController::updateEmail<\/a>"],[0,2,"<a href=\"Controllers\/User\/UsersController.php.html#237\">App\\Http\\Controllers\\User\\UsersController::updatePassword<\/a>"],[0,2,"<a href=\"Middleware\/Authenticate.php.html#15\">App\\Http\\Middleware\\Authenticate::redirectTo<\/a>"],[100,1,"<a href=\"Middleware\/RedirectIfAuthenticated.php.html#18\">App\\Http\\Middleware\\RedirectIfAuthenticated::handle<\/a>"],[0,1,"<a href=\"Requests\/Adviser\/AdviserProfileRequest.php.html#16\">App\\Http\\Requests\\Adviser\\AdviserProfileRequest::authorize<\/a>"],[0,2,"<a href=\"Requests\/Adviser\/AdviserProfileRequest.php.html#25\">App\\Http\\Requests\\Adviser\\AdviserProfileRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/Adviser\/AdviserProfileRequest.php.html#70\">App\\Http\\Requests\\Adviser\\AdviserProfileRequest::messages<\/a>"],[0,1,"<a href=\"Requests\/Adviser\/AdviserProfileRequest.php.html#80\">App\\Http\\Requests\\Adviser\\AdviserProfileRequest::failedValidation<\/a>"],[0,1,"<a href=\"Requests\/Adviser\/UpdateMeetingRequest.php.html#16\">App\\Http\\Requests\\Adviser\\UpdateMeetingRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/Adviser\/UpdateMeetingRequest.php.html#26\">App\\Http\\Requests\\Adviser\\UpdateMeetingRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/Adviser\/UpdatePasswordRequest.php.html#16\">App\\Http\\Requests\\Adviser\\UpdatePasswordRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/Adviser\/UpdatePasswordRequest.php.html#25\">App\\Http\\Requests\\Adviser\\UpdatePasswordRequest::rules<\/a>"],[100,1,"<a href=\"Requests\/Common\/AdviserRequest.php.html#15\">App\\Http\\Requests\\Common\\AdviserRequest::authorize<\/a>"],[60,2,"<a href=\"Requests\/Common\/AdviserRequest.php.html#24\">App\\Http\\Requests\\Common\\AdviserRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateDesireRequest.php.html#16\">App\\Http\\Requests\\User\\UpdateDesireRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateDesireRequest.php.html#25\">App\\Http\\Requests\\User\\UpdateDesireRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateDesireRequest.php.html#34\">App\\Http\\Requests\\User\\UpdateDesireRequest::failedValidation<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateEmailRequest.php.html#16\">App\\Http\\Requests\\User\\UpdateEmailRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateEmailRequest.php.html#25\">App\\Http\\Requests\\User\\UpdateEmailRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateEmailRequest.php.html#33\">App\\Http\\Requests\\User\\UpdateEmailRequest::failedValidation<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateInformalDecisionRequest.php.html#16\">App\\Http\\Requests\\User\\UpdateInformalDecisionRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateInformalDecisionRequest.php.html#25\">App\\Http\\Requests\\User\\UpdateInformalDecisionRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateInformalDecisionRequest.php.html#34\">App\\Http\\Requests\\User\\UpdateInformalDecisionRequest::failedValidation<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdatePasswordRequest.php.html#16\">App\\Http\\Requests\\User\\UpdatePasswordRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdatePasswordRequest.php.html#25\">App\\Http\\Requests\\User\\UpdatePasswordRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdatePasswordRequest.php.html#33\">App\\Http\\Requests\\User\\UpdatePasswordRequest::failedValidation<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateUniversityRequest.php.html#16\">App\\Http\\Requests\\User\\UpdateUniversityRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateUniversityRequest.php.html#25\">App\\Http\\Requests\\User\\UpdateUniversityRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateUniversityRequest.php.html#35\">App\\Http\\Requests\\User\\UpdateUniversityRequest::failedValidation<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateUserNameRequest.php.html#16\">App\\Http\\Requests\\User\\UpdateUserNameRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateUserNameRequest.php.html#25\">App\\Http\\Requests\\User\\UpdateUserNameRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/User\/UpdateUserNameRequest.php.html#35\">App\\Http\\Requests\\User\\UpdateUserNameRequest::failedValidation<\/a>"],[0,1,"<a href=\"Requests\/User\/UserFileUploadRequest.php.html#16\">App\\Http\\Requests\\User\\UserFileUploadRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/User\/UserFileUploadRequest.php.html#25\">App\\Http\\Requests\\User\\UserFileUploadRequest::rules<\/a>"],[0,1,"<a href=\"Requests\/User\/UserFileUploadRequest.php.html#33\">App\\Http\\Requests\\User\\UserFileUploadRequest::failedValidation<\/a>"],[0,1,"<a href=\"Requests\/User\/UserRequest.php.html#16\">App\\Http\\Requests\\User\\UserRequest::authorize<\/a>"],[0,1,"<a href=\"Requests\/User\/UserRequest.php.html#25\">App\\Http\\Requests\\User\\UserRequest::rules<\/a>"],[100,1,"<a href=\"Utils\/AdviserUtils.php.html#14\">App\\Http\\Utils\\AdviserUtils::__construct<\/a>"],[0,3,"<a href=\"Utils\/AdviserUtils.php.html#25\">App\\Http\\Utils\\AdviserUtils::saveProfile<\/a>"],[0,2,"<a href=\"Utils\/AdviserUtils.php.html#61\">App\\Http\\Utils\\AdviserUtils::saveCareers<\/a>"],[0,1,"<a href=\"Utils\/AdviserUtils.php.html#71\">App\\Http\\Utils\\AdviserUtils::saveTags<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

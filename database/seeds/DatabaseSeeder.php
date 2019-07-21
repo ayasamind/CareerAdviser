@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password')
         ]);
 
-        DB::table('advisers')->insert([
-            'name' => 'アドバイザー',
-            'email' => 'adviser@example.com',
-            'password' => bcrypt('password')
-        ]);
+        // DB::table('advisers')->insert([
+        //     'name' => 'アドバイザー',
+        //     'email' => 'adviser@example.com',
+        //     'password' => bcrypt('password')
+        // ]);
 
         DB::table('users')->insert([
             'name' => 'ユーザー',
