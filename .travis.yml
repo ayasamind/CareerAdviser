@@ -11,4 +11,4 @@ before_script:
     - php artisan key:generate
 
 script:
-    - ./vender/bin/phpunit
+    - composer test
