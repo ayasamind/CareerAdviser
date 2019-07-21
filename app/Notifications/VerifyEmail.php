@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class PasswordResetNotification extends Notification
+class VerifyEmail extends Notification
 {
     use Queueable;
     protected $title = '会員登録 キャリアアドバイザー.com';
