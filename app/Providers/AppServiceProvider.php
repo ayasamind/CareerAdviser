@@ -7,6 +7,7 @@ use App\Repositories\Adviser\AdviserInterface;
 use App\Repositories\Slack\SlackRepositoryInterface;
 use App\Repositories\Slack\SlackRepository;
 use App\Http\Utils\AdviserUtils;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // TravisCIでmigrationできるように
+        Schema::defaultStringLength(191);
     }
 
     /**
