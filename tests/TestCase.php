@@ -31,7 +31,8 @@ abstract class TestCase extends BaseTestCase
         if (!RefreshSeedsState::$seeded) {
             RefreshSeedsState::$seeded = true;
             $this->artisan('db:seed', [
-                '--env' => 'testing'
+                '--env'   => 'testing',
+                '--class' => 'Tests\Seed\DatabaseSeeder',
             ]);
         }
         $this->beginDatabaseTransaction();

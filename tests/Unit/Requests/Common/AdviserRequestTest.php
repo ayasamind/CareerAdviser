@@ -34,6 +34,7 @@ class AdviserRequestTest extends TestCase
     public function validationErrorProvider()
     {
         return [
+            // 作成時
             '正常' => [
                 [
                     'name'  => 'アドバイザー',
@@ -45,6 +46,23 @@ class AdviserRequestTest extends TestCase
                 [
                     'name'  => '',
                     'email' => 'adviser@example.com'
+                ],
+                false
+            ],
+            // 更新時
+            '正常' => [
+                [
+                    'id'    => 1,
+                    'name'  => 'アドバイザー',
+                    'email' => 'adviser@example.com'
+                ],
+                true
+            ],
+            'メールアドレスエラー' => [
+                [
+                    'id'    => 1,
+                    'name'  => 'アドバイザー',
+                    'email' => 'adviser'
                 ],
                 false
             ],
