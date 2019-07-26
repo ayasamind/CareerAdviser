@@ -30,7 +30,6 @@ class AdviserTest extends TestCase
             'name'  => 'アドバイザー',
             'email' => 'adviser@example.com'
         ];
-
         $response = $this->post($url, $data);
         $this->assertDatabaseHas('advisers', [
             'name'   => $data['name'],
