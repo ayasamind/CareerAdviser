@@ -138,7 +138,7 @@ class AdviserSchedulesController extends Controller
             ->whereBetween('date', [$week[0],  $Carbon8->addDay(9)])
             ->select('date')
             ->distinct()
-            ->addSelect('adviser_id', 'type')
+            ->addSelect('id', 'adviser_id', 'type')
             ->get();
 
         if (!$adviser->AdviserProfile) {
