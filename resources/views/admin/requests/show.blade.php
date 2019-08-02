@@ -42,6 +42,10 @@
                             <th>ステータス</th>
                             <td>{{ $meetingRequest->status_label }}</td>
                         </tr>
+                        <tr>
+                            <th>コメント</th>
+                            <td>{{ $meetingRequest->comment }}</td>
+                        </tr>
                     </table>
                 </div>
             </div>
