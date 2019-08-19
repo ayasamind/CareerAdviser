@@ -29,12 +29,14 @@ class MeetingRequest extends Model
         'date',
         'type',
         'status',
-        'place'
+        'place',
+        'review',
+        'star'
     ];
 
     protected $dates = ['date'];
 
-    protected $appends = ['type_label', 'status_label', 'is_no_schedule'];
+    protected $appends = ['type_label', 'status_label', 'is_no_schedule', 'is_past'];
 
     public function Adviser()
     {
@@ -73,5 +75,10 @@ class MeetingRequest extends Model
     public function getIsNoScheduleAttribute()
     {
         return $this->type === MeetingRequest::MEETING_TYPE_NO_SCHEDULE;
+    }
+
+    public function getIsPastAttribute()
+    {
+        return $this->date->isPast();
     }
 }

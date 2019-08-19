@@ -47,6 +47,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route("admin.requests.index") }}">面談申請一覧</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route("admin.reviews") }}">レビュー一覧</a>
+                            </li>
                         @endauth
                     </ul>
                     @endguest

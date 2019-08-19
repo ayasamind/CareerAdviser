@@ -483,7 +483,9 @@
                                             <span>さん</span>
                                             <dl>
                                                 <li><span>日時</span>{{ $request->is_no_schedule ?  "未定" : $request->date->format('Y年m月d日 H:i') }}</li>
-                                                <li><span>形式</span>{{ $request->type_label }}</li>
+                                                @if (!$request->is_no_schedule)
+                                                    <li><span>形式</span>{{ $request->type_label }}</li>
+                                                @endif
                                                 <li>
                                                     <span>場所</span>
                                                     <p class="lh15">{{ $request->Adviser->AdviserProfile->meeting_place }}</p>
@@ -493,6 +495,19 @@
                                                     <span>メールアドレス</span>
                                                     <a href="mailto:{{ $request->Adviser->email }}">{{ $request->Adviser->email }}</a>
                                                 </li>
+                                                @if (!$request->is_no_schedule && $request->is_past)
+                                                    <li>
+                                                        <a href="{{ route('user.review', [
+                                                            'id' => $request->id
+                                                        ]) }}" class="review_btn">
+                                                            @if ($request->review)
+                                                                レビューを編集
+                                                            @else
+                                                                レビューを投稿
+                                                            @endif
+                                                        </a>
+                                                    </li>
+                                                @endif
                                             </dl>
                                             <span
                                             @if ($request->status == 1)
