@@ -20,6 +20,7 @@ use App\MeetingRequest;
 use App\Mail\NewMeetingMail;
 use App\Repositories\Slack\SlackRepositoryInterface;
 use App\Notifications\NewRequestSlack;
+use App\Notifications\NewReviewSlack;
 
 class AdvisersController extends UsersController
 {
@@ -258,6 +259,14 @@ class AdvisersController extends UsersController
         $meetingRequest->review = $data['review'];
         $meetingRequest->star = $data['star'];
         $meetingRequest->update();
+
+        $message = [
+            'star' => $data['star'],
+            'review' => $data['review'],
+            'url' => route('admin.reviews'),
+            'date' => new Carbon(),
+        ];
+        $this->SlackRepository->notify(new NewReviewSlack($message));
         return redirect()->route('user.mypage')->with('success', 'レビューを登録しました');
     }
 }
