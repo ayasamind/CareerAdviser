@@ -277,8 +277,10 @@
 						<section class="review_section">
 							<h2>レビュー</h2>
 							<section class="advisor_profile_section_body">
+                                @if (count($meetingRequests) === 0)
+                                    <span class="no_review">まだレビューがありません</span>
+                                @endif
                                 @foreach ($meetingRequests as $meetingRequest)
-                                    <!-- <span class="no_review">まだレビューがありません</span> -->
                                     <div class="review_block">
                                         <span class="review_user_icon"><img src="{{ $meetingRequest->User->UserProfile ? $meetingRequest->User->UserProfile->photo_url : asset("img/service/default_usericon.jpg") }}"></span>
                                         <span class="review_user_name">{{ $meetingRequest->User->name }}</span>
