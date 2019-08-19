@@ -61,6 +61,9 @@ Route::middleware(['verified', 'auth:user'])->name('user.')->group(function() {
     Route::post('/advisers/saveRequest', 'User\AdvisersController@saveRequest')->name('save_request');
     Route::get('/advisers/done/{id}', 'User\AdvisersController@done')->name('done_request');
     Route::post('/advisers/sendRequest', 'User\AdvisersController@sendRequest')->name('send_request');
+
+    Route::get('/advisers/review/{id}', 'User\AdvisersController@review')->name('review');
+    Route::post('/advisers/save_review/{id}', 'User\AdvisersController@save_review')->name('save_review');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -76,6 +79,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put("/update/{id}", "Admin\AdvisersController@update")->name('advisers.update');
         Route::resource('/users', 'Admin\UsersController')->only(['index', 'show', 'destroy']);
         Route::resource('/requests', 'Admin\MeetingRequestsController')->only(['index', 'show']);
+        Route::get('/reviews', 'Admin\MeetingRequestsController@reviews')->name('reviews');
+        Route::post('/reviews/{id}', 'Admin\MeetingRequestsController@delete_review')->name('review.destroy');
     });
 });
 

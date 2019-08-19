@@ -668,8 +668,20 @@ header ul li a .nav_user_icon {
   white-space: nowrap;
 }
 
+#advisor_profile .review_section .star4:after, #advisor_profile .reserved_section .star4:after, #mypage .review_section .star4:after, #mypage .reserved_section .star4:after, #confirm .review_section .star4:after, #confirm .reserved_section .star4:after {
+    width: 64px;
+}
+
 #advisor_profile .review_section .star3:after, #advisor_profile .reserved_section .star3:after, #mypage .review_section .star3:after, #mypage .reserved_section .star3:after, #confirm .review_section .star3:after, #confirm .reserved_section .star3:after {
-  width: 48px;
+    width: 48px;
+}
+
+#advisor_profile .review_section .star1:after, #advisor_profile .reserved_section .star1:after, #mypage .review_section .star1:after, #mypage .reserved_section .star1:after, #confirm .review_section .star1:after, #confirm .reserved_section .star1:after {
+    width: 16px;
+}
+
+#advisor_profile .review_section .star2:after, #advisor_profile .reserved_section .star2:after, #mypage .review_section .star2:after, #mypage .reserved_section .star2:after, #confirm .review_section .star2:after, #confirm .reserved_section .star2:after {
+    width: 32px;
 }
 
 #advisor_profile .review_section .star5:after, #advisor_profile .reserved_section .star5:after, #mypage .review_section .star5:after, #mypage .reserved_section .star5:after, #confirm .review_section .star5:after, #confirm .reserved_section .star5:after {
