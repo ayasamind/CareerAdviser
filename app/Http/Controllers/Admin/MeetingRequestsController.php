@@ -33,4 +33,25 @@ class MeetingRequestsController extends Controller
             'meetingRequest' => $meetingRequest,
         ]);
     }
+
+    public function reviews()
+    {
+        $meetingRequests = MeetingRequest::whereNotNull('review')
+            ->orderByDesc('created_at')->paginate(10);
+
+        return view('admin.requests.reviews', [
+            'meetingRequests' => $meetingRequests,
+        ]);
+    }
+
+    public function delete_review($id)
+    {
+        $meetingRequest = MeetingRequest::find($id);
+        $meetingRequest->star = null;
+        $meetingRequest->review = null;
+        $meetingRequest->update();
+        return redirect()
+            ->route('admin.reviews')
+            ->with('success', 'レビューを削除しました');
+    }
 }

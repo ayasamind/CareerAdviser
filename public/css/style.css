@@ -70,6 +70,22 @@ a.txt_link {
     background-size: 1000px 1000px;
 }
 
+.review_btn {
+    background-color: #f08300;
+    padding: 12px 12px 12px;
+    color: #fff;
+    border-radius: 4px;
+    width: 80%;
+    display: block;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 20px auto 0;
+}
+
+.review_row {
+    margin: 20px auto 0;
+}
+
 /*Typing Loader*/
 .typing_loader{
     top: 50%;

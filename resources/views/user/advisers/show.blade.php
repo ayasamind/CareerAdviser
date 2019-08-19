@@ -274,63 +274,61 @@
                         @endif
 					</div>
 					<div class="advisor_col_r">
-						{{-- <section class="review_section">
+						<section class="review_section">
 							<h2>レビュー</h2>
 							<section class="advisor_profile_section_body">
-								<!-- <span class="no_review">まだレビューがありません</span> -->
-								<div class="review_block">
-									<span class="review_user_icon"><img src="{{ asset("img/service/default_usericon.jpg") }}"></span>
-									<span class="review_user_name">ユーザー名</span>
-									<span>さん</span>
-									<span class="stars star5"></span>
-									<div class="review_balloon">
-										星の数には1-5があり「star1」「star2」というクラスをつけることで星の数を変えることができます。
-									</div>
-								</div>
-								<div class="review_block">
-									<span class="review_user_icon"><img src="{{ asset("img/service/default_usericon.jpg") }}"></span>
-									<span class="review_user_name">ユーザー名</span>
-									<span>さん</span>
-									<span class="stars star3"></span>
-									<div class="review_balloon">
-										内容が長く改行する場合はこのような表示になります。内容が長く改行する場合はこのような表示になります。内容が長く改行する場合はこのような表示になります。
-									</div>
-								</div>
-								<a href="#modal_review_write" class="review_write_btn">
-								<!-- <a class="review_write_btn disabled_review"> -->
-									<span>レビューを書く</span>
-									<i class="fas fa-edit ml50"></i>
-								</a>
-								<div class="remodal remodal_review" data-remodal-id="modal_review_write">
-									<div class="modal_inner">
-									<div class="remodal_review_ttl">レビューを投稿</div>
-									<div class="review_form_wrap">
-										<form type="get" action="#" class="review_form">
-										  <label class="review_form_label">評価</label>
-										  <div class="evaluation">
-										    <input id="star1" type="radio" name="star" value="5" />
-										    <label for="star1">★</label>
-										    <input id="star2" type="radio" name="star" value="4" />
-										    <label for="star2">★</label>
-										    <input id="star3" type="radio" name="star" value="3" />
-										    <label for="star3">★</label>
-										    <input id="star4" type="radio" name="star" value="2" />
-										    <label for="star4">★</label>
-										    <input id="star5" type="radio" name="star" value="1" />
-										    <label for="star5">★</label>
-										  </div>
-										  <div class="review_text_wrap">
-										  	<label class="review_form_label">感想</label>
-										  	<textarea name="レビュー内容" id="review_textarea" placeholder="感想を記入してください" rows="5"></textarea>
-										  </div>
-										  <button type="submit" class="review_submit">レビューを投稿</button>
-										</form>
-									</div>
-									<a class="remodal-cancel" data-remodal-action="cancel"><img src="{{ asset("img/service/close_bl.svg") }}"></a>
-									</div>
-								</div>
-							</section>
-						</section> --}}
+                                @foreach ($meetingRequests as $meetingRequest)
+                                    <!-- <span class="no_review">まだレビューがありません</span> -->
+                                    <div class="review_block">
+                                        <span class="review_user_icon"><img src="{{ $meetingRequest->User->UserProfile ? $meetingRequest->User->UserProfile->photo_url : asset("img/service/default_usericon.jpg") }}"></span>
+                                        <span class="review_user_name">{{ $meetingRequest->User->name }}</span>
+                                        <span>さん</span>
+                                        <span class="stars star{{ $meetingRequest->star }}"></span>
+                                        <div class="review_balloon">
+                                            {{ $meetingRequest->review }}
+                                        </div>
+                                    </div>
+                                @endforeach
+                                @if ($canWriteReview)
+                                    <a href="#modal_review_write" class="review_write_btn">
+                                    <!-- <a class="review_write_btn disabled_review"> -->
+                                        <span>レビューを書く</span>
+                                        <i class="fas fa-edit ml50"></i>
+                                    </a>
+                                @endif
+                                    <div class="remodal remodal_review" data-remodal-id="modal_review_write">
+                                        <div class="modal_inner">
+                                        <div class="remodal_review_ttl">レビューを投稿</div>
+                                        <div class="review_form_wrap">
+                                            {!! Form::model($canWriteReview, ['route' => ['user.save_review', $canWriteReview ? $canWriteReview->id : null],
+                                                'method' => 'post',
+                                                'class' => 'review_form row center_flex_ver'
+                                            ]) !!}
+                                                <label class="review_form_label">評価</label>
+                                                <div class="evaluation">
+                                                    <input id="star1" type="radio" name="star" value="5" />
+                                                    <label for="star1">★</label>
+                                                    <input id="star2" type="radio" name="star" value="4" />
+                                                    <label for="star2">★</label>
+                                                    <input id="star3" type="radio" name="star" value="3" />
+                                                    <label for="star3">★</label>
+                                                    <input id="star4" type="radio" name="star" value="2" />
+                                                    <label for="star4">★</label>
+                                                    <input id="star5" type="radio" name="star" value="1" />
+                                                    <label for="star5">★</label>
+                                                </div>
+                                                <div class="review_text_wrap">
+                                                    <label class="review_form_label">感想</label>
+                                                    {!! Form::textarea('review', $canWriteReview ? $canWriteReview->review : null, ['id'=>'review_textarea', 'class'=>'mypage_input_txt', 'required'=>'required', 'placeholder' => '感想を記入してください', 'row' => 5]) !!}
+                                                </div>
+                                                <button type="submit" class="review_submit">レビューを投稿</button>
+                                            {!! Form::close() !!}
+                                        </div>
+                                        <a class="remodal-cancel" data-remodal-action="cancel"><img src="{{ asset("img/service/close_bl.svg") }}"></a>
+                                        </div>
+                                    </div>
+                                </section>
+                        </section>
 					</div>
 				</div>
 			</section>

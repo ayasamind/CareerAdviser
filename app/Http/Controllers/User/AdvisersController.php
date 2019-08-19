@@ -6,6 +6,7 @@ use App\Adviser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\AdminsController;
 use App\Http\Requests\Common\AdviserRequest;
+use App\Http\Requests\User\SaveReviewRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
@@ -66,6 +67,21 @@ class AdvisersController extends UsersController
     public function show(Request $request, $id)
     {
         $adviser = Adviser::with(['AdviserProfile', 'AdviserCareer', 'Tag'])->findOrFail($id);
+        $meetingRequests = MeetingRequest::with('User.UserProfile')
+            ->where('adviser_id', $id)
+            ->whereNotNull('review')
+            ->paginate(5);
+
+        $canWriteReview = null;
+        if (Auth::check()) {
+            $canWriteReview = MeetingRequest::where('user_id', Auth::user()->id)
+                ->where('status', MeetingRequest::STATUS_TYPE_APPROVED)
+                ->whereNull('review')
+                ->where('date', '<', new Carbon())
+                ->orderByDesc('created_at')
+                ->first();
+        }
+
         if (!$adviser->public_flag) {
             abort(404);
         }
@@ -133,7 +149,9 @@ class AdvisersController extends UsersController
             'week'    => $week,
             'schedules' => $schedules,
             'array' => $array,
-            'user' => $user
+            'user' => $user,
+            'meetingRequests' => $meetingRequests,
+            'canWriteReview' => $canWriteReview
         ]);
     }
 
@@ -221,5 +239,25 @@ class AdvisersController extends UsersController
         return redirect()->route('user.done_request', [
             'id' => $meetingRequest->id
         ])->with('success', '面談を申し込みました');
+    }
+
+    public function review($id)
+    {
+        $meetingRequest = MeetingRequest::find($id);
+        $adviser = Adviser::with('AdviserProfile')->findOrFail($meetingRequest->adviser_id);
+        return view('user.advisers.review', [
+            'meetingRequest' => $meetingRequest,
+            'adviser' => $adviser
+        ]);
+    }
+
+    public function save_review($id, SaveReviewRequest $request)
+    {
+        $data = $request->all();
+        $meetingRequest = MeetingRequest::find($id);
+        $meetingRequest->review = $data['review'];
+        $meetingRequest->star = $data['star'];
+        $meetingRequest->update();
+        return redirect()->route('user.mypage')->with('success', 'レビューを登録しました');
     }
 }
