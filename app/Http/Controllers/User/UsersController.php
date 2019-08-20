@@ -227,7 +227,14 @@ class UsersController extends BaseController
             abort(404);
         }
         $user = Auth::user();
-        $user->profile = $request->email;
+        if (!$user->password) {
+            return response()->json([
+                'message' => 'パスワードを設定してください',
+                'status' => 'error'
+            ], Response::HTTP_OK);
+        }
+        $user->email = $request->email;
+        $user->update();
         return response()->json([
             'message' => 'ユーザー情報を編集しました',
             'status' => 'success'

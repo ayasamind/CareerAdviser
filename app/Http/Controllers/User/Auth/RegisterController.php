@@ -84,7 +84,8 @@ class RegisterController extends UsersController
                 'id' => $user->id
             ]),
             'client' => $client,
-            'twitter_id' => $user->twitter_id
+            'twitter_id' => $user->twitter_id,
+            'facebook_id' => $user->facebook_id,
         ];
         $this->SlackRepository->notify(new Slack($message));
     }
@@ -125,12 +126,12 @@ class RegisterController extends UsersController
     }
 
     // Twitterログイン
-    public function redirectToProvider(){
+    public function redirectToProviderForTwitter(){
         return Socialite::driver('twitter')->redirect();
     }
 
     // Twitterコールバック
-    public function handleProviderCallback(){
+    public function handleProviderCallbackForTwitter(){
         try {
             $twitterUser = Socialite::driver('twitter')->user();
         } catch (Exception $e) {
@@ -143,7 +144,30 @@ class RegisterController extends UsersController
         } else {
             $user = $this->createUserByTwitter($twitterUser);
             Auth::login($user, true);
-            return redirect('/thanks_twitter');
+            return redirect('/thanks_social');
+        }
+    }
+
+    // Facebookログイン
+    public function redirectToProviderForFacebook(){
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    // Twitterコールバック
+    public function handleProviderCallbackForFacebook(){
+        try {
+            $facebookUser = Socialite::driver('facebook')->user();
+        } catch (Exception $e) {
+            return redirect('auth/facebook');
+        }
+        $authUser = User::where('email', $facebookUser->email)->first();
+        if ($authUser) {
+            Auth::login($authUser, true);
+            return redirect('/mypage')->with('success', 'ログインしました');
+        } else {
+            $user = $this->createUserByFacebook($facebookUser);
+            Auth::login($user, true);
+            return redirect('/thanks_social');
         }
     }
 
@@ -169,6 +193,39 @@ class RegisterController extends UsersController
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'twitter_id' => $data['twitter_id'],
+                'email_verified_at' => $data['email_verified_at']
+            ]);
+            UserProfile::create([
+                'user_id' => $user->id,
+                'photo_url' => $data['photo_url'],
+            ]);
+            return $user;
+        });
+        return $user;
+    }
+
+    private function createUserByFacebook($facebookUser)
+    {
+        $data = [
+            'name' => $facebookUser->name,
+            'email' => $facebookUser->email,
+            'facebook_id' => $facebookUser->id,
+            'photo_url' => $facebookUser->avatar_original,
+            'introduce' => null,
+            'email_verified_at' => new Carbon()
+        ];
+        $user = $this->facebookCreate($data);
+        $this->afterRegistered($data, $user, 'Facebook');
+        return $user;
+    }
+
+    protected function facebookCreate(array $data)
+    {
+        $user = DB::transaction(function () use ($data) {
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'facebook_id' => $data['facebook_id'],
                 'email_verified_at' => $data['email_verified_at']
             ]);
             UserProfile::create([
