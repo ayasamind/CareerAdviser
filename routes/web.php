@@ -33,16 +33,19 @@ Route::get('/password/reset/{token}', 'User\Auth\ResetPasswordController@showRes
 Route::post('/password/reset', 'User\Auth\ResetPasswordController@reset')->name('password.update');
 
 // ログインURL
-Route::get('auth/twitter', 'User\Auth\RegisterController@redirectToProvider')->name('auth.twitter');
+Route::get('auth/twitter', 'User\Auth\RegisterController@redirectToProviderForTwitter')->name('auth.twitter');
 // コールバックURL
-Route::get('auth/twitter/callback', 'User\Auth\RegisterController@handleProviderCallback');
+Route::get('auth/twitter/callback', 'User\Auth\RegisterController@handleProviderCallbackForTwitter');
+
+Route::get('auth/facebook', 'User\Auth\RegisterController@redirectToProviderForFacebook')->name('auth.facebook');
+Route::get('auth/facebook/callback', 'User\Auth\RegisterController@handleProviderCallbackForFacebook');
 
 Route::middleware(['auth:user'])->name('user.')->group(function() {
     Route::get('/thanks', function () {
         return view('user.thanks');
     });
-    Route::get('/thanks_twitter', function () {
-        return view('user.thanks_twitter');
+    Route::get('/thanks_social', function () {
+        return view('user.thanks_social');
     });
     Route::get("/mypage", "User\UsersController@view")->name('mypage');
 });

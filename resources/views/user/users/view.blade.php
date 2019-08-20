@@ -564,13 +564,15 @@
                                                 <a id="save_password" class="profile_save_btn">保存</a>
                                             </div>
                                         </h3>
-                                        <dl class="profile_dl_static">
-                                            <!-- <li><span>内定数</span>3</li> -->
-                                            <li>
-                                                <span>現在のパスワード</span>
-                                                <p>*******</p>
-                                            </li>
-                                        </dl>
+                                        @if ($user->password)
+                                            <dl class="profile_dl_static">
+                                                <!-- <li><span>内定数</span>3</li> -->
+                                                <li>
+                                                    <span>現在のパスワード</span>
+                                                        <p>*******</p>
+                                                </li>
+                                            </dl>
+                                        @endif
                                         <dl class="profile_dl_edit">
                                             <li>
                                                 <span>新しいパスワード</span>
