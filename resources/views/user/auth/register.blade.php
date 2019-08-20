@@ -26,9 +26,9 @@
 							</div>
 							<div class="sns_signup_wrap_outer">
 								<div class="sns_signup_wrap">
-									<button type="button" href="#" class="fb_login fs15 fw700 disable" disabled>
+                                    <a href="{{ route('auth.facebook') }}" class="fb_login fs15 fw700">
 										<i class="fab fa-facebook-square fs26 mr40"></i>facebookで新規登録
-                                    </button>
+                                    </a>
 									<a href="{{ route('auth.twitter') }}" class="tw_login fs15 fw700">
 										<i class="fab fa-twitter fs26 mr40"></i>Twitterで新規登録
                                     </a>
