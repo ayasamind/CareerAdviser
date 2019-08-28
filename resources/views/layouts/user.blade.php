@@ -86,7 +86,12 @@
     <script src="{{ asset("js/remodal.min.js") }}"></script>
 	<!-- 残りはfooterで -->
 
-	<!-- js -->
+    <!-- js -->
+    <!-- User Heat Tag -->
+    <script type="text/javascript">
+        (function(add, cla){window['UserHeatTag']=cla;window[cla]=window[cla]||function(){(window[cla].q=window[cla].q||[]).push(arguments)},window[cla].l=1*new Date();var ul=document.createElement('script');var tag = document.getElementsByTagName('script')[0];ul.async=1;ul.src=add;tag.parentNode.insertBefore(ul,tag);})('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');_uhtracker({id:'uhCzKYHaYs'});
+    </script>
+    <!-- End User Heat Tag -->
 	<script>
         $(document).ready(function($){
             var ua = navigator.userAgent;
