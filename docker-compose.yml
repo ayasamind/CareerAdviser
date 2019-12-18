@@ -30,7 +30,7 @@ services:
       MYSQL_DATABASE: ${DOCKER_DB_DATABASE}
       MYSQL_TEST_DATABASE: ${DOCKER_TEST_DATABASE}
     ports:
-      - 13306:3306
+      - 23306:3306
     volumes:
       - mysql-data:/var/lib/mysql
       - ./server/docker/mysql:/docker-entrypoint-initdb.d
