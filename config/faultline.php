@@ -3,7 +3,7 @@
 $notifier = [
     'project' => env('FAULTLINE_PROJECT'),
     'apiKey' => env('FAULTLINE_API_KEY'),
-    'endpoint' => env('FAULTLINE_ENDPOINT'),
+    'endpoint' => env('FAULTLINE_ENDPINT'),
     'timeout' => env('FAULTLINE_TIMEOUT', '30.0'),
     'notifications' => [],
 
