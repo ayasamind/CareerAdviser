@@ -20,7 +20,7 @@ class MeetingRequestsController extends Controller
 
     public function index()
     {
-        $meetingRequests = MeetingRequest::orderByDesc('created_at')->paginate(10);
+        $meetingRequests = MeetingRequest::with(['Adviser'])->orderByDesc('created_at')->paginate(10);
         return view('admin.requests.index', [
             'meetingRequests' => $meetingRequests,
         ]);
