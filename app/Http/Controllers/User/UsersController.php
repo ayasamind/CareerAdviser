@@ -36,6 +36,7 @@ class UsersController extends BaseController
 
     public function view()
     {
+        sss
         $user = User::with(['UserProfile'])->findOrFail(Auth::user()->id);
         $meetingRequests = MeetingRequest::with(['Adviser'])->where('user_id', $user->id)->orderByDesc('created_at')->paginate(3);
         $prefectures = $this->getPrefectureList();

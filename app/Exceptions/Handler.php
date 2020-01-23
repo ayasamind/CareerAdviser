@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Auth\AuthenticationException;
+use LaravelFaultline\Exceptions\Handler\LaravelFaultline;
 
 class Handler extends ExceptionHandler
 {
@@ -35,6 +36,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        LaravelFaultline::notify($exception);
         parent::report($exception);
     }
 
