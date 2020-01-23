@@ -254,7 +254,7 @@
                 </div>
             </div>
             <!-- <p class="copyright">Copyright &copy; ownername All Rights Reserved.</p> -->
-            <small class="copyright block fs12 fs11sp">&copy; 2019<!-- <span id="thisYear"></span> --> RASHISA Inc.</small>
+            <small class="copyright block fs12 fs11sp">&copy; 2019<!-- <span id="thisYear"></span> --> 株式会社えらるどヒューマン</small>
         @endauth
         @guest
             <div class="footer_inner container">
@@ -267,7 +267,7 @@
                             <li class="footer_nav_li"><a href="{{ route('company') }}" class="fs12">運営会社</a></li>
                         </ul>
                     </div>
-                    <small class="copyright_lp_sub block fs12 fs11sp">&copy; 2019<!-- <span id="thisYear"></span> --> RASHISA Inc.</small>
+                    <small class="copyright_lp_sub block fs12 fs11sp">&copy; 2019<!-- <span id="thisYear"></span> --> 株式会社えらるどヒューマン</small>
                 </div>
             </div>
         @endguest

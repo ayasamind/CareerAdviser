@@ -211,7 +211,7 @@
             </div>
         </div>
         <!-- <p class="copyright">Copyright &copy; ownername All Rights Reserved.</p> -->
-        <small class="copyright block fs12 fs11sp">&copy; 2019<!-- <span id="thisYear"></span> --> RASHISA Inc.</small>
+        <small class="copyright block fs12 fs11sp">&copy; 2019<!-- <span id="thisYear"></span> --> 株式会社えらるどヒューマン</small>
     </footer>
     <script src="js/remodal.js"></script>
     <script src="js/accordion_wp.js"></script>
