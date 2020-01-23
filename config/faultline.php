@@ -43,7 +43,7 @@ return [
     'config' => [
         'force' => false,
         'allowed_env' => [
-            'production',
+            'production'
         ],
         'deny_exception' => [
             '\Illuminate\Validation\ValidationException',
