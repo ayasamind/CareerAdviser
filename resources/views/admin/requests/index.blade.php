@@ -32,7 +32,11 @@
                                 <a href="{{ route('admin.advisers.show', [
                                     'id' => $request['Adviser']['id']
                                 ]) }}">
-                                {{ $request->Adviser->name }}
+                                @if($request->Adviser)
+                                    {{ $request->Adviser->name }}
+                                @else
+                                  削除されたアドバイザー
+                                @endif
                             </td>
                             <td>{{ $request->date->format('Y年m月d日 H:i') }}</td>
                             <td>{{ $request->type_label }}</td>
