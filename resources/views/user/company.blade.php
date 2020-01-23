@@ -19,31 +19,29 @@
 				<section class="company_section container_lp_sub">
 					<div class="section_inner company_inner">
 						<div class="company_content">
-							<img src="{{ asset('img/rashisa_logo.svg') }}" alt="株式会社RASHISA" class="block width30 center_block mb20 width50sp mt20sp">
 							<table class="operating_company_table">
 							    <tbody>
 								    <tr>
 								      <th>社名</th>
-								      <td>株式会社RASHISA</td>
+								      <td>株式会社えらるどヒューマン</td>
 								    </tr>
 								    <tr>
 								      <th>代表者</th>
-								      <td>岡本翔</td>
+								      <td>吉瀬 機一郎</td>
 								    </tr>
 								    <tr>
 								      <th>設立</th>
-								      <td>2017年1月23日</td>
+								      <td>2019年11月22日</td>
 								    </tr>
 								    <tr>
 								      <th>所在地</th>
-								      <td>福岡県福岡市中央区天神3-15-1 にちりんビル3F</td>
+								      <td>東京都北区豊島1丁目30番3号</td>
 								    </tr>
 								    <tr>
 								      <th>事業内容</th>
 								      <td>
 										<ul>
-											<li>⑴キャリアドバイザー.comの運営</li>
-											<li>⑵ジャパンキャリアフェスティバルの運営</li>
+											<li>キャリアドバイザー.comの運営</li>
 										</ul>
 								      </td>
 								    </tr>
