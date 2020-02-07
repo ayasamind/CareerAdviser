@@ -318,7 +318,7 @@
 
         $(function() {
             if (document.domain === 'www.ca-com.life') {
-                location.href = 'https://ca.eraldhuman.com/' + location.pathname
+                location.href = 'https://ca.eraldhuman.com' + location.pathname
             }
         })
     </script>
