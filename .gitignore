@@ -20,3 +20,5 @@ yarn-error.log
 .env.travis
 heroku.sh
 .phpunit.result.cache
+/server/.env.development
+/server/.env.production
