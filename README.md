@@ -1,11 +1,9 @@
-[![Build Status](https://travis-ci.com/ayasamind/CareerAdviser.svg?token=pqfJ9JvhWcp5ECY4Spsq&branch=master)](https://travis-ci.com/ayasamind/CareerAdviser)
-
 ## 開発環境構築
 
 ```
 $ cp server/.env.development .env
 $ docker-compose up -d
-$ docker exec -it light-php bash
+$ docker exec -it ca-php bash
 $ composer install
 $ php artisan migrate
 $ php artisan db:seed
