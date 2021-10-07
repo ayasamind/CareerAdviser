@@ -17,4 +17,5 @@ yarn-error.log
 .env.staging
 .env.testing
 .env.production
+heroku.sh
 .phpunit.result.cache

@@ -20,7 +20,6 @@ abstract class TestCase extends BaseTestCase
     {
         if (!RefreshDatabaseState::$migrated) {
             RefreshDatabaseState::$migrated = true;
-            // 入出金管理システム側のデータのマイグレーション
             $this->artisan('migrate:fresh',[
                 '--env' => 'testing',
                 '--path' => [
