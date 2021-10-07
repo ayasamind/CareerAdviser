@@ -16,4 +16,5 @@ yarn-error.log
 .env.dev
 .env.staging
 .env.testing
+.env.production
 .phpunit.result.cache
